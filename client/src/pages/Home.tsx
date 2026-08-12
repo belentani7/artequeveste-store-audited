@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
 import { formatMoney } from "@/lib/format";
 import { useCart } from "@/contexts/CartContext";
+import { startLogin } from "@/const";
 import type { Product } from "@shared/commerce/types";
 
 const categories = ["Todos", "Camisetas", "Quimonos", "Bolsas", "Canecas", "Souvenires"];
@@ -81,7 +82,7 @@ export default function Home() {
           <nav className={`${menuOpen ? "absolute left-0 right-0 top-20 flex bg-[#faf9f6] p-5 shadow-xl" : "hidden"} flex-col gap-5 text-sm text-[#2d2d2d] md:static md:flex md:flex-row md:bg-transparent md:p-0 md:shadow-none`}>
             <a href="#colecao" onClick={() => setMenuOpen(false)} className="hover:text-[#40E0D0]">Coleção</a><a href="#historia" onClick={() => setMenuOpen(false)} className="hover:text-[#40E0D0]">Nossa história</a><a href="#cuidados" onClick={() => setMenuOpen(false)} className="hover:text-[#40E0D0]">Envios e trocas</a>
           </nav>
-          <div className="flex items-center gap-2"><button className="hidden rounded-full p-2 text-[#40E0D0] sm:block" aria-label="Instagram"><Instagram size={18} /></button><button className="relative rounded-full p-2 text-[#40E0D0]" aria-label="Abrir carrinho" onClick={openCart}><ShoppingBag size={20} />{itemCount > 0 && <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#FF1493] text-[0.65rem] font-bold text-white">{itemCount}</span>}</button><button className="rounded-full p-2 md:hidden" aria-label="Abrir menu" onClick={() => setMenuOpen(value => !value)}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button></div>
+          <div className="flex items-center gap-2"><button className="hidden rounded-full p-2 text-[#40E0D0] sm:block" aria-label="Instagram"><Instagram size={18} /></button><button className="hidden rounded-full px-3 py-2 text-xs font-semibold text-[#1a1a1a] sm:block" onClick={() => startLogin()}>Entrar</button><button className="relative rounded-full p-2 text-[#40E0D0]" aria-label="Abrir carrinho" onClick={openCart}><ShoppingBag size={20} />{itemCount > 0 && <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#FF1493] text-[0.65rem] font-bold text-white">{itemCount}</span>}</button><button className="rounded-full p-2 md:hidden" aria-label="Abrir menu" onClick={() => setMenuOpen(value => !value)}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button></div>
         </div>
       </header>
 

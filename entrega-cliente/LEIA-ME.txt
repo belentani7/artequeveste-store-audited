@@ -13,3 +13,5 @@ ARTE QUE VESTE — PACOTE DE ENTREGA
 
 NÃO INCLUIR SENHAS, TOKENS, CHAVES DE API OU DADOS BANCÁRIOS NESTA PASTA.
 As credenciais devem ser entregues por convite ou canal seguro e alteradas no primeiro acesso.
+6. Status-Pagamento-e-Envio.md
+   Explica que pagamento e frete estão preparados, mas só podem ser ativados pelo titular.
