@@ -1,0 +1,2298 @@
+
+
+
+
+
+
+
+
+
+
+Manual Completo - ARTE QUE VESTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARTE QUE VESTE
+
+
+MANUAL 
+COMPLETO
+
+
+Do Zero à Loja Online
+
+
+
+        Guia Forense Passo a Passo para Operação em Aracaju/SE
+    
+
+
+
+
+Versão:
+ 1.0
+
+
+Data:
+ 20 de Junho de 2026
+
+
+Local:
+ Barcelona, España
+
+
+Idioma:
+ Português (Brasil)
+
+
+
+
+
+
+Design & Desenvolvimento Web: Pedro Marcos Santos Belentani
+
+
+Instagram: @Belentani_
+
+
+© 2026 – Todos os direitos reservados
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ÍNDICE GERAL
+
+
+
+
+1.
+ 
+INTRODUÇÃO E VISÃO GERAL
+
+
+2.
+ 
+ASPECTOS LEGAIS E TRIBUTÁRIOS
+
+
+3.
+ 
+HOSPEDAGEM E DOMÍNIO
+
+
+4.
+ 
+CONFIGURAÇÃO DA PLATAFORMA (NUVEMSHOP)
+
+
+5.
+ 
+GATEWAYS DE PAGAMENTO
+
+
+6.
+ 
+LOGÍSTICA E TRANSPORTADORAS
+
+
+7.
+ 
+GESTÃO DE ESTOQUE
+
+
+8.
+ 
+EDIÇÃO E GESTÃO DE PRODUTOS
+
+
+9.
+ 
+MARKETING DIGITAL
+
+
+10.
+ 
+SUPORTE TÉCNICO E ATENDIMENTO
+
+
+11.
+ 
+SEGURANÇA E BACKUP
+
+
+12.
+ 
+SITE ESTÁTICO vs LOJA REAL
+
+
+13.
+ 
+ADENDO PRÁTICO DE EXECUÇÃO
+
+
+14.
+ 
+POLÍTICAS LEGAIS (TEXTOS PRONTOS)
+
+
+15.
+ 
+PLANO DE CONTINGÊNCIA
+
+
+16.
+ 
+PLANILHA DE MARGEM E CUSTOS
+
+
+17.
+ 
+CRONOGRAMA DE 30 DIAS
+
+
+18.
+ 
+CHECKLIST FINAL E GUIA RÁPIDO
+
+
+19.
+ 
+GLOSSÁRIO
+
+
+20.
+ 
+CONTATOS ÚTEIS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. INTRODUÇÃO E VISÃO GERAL
+
+
+Este manual foi criado para fornecer um guia completo, passo a passo, para a implantação e operação da loja online 
+Arte Que Veste
+. Ele cobre desde os aspectos legais até a gestão diária, passando por configuração técnica, marketing e atendimento ao cliente.
+
+
+O público-alvo é o proprietário da marca, que deseja vender camisetas, kimonos, bolsas, canecas e souvenirs com estampas de xilogravura nordestina, produzidas em parceria com o Mestre Nivaldo Oliveira, em São Cristóvão/SE.
+
+
+1.1 O Que Este Manual Inclui
+
+
+
+
+Abertura de MEI e obrigações fiscais
+
+
+Registro de domínio e contratação de hospedagem
+
+
+Configuração da plataforma Nuvemshop
+
+
+Integração com Mercado Pago, Melhor Envio e NFe.io
+
+
+Gestão de estoque físico e digital
+
+
+Cadastro e edição de produtos
+
+
+Estratégias de marketing digital (Instagram, tráfego pago, e-mail)
+
+
+Atendimento ao cliente e suporte técnico
+
+
+Segurança, backup e plano de contingência
+
+
+Checklists, cronogramas e modelos de documentos
+
+
+
+
+1.2 Estrutura do Projeto
+
+
+O projeto é composto por dois pilares:
+
+
+
+
+Site institucional:
+ Página estática (HTML) que conta a história da marca, a cultura nordestina e apresenta o Mestre Nivaldo. Hospedado em Netlify (gratuito). URL: artequeveste.com.br
+
+
+Loja virtual:
+ Plataforma Nuvemshop com carrinho, checkout, pagamentos e gestão de pedidos. URL: loja.artequeveste.com.br
+
+
+
+
+O cliente navega pelo site institucional e, ao decidir comprar, é redirecionado para a loja segura.
+
+
+
+
+💡 Dica de Ouro:
+ Mantenha os dois sites com a mesma identidade visual (cores, fontes, logo) para transmitir consistência e confiança.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+2. ASPECTOS LEGAIS E TRIBUTÁRIOS
+
+
+Antes de vender online, você precisa regularizar sua empresa. A opção mais adequada para começar é o 
+MEI
+ (Microempreendedor Individual).
+
+
+2.1 Abertura do MEI
+
+
+Custo:
+ Gratuito
+
+
+Faturamento máximo:
+ R$ 81.000/ano (2026)
+
+
+Imposto mensal:
+ R$ 77,90 (comércio)
+
+
+Passo a passo:
+
+
+
+
+Acesse 
+portaldoempreendedor.gov.br
+
+
+Clique em "Formalize-se"
+
+
+Preencha seus dados pessoais (RG, CPF, comprovante de residência)
+
+
+Escolha os CNAEs principais e secundários:
+            
+
+
+Principal:
+ 4781-4/00 – Comércio varejista de artigos do vestuário e acessórios
+
+
+Secundário:
+ 4789-0/99 – Comércio varejista de outros produtos não especificados
+
+
+
+
+
+
+Informe o endereço em Aracaju/SE
+
+
+Confirme e gere o CNPJ
+
+
+Prazo: 2-3 dias úteis
+
+
+
+
+
+
+⚠️ Atenção:
+ O MEI não pode ter faturamento superior a R$ 81.000 por ano. Se ultrapassar, você precisará migrar para o Simples Nacional.
+    
+
+
+2.2 Inscrição Estadual
+
+
+Obrigatória para comércio.
+
+
+
+
+Acesse 
+www.sefaz.se.gov.br
+
+
+Solicite a Inscrição Estadual
+
+
+Custo:
+ Gratuito
+
+
+Prazo:
+ 5-10 dias úteis
+
+
+
+
+2.3 Alvará de Funcionamento
+
+
+Para Aracaju/SE:
+
+
+
+
+Prefeitura Municipal de Aracaju – Secretaria de Planejamento
+
+
+Custo:
+ R$ 100-300 (varia por atividade)
+
+
+Prazo:
+ 15-30 dias
+
+
+
+
+
+
+💡 Dica:
+ Muitos MEIs começam sem o alvará e o tiram depois, pois o processo é demorado. Porém, tecnicamente é obrigatório.
+    
+
+
+2.4 Impostos e Tributos
+
+
+MEI – Mensal:
+
+
+
+
+DAS MEI: R$ 77,90 (comércio)
+
+
+Vencimento: todo dia 20
+
+
+Pagamento: Guia DAS no SIMEI
+
+
+
+
+ICMS (Sergipe):
+
+
+
+
+Operação interna: 18%
+
+
+Interestadual: 7% (Sul/Sudeste) ou 12% (Norte/Nordeste/Centro-Oeste/ES)
+
+
+DIFAL: diferença entre alíquota interna e interestadual (cuidado com vendas para consumidor final em outro estado)
+
+
+
+
+PIS/COFINS:
+ MEI isento.
+
+
+2.5 Nota Fiscal Eletrônica (NF-e)
+
+
+Obrigatório para ME e opcional para MEI.
+ Mas é recomendável emitir para passar credibilidade.
+
+
+Emissão gratuita:
+
+
+
+
+NFe.io – 50 NFs/mês grátis
+
+
+Emissor Gratuito SEFAZ/SE – ilimitado
+
+
+Sebrae SE – emissor gratuito
+
+
+
+
+Configuração:
+
+
+
+
+Certificado Digital e-CNPJ (A1) – R$ 200-400/ano
+
+
+Credenciamento na SEFAZ/SE
+
+
+Software emissor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. HOSPEDAGEM E DOMÍNIO
+
+
+3.1 Melhores Opções de Hospedagem
+
+
+
+
+
+
+Plataforma
+Preço
+Vantagens
+
+
+
+
+
+
+Hostinger
+R$ 11,99/mês (1º ano)
+Servidor no Brasil, SSL grátis, suporte 24/7
+
+
+Netlify
+Grátis (plano básico)
+Deploy fácil, SSL grátis, CDN global
+
+
+Vercel
+Grátis (plano hobby)
+Performance excelente, SSL grátis, deploy automático
+
+
+
+
+
+
+
+
+💡 Recomendação:
+ Use 
+Netlify
+ para o site institucional (gratuito) e 
+Nuvemshop
+ para a loja (plataforma paga com tudo incluso).
+    
+
+
+3.2 Registro de Domínio
+
+
+Registro.br (oficial .com.br):
+
+
+
+
+Custo:
+ R$ 40/ano
+
+
+Site:
+ registro.br
+
+
+Obrigatório:
+ CNPJ ou CPF
+
+
+Prazo:
+ 3-5 dias úteis
+
+
+
+
+Passo a passo:
+
+
+
+
+Acesse registro.br
+
+
+Verifique disponibilidade: artequeveste.com.br
+
+
+Clique em "Registre-se"
+
+
+Preencha os dados do titular (CNPJ)
+
+
+Pague o boleto (R$ 40)
+
+
+Configure o DNS após aprovação
+
+
+
+
+3.3 Configuração de DNS (Domínio e Subdomínio)
+
+
+Você terá dois sites, portanto dois registros DNS.
+
+
+
+        Registro 1 (Site Institucional – Netlify):
+        Tipo: A
+        Nome: @
+        Valor: 75.2.60.5
+        TTL: 3600
+
+        Registro 2 (Loja – Nuvemshop):
+        Tipo: CNAME
+        Nome: loja
+        Valor: loja.artequeveste.com.br.nuvemshop.com.br
+        TTL: 3600
+
+        Registro 3 (WWW – redireciona para o site):
+        Tipo: CNAME
+        Nome: www
+        Valor: artequeveste.netlify.app
+        TTL: 3600
+    
+
+
+No Netlify:
+ Vá em "Site settings" > "Domain management" > "Add custom domain" e digite 
+artequeveste.com.br
+.
+
+
+Na Nuvemshop:
+ Vá em "Configurações" > "Domínio" > "Adicionar domínio próprio" e digite 
+loja.artequeveste.com.br
+.
+
+
+
+
+⚠️ Atenção:
+ A propagação do DNS pode levar até 48 horas. Não se preocupe se o site não abrir imediatamente.
+    
+
+
+3.4 Certificado SSL/HTTPS
+
+
+Gratuito (Let's Encrypt) – incluso no Netlify e Nuvemshop. Ativado automaticamente.
+
+
+
+
+
+
+
+
+
+
+
+
+4. CONFIGURAÇÃO DA PLATAFORMA (NUVEMSHOP)
+
+
+4.1 Criar Conta
+
+
+
+
+Acesse 
+nuvemshop.com.br
+
+
+Clique em "Começar grátis"
+
+
+Preencha: Nome, Email, Senha, CNPJ
+
+
+Confirme o email
+
+
+Complete o cadastro com os dados da loja (nome, telefone, endereço)
+
+
+
+
+4.2 Escolha do Tema
+
+
+
+
+Temas recomendados: 
+Minimal
+, 
+Fashion
+ ou 
+Store
+
+
+Personalize: logo, cores (#40E0D0 – turquesa, #FF1493 – rosa), fontes (Playfair Display + Inter)
+
+
+
+
+4.3 Páginas Obrigatórias
+
+
+
+
+Home:
+ Banner principal com chamada para a coleção
+
+
+Sobre Nós:
+ História da marca e do Mestre Nivaldo
+
+
+Coleções:
+ Lista de produtos com filtros
+
+
+Contato:
+ Formulário, WhatsApp, Instagram
+
+
+Trocas e Devoluções:
+ Política legal
+
+
+Política de Privacidade:
+ LGPD
+
+
+Termos de Uso:
+ Condições gerais
+
+
+
+
+4.4 Configurar Produtos
+
+
+Veja a seção 
+8. EDIÇÃO E GESTÃO DE PRODUTOS
+ para o passo a passo completo.
+
+
+
+
+
+
+
+
+
+
+
+
+5. GATEWAYS DE PAGAMENTO
+
+
+5.1 Mercado Pago (Recomendado)
+
+
+Taxas:
+
+
+
+
+Cartão à vista: 4,99% + R$ 0,50
+
+
+Cartão parcelado: 5,99% + R$ 0,50/parcela
+
+
+PIX: 0,99%
+
+
+Boleto: R$ 2,00
+
+
+
+
+Como configurar:
+
+
+
+
+Crie conta em mercadopago.com.br (Pessoa Jurídica)
+
+
+Envie os documentos (RG, comprovante de endereço, CNPJ)
+
+
+Aguarde aprovação (24-48h)
+
+
+No painel do Mercado Pago, vá em "Configurações" > "Credenciais"
+
+
+Copie a 
+Public Key
+ e o 
+Access Token
+
+
+Na Nuvemshop, vá em "Configurações" > "Formas de pagamento" > "Mercado Pago"
+
+
+Cole as chaves e ative as formas de pagamento
+
+
+
+
+5.2 Configurar Parcelamento
+
+
+
+
+Máximo de parcelas: 12x
+
+
+Parcelas sem juros: 3x (ou 6x se possível)
+
+
+Valor mínimo por parcela: R$ 5,00
+
+
+
+
+5.3 Testar Checkout
+
+
+Use o cartão de teste do Mercado Pago:
+
+
+
+        Número: 5031 4332 1541 3543
+        Validade: 11/25
+        CVV: 123
+        Nome: TESTE
+        CPF: 12345678909
+    
+
+
+Faça uma compra teste e verifique se o pedido aparece no painel da Nuvemshop.
+
+
+
+
+
+
+
+
+
+
+
+
+6. LOGÍSTICA E TRANSPORTADORAS
+
+
+6.1 Melhor Envio (Recomendado)
+
+
+Plataforma comparadora de fretes com descontos de até 70%.
+
+
+Cadastro:
+
+
+
+
+Acesse melhorenvio.com.br
+
+
+Crie conta com CNPJ
+
+
+Configure CEP de origem (Aracaju/SE)
+
+
+Integre com a Nuvemshop via API Key
+
+
+
+
+Transportadoras:
+
+
+
+
+PAC:
+ 7-15 dias úteis, mais barato
+
+
+SEDEX:
+ 3-7 dias úteis, médio
+
+
+Jadlog:
+ 5-12 dias, privada
+
+
+
+
+6.2 Embalagens
+
+
+
+
+Envelopes plásticos (P: R$ 0,30, M: R$ 0,45, G: R$ 0,60)
+
+
+Caixas de papelão (P: R$ 1,50, M: R$ 2,50, G: R$ 4,00)
+
+
+Fita adesiva: R$ 8,00/rolo
+
+
+
+
+Onde comprar:
+ Mercado Livre, Shopee, Amazon, Embalax, ou lojas locais em Aracaju.
+
+
+6.3 Processo de Envio
+
+
+
+
+Acesse Nuvemshop > Pedidos
+
+
+Filtre "Pagos"
+
+
+Separe o produto no estoque
+
+
+Embele com cuidado (produto, brinde, cartão de agradecimento)
+
+
+Pese e meça o pacote
+
+
+Gere etiqueta no Melhor Envio
+
+
+Cole a etiqueta
+
+
+Leve aos Correios
+
+
+Atualize status para "Enviado" e envie o código de rastreio
+
+
+
+
+
+
+💡 Dica:
+ Pedidos feitos até 14h são enviados no mesmo dia. Após 14h, no próximo dia útil.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+7. GESTÃO DE ESTOQUE
+
+
+7.1 Controle Físico (Planilha)
+
+
+Use uma planilha Excel/Google Sheets com as colunas:
+
+
+
+
+SKU
+
+
+Nome do Produto
+
+
+Tamanho/Cor
+
+
+Quantidade Atual
+
+
+Quantidade Mínima
+
+
+Quantidade Máxima
+
+
+Fornecedor
+
+
+Preço de Custo
+
+
+Última Entrada
+
+
+Última Saída
+
+
+Status (OK/Repor)
+
+
+
+
+7.2 Controle Digital (Nuvemshop)
+
+
+
+
+Vá em "Produtos" > "Estoque"
+
+
+Ative "Controlar estoque"
+
+
+Defina quantidade inicial e estoque mínimo
+
+
+Não permita venda sem estoque
+
+
+
+
+7.3 Entrada de Produtos
+
+
+
+
+Receba mercadoria do fornecedor
+
+
+Confira a nota fiscal
+
+
+Verifique qualidade (costuras, estampas, tamanhos)
+
+
+Conte as unidades
+
+
+Armazene em local adequado
+
+
+Atualize o sistema (adicione quantidade e registre data)
+
+
+
+
+7.4 Saída de Produtos
+
+
+
+
+O sistema baixa o estoque automaticamente após cada venda confirmada
+
+
+Em caso de troca/devolução, reative o estoque manualmente se o produto estiver novo
+
+
+
+
+7.5 Inventário Físico
+
+
+Faça mensalmente:
+
+
+
+
+Imprima a lista de produtos
+
+
+Conte fisicamente cada item
+
+
+Anote as quantidades reais
+
+
+Compare com o sistema
+
+
+Ajuste diferenças
+
+
+Investigue discrepâncias
+
+
+Atualize o sistema
+
+
+Assine e arquive
+
+
+
+
+7.6 Reposição de Estoque
+
+
+Fórmula:
+
+
+
+        Qtd a Comprar = (Média Vendas Mensais x Lead Time) + Estoque Segurança - Estoque Atual
+    
+
+
+Exemplo:
+
+
+
+
+Média vendas: 20 unid/mês
+
+
+Lead time: 15 dias (0,5 mês)
+
+
+Estoque segurança: 10 unidades
+
+
+Estoque atual: 5 unidades
+
+
+Qtd a comprar = (20 × 0,5) + 10 – 5 = 15 unidades
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8. EDIÇÃO E GESTÃO DE PRODUTOS
+
+
+8.1 Adicionar Novo Produto (Nuvemshop)
+
+
+
+
+Produtos > Adicionar Produto
+
+
+Nome:
+ Camiseta Bumba Meu Boi – Turquesa
+
+
+Descrição:
+ Use o texto detalhado que já consta no site institucional
+
+
+Preço:
+ R$ 129,00 | 
+Custo:
+ R$ 45,00
+
+
+SKU:
+ CAM-BMB-001
+
+
+Estoque:
+ 20 unidades | 
+Mínimo:
+ 5
+
+
+Variações:
+ Ative e configure Tamanhos (P, M, G, GG) e Cores (Turquesa, Branca, Preta)
+
+
+Imagens:
+ Adicione ao menos 4 fotos (frente, costas, detalhe, modelo)
+
+
+Peso:
+ 0,200 kg | 
+Dimensões:
+ 30 x 25 x 3 cm
+
+
+SEO:
+ Título, descrição, URL amigável
+
+
+Salvar e publicar
+
+
+
+
+8.2 Editar Produto
+
+
+
+
+Alterar preço:
+ Produtos > Editar > Preço > Salvar
+
+
+Alterar estoque:
+ Produtos > Estoque > Editar quantidade
+
+
+Alterar imagens:
+ Produtos > Editar > Seção Imagens
+
+
+Desativar:
+ Status > Inativo (recomendado em vez de excluir)
+
+
+Excluir:
+ Cuidado – é permanente e perde histórico
+
+
+
+
+8.3 Importar/Exportar CSV
+
+
+Use para migrar muitos produtos de uma vez. Baixe o modelo, preencha e importe.
+
+
+
+
+
+
+
+
+
+
+
+
+9. MARKETING DIGITAL
+
+
+9.1 Instagram (@artequeveste79)
+
+
+Configuração:
+ Converta para Conta Comercial, preencha a bio com link do site, e use destaques (Novidades, Bastidores, Depoimentos, Como Comprar, Tamanho, FASC).
+
+
+Estratégia de Conteúdo:
+
+
+
+
+Produto (40%):
+ Fotos profissionais, modelos, detalhes
+
+
+Bastidores (25%):
+ Mestre Nivaldo trabalhando, processo de xilogravura
+
+
+Cultural (20%):
+ História do Bumba Meu Boi, São Cristóvão, FASC
+
+
+Depoimentos (10%):
+ Clientes usando as peças
+
+
+Promocional (5%):
+ Lançamentos e cupons
+
+
+
+
+Hashtags:
+ #artequeveste #xilogravura #modanordestina #bumbameuboi #saocristovao #sergipe
+
+
+9.2 Tráfego Pago
+
+
+Facebook/Instagram Ads:
+ Orçamento inicial de R$ 300-500/mês. Crie campanhas de tráfego, conversão e engajamento.
+
+
+Google Ads:
+ R$ 200-300/mês para palavras-chave como "camiseta xilogravura" e "moda nordestina online".
+
+
+9.3 E-mail Marketing
+
+
+Use Mailchimp (grátis até 2.000 contatos) ou a ferramenta de email da Nuvemshop.
+
+
+Sequência de boas-vindas:
+
+
+
+
+Imediato: agradecimento, história, cupom 10% OFF
+
+
+3 dias: conheça o Mestre Nivaldo
+
+
+7 dias: últimas peças disponíveis
+
+
+
+
+9.4 SEO
+
+
+
+
+Títulos com palavras-chave (máx 60 caracteres)
+
+
+Meta descrições com call-to-action (máx 160 caracteres)
+
+
+URLs amigáveis (ex: /camiseta-bumba-meu-boi)
+
+
+Imagens com alt text e nomes descritivos
+
+
+Blog com conteúdo sobre xilogravura, Bumba Meu Boi, São Cristóvão
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10. SUPORTE TÉCNICO E ATENDIMENTO
+
+
+10.1 Atendimento ao Cliente
+
+
+
+
+WhatsApp Business:
+ Principal canal, responda em até 1 hora
+
+
+Email:
+ contato@artequeveste.com.br, responda em até 24h
+
+
+Instagram Direct:
+ responda em até 2 horas
+
+
+Chat Online (Tidio/JivoChat):
+ opcional
+
+
+
+
+Respostas rápidas (WhatsApp):
+
+
+
+
+Saudação: "Olá! Bem-vindo à Arte Que Veste. Sou [nome], como posso ajudar?"
+
+
+Prazo de entrega: informações por região
+
+
+Trocas e devoluções: 7 dias, produto sem uso
+
+
+Formas de pagamento: cartão, Pix, boleto
+
+
+
+
+10.2 Resolução de Problemas
+
+
+
+
+Produto atrasado:
+ verifique rastreio, informe o cliente, peça desculpas, ofereça brinde/cupom
+
+
+Produto danificado:
+ peça fotos, avalie o dano, envie novo produto, registre ocorrência
+
+
+Produto errado:
+ peça desculpas, envie o correto, oriente devolução
+
+
+Cliente insatisfeito:
+ ouça ativamente, não se defenda, ofereça solução (troca, desconto)
+
+
+
+
+10.3 Suporte da Nuvemshop
+
+
+
+
+Chat 24/7
+
+
+Email: suporte@nuvem.com.br
+
+
+Central de ajuda: ajuda.nuvem.com.br
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11. SEGURANÇA E BACKUP
+
+
+11.1 Backup
+
+
+
+
+Nuvemshop faz backup diário automático (retenção 30 dias)
+
+
+Exporte produtos CSV semanalmente e guarde no Google Drive
+
+
+Faça backup do tema personalizado antes de editar
+
+
+
+
+11.2 Segurança
+
+
+
+
+SSL/HTTPS ativado automaticamente
+
+
+Use senhas fortes (mínimo 12 caracteres, com maiúsculas, minúsculas, números e símbolos)
+
+
+Troque senhas a cada 90 dias
+
+
+Ative autenticação de dois fatores em todas as plataformas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12. SITE ESTÁTICO vs LOJA REAL
+
+
+Entendendo a diferença:
+ Um site estático (como o HTML que você tem) é apenas uma vitrine. Ele mostra produtos, mas não processa pagamentos, não controla estoque, não emite nota fiscal, não calcula frete.
+
+
+Uma 
+loja virtual real
+ (como a Nuvemshop) tem:
+
+
+
+
+Backend e banco de dados
+
+
+Processamento de pagamentos (Mercado Pago)
+
+
+Cálculo de frete (Melhor Envio)
+
+
+Emissão de nota fiscal (NFe.io)
+
+
+Painel administrativo completo
+
+
+Gestão de clientes e pedidos
+
+
+
+
+Recomendação:
+ Use o HTML como site institucional e a Nuvemshop como loja. No HTML, substitua os botões "Adicionar ao carrinho" por links que redirecionam para a página do produto na Nuvemshop.
+
+
+
+        <a href="https://loja.artequeveste.com.br/products/camiseta-bumba-meu-boi" target="_blank" class="btn-primary">
+            Comprar na Loja Oficial
+        </a>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+13. ADENDO PRÁTICO DE EXECUÇÃO
+
+
+13.1 Domínio e Subdomínio na Prática
+
+
+No Registro.br, crie os registros DNS:
+
+
+
+
+Registro A:
+ @ → IP do Netlify (75.2.60.5)
+
+
+Registro CNAME:
+ loja → loja.artequeveste.com.br.nuvemshop.com.br
+
+
+Registro CNAME:
+ www → artequeveste.netlify.app
+
+
+
+
+No Netlify, adicione o domínio personalizado. Na Nuvemshop, adicione o subdomínio loja.
+
+
+13.2 Como Sincronizar Estoque Físico com Digital
+
+
+
+
+Quando receber mercadoria, atualize a quantidade na Nuvemshop manualmente
+
+
+O sistema baixa automaticamente a cada venda
+
+
+Faça inventário físico semanalmente e corrija eventuais divergências
+
+
+
+
+13.3 Fluxo Diário (Guia de 1 Página)
+
+
+
+        MANHÃ (9h-10h):
+        1. Abrir Nuvemshop
+        2. Verificar novos pedidos
+        3. Separar produtos com status "Pagamento aprovado"
+
+        TARDE (14h-16h):
+        4. Embalar os produtos
+        5. Gerar etiquetas no Melhor Envio
+        6. Levar aos Correios (até 17h)
+        7. Atualizar status para "Enviado"
+
+        FINAL DO DIA (18h):
+        8. Responder WhatsApp
+        9. Verificar estoque baixo
+        10. Anotar o que precisa repor
+    
+
+
+13.4 Erros Comuns e Como Evitar
+
+
+
+
+Não testar checkout:
+ Use cartão de teste antes de lançar
+
+
+Esquecer de baixar estoque:
+ Configure baixa automática
+
+
+Não calcular frete:
+ Configure antes de lançar
+
+
+Não responder WhatsApp:
+ Ative notificações
+
+
+Não emitir nota fiscal:
+ Configure NFe.io
+
+
+Não ter políticas legais:
+ Publique antes do lançamento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14. POLÍTICAS LEGAIS (TEXTOS PRONTOS)
+
+
+14.1 Política de Troca e Devolução
+
+
+Copie e cole no site:
+
+
+
+        POLÍTICA DE TROCA E DEVOLUÇÃO – ARTE QUE VESTE
+
+        1. Prazo: 7 dias corridos após o recebimento (Art. 49 do CDC).
+        2. Condições: produto sem uso, na embalagem original, etiqueta intacta.
+        3. Como solicitar: WhatsApp (79) XXXXX-XXXX, informando número do pedido e motivo.
+        4. Defeito: 30 dias para troca, enviamos novo produto sem custo.
+        5. Reembolso: no mesmo método de pagamento (cartão: estorno na fatura; Pix: transferência; boleto: crédito).
+        6. Frete de devolução: defeito/fabricação – pagamos; arrependimento/tamanho – cliente paga.
+    
+
+
+14.2 Política de Privacidade (LGPD)
+
+
+
+        POLÍTICA DE PRIVACIDADE – ARTE QUE VESTE
+
+        1. Dados coletados: nome, e-mail, telefone, endereço, CPF (para NF).
+        2. Uso: processar pedidos, enviar confirmações e rastreios, newsletter (com autorização).
+        3. Compartilhamento: apenas com transportadoras, Mercado Pago e NFe.io.
+        4. Seus direitos: excluir, corrigir, copiar dados, revogar consentimento.
+        5. Cookies: carrinho, preferências, analytics.
+    
+
+
+14.3 Termos de Uso
+
+
+
+        TERMOS DE USO – ARTE QUE VESTE
+
+        1. Aceitação: ao usar o site, você concorda.
+        2. Propriedade Intelectual: todo conteúdo é da ARTE QUE VESTE.
+        3. Uso permitido: navegar, comprar, compartilhar com crédito.
+        4. Uso proibido: copiar, modificar ou revender conteúdo.
+        5. Preços em Reais (R$), podem ser alterados sem aviso.
+        6. Responsabilidade: não nos responsabilizamos por atrasos dos Correios.
+        7. Foro: Aracaju/SE.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+15. PLANO DE CONTINGÊNCIA
+
+
+15.1 Se o Site da Nuvemshop Cair
+
+
+
+
+Verifique status.nuvemshop.com.br
+
+
+Poste no Instagram: "⚠️ Nossa loja está em manutenção, mas você pode falar conosco pelo WhatsApp (79) XXXXX-XXXX"
+
+
+Atenda pelo WhatsApp e anote os pedidos manualmente
+
+
+
+
+15.2 Se o Pagamento Falhar
+
+
+
+
+Peça desculpas e sugira outro cartão ou Pix
+
+
+Se preferir boleto, gere manualmente e envie por WhatsApp
+
+
+Confirme o pagamento e baixe o estoque manualmente
+
+
+
+
+15.3 Se a Transportadora Extraviar
+
+
+
+
+Envie um novo produto imediatamente, sem custo
+
+
+Abra chamado no Correios/Melhor Envio para reembolso
+
+
+Absorva o prejuízo – o cliente ficará satisfeito
+
+
+
+
+15.4 Se o Cliente Não Receber
+
+
+
+
+Verifique o rastreio
+
+
+Se parado há mais de 5 dias, abra reclamação nos Correios
+
+
+Informe o cliente com transparência
+
+
+Se passar de 20 dias, envie um novo produto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16. PLANILHA DE MARGEM E CUSTOS
+
+
+16.1 Margem por Produto
+
+
+
+
+
+
+Produto
+Preço
+Custo
+Taxa Pix
+Taxa Cartão
+Embalagem
+Lucro Pix
+Lucro Cartão
+
+
+
+
+
+
+Camiseta Bumba
+R$ 129
+R$ 45
+R$ 1,28
+R$ 6,93
+R$ 3
+R$ 79,72
+R$ 74,07
+
+
+Kimono Cultura
+R$ 249
+R$ 95
+R$ 2,47
+R$ 12,92
+R$ 5
+R$ 146,53
+R$ 136,08
+
+
+
+
+
+
+16.2 Custos Fixos Mensais
+
+
+
+
+MEI (DAS): R$ 77,90
+
+
+Nuvemshop: R$ 59,00
+
+
+Domínio (R$ 40/12): R$ 3,33
+
+
+Email profissional: R$ 15,00
+
+
+Total: R$ 155,23
+
+
+
+
+Para cobrir os custos fixos, você precisa vender 
+2 camisetas por mês
+ (lucro de R$ 79,72 cada) ou 
+1 kimono
+ (lucro de R$ 146,53).
+
+
+
+
+
+
+
+
+
+
+
+
+17. CRONOGRAMA DE 30 DIAS
+
+
+Semana 1 – A papelada
+
+
+
+
+Dia 1: Abrir MEI
+
+
+Dia 2: Inscrição Estadual
+
+
+Dia 3: Registrar domínio
+
+
+Dia 4: Contratar Netlify/Nuvemshop
+
+
+Dia 5: Comprar certificado digital
+
+
+Dia 6-7: Aguardar aprovações
+
+
+
+
+Semana 2 – Configuração da loja
+
+
+
+
+Dia 8: Criar conta Nuvemshop
+
+
+Dia 9: Configurar Mercado Pago
+
+
+Dia 10: Configurar Melhor Envio
+
+
+Dia 11: Configurar NFe.io
+
+
+Dia 12: Configurar tema e personalizar
+
+
+Dia 13-14: Ajustes finos
+
+
+
+
+Semana 3 – Produtos e fotos
+
+
+
+
+Dia 15: Sessão fotográfica
+
+
+Dia 16: Editar fotos
+
+
+Dia 17-18: Cadastrar produtos (1-6)
+
+
+Dia 19: Descrições SEO
+
+
+Dia 20-21: Testar checkout
+
+
+
+
+Semana 4 – Marketing e lançamento
+
+
+
+
+Dia 22: Configurar Instagram Business
+
+
+Dia 23: Criar 9 posts iniciais
+
+
+Dia 24: Configurar WhatsApp Business
+
+
+Dia 25: Publicar políticas
+
+
+Dia 26: Testes com amigos/família
+
+
+Dia 27: Corrigir bugs
+
+
+Dia 28: 
+LANÇAMENTO OFICIAL!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18. CHECKLIST FINAL E GUIA RÁPIDO
+
+
+2 Dias Antes do Lançamento
+
+
+
+
+☐ Testei checkout com cartão de teste
+
+
+☐ Testei checkout com Pix (paguei R$ 1,00)
+
+
+☐ Testei checkout com boleto
+
+
+☐ Frete PAC aparece
+
+
+☐ Frete SEDEX aparece
+
+
+☐ Estoque baixa automaticamente
+
+
+☐ Recebo email de novo pedido
+
+
+
+
+1 Dia Antes
+
+
+
+
+☐ Política de troca publicada
+
+
+☐ Política de privacidade publicada
+
+
+☐ Termos de uso publicados
+
+
+☐ WhatsApp Business configurado
+
+
+☐ Respostas rápidas criadas
+
+
+☐ Post no Instagram: "Amanhã é o grande dia! 🚀"
+
+
+
+
+Dia do Lançamento
+
+
+
+
+☐ 9h: Postar "LOJA ABERTA!" no Instagram
+
+
+☐ 10h: Enviar email para lista
+
+
+☐ 11h: Ativar anúncios (R$ 10/dia)
+
+
+☐ 12h: Primeiro pedido? 🎉
+
+
+☐ 14h: Separar e embalar
+
+
+☐ 17h: Levar aos Correios
+
+
+☐ 18h: Atualizar status
+
+
+☐ 20h: Stories com primeiros clientes
+
+
+
+
+Guia de 1 Página para Colar na Parede
+
+
+
+        ═══════════════════════════════════════════════
+        MANHÃ (9h-10h)
+        1. Abrir Nuvemshop
+        2. Verificar novos pedidos
+        3. Separar produtos "Pagamento aprovado"
+
+        TARDE (14h-16h)
+        4. Embalar produtos
+        5. Gerar etiquetas no Melhor Envio
+        6. Levar aos Correios (até 17h)
+        7. Atualizar status para "Enviado"
+
+        FINAL DO DIA (18h)
+        8. Responder WhatsApp
+        9. Verificar estoque baixo
+        10. Anotar o que repor
+
+        SEMANALMENTE (Sexta)
+        1. Inventário físico
+        2. Comparar com sistema
+        3. Ajustar diferenças
+        4. Pedir reposição
+        5. Postar no Instagram (5+ posts)
+        ═══════════════════════════════════════════════
+    
+
+
+
+
+
+
+
+
+
+
+
+
+19. GLOSSÁRIO
+
+
+
+
+CNPJ:
+ Cadastro Nacional de Pessoa Jurídica – número de identificação da empresa.
+
+
+MEI:
+ Microempreendedor Individual – regime simplificado para pequenos negócios.
+
+
+DAS:
+ Documento de Arrecadação do MEI – guia de pagamento mensal.
+
+
+CNAE:
+ Classificação Nacional de Atividades Econômicas – código que define a atividade da empresa.
+
+
+NF-e:
+ Nota Fiscal Eletrônica – documento fiscal digital.
+
+
+Certificado Digital:
+ Arquivo que assina digitalmente documentos fiscais.
+
+
+DNS:
+ Sistema de Nomes de Domínio – traduz nomes em endereços IP.
+
+
+SSL:
+ Secure Sockets Layer – protocolo de segurança para conexões HTTPS.
+
+
+SKU:
+ Stock Keeping Unit – código único de identificação de produto.
+
+
+Gateway de Pagamento:
+ Empresa que processa transações financeiras online.
+
+
+DIFAL:
+ Diferencial de Alíquota – ajuste de ICMS em vendas interestaduais.
+
+
+Lead Time:
+ Tempo entre o pedido e a entrega do fornecedor.
+
+
+MOQ:
+ Quantidade mínima de compra exigida pelo fornecedor.
+
+
+LGPD:
+ Lei Geral de Proteção de Dados – legislação brasileira sobre privacidade.
+
+
+PCI-DSS:
+ Padrão de segurança para dados de cartão de crédito.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20. CONTATOS ÚTEIS
+
+
+
+
+Portal do Empreendedor (MEI):
+ portaldoempreendedor.gov.br
+
+
+Receita Federal:
+ gov.br/receitafederal
+
+
+SEFAZ/SE:
+ sefaz.se.gov.br | Inscrição Estadual: (79) 3218-2500
+
+
+Prefeitura de Aracaju:
+ aracaju.se.gov.br | Alvará: (79) 3218-2000
+
+
+Sebrae Sergipe:
+ 0800 570 0800 | sebrae.com.br
+
+
+Correios Aracaju:
+ (79) 3211-5400 | correios.com.br
+
+
+Nuvemshop:
+ suporte@nuvem.com.br | ajuda.nuvem.com.br
+
+
+Mercado Pago:
+ mercadopago.com.br
+
+
+Melhor Envio:
+ melhorenvio.com.br | suporte@melhorenvio.com.br
+
+
+NFe.io:
+ nfe.io
+
+
+Registro.br:
+ registro.br
+
+
+Netlify:
+ netlify.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Manual elaborado por Pedro Marcos Santos Belentani
+
+
+Instagram: @Belentani_  ·  Email: belentani7pedro@gmail.com
+
+
+Barcelona, España – 20 de Junho de 2026
+
+
+
+        © 2026 – Todos os direitos reservados. Este manual é protegido por direitos de autor.
+    
+
+
+
+
+

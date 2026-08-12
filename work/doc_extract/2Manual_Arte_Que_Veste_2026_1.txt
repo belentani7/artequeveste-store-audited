@@ -1,0 +1,1058 @@
+MANUAL COMPLETO DE IMPLANTAÇÃO E GESTÃO
+
+                       ARTE QUE VESTE
+             Guia Forense Passo a Passo — Edição Ampliada 2026
+               Da Identidade Visual ao HTML; do HTML à Loja Online Real
+      Operação em Aracaju/SE — legislação e processos verificados em junho de 2026
+
+
+
+
+                                     Aracaju, Sergipe, Brasil
+  Validade: revisar a cada 6 meses, e sempre antes de cada janela de decisão da Reforma Tributária
+
+
+
+
+                                                 1
+SUMÁRIO
+
+CAPÍTULO 1 — Fundamentos Jurídicos e Tributários (Aracaju/SE, 2026)
+
+CAPÍTULO 2 — Do Arquivo HTML à Loja Online Real (inclui Hospedagem e Infraestrutura)
+
+CAPÍTULO 3 — Pagamentos
+
+CAPÍTULO 4 — Logística e Transportadoras
+
+CAPÍTULO 5 — Gestão de Estoque
+
+CAPÍTULO 6 — Gestão de Produtos e Catálogo
+
+CAPÍTULO 7 — Marketing Digital
+
+CAPÍTULO 8 — Atendimento, Suporte, Segurança e Backup
+
+CAPÍTULO 9 — Gestão Contínua, Custos e Plano de Ação
+
+CAPÍTULO 10 — Anexos (Contatos, Modelo de Produto, Glossário)
+
+
+
+
+                                              2
+CAPÍTULO 1 — FUNDAMENTOS JURÍDICOS E TRIBUTÁRIOS (ARACAJU/SE,
+2026)
+
+Esta parte substitui e corrige a versão anterior do manual, que continha valores de 2024 e um órgão
+municipal incorreto para o alvará. Todos os valores abaixo foram verificados em fontes oficiais e de
+contabilidade especializada na semana de elaboração deste documento (junho de 2026). Como tributos e
+limites são revisados com frequência, confirme sempre o valor vigente no Portal do Empreendedor (gov.br)
+e no site da Prefeitura de Aracaju antes de qualquer pagamento.
+
+1.1 — Escolha do Regime: MEI ou Microempresa (ME)?
+ Critério                  MEI                                      ME (Simples Nacional)
+ Faturamento               R$ 81.000 (2026, inalterado desde
+                                                                    R$ 360.000
+ máximo/ano                2018)
+ Faturamento
+                           R$ 6.750                                 —
+ médio/mês (referência)
+                           Gratuito, via Portal do                  R$ 500–1.500 (contador) + taxas
+ Custo de abertura
+                           Empreendedor                             Jucese
+                           Valor fixo: R$ 82,05 a R$ 87,05
+                                                                    4% a 19% sobre o faturamento,
+ Imposto mensal (DAS)      (varia por atividade, indexado ao
+                                                                    conforme Anexo I ou III
+                           salário mínimo)
+ Pode ter sócio            Não                                      Sim
+ Emite NF para Pessoa      Sim, mas só obrigatório se o
+                                                                    Sim, obrigatório
+ Jurídica                  comprador exigir
+                           Máximo 1, com salário mínimo ou
+ Funcionário                                                        Conforme necessidade
+                           piso da categoria
+                                                                    A partir do momento em que o
+ Indicado para Arte Que    Sim, na fase inicial (loja em Aracaju,   faturamento mensal se aproximar
+ Veste                     faturamento ainda não recorrente)        de R$ 6.750–7.000 de forma
+                                                                    consistente
+
+
+
+  Ponto de atenção real para 2026
+  Se o faturamento anual ultrapassar R$ 81.000 em até 20% (até R$ 97.200), o MEI continua até
+  31/12 e paga apenas um DAS complementar sobre o excedente; a migração para ME ocorre em
+  janeiro do ano seguinte. Se ultrapassar mais de 20%, o desenquadramento é retroativo a janeiro do
+  ano em curso (ou à data de abertura), com recálculo de impostos, multas e juros. Desde a
+  Resolução CGSN nº 183/2025, rendimentos recebidos no CPF do titular ligados à mesma atividade
+  econômica também contam para esse limite — relevante se parte das vendas da loja for recebida
+  via Pix pessoa física fora do CNPJ.
+
+
+1.2 — Abertura: o caminho real em Sergipe (corrigido)
+O fluxo descrito em versões anteriores deste manual estava parcialmente desatualizado. Em Sergipe, a
+abertura de empresa não passa por um portal genérico isolado: ela é integrada entre a Receita Federal, a
+Junta Comercial de Sergipe (Jucese) e a Prefeitura, através de dois sistemas que se conversam:
+
+
+                                                      3
+  • Portal do Empreendedor (gov.br/empresas-e-negocios/empreendedor) — ponto de partida obrigatório
+    apenas para quem vai abrir como MEI; é onde se obtém o CNPJ.
+  • AGILIZA SE (www.agiliza.se.gov.br) — sistema estadual de viabilidade e registro (Redesim), gerido em
+    conjunto com a Jucese; usado para ME/EPP e para a etapa municipal de quem já é MEI.
+  • SLIM Aracaju (slim.aracaju.se.gov.br) — portal de licenciamento municipal da Prefeitura de Aracaju,
+    onde se solicita o Alvará de Localização e Funcionamento depois de aberto o CNPJ.
+
+Passo a passo — MEI (recomendado para a fase atual da Arte Que Veste)
+  1. Acesse gov.br/empresas-e-negocios/empreendedor e selecione "Quero ser MEI".
+  2. Informe CPF, título de eleitor e dados pessoais (login via conta gov.br, nível bronze/prata é suficiente).
+  3. Escolha a(s) CNAE(s): principal 47.81-4/00 (comércio varejista de artigos do vestuário e acessórios);
+     secundárias recomendadas: 47.89-0/99 e 47.72-5/00 (comércio de cosméticos/bijuterias, se for vender
+     também acessórios).
+  4. Informe o endereço da atividade em Aracaju/SE (pode ser o endereço residencial, salvo restrição de
+     condomínio).
+  5. Confirme os dados e gere o CNPJ — emissão imediata na maioria dos casos.
+  6. Em seguida, a inscrição municipal (cadastro mobiliário/alvará) é integrada automaticamente ou
+     solicitada via SLIM Aracaju, conforme orientação exibida ao final do cadastro no Portal do
+     Empreendedor.
+
+Passo a passo — ME / Simples Nacional (se já nascer maior, ou após desenquadramento do MEI)
+  7. Acesse www.agiliza.se.gov.br e faça a Consulta de Viabilidade do endereço e da atividade (a Prefeitura
+     verifica zoneamento e acessibilidade do local).
+  8. Com a viabilidade aprovada, registre o Contrato Social/Requerimento de Empresário na Jucese, via
+     integração do próprio Agiliza.
+  9. Obtenha o CNPJ na Receita Federal (gerado automaticamente após o registro na Jucese, via Redesim).
+  10.   Solicite a Inscrição Estadual junto à SEFAZ/SE (obrigatória para quem vende mercadorias).
+  11.   Solicite o Alvará de Localização e Funcionamento no SLIM Aracaju (ver 1.3).
+
+  Prazo real (não o de 2024)
+  A Prefeitura de Aracaju reduziu o prazo médio de abertura de empresas de baixo e médio risco —
+  categoria em que se encaixa uma loja de roupas sem fabricação no local — de até 5 dias úteis para
+  poucas horas a 1 dia útil, com liberação do alvará a partir do próprio cadastro e fiscalização
+  posterior. Atividades de alto risco (ex.: manipulação de alimentos, atividades insalubres) continuam
+  exigindo avaliação prévia dos órgãos competentes antes da liberação.
+
+
+1.3 — Alvará de Localização e Funcionamento (correção importante)
+O órgão responsável NÃO é a "Secretaria de Planejamento", como constava em versões anteriores. Em
+Aracaju, o Alvará de Localização e Funcionamento é expedido pela Secretaria Municipal de Finanças (SEFIN),
+com base no Decreto Municipal nº 2.469, e solicitado integralmente pela internet no portal SLIM Aracaju.
+
+ Item                            Detalhe
+                                 slim.aracaju.se.gov.br → "Alvará de Localização" (pessoa jurídica) ou
+ Onde solicitar
+                                 AjuInteligente (autônomo/pessoa física)
+                                 SEFIN (Secretaria Municipal de Finanças), com apoio técnico da
+ Órgão expedidor
+                                 EMSURB para itens de som/ocupação de espaço público
+ Custo (Taxa de Localização e    Varia por metragem e atividade; consultar tabela vigente no SLIM no
+
+                                                       4
+ Item                            Detalhe
+ Funcionamento — TLF)            momento da solicitação
+ Prazo (baixo/médio risco)       Liberação em poucas horas a 1 dia útil, com fiscalização posterior
+                                 Só é exigido para atividades de médio/alto risco sanitário (Decreto nº
+                                 7.493/2024); uma loja de roupas e bijuterias normalmente NÃO se
+ Alvará Sanitário (separado)
+                                 enquadra, mas confirme se também for vender cosméticos ou
+                                 perfumaria
+ Documentos (Pessoa              Cartão CNPJ, RG/CPF dos sócios, comprovante de residência, Contrato
+ Jurídica)                       Social registrado na Jucese, cartão de autógrafo dos sócios
+
+
+1.4 — Inscrição Estadual (SEFAZ/SE)
+Obrigatória para quem vende mercadorias (não se aplica isoladamente ao MEI, que já recebe tratamento
+simplificado, mas é exigida ao migrar para ME). Solicitação pela Secretaria de Estado da Fazenda de Sergipe
+(SEFAZ/SE), integrada ao mesmo fluxo de abertura via Jucese/Redesim quando a empresa nasce como ME.
+Gratuita, prazo médio de 5 a 10 dias úteis quando solicitada separadamente.
+
+1.5 — Tributos em 2026 (valores corrigidos)
+MEI — DAS mensal
+ Atividade                   Composição                            Valor aproximado/mês (2026)
+ Comércio/Indústria          INSS + ICMS                           R$ 82,05
+ Serviços                    INSS + ISS                            R$ 86,05
+ Comércio + Serviços         INSS + ICMS + ISS                     R$ 87,05
+Valores calculados sobre o salário mínimo de R$ 1.621 (2026) e sujeitos a pequenas variações conforme
+reajustes oficiais publicados pela Receita Federal/CGSN ao longo do ano — confirme o boleto exato no app
+MEI ou no Portal do Simples Nacional antes de pagar. Vencimento: todo dia 20. Atraso gera multa de 0,33%
+a 2% ao mês (limitada a 20%) mais juros Selic.
+
+Simples Nacional — Anexo I (Comércio), faixas 2026
+ Faixa de faturamento (12 meses)           Alíquota nominal          Observação
+ Até R$ 180.000                            4,00%                     Sem parcela a deduzir
+                                                                     Com parcela a deduzir conforme
+ R$ 180.000,01 a R$ 360.000                7,30%                     tabela oficial — o contador calcula
+                                                                     a alíquota efetiva
+Os percentuais acima são os mesmos parâmetros estruturais da Lei Complementar 123/2006 e não mudam
+por causa da Reforma Tributária em 2026 (ver 1.7). A faixa de R$ 360.000 a R$ 4,8 milhões deixa de ser
+MEI/ME e passa a EPP — fora do escopo inicial da Arte Que Veste.
+
+ICMS em Sergipe — valor corrigido
+A alíquota interna padrão de Sergipe é de 19% + 1% destinado ao Fundo Estadual de Combate e Erradicação
+da Pobreza (FECOEP) = 20% no total (art. 40, I do RICMS/SE; art. 2º-A da Lei nº 4.731/2002) — e não 18%,
+como constava na versão anterior. Para venda interestadual (cliente fora de Sergipe), a alíquota
+interestadual aplicável é:
+  • 12% — quando a mercadoria sai de SE para estados do Sul/Sudeste, exceto Espírito Santo.
+
+                                                      5
+  • 7% — quando a mercadoria sai de SE para Norte, Nordeste, Centro-Oeste ou Espírito Santo (caso mais
+    comum, já que SE é Nordeste vendendo majoritariamente dentro da própria região e para o Sudeste).
+  • DIFAL (Diferencial de Alíquota) — quando o destinatário é consumidor final em outro estado, recolhe-
+    se a diferença entre a alíquota interna do estado de destino e a interestadual aplicada. Empresas do
+    Simples Nacional recolhem o DIFAL de forma simplificada, geralmente já embutido no DAS
+    proporcionalmente — confirme com contador se a operação interestadual for relevante para a loja.
+
+1.6 — Nota Fiscal Eletrônica (NF-e/NFC-e) — regra real para 2026 e o que muda em
+2027
+ Situação                   Regra em 2026                         O que muda em 2027
+ Venda para Pessoa                                                Permanece obrigatória, já com
+                            Emissão obrigatória
+ Jurídica (PJ)                                                    destaque de IBS/CBS
+ Venda para Pessoa                                                Emissão obrigatória em TODAS as
+                            Emissão obrigatória apenas se o
+ Física (PF/consumidor                                            operações, independentemente do
+                            cliente solicitar
+ final)                                                           destinatário
+                            Pode emitir gratuitamente (NFe.io,    Passa a emitir em toda venda, sem
+ MEI
+                            Emissor da SEFAZ/SE, Sebrae/SE)       exceção
+Recomendação prática: mesmo não sendo obrigatório hoje para venda a pessoa física, configure o emissor
+de nota fiscal (gratuito) desde o lançamento da loja. Isso evita uma corrida de adaptação em 2027 e já cria o
+hábito de emitir nota em cada pedido — o que também facilita a contabilidade e a defesa em eventuais
+disputas com clientes (troca, devolução, garantia).
+
+1.7 — Reforma Tributária (EC 132/2023): o que realmente muda em 2026 para a Arte
+Que Veste
+Este é o ponto mais importante que faltava nas versões anteriores do manual, porque 2026 é, na prática, o
+primeiro ano em que a reforma "toca" o dia a dia de qualquer negócio brasileiro — inclusive o MEI/ME.
+  • A Reforma substitui PIS, Cofins e IPI por um novo tributo federal, a CBS (Contribuição sobre Bens e
+    Serviços), e substitui ICMS e ISS por um novo tributo, o IBS (Imposto sobre Bens e Serviços), de
+    competência estadual/municipal.
+  • 2026 é oficialmente o "ano de teste": as notas fiscais já passam a trazer os campos de CBS (0,9%) e IBS
+    (0,1%) destacados, mas esses valores são compensados com o que já se paga de PIS/Cofins — ou seja,
+    sem impacto real no caixa da empresa em 2026.
+  • Até abril de 2026 não há multa por erro ou omissão no preenchimento desses campos — período de
+    adaptação.
+  • Para quem está no Simples Nacional/MEI (o caso da Arte Que Veste): não há nenhuma mudança na
+    forma de pagar impostos em 2026. Tudo continua pelo DAS, exatamente como hoje.
+  • A mudança real para o Simples Nacional/MEI começa em 2027, quando os documentos fiscais passam a
+    destacar IBS/CBS de forma plena e a empresa precisa decidir, até setembro de 2026, se permanece
+    recolhendo tudo dentro do DAS (regime simplificado, mais simples, recomendado para a Arte Que
+    Veste por vender majoritariamente a pessoa física) ou se opta pelo "Simples Híbrido" (recolher IBS/CBS
+    por fora do DAS para gerar crédito a clientes Pessoa Jurídica — só vale a pena para quem vende em
+    volume relevante para outras empresas, o que não é o perfil de uma loja de roupas autoral vendendo a
+    consumidor final).
+  • O cronograma completo: 2026 alíquota-teste (1% somado); 2027 extinção do PIS/Cofins e zeramento
+    do IPI; 2029 a 2032 substituição gradual de ICMS/ISS pelo IBS (10% ao ano); 2033 sistema novo
+    plenamente em vigor.
+
+
+                                                      6
+  Recomendação prática para 2026
+  Nada precisa ser feito agora além de: (1) garantir que o emissor de nota fiscal usado pela loja já
+  esteja atualizado para o novo layout (a maioria dos emissores gratuitos já se atualiza
+  automaticamente); (2) anotar no calendário a janela de decisão "Simples tradicional x Híbrido", que
+  se abre antes de setembro de 2026; e (3) não se preocupar com aumento de preço — a própria
+  reforma foi desenhada para ser neutra em 2026.
+
+
+1.8 — LGPD para uma loja virtual (não estava no manual anterior)
+A partir do momento em que a loja online da Arte Que Veste coleta nome, telefone, CPF, e-mail e endereço
+de entrega de clientes, ela se torna "controladora de dados pessoais" e está sujeita à Lei Geral de Proteção
+de Dados (Lei nº 13.709/2018), fiscalizada pela ANPD.
+  • Tenha uma Política de Privacidade visível no rodapé do site, explicando quais dados são coletados
+    (nome, telefone, endereço, dados de pagamento processados pelo gateway) e para que são usados
+    (processar o pedido, calcular frete, emitir nota fiscal).
+  • Use apenas os dados necessários para a venda — não venda nem compartilhe a lista de clientes com
+    terceiros sem consentimento.
+  • Dados de cartão de crédito NUNCA devem ser armazenados pela própria loja: isso é responsabilidade
+    do gateway de pagamento (Mercado Pago, PagBank etc.), que é certificado PCI-DSS. Nunca crie um
+    formulário próprio que peça número de cartão diretamente em um HTML sem gateway certificado.
+  • Para pedidos via WhatsApp (como na versão atual do site), o número de telefone do cliente e o
+    conteúdo da conversa também são dados pessoais — mantenha o WhatsApp Business com
+    senha/biometria e não compartilhe prints de conversas de clientes publicamente sem mascarar o
+    nome/telefone.
+  • Garanta ao cliente o direito de solicitar a exclusão dos seus dados (ex.: "apague meus dados") e
+    responda em prazo razoável (a LGPD não fixa prazo exato para pequenos negócios, mas a boa prática
+    de mercado é até 15 dias).
+
+1.9 — Direito do Consumidor no comércio eletrônico
+Além do Código de Defesa do Consumidor (Lei nº 8.078/1990), o comércio eletrônico tem regras específicas
+no Decreto nº 7.962/2013:
+  • Direito de arrependimento: o cliente pode desistir da compra em até 7 dias corridos após o
+    recebimento, sem precisar justificar, com devolução integral do valor pago (inclusive frete). Isso é
+    diferente da política de "troca em 7 dias por defeito" — é um direito amplo de arrependimento típico
+    de compra à distância.
+  • Dever de informação clara: antes de finalizar a compra, o site deve informar claramente as
+    características essenciais do produto, preço total (com frete), prazo de entrega e identificação completa
+    do vendedor (nome/razão social, CNPJ, endereço, telefone/e-mail de contato).
+  • Atendimento facilitado: o consumidor precisa ter um canal de atendimento de fácil acesso para
+    reclamações e cancelamentos — o WhatsApp Business já cumpre esse papel, desde que respondido em
+    tempo razoável.
+  • Confirmação imediata do recebimento do pedido — por isso é recomendável que, mesmo no modelo
+    atual via WhatsApp, a loja confirme o pedido por escrito (mensagem) logo após o recebimento.
+
+
+
+
+                                                      7
+CAPÍTULO 2 — DO ARQUIVO HTML À LOJA ONLINE REAL (CASO ARTE
+QUE VESTE)
+
+Esta parte é o núcleo prático deste manual: como transformar os arquivos index.html e loja.html — já
+construídos, com identidade visual, catálogo por categoria, tamanhos brasileiros e animações GSAP — em
+uma loja que processa pedidos, pagamentos e estoque de verdade, e como administrar essa loja no dia a
+dia.
+
+2.1 — Diagnóstico honesto: o que os arquivos atuais já fazem e o que não fazem
+ Camada              Situação atual (index.html / loja.html)    O que falta para virar loja real
+                     Completo: design autoral, Tailwind,
+                                                                Nada — pode ser reaproveitado
+ Frontend (visual)   GSAP, tradução PT/ES/EN, catálogo por
+                                                                100%
+                     categoria e tamanho BR
+                     Visual, em memória do navegador (array     Persistência real (banco de dados) e
+ Carrinho
+                     JavaScript)                                cálculo de frete/imposto
+                                                                Opcional manter como canal
+ Finalização de
+                     Pedido textual enviado por WhatsApp        adicional; para escalar, checkout com
+ compra
+                                                                pagamento online
+                     Inexistente (cliente paga combinando por   Gateway certificado (Mercado Pago,
+ Pagamento
+                     WhatsApp)                                  PagBank etc.)
+                                                                Banco de dados que decremente
+                     Inexistente — nenhum controle
+ Estoque                                                        automaticamente a cada venda
+                     automático
+                                                                confirmada
+                                                                Integração com emissor de
+ Nota fiscal         Inexistente
+                                                                NF-e/NFC-e
+                                                                Integração com Melhor
+ Frete               Não calculado (a combinar)
+                                                                Envio/Correios por CEP
+                                                                Painel simples para o dono da loja
+ Painel              Inexistente — editar produto = editar
+                                                                cadastrar/editar produtos sem tocar
+ administrativo      código
+                                                                em código
+Esse diagnóstico não é um defeito do trabalho feito — é exatamente o esperado de um frontend bem
+construído. Faltam os outros pilares (backend, banco de dados, integrações, painel), que são camadas
+diferentes e podem ser adicionadas sem jogar fora o que já existe.
+
+2.2 — Três caminhos possíveis (e como decidir entre eles)
+Opção A — Migrar o catálogo para uma plataforma SaaS (Nuvemshop, Tray, Shopify)
+  • Como funciona: o HTML atual deixa de ser o site final; ele serve de referência visual. A plataforma
+    fornece backend, pagamento, frete e nota fiscal prontos, e o tema visual é recriado (ou aproximado)
+    dentro do editor da plataforma, ou via CSS customizado que a própria plataforma permite.
+  • Vantagens: ativo em dias, sem precisar manter servidor, suporte em português, atualizações de
+    segurança automáticas.
+  • Desvantagens: perde-se parte do controle visual exclusivo (animações GSAP avançadas geralmente não
+    são 100% portáveis para o editor da plataforma); mensalidade obrigatória;
+
+
+
+                                                     8
+  • Indicado quando: a prioridade é vender o quanto antes, com baixo risco técnico, e não há
+    tempo/equipe para manter um backend próprio.
+
+Opção B — Manter o HTML atual como frontend e construir um backend próprio (recomendado
+neste caso)
+  • Como funciona: o index.html e o loja.html continuam sendo o site (visual 100% preservado, inclusive as
+    animações GSAP e o array de produtos). Um backend próprio é construído para: guardar produtos e
+    estoque em banco de dados, processar pagamento, calcular frete e registrar pedidos. O frontend passa
+    a buscar os produtos via uma API em vez de um array fixo no JavaScript.
+  • Vantagens: zero perda de identidade visual; controle total do código e dos dados; sem mensalidade de
+    plataforma (apenas custo de servidor, tipicamente menor); reaproveita diretamente o trabalho já feito
+    nesta conversa.
+  • Desvantagens: exige construir e manter o backend (ou contratar quem mantenha); responsabilidade de
+    segurança (atualizações, backups) passa a ser do próprio operador.
+  • Indicado quando: já existe (ou está sendo construída) capacidade técnica própria — que é exatamente
+    o caso aqui, já que o "Belentani · estudi digital" está sendo desenvolvido com FastAPI, PostgreSQL,
+    Redis e n8n. Reaproveitar essa mesma stack para a Arte Que Veste é o caminho de menor esforço
+    marginal.
+
+Opção C — WooCommerce (WordPress)
+  • Como funciona: o site passa a viver dentro do WordPress + plugin WooCommerce; o HTML atual é
+    adaptado a um tema ou usado como referência para customizar o tema padrão.
+  • Vantagens: ecossistema gigante de plugins (frete, pagamento, nota fiscal todos prontos via plugin); sem
+    mensalidade de plataforma, só hospedagem.
+  • Desvantagens: exige manutenção de WordPress (atualizações de segurança frequentes); customização
+    profunda do visual GSAP dentro do WordPress dá mais trabalho do que manter o HTML puro.
+  • Indicado quando: se quer um meio-termo — mais controle que o SaaS, menos trabalho de
+    programação que construir um backend do zero — mas sem querer programar a API.
+
+  Critério de decisão rápido
+  Se o objetivo é vender amanhã, com o menor risco técnico → Opção A. Se já existe (ou está em
+  construção) infraestrutura própria e o objetivo é controle total + zero mensalidade de plataforma
+  no longo prazo → Opção B. Se quer meio-termo sem programar → Opção C. O restante desta parte
+  detalha a Opção B, por ser a que aproveita diretamente o material já produzido e a stack que já está
+  em desenvolvimento.
+
+
+2.3 — Arquitetura recomendada para a Opção B
+A ideia central é simples: o HTML/CSS/JavaScript que já existe não muda visualmente em nada. A única
+mudança de código é trocar o array fixo "PRODUTOS" do loja.html por uma chamada a uma API (fetch), que
+devolve os mesmos campos (nome, descrição, preço, categoria, imagem) só que vindos de um banco de
+dados administrável.
+
+Componentes mínimos do backend
+                                                                 Ferramenta sugerida (alinhada ao
+ Componente          Função
+                                                                 stack já em uso)
+                     Devolver a lista de                         FastAPI (Python) — endpoint GET
+ API de catálogo
+                     produtos/estoque/preço para o loja.html     /produtos
+ Banco de dados      Guardar produtos, estoque, pedidos e        PostgreSQL
+
+                                                     9
+                                                                Ferramenta sugerida (alinhada ao
+ Componente         Função
+                                                                stack já em uso)
+                    clientes
+                    Evitar sobrecarga em picos de acesso e
+ Fila/cache         processar webhooks de pagamento de          Redis
+                    forma assíncrona
+ Checkout/          Processar Pix, cartão e boleto com          Mercado Pago (Checkout Pro ou
+ pagamento          segurança PCI-DSS                           Transparente via API)
+ Cálculo de frete   Consultar preço e prazo por CEP             API do Melhor Envio
+                    Emitir NF-e/NFC-e automaticamente           NFe.io ou Emissor gratuito da
+ Nota fiscal
+                    após pagamento confirmado                   SEFAZ/SE
+                    Disparar e-mail/WhatsApp de
+ Automação pós-                                                 n8n (workflow já usado no
+                    confirmação, atualizar planilha, alertar
+ venda                                                          ecossistema Belentani)
+                    estoque baixo
+                                                                VPS simples (ex.: Hostinger VPS, ou
+ Hospedagem do
+                    Rodar a API 24/7                            Railway/Render) — diferente da
+ backend
+                                                                hospedagem de site estático
+                                                                Cloudflare Pages (já em uso no
+ Hospedagem do
+                    Servir o index.html/loja.html               ecossistema) ou a mesma
+ frontend
+                                                                hospedagem do backend
+
+Fluxo de um pedido, do clique ao produto entregue
+ 12. Cliente abre loja.html → o JavaScript faz fetch("/api/produtos") e recebe a lista atual com preço e
+    estoque reais (em vez do array fixo de hoje).
+ 13. Cliente clica em "Comprar" → em vez de abrir o WhatsApp direto, o botão chama POST
+    /api/pedidos, criando um pedido com status "pendente" no PostgreSQL e reduzindo o estoque
+    reservado.
+ 14. O backend devolve um link de pagamento do Mercado Pago (Checkout Pro) para aquele pedido
+    específico.
+ 15. Cliente paga via Pix, cartão ou boleto na página do Mercado Pago (não dentro do seu HTML — isso é
+    o que garante a segurança PCI-DSS sem você precisar se certificar).
+ 16. O Mercado Pago notifica seu backend via webhook ("pagamento aprovado") → o backend atualiza o
+    status do pedido para "pago", decrementa o estoque definitivamente e dispara (via n8n) a emissão
+    automática da nota fiscal e uma mensagem de confirmação ao cliente.
+ 17. O dono da loja vê o pedido pago em um painel simples (pode ser até uma planilha do Google Sheets
+    sincronizada via n8n, na fase inicial, antes de existir um painel administrativo próprio), separa o
+    produto, gera a etiqueta no Melhor Envio e despacha.
+ 18.    O cliente recebe o código de rastreio automaticamente, também via n8n.
+
+ Caminho de transição em fases (evita big-bang)
+ Não é preciso construir tudo de uma vez. Fase 1 (já existe hoje): catálogo estático + WhatsApp. Fase
+ 2: trocar o array de produtos por uma API simples (só catálogo, ainda sem pagamento) — isso já
+ resolve "editar produto sem tocar em HTML". Fase 3: adicionar checkout real com Mercado Pago,
+ mantendo o botão do WhatsApp como alternativa para quem preferir combinar diretamente. Fase
+ 4: automatizar nota fiscal, frete e notificações via n8n. Cada fase é testável isoladamente antes de
+ avançar para a próxima.
+
+                                                    10
+2.4 — Pagamento real: Mercado Pago, passo a passo
+  19.   Crie a conta em mercadopago.com.br com o CNPJ da loja.
+  20. Complete a verificação de identidade (envio de documentos) — sem isso a conta fica limitada e não
+     libera valores.
+  21. No painel de desenvolvedores (Suas integrações), crie uma aplicação e obtenha as credenciais de
+     TESTE (Public Key + Access Token de sandbox) — use-as primeiro para simular pagamentos sem
+     dinheiro real.
+  22. Implemente a chamada de criação de preferência de pagamento (Checkout Pro) no backend: ao
+     confirmar o pedido, o backend chama a API do Mercado Pago e recebe um link de pagamento, que é
+     mostrado ao cliente.
+  23. Configure a URL de notificação (webhook) para receber o aviso automático de "pagamento
+     aprovado/rejeitado/pendente".
+  24. Teste o fluxo inteiro em sandbox: criar pedido → pagar com cartão de teste → confirmar que o
+     webhook chega e o estoque é decrementado.
+  25. Só então troque as credenciais de teste pelas de produção (reais) — esse é o "botão de virar a
+     chave" para começar a vender de verdade.
+Taxas de referência (confirme sempre no painel, pois mudam com frequência): cartão à vista cerca de 4,99%
++ R$ 0,50; Pix cerca de 0,99%; boleto cerca de R$ 2,00 por boleto pago. Pix é o canal de menor custo e de
+aprovação instantânea — vale destacá-lo como opção preferencial na loja.
+
+2.5 — Frete real: integração com Melhor Envio
+  26.   Crie conta gratuita em melhorenvio.com.br com o CNPJ da loja.
+  27. Cadastre o CEP de origem (Aracaju/SE) e as dimensões/peso padrão de cada tipo de produto
+     (camiseta, kimono, bijuteria, sandália — pesos e caixas diferentes).
+  28.   Gere a API Key de integração no painel.
+  29. No backend, ao calcular o frete no checkout, chame a API do Melhor Envio passando CEP de origem,
+     CEP de destino e dimensões — a API devolve as opções (PAC, SEDEX, transportadoras privadas) com
+     preço e prazo reais.
+  30. Depois do pagamento confirmado, gere a etiqueta de envio diretamente pela mesma API ou pelo
+     painel do Melhor Envio.
+
+2.6 — Nota fiscal automatizada
+Use a API do NFe.io (ou equivalente) integrada ao backend: ao receber a confirmação de pagamento via
+webhook, o backend (ou um fluxo n8n) chama a API de emissão de nota, passando os dados do pedido. A
+nota é gerada e o link/PDF pode ser enviado automaticamente ao cliente por e-mail ou WhatsApp.
+
+2.7 — Gestão da loja própria no dia a dia (Opção B)
+  • Cadastrar produto novo: enquanto não houver um painel administrativo, o cadastro pode ser feito por
+    um formulário simples conectado à API, ou diretamente no banco de dados via uma ferramenta de
+    administração (ex.: pgAdmin, ou um pequeno script). É a mesma lógica do array PRODUTOS já usado no
+    loja.html — só que agora vive no banco em vez do código-fonte.
+  • Alterar preço/estoque: idem — via painel/formulário, sem precisar editar e reenviar o arquivo HTML.
+  • Acompanhar pedidos: painel simples (ou planilha sincronizada via n8n) mostrando pedidos pendentes,
+    pagos, enviados e entregues.
+  • Backup: backup diário automático do PostgreSQL (a maioria dos provedores de VPS oferece isso; se
+    não, um script simples de pg_dump agendado).
+
+                                                    11
+  • Monitoramento básico: configurar um alerta (e-mail/WhatsApp via n8n) se a API ficar fora do ar, para
+    reagir rápido.
+
+Checklist de virada de chave (sair do WhatsApp-manual para checkout real)
+  ☐ API de catálogo funcionando e loja.html já consumindo os produtos dela, não mais do array fixo
+  ☐ Banco de dados com estrutura de produtos, estoque e pedidos criada e testada
+  ☐ Conta Mercado Pago verificada e aprovada para produção
+  ☐ Fluxo de pagamento testado de ponta a ponta em sandbox, sem erros
+  ☐ Webhook de confirmação de pagamento testado e decrementando estoque corretamente
+  ☐ Conta Melhor Envio configurada com CEP de origem e dimensões dos produtos
+  ☐ Emissor de nota fiscal configurado e testado com um pedido de teste
+  ☐ Política de privacidade e termos de uso publicados no site (LGPD)
+  ☐ Botão de WhatsApp mantido como canal alternativo de atendimento (não removido)
+  ☐ Backup automático do banco de dados configurado e testado (restaurar uma vez para confirmar que
+    funciona)
+
+Hospedagem, Domínio e Infraestrutura
+Importante: o tipo de hospedagem certo depende do caminho escolhido na Parte II. Hospedagem
+compartilhada comum (a maioria dos planos "baratinhos") serve perfeitamente para um site estático
+(Opções A e C, ou a Fase 1 da Opção B). Mas se o backend próprio (FastAPI + PostgreSQL + Redis) for adiante,
+é necessário um VPS (servidor virtual privado) ou um serviço de cloud, porque hospedagem compartilhada
+não permite rodar esses processos.
+
+3.1 — Hospedagem para site estático (index.html / loja.html)
+                          Plano de entrada
+ Provedor                                           Domínio .com.br          Observação
+                          (aprox.)
+                                                                             Já em uso no ecossistema
+                          Gratuito para sites       Não inclui — registrar
+ Cloudflare Pages                                                            Belentani; CDN global,
+                          estáticos                 separado
+                                                                             deploy automático via Git
+                          A partir de ~R$ 12–       Grátis no primeiro       Bom custo-benefício,
+ Hostinger
+                          20/mês                    ano em planos anuais     servidor no Brasil
+                                                    Grátis no primeiro
+ KingHost                 A partir de ~R$ 15/mês                             Suporte nacional
+                                                    ano
+                                                    Grátis no primeiro       Suporte premium, mais
+ Locaweb                  A partir de ~R$ 30/mês
+                                                    ano                      caro
+Recomendação: como o ecossistema "Belentani · estudi digital" já usa Cloudflare Pages, é o caminho de
+menor atrito para hospedar o index.html/loja.html — gratuito, rápido e já integrado ao fluxo de trabalho
+existente. Reserve um plano pago (Hostinger/KingHost) apenas se for necessário e-mail profissional com o
+domínio (ex.: contato@artequeveste.com.br) sem custo adicional de outro serviço.
+
+3.2 — Hospedagem para o backend (necessária apenas na Opção B)
+                                                    Faixa de custo
+ Provedor                   Tipo                                               Observação
+                                                    (aprox./mês)
+ VPS Hostinger/KingHost     Servidor virtual        R$ 25–60                   Controle total; exige
+
+
+                                                    12
+                                                    Faixa de custo
+ Provedor                  Tipo                                                Observação
+                                                    (aprox./mês)
+                                                                               configurar FastAPI,
+                                                                               PostgreSQL e Redis
+                           próprio
+                                                                               manualmente (ou via
+                                                                               Docker)
+                                                                               Mais simples para subir
+                                                    Camada gratuita
+                           Plataforma de deploy                                uma API FastAPI
+ Railway / Render                                   limitada; pago a partir
+                           gerenciado                                          rapidamente, sem
+                                                    de ~US$ 5–10
+                                                                               gerenciar servidor
+                                                                               Boa documentação,
+ DigitalOcean Droplet      VPS internacional        A partir de US$ 6
+                                                                               comunidade grande
+Para o estágio inicial da Arte Que Veste (poucos pedidos por dia), a opção gerenciada (Railway/Render)
+tende a ser mais simples de manter sem dedicação técnica diária. Migrar para VPS próprio compensa
+quando o volume de pedidos justificar o controle adicional.
+
+3.3 — Registro de domínio
+  • Registro.br — domínio .com.br oficial, custo de referência ~R$ 40/ano, exige CNPJ ou CPF do titular.
+  • Verifique a disponibilidade de "artequeveste.com.br" o quanto antes — domínios de marcas em
+    ascensão são alvo de especuladores.
+  • Aponte os nameservers do domínio para o provedor de hospedagem escolhido (Cloudflare, Hostinger
+    etc.) — o próprio painel de cada provedor mostra os valores exatos a inserir no Registro.br.
+
+3.4 — Certificado SSL/HTTPS
+Gratuito via Let's Encrypt em praticamente todos os provedores citados, com renovação automática.
+Verifique sempre o cadeado de "site seguro" no navegador antes de divulgar a loja — sem HTTPS,
+navegadores modernos chegam a bloquear formulários de pagamento.
+
+
+
+
+                                                    13
+CAPÍTULO 3 — PAGAMENTOS
+
+Comparativo entre as principais opções para uma loja brasileira de pequeno porte. As taxas abaixo são
+valores de referência praticados no mercado — confirme sempre a tabela vigente no painel de cada gateway
+antes de decidir, pois são revisadas com frequência.
+
+ Gateway                 Cartão à vista           Pix                Boleto          Observação
+                                                                                     Mais usado no
+                                                                                     Brasil; checkout
+ Mercado Pago            ~4,99% + R$0,50          ~0,99%             ~R$2,00         transparente;
+                                                                                     antecipação
+                                                                                     disponível
+                                                                                     Taxas de cartão
+ PagBank (PagSeguro)     ~3,99% + R$0,40          ~1,99%             ~R$2,00
+                                                                                     competitivas
+                                                                                     Boas taxas; API
+                                                                                     robusta;
+ Asaas                   ~2,99% + R$0,49          ~0,99%             ~R$1,99
+                                                                                     cobrança
+                                                                                     recorrente
+
+
+4.1 — Pix como canal preferencial
+  • Menor taxa entre as opções, aprovação imediata, disponível 24 horas por dia, sem risco de chargeback.
+  • Configure QR Code dinâmico vinculado a cada pedido, com baixa automática no sistema ao ser pago.
+  • Considere um pequeno desconto (3–5%) para pagamento via Pix — incentivo comum no varejo online
+    brasileiro que reduz custo de taxa para a loja e é repassado parcialmente ao cliente.
+
+4.2 — Parcelamento no cartão
+  • Defina um valor mínimo por parcela (ex.: R$ 5,00 a R$ 10,00) para evitar parcelamentos de valores
+    muito baixos.
+  • Sugestão de configuração: 1x a 3x sem juros (absorvido pela loja no preço); 4x a 6x sem juros,
+    repassado parcialmente no preço; 7x a 12x com juros pagos pelo cliente.
+
+4.3 — Boleto bancário
+Útil para clientes sem cartão ou que preferem pagar em lotérica/banco. Validade recomendada de até 3 dias
+(para não travar estoque por muito tempo) ou até 30 dias, conforme política da loja; juros de mora de
+referência 0,10%/dia após o vencimento e multa de 2%.
+
+
+
+
+                                                    14
+CAPÍTULO 4 — LOGÍSTICA E TRANSPORTADORAS (SAÍDA DE
+ARACAJU/SE)
+
+5.1 — Melhor Envio (recomendado)
+Plataforma gratuita que compara preços entre Correios e transportadoras privadas, com descontos de até
+70% sobre a tabela de balcão. Cadastro com CNPJ, configurando o CEP de origem em Aracaju e as
+dimensões/peso padrão de cada categoria de produto (camiseta, kimono, bijuteria, sandália — cada uma
+com embalagem própria).
+
+ Transportadora            Serviço                  Prazo de referência        Observação
+ Correios                  PAC                      7–15 dias úteis            Mais econômico
+                                                                               Rastreamento
+ Correios                  SEDEX                    3–7 dias úteis
+                                                                               completo
+ Correios                  SEDEX 10                 1–2 dias úteis             Só em capitais
+                                                                               Privada, boa cobertura
+ Jadlog                    Rodoviário               5–12 dias
+                                                                               nacional
+                                                                               Mais cara, indicada
+ Azul Cargo / Loggi        Aéreo/expresso           1–5 dias                   para urgência ou
+                                                                               capitais
+
+
+5.2 — Estratégia de frete
+  • Frete grátis condicional acima de um valor mínimo de pedido (ex.: R$ 299), repassando parte do custo
+    no preço dos produtos.
+  • Frete fixo (ex.: R$ 15–25) independentemente do destino, simplificando a comunicação ao cliente, com
+    a loja absorvendo a diferença em destinos mais distantes.
+  • Frete real calculado por CEP no checkout (mais justo, mas exige a integração técnica descrita na Parte
+    II).
+
+5.3 — Embalagens e expedição
+  • Envelopes plásticos para peças leves (camisetas, bijuteria); caixas de papelão para kimonos, sandálias e
+    itens volumosos.
+  • Inclua um cartão de agradecimento e, quando possível, um pequeno mimo — reforça a experiência de
+    marca artesanal.
+  • Rotina diária: pedidos pagos até 14h são separados e postados no mesmo dia; após 14h, no próximo
+    dia útil. Prazo máximo interno de 2 dias úteis para postagem.
+
+
+
+
+                                                     15
+CAPÍTULO 5 — GESTÃO DE ESTOQUE
+
+6.1 — Controle, mesmo antes de existir um backend
+Enquanto a loja opera no modelo atual (catálogo no array do loja.html + pedido por WhatsApp), o controle
+de estoque pode e deve ser feito em uma planilha simples, com os mesmos campos que futuramente irão
+para o banco de dados — isso facilita a migração quando a Opção B (Parte II) avançar.
+
+ Campo                            Exemplo
+ SKU                              CAM-BMB-001
+ Produto                          Camiseta Bumba Meu Boi
+ Tamanho/Cor                      M / Turquesa
+ Quantidade atual                 20
+ Estoque mínimo (alerta)          5
+ Fornecedor                       Malharia Silva (Aracaju/SE)
+ Preço de custo                   R$ 45,00
+
+
+6.2 — Rotina de entrada e saída
+  • Entrada: conferir nota fiscal do fornecedor, verificar qualidade (costura, estampa, tamanho), contar
+    unidades, atualizar a planilha/banco com data e fornecedor.
+  • Saída: ao confirmar pagamento, decrementar o estoque imediatamente (manual na planilha hoje;
+    automático via backend na Opção B).
+  • Devoluções: produto em estado de novo retorna ao estoque; produto danificado é baixado como
+    perda.
+
+6.3 — Inventário físico
+Recomendado mensalmente (mínimo trimestral), e sempre antes de campanhas promocionais grandes.
+Compare a contagem física com o sistema/planilha e investigue qualquer diferença antes de simplesmente
+"ajustar o número".
+
+6.4 — Fórmula de reposição
+Quantidade a comprar = (Média de vendas mensais × Lead time do fornecedor, em meses) + Estoque de
+segurança − Estoque atual. Exemplo: vendendo 20 unidades/mês, com fornecedor entregando em 15 dias
+(0,5 mês) e estoque de segurança de 10 unidades, partindo de um estoque atual de 5: (20 × 0,5) + 10 − 5 =
+15 unidades a comprar.
+
+6.5 — Fornecedores locais (referência)
+  • Malharia para camisetas em branco/cores base, idealmente em Aracaju/SE ou região metropolitana,
+    para reduzir frete e prazo de reposição.
+  • Parceria de estamparia/xilogravura com o artesão responsável pelas estampas, já estabelecida segundo
+    o material da marca.
+  • Fornecedor de tecidos especiais (seda, viscose) para peças como kimonos e vestidos, mesmo que fora
+    de Sergipe, dado o caráter exclusivo dessas peças.
+
+
+                                                    16
+CAPÍTULO 6 — GESTÃO DE PRODUTOS E CATÁLOGO
+
+7.1 — Hoje: editar o array PRODUTOS do loja.html
+Na versão atual do site, cada produto é um objeto simples dentro do array PRODUTOS, em JavaScript, com
+os campos name, desc, price, category, img e alt. A cor e o nome do selo (badge) saem automaticamente da
+categoria escolhida — não é preciso editar estilo, só os dados do produto. Para adicionar um produto novo
+hoje, basta copiar um bloco existente e trocar esses seis valores.
+
+7.2 — Quando existir backend (Opção B, Parte II): mesmos campos, lugar diferente
+A estrutura de dados não muda — os mesmos seis campos (e mais os de estoque/SKU) passam a viver em
+uma tabela do PostgreSQL em vez de um array no código. Isso significa que a transição é direta: o
+"formulário de cadastro de produto" do futuro painel administrativo terá exatamente esses campos.
+
+7.3 — Boas práticas de cadastro (válidas nos dois modelos)
+  • Nome do produto + categoria + descrição curta e honesta sobre material e origem da estampa.
+  • Preço de venda e preço de custo separados internamente (o preço de custo nunca aparece no site,
+    apenas no controle interno).
+  • SKU no padrão CATEGORIA-MODELO-NÚMERO (ex.: CAM-BMB-001), para rastrear facilmente em
+    planilha, nota fiscal e estoque.
+  • Imagem principal em alta resolução (mínimo 1000×1000px) e, idealmente, mais de uma foto por
+    produto (frente, detalhe da estampa, modelo vestindo).
+  • Variações de tamanho/cor — no padrão brasileiro já implementado no loja.html (PP, P, M, G, GG, XGG
+    para adulto; 2 a 16 anos para infantil; 33 a 44 para calçados).
+  • SEO básico: título descritivo com palavra-chave (ex.: "Camiseta Bumba Meu Boi — Xilogravura
+    Nordestina | Arte Que Veste") e URL amigável caso a loja evolua para páginas individuais de produto.
+
+7.4 — Edição, desativação e exclusão
+  • Alterar preço/estoque: editar o campo correspondente (no array hoje, no painel/banco no futuro).
+  • Desativar um produto sem excluir o histórico: preferível a excluir, principalmente depois de já ter
+    vendido — mantém o histórico de vendas e notas fiscais associadas.
+  • Excluir definitivamente: só para produtos que nunca venderam, evitando perda de rastreabilidade
+    fiscal.
+
+
+
+
+                                                     17
+CAPÍTULO 7 — MARKETING DIGITAL
+
+8.1 — Instagram como canal principal
+  • Conta comercial, categoria "Loja de roupas", bio com proposta de valor (xilogravura nordestina em
+    tecido), link para o site e contato direto.
+  • Frequência sugerida: 1 post/dia no feed, 5–10 stories/dia, 3–4 reels/semana.
+  • Distribuição de conteúdo: ~40% produto, ~25% bastidores (processo de estamparia/xilogravura), ~20%
+    cultural (Bumba Meu Boi, São Cristóvão, cultura popular nordestina), ~10% depoimentos de clientes,
+    ~5% promocional.
+  • Hashtags de referência: #artequeveste #xilogravura #modanordestina #bumbameuboi #saocristovao
+    #sergipe #modaautoral #culturapopular.
+
+8.2 — Tráfego pago (quando o caixa permitir)
+Orçamento inicial sugerido de R$ 300–500/mês em Facebook/Instagram Ads, com público de 25–55 anos
+interessado em moda nordestina, arte popular e cultura brasileira, localizado no Brasil — campanhas de
+tráfego para o site e, depois de configurado o Pixel, campanhas de conversão por remarketing.
+
+8.3 — Conteúdo e SEO
+  • Títulos e descrições de produto com palavras-chave naturais (xilogravura, Bumba Meu Boi, Nordeste)
+    sem forçar repetição.
+  • Imagens com nome de arquivo e texto alternativo descritivos (ex.: "camiseta-turquesa-xilogravura-
+    bumba-meu-boi.jpg").
+  • Conteúdo de blog ou legendas longas contando a história da xilogravura e da cultura por trás de cada
+    estampa — gera tráfego orgânico de longo prazo e reforça a narrativa de marca já trabalhada na página
+    inicial do site.
+
+8.4 — Parcerias com micro-influenciadores
+Foco em perfis de 5 a 50 mil seguidores, engajamento mínimo de 3%, públicos no Nordeste ou interessados
+em cultura/sustentabilidade — geralmente via permuta de produto + cupom exclusivo, mais acessível que
+cachê fixo na fase inicial.
+
+
+
+
+                                                   18
+CAPÍTULO 8 — ATENDIMENTO, SUPORTE, SEGURANÇA E BACKUP
+
+9.1 — Canais de atendimento
+                                                                             Tempo de resposta
+ Canal                      Uso principal
+                                                                             sugerido
+                                                                             Até 1 hora em horário
+ WhatsApp Business          Canal principal (pedido, dúvida, pós-venda)
+                                                                             comercial
+                                                                             Até 2 horas em horário
+ Instagram Direct           Dúvidas vindas de posts/stories
+                                                                             comercial
+ E-mail                     Trocas, devoluções, questões formais             Até 24h úteis
+No WhatsApp Business, configure respostas rápidas para as perguntas mais comuns: prazo de entrega por
+região, política de troca/devolução (lembrando do direito de arrependimento de 7 dias, Parte I, 1.9), formas
+de pagamento aceitas e guia de tamanhos brasileiros (já presente no loja.html).
+
+9.2 — Resolução de problemas — roteiro
+  • Produto atrasado: verificar rastreio, contatar transportadora, informar o cliente com transparência e
+    prazo atualizado.
+  • Produto danificado: solicitar fotos do dano e da embalagem, repor o produto com frete grátis e só
+    depois tratar o ressarcimento com a transportadora/seguro, se houver.
+  • Produto errado: pedir desculpas, confirmar o produto correto, enviar com frete grátis e orientar a
+    devolução do item incorreto.
+  • Cliente insatisfeito: ouvir sem defensiva, oferecer solução concreta (troca, devolução ou desconto),
+    resolver rápido e registrar o caso para identificar padrões (ex.: erro recorrente de separação de
+    pedido).
+
+9.3 — Segurança e LGPD na prática operacional
+  • Senhas fortes (mínimo 12 caracteres, com números e símbolos) em todas as contas administrativas
+    (hospedagem, gateway de pagamento, Instagram, e-mail) e autenticação de dois fatores ativada em
+    todas elas.
+  • Nunca armazenar dados de cartão de crédito de clientes em planilhas, e-mails ou prints — isso é
+    responsabilidade exclusiva do gateway certificado.
+  • Ao compartilhar prints de conversas de clientes (como depoimentos no Instagram), ocultar telefone e,
+    se possível, sobrenome.
+  • Política de privacidade publicada no rodapé do site informando quais dados são coletados e para quê
+    (ver Parte I, 1.8).
+
+9.4 — Backup
+  • Hoje (site estático): manter os arquivos index.html e loja.html versionados em um repositório (Git) ou,
+    no mínimo, em backups datados em nuvem (Google Drive) a cada alteração relevante.
+  • No futuro (backend próprio, Opção B): backup automático diário do PostgreSQL, com teste periódico de
+    restauração — um backup que nunca foi restaurado em teste não é um backup confiável.
+  • Exportação semanal do catálogo de produtos em CSV como camada extra de segurança,
+    independentemente de onde os dados estejam armazenados.
+
+
+
+                                                     19
+CAPÍTULO 9 — GESTÃO CONTÍNUA, CUSTOS E PLANO DE AÇÃO
+
+10.1 — Rotina diária
+  ☐ Verificar novos pedidos (WhatsApp/planilha/painel)
+  ☐ Responder mensagens pendentes
+  ☐ Postar 5 a 10 stories
+  ☐ Verificar e atualizar estoque após vendas do dia
+  ☐ Separar e despachar pedidos pagos até 14h
+
+10.2 — Rotina semanal
+  ☐ Post no feed (mínimo 5 a 7 vezes/semana)
+  ☐ Reels (3 a 4 vezes/semana)
+  ☐ Análise simples de métricas (visitas, vendas, ticket médio)
+  ☐ Reposição de estoque conforme fórmula da Parte VI
+  ☐ Backup de segurança dos dados/arquivos do site
+
+10.3 — Rotina mensal
+  ☐ Inventário físico do estoque
+  ☐ Análise financeira (receita, custo de produto, frete, taxas de gateway, margem real)
+  ☐ Pagamento do DAS (MEI) até o dia 20
+  ☐ Planejamento de novos produtos/coleções sazonais
+  ☐ Revisão de campanhas e parcerias com influenciadores
+
+10.4 — Rotina anual/regulatória
+  ☐ Entrega da DASN-SIMEI até 31 de maio (mesmo com faturamento zero)
+  ☐ Revisão do limite de faturamento MEI (R$ 81.000) e planejamento de eventual migração para ME
+  ☐ Revisão deste manual e dos valores tributários — confirmar mudanças da Reforma Tributária (Parte I,
+    1.7), especialmente a decisão Simples x Híbrido antes de setembro de cada ano de transição
+  ☐ Renovação de certificado digital, domínio e contratos de hospedagem
+
+Custos Consolidados (2026)
+Valores de referência para planejamento; confirme sempre o valor exato no momento da contratação, pois
+preços comerciais mudam com frequência maior que a legislação.
+
+11.1 — Investimento único de abertura
+ Item                                                  Custo aproximado
+ Abertura MEI                                          R$ 0
+ Registro de domínio .com.br                           R$ 40/ano
+ Fotos profissionais de produto                        R$ 500–1.500
+ Estoque inicial (50 peças)                            R$ 2.000–3.000
+
+
+                                                       20
+ Item                                               Custo aproximado
+ Embalagens (100 unidades)                          R$ 200
+ Certificado digital e-CNPJ (se ME)                 R$ 200–400/ano
+ TOTAL estimado                                     R$ 2.940–5.140
+
+
+11.2 — Custos mensais fixos (modelo atual, site estático + WhatsApp)
+ Item                                               Custo aproximado/mês
+ DAS-MEI                                            R$ 82,05–87,05
+ Hospedagem do site                                 R$ 0 (Cloudflare Pages) a R$ 20
+ Domínio (rateio anual)                             R$ 3,33
+ WhatsApp Business / Instagram                      R$ 0
+ TOTAL estimado                                     R$ 85–110/mês
+
+
+11.3 — Custos mensais adicionais ao evoluir para backend próprio (Opção B, Parte II)
+ Item                                               Custo aproximado/mês
+ VPS ou serviço gerenciado para a API               R$ 25–60
+ Banco de dados (incluso no VPS ou serviço
+                                                    R$ 0–30
+ separado)
+ Emissor de nota fiscal                             R$ 0–50 (planos gratuitos cobrem baixo volume)
+ TOTAL adicional estimado                           R$ 25–140/mês
+
+
+11.4 — Custos variáveis por venda
+ • Taxa de gateway: cartão ~4,99% + R$0,50; Pix ~0,99%; boleto ~R$2,00.
+ • Embalagem: R$ 2–5 por pedido.
+ • Frete: R$ 15–35 em média, conforme destino e estratégia (grátis condicional, fixo ou real por CEP).
+ • Custo do produto: R$ 25–120, conforme categoria.
+
+Plano de Ação e Checklist Final
+
+12.1 — Pré-lançamento (30 dias) — trilha legal e comercial
+Semana 1
+ ☐ Abrir MEI (gov.br/empresas-e-negocios/empreendedor)
+ ☐ Confirmar/solicitar Alvará de Localização via SLIM Aracaju
+ ☐ Registrar domínio artequeveste.com.br
+ ☐ Configurar hospedagem do site (Cloudflare Pages ou equivalente) e SSL
+ ☐ Criar e-mail profissional (contato@artequeveste.com.br)
+
+
+
+
+                                                   21
+Semana 2
+ ☐ Publicar index.html e loja.html já finalizados, com imagens definitivas (substituir as temporárias de IA)
+ ☐ Conferir todas as categorias e tamanhos brasileiros no catálogo
+ ☐ Cadastrar os primeiros produtos reais com fotos profissionais
+
+Semana 3
+ ☐ Configurar conta Mercado Pago (ou manter WhatsApp como canal único nesta fase)
+ ☐ Configurar Melhor Envio com CEP de origem em Aracaju
+ ☐ Publicar Política de Privacidade (LGPD) e Termos de Compra no site
+
+Semana 4
+ ☐ Configurar Instagram Business e primeiros 9 posts
+ ☐ Configurar respostas rápidas do WhatsApp Business
+ ☐ Testar o site completo em celular e em diferentes navegadores
+ ☐ Corrigir eventuais erros encontrados
+
+12.2 — Lançamento (7 dias)
+ ☐ Publicar o site oficialmente
+ ☐ Anunciar no Instagram e enviar para contatos diretos
+ ☐ Acompanhar de perto os primeiros pedidos e mensagens
+ ☐ Coletar os primeiros depoimentos de clientes
+
+12.3 — Trilha técnica paralela (evolução para Opção B — Parte II)
+ ☐ Definir se o caminho será Opção A, B ou C (critério da Parte II, 2.2)
+ ☐ Se Opção B: montar a API mínima de catálogo (FastAPI + PostgreSQL) e trocar o array fixo do loja.html
+   por uma chamada fetch
+ ☐ Integrar Mercado Pago em sandbox e validar o fluxo completo antes de produção
+ ☐ Integrar Melhor Envio para cálculo real de frete
+ ☐ Automatizar nota fiscal e notificações via n8n
+ ☐ Só então desativar o fluxo manual via WhatsApp como único canal de finalização (mantendo-o como
+   atendimento)
+
+12.4 — Calendário regulatório a não perder
+ ☐ Todo dia 20: vencimento do DAS-MEI
+ ☐ 31 de maio: entrega da DASN-SIMEI anual
+ ☐ Antes de setembro (em anos de transição da Reforma Tributária): decisão Simples tradicional × Híbrido
+   para IBS/CBS
+ ☐ Acompanhar o teto de R$ 81.000/ano do MEI — se ultrapassar, iniciar a transição para ME no início do
+   ano seguinte
+
+
+
+
+                                                      22
+CAPÍTULO 10 — ANEXOS
+
+Anexo A — Contatos Úteis (Aracaju/SE)
+ Órgão/Serviço                           Contato
+                                         0800 570 0800 — sebrae.com.br/sites/PortalSebrae/se
+ Sebrae Sergipe
+                                         (consultoria gratuita para MEI/ME)
+ Portal do Empreendedor (abertura
+                                         gov.br/empresas-e-negocios/empreendedor
+ MEI)
+ AGILIZA SE (abertura ME/EPP,
+                                         www.agiliza.se.gov.br
+ Redesim/Jucese)
+ SLIM Aracaju (Alvará de Localização e
+                                         slim.aracaju.se.gov.br — emitido pela SEFIN
+ Funcionamento)
+ AjuInteligente (autônomos/pessoa
+                                         Portal de atendimento digital da Prefeitura de Aracaju
+ física)
+ SEFAZ/SE (Inscrição Estadual, ICMS)     sefaz.se.gov.br
+ Jucese (Junta Comercial de Sergipe)     jucese.se.gov.br
+ Correios Aracaju — Agência Central      (79) 3211-5400 — correios.com.br
+
+
+Anexo B — Modelo de Campos de Produto (CSV/Banco)
+Mesma estrutura usada no array PRODUTOS do loja.html, pronta para se tornar uma tabela de banco de
+dados ou planilha de importação:
+
+ Campo                     Tipo                              Exemplo
+ sku                       texto único                       CAM-BMB-001
+ name                      texto                             Camiseta Bumba Meu Boi
+ desc                      texto                             Algodão Premium
+ price                     número (decimal)                  129.00
+ cost_price                número (decimal, uso interno)     45.00
+ category                  texto (categoria do site)         masculino
+ stock                     número inteiro                    20
+ img                       URL                               https://.../camiseta.jpg
+ alt                       texto (acessibilidade/SEO)        Camiseta Bumba Meu Boi
+
+
+Anexo C — Glossário Técnico Mínimo
+  • API: porta de comunicação entre o site (frontend) e o sistema que guarda os dados (backend) — é o
+    que permite ao loja.html buscar produtos reais em vez de uma lista fixa.
+  • Backend: a parte do sistema que não é vista pelo visitante, responsável por guardar dados, processar
+    pagamentos e regras de negócio.
+
+
+                                                       23
+• Webhook: aviso automático que um serviço externo (ex.: Mercado Pago) envia ao seu backend quando
+  algo acontece (ex.: "pagamento aprovado").
+• VPS: servidor virtual próprio, necessário para rodar um backend (diferente de hospedagem comum,
+  que só serve arquivos estáticos).
+• Sandbox: ambiente de teste de um gateway de pagamento, com dinheiro fictício, usado antes de "ligar"
+  o pagamento real.
+• Gateway de pagamento: empresa certificada que processa cartão/Pix/boleto com segurança, para que
+  a loja nunca precise guardar dados de cartão.
+• DIFAL: diferença de ICMS recolhida quando se vende para consumidor final em outro estado.
+• IBS/CBS: os dois novos tributos da Reforma Tributária que, ao longo de 2026–2033, substituem ICMS,
+  ISS, PIS, Cofins e IPI.
+
+
+
+
+                                                 24
+

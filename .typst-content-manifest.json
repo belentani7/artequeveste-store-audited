@@ -1,0 +1,11 @@
+{
+  "task_kind": "markdown-to-pdf",
+  "output": "pdf",
+  "signals": ["professional-report", "editorial-manual"],
+  "hard_constraints": ["Português do Brasil", "capa editorial", "capítulos completos", "storytelling", "manual de lançamento e manutenção"],
+  "content_features": {
+    "code_blocks": 0,
+    "defined_terms": 18,
+    "portrait_images": 0
+  }
+}

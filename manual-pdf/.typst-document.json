@@ -1,0 +1,9 @@
+{
+  "entry": "main.typ",
+  "mode": "markdown",
+  "source": {
+    "original_path": "/home/ubuntu/artequeveste-store/manual-arte-que-veste-2026.md",
+    "prepared_path": "source.md"
+  },
+  "theme": "report-theme.typ"
+}

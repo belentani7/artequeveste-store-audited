@@ -1,0 +1,3812 @@
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+
+   📚
+​
+#    MANUAL COMPLETO DE IMPLANTAÇÃO - ARTE
+QUE VESTE
+Guia Forense Passo a Passo para Operação
+emAracaju/SE
+
+
+
+📋 ÍNDICE GERAL
+1. [ASPECTOS LEGAIS E TRIBUTÁRIOS](#1-aspectos-legais-e-tributários)
+2. [HOSPEDAGEM E DOMÍNIO](#2-hospedagem-e-domínio)
+3. [CONFIGURAÇÃO DA PLATAFORMA](#3-configuração-da-plataforma)
+4. [GATEWAYS DE PAGAMENTO](#4-gateways-de-pagamento)
+5. [LOGÍSTICA E TRANSPORTADORAS](#5-logística-e-transportadoras)
+6. [GESTÃO DE ESTOQUE](#6-gestão-de-estoque)
+7. [EDIÇÃO DE PRODUTOS](#7-edição-de-produtos)
+8. [MARKETING DIGITAL](#8-marketing-digital)
+9. [SUPORTE TÉCNICO](#9-suporte-técnico)
+10. [CHECKLIST FINAL](#10-checklist-final)
+
+
+
+
+1. ASPECTOS LEGAIS E TRIBUTÁRIOS
+
+#1.1 ABERTURA DE EMPRESA
+
+Opção 1: MEI (Microempreendedor Individual)
+- Custo: Gratuito
+- Faturamento máximo: R$ 81.000/ano (2024)
+- Imposto mensal: R$ 77,90 (comércio) ou R$ 81,90 (serviço)
+- CNAEs recomendados:
+  - 4781-4/00 - Comércio varejista de artigos do vestuário e acessórios
+  - 4789-0/99 - Comércio varejista de outros produtos não especificados anteriormente
+  - 7490-1/04 - Atividades de intermediação e agenciamento de serviços e negócios em
+geral
+
+Passo a Passo MEI:
+1. Acesse: portaldoempreendedor.gov.br
+2. Clique em "Formalize-se"
+3. Preencha dados pessoais
+4. Selecione CNAEs principais e secundários
+5. Informe endereço em Aracaju/SE
+6. Confirme e gere CNPJ
+7. Tempo: 2-3 dias úteis
+8. Custo: Zero
+
+Opção 2: Simples Nacional (ME)
+- Custo de abertura: R$ 500-1.500 (contador)
+- Faturamento: Até R$ 360.000/ano
+- Imposto: 4-19% sobre faturamento (Anexo I ou III)
+- Vantagem: Permite mais de 1 MEI, emite NF para PJ
+
+Documentos Necessários:
+- RG e CPF
+- Comprovante de residência
+- Título de eleitor
+- Certificado Digital e-CNPJ (opcional inicial)
+
+#1.2 INSCRIÇÃO ESTADUAL
+
+Obrigatório para comércio:
+1. Acesse: www.sefaz.se.gov.br
+2. Solicite Inscrição Estadual
+3. Custo: Gratuito
+4. Prazo: 5-10 dias úteis
+
+#1.3 ALVARÁ DE FUNCIONAMENTO
+
+Para Aracaju/SE:
+1. Prefeitura Municipal de Aracaju
+2. Secretaria de Planejamento
+3. Custo: R$ 100-300 (varia por atividade)
+4. Prazo: 15-30 dias
+
+#1.4 IMPOSTOS E TRIBUTOS
+
+MEI - Mensal:
+- DAS MEI: R$ 77,90 (comércio)
+- Vencimento: Todo dia 20
+- Pagamento: Guia DAS no SIMEI
+
+Simples Nacional:
+- Anexo I (Comércio):
+  - Até R$ 180.000/ano: 4%
+  - De R$ 180.001 a R$ 360.000: 7%
+- Anexo III (Serviços):
+  - Até R$ 180.000/ano: 6%
+  - De R$ 180.001 a R$ 360.000: 11,5%
+
+ICMS (Sergipe):
+- Operação interna: 18%
+- Interestadual:
+  - Sul/Sudeste (exceto ES): 7%
+  - Norte/Nordeste/Centro-Oeste/ES: 12%
+
+Diferencial de Alíquota (DIFAL):
+- Quando vende para consumidor final em outro estado
+- Diferença entre alíquota interna e interestadual
+
+PIS/COFINS:
+- MEI: Isento
+- Simples Nacional: Incluído no DAS
+
+#1.5 NOTA FISCAL ELETRÔNICA (NF-e)
+
+Obrigatório para ME e opcional para MEI:
+
+Emissão Gratuita:
+1. NFe.io - 50 NFs/mês grátis
+2. Emissor Gratuito SEFAZ/SE - Ilimitado
+3. Sebrae SE - Emissor gratuito
+
+Configuração:
+1. Certificado Digital e-CNPJ (R$ 200-400/ano)
+2. Credenciamento na SEFAZ/SE
+3. Software emissor
+4. Custo anual: R$ 200-600
+
+
+
+
+2. HOSPEDAGEM E DOMÍNIO
+
+#2.1 MELHORES OPÇÕES DE HOSPEDAGEM
+
+OPÇÃO 1: HOSTINGER (Melhor Custo-Benefício)
+- Plano Single: R$ 11,99/mês (primeiro ano)
+- Domínio: .com.br grátis 1 ano
+- SSL: Gratuito
+- Espaço: 50 GB SSD
+- Tráfego: Ilimitado
+- Suporte: 24/7 em português
+- Localização: Servidores no Brasil
+- Renovação: R$ 19,99/mês
+ ✅
+Vantagens:
+
+ ✅
+-   Mais barato
+
+ ✅
+-   Servidor no Brasil (velocidade)
+
+ ✅
+-   Painel intuitivo
+-   30 dias de garantia
+
+OPÇÃO 2: HOSTGATOR (Tradicional)
+- Plano P: R$ 16,74/mês (anual)
+- Domínio: .com.br grátis
+- SSL: Gratuito
+- Espaço: Ilimitado
+- Renovação: R$ 27,90/mês
+
+OPÇÃO 3: KINGHOST (Nacional)
+- Plano Linux Start: R$ 14,90/mês
+- Domínio: .com.br grátis 1 ano
+- SSL: Gratuito
+- Suporte: Brasileiro
+- Renovação: R$ 24,90/mês
+
+OPÇÃO 4: LOCAWEB (Premium)
+- Plano Starter: R$ 29,90/mês
+- Qualidade: Excelente
+- Suporte: Top de linha
+- Recomendado: Para quem pode investir mais
+
+#2.2 REGISTRO DE DOMÍNIO
+
+Registro.br (Oficial .com.br):
+- Custo: R$ 40/ano
+- Site: registro.br
+- Obrigatório: CNPJ ou CPF
+- Tempo: 3-5 dias úteis
+
+Passo a Passo:
+1. Acesse registro.br
+2. Verifique disponibilidade: artequeveste.com.br
+3. Clique em "Registre-se"
+4. Preencha dados do titular (CNPJ)
+5. Pague boleto (R$ 40)
+6. Configure DNS após aprovação
+
+#2.3 CONFIGURAÇÃO DE DNS
+
+Apontar Domínio para Hospedagem:
+
+Nameservers (Hostinger):
+```
+ns1.hostinger.com
+ns2.hostinger.com
+```
+
+Registro A (se necessário):
+```
+Tipo: A
+Nome: @
+Valor: IP do servidor (fornecido pela hospedagem)
+TTL: 14400
+```
+
+Configuração no Registro.br:
+1. Acesse registro.br
+2. Clique no domínio
+3. Alterar DNS
+4. Insira nameservers da Hostinger
+5. Aguarde 24-48h propagação
+
+#2.4 CERTIFICADO SSL/HTTPS
+
+Gratuito (Let's Encrypt):
+- Incluído em todas as hospedagens
+- Ativado automaticamente
+- Renovação automática
+
+Configuração:
+1. Painel de controle (cPanel/hPanel)
+2. SSL/TLS
+3. Selecione domínio
+4. Clique em "Instalar"
+5. Forçar HTTPS
+
+
+
+
+3. CONFIGURAÇÃO DA PLATAFORMA
+
+#3.1 ESCOLHA DA PLATAFORMA
+
+OPÇÃO 1: NUUVEM (Recomendada)
+- Plano Inicial: R$ 59/mês
+- Vantagens:
+  - Brasileira
+  - Suporte em português
+  - Integração Correios/Melhor Envio
+  - Temas responsivos
+  - App mobile
+ - Ideal para moda
+
+OPÇÃO 2: SHOPIFY
+- Plano Básico: R$ 107/mês
+- Vantagens:
+  - Global
+  - Apps ilimitados
+  - Alta escalabilidade
+- Desvantagens:
+  - Mais cara
+  - Apps pagos adicionais
+
+OPÇÃO 3: TRAY
+- Plano Start: R$ 49/mês
+- Vantagens:
+  - Custo-benefício
+  - Marketplace integrado
+  - Nacional
+
+OPÇÃO 4: WOOCommerce (WordPress)
+- Custo: Gratuito (software)
+- Hospedagem: R$ 20-40/mês
+- Vantagens:
+  - Total controle
+  - Sem mensalidade plataforma
+- Desvantagens:
+  - Requer conhecimento técnico
+  - Manutenção própria
+
+#3.2 CONFIGURAÇÃO NUUVEM (Passo a Passo)
+
+1. Criação da Conta:
+```
+1. Acesse nuuvem.com.br
+2. Clique "Começar grátis"
+3. Preencha:
+   - Nome completo
+   - Email
+   - Senha
+   - CNPJ
+4. Confirme email
+5. Complete cadastro
+```
+
+2. Configuração da Loja:
+```
+Dados da Loja:
+- Nome: Arte Que Veste
+- Email: contato@artequeveste.com.br
+- Telefone: (79) XXXXX-XXXX
+- Endereço: Rua XXX, nº XX, Bairro, Aracaju/SE, CEP 49XXX-XXX
+
+Configurações:
+- Moeda: Real (R$)
+- Fuso horário: Brasília (GMT-3)
+- Idioma: Português
+```
+
+3. Escolha do Tema:
+```
+Temas Recomendados:
+- Minimal (gratuito)
+- Fashion (gratuito)
+- Store (gratuito)
+
+Personalização:
+- Logo: Upload logo ARTE QUE VESTE
+- Cores:
+  - Primária: #40E0D0 (Turquesa)
+  - Secundária: #FF1493 (Rosa)
+  - Texto: #1a1a1a (Preto)
+- Fontes: Playfair Display (títulos) + Inter (corpo)
+```
+
+4. Configuração de Produtos:
+```
+Cadastro de Produto:
+1. Produtos > Adicionar Produto
+2. Preencha:
+   - Nome: Camiseta Bumba Meu Boi
+   - Descrição: Texto completo
+   - Preço: R$ 129,00
+   - Preço de custo: R$ 45,00
+   - SKU: CAM-BMB-001
+   - Estoque: 20 unidades
+   - Peso: 200g
+   - Dimensões: 30x25x3 cm
+
+3. Imagens:
+  - Foto principal (mínimo 1000x1000px)
+  - Fotos adicionais (mínimo 3)
+  - Vídeo (opcional)
+
+4. Variações:
+  - Tamanhos: P, M, G, GG
+  - Cores: Turquesa, Branco, Preto
+5. SEO:
+   - Título: Camiseta Bumba Meu Boi - Arte Que Veste
+   - Descrição: Camiseta com xilogravura...
+   - Palavras-chave: xilogravura, camiseta, nordeste
+```
+
+#3.3 MIGRAÇÃO DE PRODUTOS EM MASSA
+
+Via CSV (Planilha):
+```
+1. Exporte modelo CSV da Nuvem
+2. Preencha colunas:
+   - sku, name, description, price, cost_price
+   - stock, weight, width, height, depth
+   - category, images, variations
+
+3. Importe CSV
+4. Revise produtos
+5. Publique
+```
+
+Modelo CSV:
+```csv
+sku,name,description,price,cost_price,stock,weight,width,height,depth,category
+CAM-BMB-001,"Camiseta Bumba Meu Boi","Xilogravura em algodão
+premium",129.00,45.00,20,0.200,30,25,3,Camisetas
+KIM-CP-001,"Kimono Cultura Popular","Seda com estampa
+xilogravura",249.00,95.00,10,0.350,35,30,5,Kimonos
+```
+
+
+
+
+4. GATEWAYS DE PAGAMENTO
+
+#4.1 PRINCIPAIS OPÇÕES
+
+OPÇÃO 1: MERCADO PAGO (Recomendado)
+- Taxas:
+  - Cartão à vista: 4.99% + R$ 0,50
+  - Cartão parcelado: 5.99% + R$ 0,50/parcela
+  - PIX: 0.99%
+  - Boleto: R$ 2,00
+
+- Liberação:
+  - À vista: 14 dias
+  - Parcelado: conforme parcelas
+- Vantagens:
+  - Reconhecido
+  - Fácil integração
+  - Checkout transparente
+  - Antecipação disponível
+
+Configuração:
+```
+1. Crie conta: mercadopago.com.br
+2. Ative conta (envie documentos)
+3. Obtenha credenciais:
+   - Public Key
+   - Access Token
+4. Na Nuvem:
+   - Configurações > Pagamentos
+   - Mercado Pago
+   - Cole credenciais
+   - Ative
+```
+
+OPÇÃO 2: PAGBANK (PAGSEGURO)
+- Taxas:
+  - Cartão à vista: 3.99% + R$ 0,40
+  - PIX: 1.99%
+  - Boleto: R$ 2,00
+
+- Vantagens:
+  - Taxas competitivas
+  - Popular no Brasil
+  - Antecipação
+
+OPÇÃO 3: ASAAS
+- Taxas:
+  - Cartão: 2.99% + R$ 0,49
+  - PIX: 0.99%
+  - Boleto: R$ 1,99
+
+- Vantagens:
+  - Menores taxas
+  - Cobrança recorrente
+  - API robusta
+
+OPÇÃO 4: NUUVEM PAGO
+- Taxas:
+  - Cartão: 3.59% + R$ 0,50
+  - PIX: 0.99%
+  - Boleto: R$ 1,50
+- Vantagens:
+  - Integrado Nuvem
+  - Sem burocracia
+  - Liberação rápida
+
+#4.2 CONFIGURAÇÃO DE PARCELAMENTO
+
+Recomendado:
+```
+- Mínimo por parcela: R$ 5,00
+- Máximo de parcelas: 12x
+- Parcelas sem juros: 3x ou 6x
+- Juros: Por conta da loja ou cliente
+```
+
+Exemplo de Configuração:
+```
+1x a 3x: Sem juros
+4x a 6x: Sem juros (loja absorve)
+7x a 12x: Com juros (cliente paga)
+```
+
+#4.3 PIX - CONFIGURAÇÃO
+
+Obrigatório ter:
+```
+1. QR Code dinâmico
+2. Aprovação automática
+3. Baixa automática no pedido
+4. Desconto de 5% para PIX (opcional)
+```
+
+Vantagens:
+- Aprovação imediata
+- Taxa baixa (0.99%)
+- Disponível 24/7
+- Sem chargeback
+
+#4.4 BOLETO BANCÁRIO
+
+Configuração:
+```
+- Banco: Itaú, Bradesco, Santander
+- Juros: 0,10% ao dia (máx 30 dias)
+- Multa: 2% após vencimento
+- Validade: 30 dias
+```
+5. LOGÍSTICA E TRANSPORTADORAS
+
+#5.1 MELHOR ENVIO (Recomendado)
+
+O que é:
+- Plataforma comparadora de fretes
+- Descontos de até 70%
+- Integração com Correios e transportadoras
+
+Custo:
+- Grátis para usar
+- Paga apenas o frete
+
+Cadastro:
+```
+1. Acesse: melhorenvio.com.br
+2. Crie conta (CNPJ)
+3. Configure:
+   - CEP de origem: 49XXX-XXX (Aracaju)
+   - Dimensões padrão dos produtos
+   - Peso padrão
+4. Integre com Nuvem:
+   - Configurações > Frete
+   - Melhor Envio
+   - API Key
+```
+
+Transportadoras Disponíveis:
+```
+Correios:
+- PAC: 7-15 dias úteis
+- SEDEX: 3-7 dias úteis
+- SEDEX 10: 1-2 dias úteis (capital)
+
+Privadas:
+- Jadlog: 5-12 dias
+- Azul Cargo: 1-3 dias (urgente)
+- Loggi: 2-5 dias (capitais)
+```
+
+#5.2 CORREIOS DIRETO
+
+Cadastro:
+```
+1. Acesse: correios.com.br
+2. Cartão de Postagem
+3. Envie documentação:
+   - CNPJ
+   - Inscrição Estadual
+   - Contrato social
+4. Taxa: R$ 0-100/mês (volume)
+```
+
+Serviços:
+```
+PAC:
+- Prazo: 7-15 dias
+- Preço: Mais barato
+- Rastreamento: Sim
+
+SEDEX:
+- Prazo: 3-7 dias
+- Preço: Médio
+- Rastreamento: Sim
+
+SEDEX 10:
+- Prazo: Entrega até 10h
+- Preço: Alto
+- Disponibilidade: Capitais
+```
+
+#5.3 FRETE GRÁTIS
+
+Estratégia:
+```
+Opção 1: Condicional
+- Compras acima de R$ 299
+- Repassar no preço do produto
+
+Opção 2: Parcial
+- Cliente paga 50% do frete
+- Loja subsidia 50%
+
+Opção 3: Fixo
+- Frete único: R$ 15-25
+- Independente do destino
+```
+
+Cálculo:
+```
+Preço do Produto: R$ 129
+Custo Real: R$ 45
+Frete Médio: R$ 20
+Lucro: R$ 129 - R$ 45 - R$ 20 = R$ 64
+```
+
+#5.4 EMBALAGENS
+
+Tipos Recomendadas:
+```
+1. Envelopes Plásticos:
+   - Tamanho P: 16x24cm - R$ 0,30/un
+   - Tamanho M: 24x34cm - R$ 0,45/un
+   - Tamanho G: 32x42cm - R$ 0,60/un
+
+2. Caixas de Papelão:
+  - P: 20x15x10cm - R$ 1,50/un
+  - M: 30x20x15cm - R$ 2,50/un
+  - G: 40x30x20cm - R$ 4,00/un
+
+3. Fita Adesiva:
+  - Rolo 50m: R$ 8,00
+
+4. Etiqueta de Envio:
+   - Impressora térmica: R$ 800-1.500
+   - Ou impressora comum + saco plástico
+```
+
+Onde Comprar:
+```
+- Mercado Livre
+- Shopee
+- Amazon
+- Embalax (embalax.com.br)
+- Plásticos Aracaju (local)
+```
+
+#5.5 PROCESSO DE ENVIO
+
+Passo a Passo Diário:
+```
+1. Acesse Nuvem > Pedidos
+2. Filtre: "Pagos" ou "Aguardando envio"
+3. Separe produtos no estoque
+4. Embale com cuidado:
+   - Produto
+   - Brinde (opcional)
+   - Agradecimento
+   - Cartão de visita
+5. Pese e meça
+6. Gere etiqueta no Melhor Envio
+7. Cole etiqueta na embalagem
+8. Leve aos Correios/Transportadora
+9. Atualize status: "Enviado"
+10. Envie código de rastreio ao cliente
+```
+
+Tempo de Postagem:
+```
+- Pedido até 14h: Envio mesmo dia
+- Pedido após 14h: Envio próximo dia útil
+- Prazo máximo: 2 dias úteis
+```
+
+
+
+
+6. GESTÃO DE ESTOQUE
+
+#6.1 CONTROLE FÍSICO
+
+Planilha de Controle:
+```
+Colunas:
+- SKU
+- Nome do Produto
+- Tamanho/Cor
+- Quantidade Atual
+- Quantidade Mínima
+- Quantidade Máxima
+- Fornecedor
+- Preço de Custo
+- Última Entrada
+- Última Saída
+- Status (OK/Repor)
+```
+
+Modelo de Planilha:
+```
+SKU     | Produto        | Tam | Cor  | Qtd | Mín | Fornec    | Custo
+CAM-BMB-001| Camiseta Bumba Meu Boi| P | Turquesa | 15 | 5 | Malharia Silva | R$ 45
+CAM-BMB-002| Camiseta Bumba Meu Boi| M | Turquesa | 20 | 5 | Malharia Silva | R$ 45
+KIM-CP-001 | Kimono Cultura Pop | Ú | Variado | 8 | 3 | Tecidos Norte | R$ 95
+```
+
+#6.2 CONTROLE DIGITAL (NUVEM)
+
+Configuração:
+```
+1. Produtos > Estoque
+2. Ative "Controlar estoque"
+3. Defina:
+   - Quantidade inicial
+   - Estoque mínimo (alerta)
+   - Permite venda sem estoque? (Não)
+4. Atualize manualmente ou via CSV
+```
+
+Alertas de Estoque Baixo:
+```
+Configure:
+- Email de alerta: seu@email.com
+- Quantidade mínima: 5 unidades
+- Frequência: Diário
+```
+
+#6.3 ENTRADA DE PRODUTOS
+
+Processo:
+```
+1. Receba mercadoria do fornecedor
+2. Confira nota fiscal
+3. Verifique qualidade:
+   - Costuras
+   - Estampas
+   - Tamanhos
+   - Cores
+4. Conte unidades
+5. Armazene em local adequado
+6. Atualize sistema:
+   - Nuvem > Produtos > Estoque
+   - Adicione quantidade
+   - Registre data
+   - Anote fornecedor
+```
+
+Nota Fiscal de Entrada:
+```
+Obrigatório para ME:
+- Registre no sistema contábil
+- Arquive por 5 anos
+- Controle de ICMS
+```
+
+#6.4 SAÍDA DE PRODUTOS
+
+Processo de Venda:
+```
+1. Pedido confirmado na Nuvem
+2. Sistema baixa estoque automaticamente
+3. Separe produto físico
+4. Embale
+5. Envie
+6. Confirme envio no sistema
+7. Estoque atualizado automaticamente
+```
+
+Devoluções/Trocas:
+```
+1. Cliente solicita troca
+2. Receba produto de volta
+3. Verifique estado:
+   - Novo: Retorna ao estoque
+   - Usado/Danificado: Baixa como perda
+4. Atualize sistema:
+   - Adicione ao estoque (se novo)
+   - Ou registre perda
+5. Envie novo produto ou estorne
+```
+
+#6.5 INVENTÁRIO FÍSICO
+
+Quando Fazer:
+- Mensalmente (recomendado)
+- Trimestralmente (mínimo)
+- Antes de grandes promoções
+- Após mudanças no estoque
+
+Processo:
+```
+1. Imprima lista de produtos
+2. Conte fisicamente cada item
+3. Anote quantidades reais
+4. Compare com sistema
+5. Ajuste diferenças:
+   - Sistema: 20
+   - Físico: 18
+   - Ajuste: -2
+6. Investigue discrepâncias:
+   - Roubo?
+   - Erro de digitação?
+   - Produto danificado?
+7. Atualize sistema
+8. Assine e arquive
+```
+
+Planilha de Inventário:
+```
+Data: __/__/____
+Responsável: ________________
+
+Produto: Camiseta Bumba Meu Boi
+SKU: CAM-BMB-001
+
+Tamanho | Sistema | Físico | Diferença | Ajuste
+P   | 15    | 14 | -1       | -1
+M    | 20    | 20 | 0        |0
+G   | 18    | 17 | -1        | -1
+GG     | 10    | 10 | 0        |0
+
+Total de Itens: 63
+Diferenças: -2
+Justificativa: Produto extraviado na expedição
+Assinatura: ___________________
+```
+
+#6.6 REPOSIÇÃO DE ESTOQUE
+
+Quando Repor:
+
+✅
+```
+
+✅
+    Quando atingir estoque mínimo
+
+✅
+    30 dias antes de datas comemorativas
+
+✅
+    Quando produto estiver esgotado
+
+✅
+    Quando houver previsão de alta demanda
+    Após análise de vendas mensais
+```
+
+Cálculo de Reposição:
+```
+Fórmula:
+Qtd a Comprar =
+  (Média Vendas Mensais x Lead Time) +
+  Estoque Segurança -
+  Estoque Atual
+
+Exemplo:
+- Média vendas Camiseta: 20 unid/mês
+- Lead time (entrega fornecedor): 15 dias (0.5 mês)
+- Estoque segurança: 10 unidades
+- Estoque atual: 5 unidades
+
+Qtd a comprar = (20 x 0.5) + 10 - 5 = 15 unidades
+```
+
+Fornecedores Recomendados:
+```
+Camisetas Brancas:
+- Malharia Silva (Aracaju/SE)
+  - Telefone: (79) XXXX-XXXX
+  - MOQ: 50 peças
+  - Preço: R$ 25-35/un
+
+- Malharia Nordeste (Recife/PE)
+  - Telefone: (81) XXXX-XXXX
+  - MOQ: 100 peças
+  - Preço: R$ 22-30/un
+
+Estamparia/Xilogravura:
+- Mestre Nivaldo Oliveira (São Cristóvão/SE)
+  - Parceria estabelecida
+  - Preço: R$ 10-15/peça estampada
+
+Kimonos/Seda:
+- Tecidos Norte (São Paulo/SP)
+  - Telefone: (11) XXXX-XXXX
+  - MOQ: 20 peças
+  - Preço: R$ 80-120/metro
+```
+
+#6.7 ARMAZENAMENTO
+
+Condições Ideais:
+
+✅
+```
+
+✅
+    Local seco e arejado
+
+✅
+    Temperatura: 20-25°C
+
+✅
+    Umidade: 50-60%
+
+✅
+    Longe da luz solar direta
+
+✅
+    Longe de umidade
+    Protegido de pragas (traças)
+```
+
+Organização Física:
+```
+1. Separe por categoria:
+   - Camisetas
+   - Kimonos
+   - Vestidos
+   - Acessórios
+   - Souvenirs
+
+2. Dentro de cada categoria:
+  - Por tamanho (P, M, G, GG)
+  - Por cor
+ - Por modelo
+
+3. Use etiquetas:
+  - Nome do produto
+  - Tamanho
+  - Código SKU
+  - Quantidade
+
+4. Prateleiras:
+   - Altura: 1,80m máximo
+   - Profundidade: 40-50cm
+   - Identificação clara
+```
+
+Embalagem para Armazenamento:
+
+✅
+```
+
+✅
+    Sacos plásticos com zíper
+
+✅
+    Caixas organizadoras
+
+✅
+    Prateleiras identificadas
+
+✅
+    Cabides para peças penduradas
+    Gavetas organizadas
+```
+
+
+
+
+7. EDIÇÃO DE PRODUTOS
+
+#7.1 ADICIONAR NOVO PRODUTO
+
+Passo a Passo Nuvem:
+```
+1. Acesse: Produtos > Adicionar Produto
+
+2. Informações Básicas:
+  - Nome: Camiseta Bumba Meu Boi
+  - Descrição Completa:
+    "Camiseta 100% algodão premium com estampa
+    de xilogravura do Bumba Meu Boi, tradição
+    nordestina. Estampa feita artesanalmente
+    pelo Mestre Nivaldo Oliveira em São
+    Cristóvão/SE.
+
+    Características:
+    - Tecido: Algodão 30.1 penteado
+    - Gramatura: 160g/m²
+    - Estampa: Xilogravura artesanal
+    - Acabamento: Costura reforçada
+    - Gola: Redonda com ribana
+   - Etiqueta: Sem etiqueta (conforto)
+
+   Cuidados:
+   - Lavar à mão ou máquina (água fria)
+   - Não usar alvejante
+   - Secar à sombra
+   - Passar em temperatura média"
+
+3. Preço:
+  - Preço de venda: R$ 129,00
+  - Preço de custo: R$ 45,00
+  - Preço promocional: R$ 115,00 (opcional)
+  - Data início/fim promoção
+
+4. SKU:
+  - Código único: CAM-BMB-001
+  - Use padrão: CATEGORIA-MODELO-NUMERO
+
+5. Estoque:
+  - Controle: Sim
+  - Quantidade: 50
+  - Estoque mínimo: 10
+  - Permite compra sem estoque: Não
+
+6. Peso e Dimensões:
+  - Peso: 0,200 kg (200g)
+  - Largura: 30 cm
+  - Altura: 25 cm
+  - Profundidade: 3 cm
+
+7. Imagens:
+  - Foto principal: 1000x1000px mínimo
+  - Fotos adicionais: Mínimo 3
+    - Frente
+    - Costas
+    - Detalhe da estampa
+    - Modelo vestindo
+  - Formato: JPG ou PNG
+  - Tamanho: Máx 5MB cada
+
+8. Variações:
+  - Tamanhos: P, M, G, GG, XG
+  - Cores: Turquesa, Branco, Preto
+
+ Para cada variação:
+ - SKU único
+ - Preço (pode ser diferente)
+ - Estoque individual
+ - Imagem específica (opcional)
+
+9. Categorias:
+  - Principal: Camisetas
+  - Secundária: Moda Masculina/Feminina
+
+10. Tags/Palavras-chave:
+  - xilogravura
+  - bumba meu boi
+  - camiseta
+  - nordeste
+  - arte que veste
+  - mestre nivaldo
+
+11. SEO:
+  - Título SEO: Camiseta Bumba Meu Boi - Xilogravura Nordestina | Arte Que Veste
+  - Meta descrição: Camiseta com estampa de xilogravura do Bumba Meu Boi. Arte
+nordestina autêntica do Mestre Nivaldo. Algodão premium.
+  - URL amigável: camiseta-bumba-meu-boi-xilogravura
+
+12. Status:
+  - Ativo (publicado)
+  - Rascunho (não publicado)
+  - Agendado (publicar em data específica)
+
+13. Salvar
+```
+
+#7.2 EDITAR PRODUTO EXISTENTE
+
+Alterar Preço:
+```
+1. Produtos > Lista de Produtos
+2. Busque produto: "Camiseta Bumba Meu Boi"
+3. Clique em Editar
+4. Altere:
+   - Preço de venda: R$ 129,00 → R$ 139,00
+5. Salvar
+6. Sistema atualiza automaticamente
+```
+
+Alterar Estoque:
+```
+1. Produtos > Estoque
+2. Busque produto
+3. Altere quantidade:
+   - Atual: 20
+   - Nova: 35
+4. Motivo: "Reposição de estoque"
+5. Salvar
+```
+
+Alterar Imagens:
+```
+1. Produtos > Editar Produto
+2. Seção Imagens
+3. Para remover:
+   - Clique no X da imagem
+4. Para adicionar:
+   - Arraste nova imagem
+   - Ou clique "Upload"
+5. Defina imagem principal (arraste para primeira posição)
+6. Salvar
+```
+
+Alterar Descrição:
+```
+1. Produtos > Editar Produto
+2. Campo Descrição
+3. Edite texto
+4. Use formatação:
+   - <strong>texto</strong> (negrito)
+   - <em>texto</em> (itálico)
+   - <ul><li>item</li></ul> (lista)
+5. Salvar
+```
+
+#7.3 EXCLUIR/DESATIVAR PRODUTO
+
+Desativar (Recomendado):
+```
+1. Produtos > Editar Produto
+2. Status: Ativo → Inativo
+3. Salvar
+
+Vantagens:
+- Produto some da loja
+- Mantém histórico de vendas
+- Pode reativar depois
+- Não perde dados
+```
+
+Excluir (Cuidado!):
+```
+1. Produtos > Editar Produto
+2. Clique em Excluir
+3. Confirme exclusão
+
+Atenção:
+- Exclusão permanente
+- Perde histórico de vendas
+- Não pode desfazer
+- Só use se produto nunca vendeu
+```
+
+Excluir em Massa:
+```
+1. Produtos > Lista
+2. Marque checkboxes dos produtos
+3. Ações em Massa > Excluir
+4. Confirme
+```
+
+#7.4 DUPLICAR PRODUTO
+
+Para criar variação:
+```
+1. Produtos > Editar Produto
+2. Clique em Duplicar
+3. Sistema cria cópia exata
+4. Edite:
+   - Nome: Camiseta Bumba Meu Boi - Cor Branca
+   - SKU: CAM-BMB-002
+   - Cor: Branco
+   - Imagens: Troque fotos
+5. Salvar
+```
+
+#7.5 IMPORTAR/EXPORTAR PRODUTOS
+
+Exportar para Backup:
+```
+1. Produtos > Lista
+2. Clique em Exportar
+3. Formato: CSV ou Excel
+4. Campos: Todos
+5. Download arquivo
+6. Guarde em local seguro
+```
+
+Importar em Massa:
+```
+1. Baixe modelo CSV da Nuvem
+2. Preencha planilha:
+ - sku, name, description, price
+ - cost_price, stock, weight
+ - width, height, depth
+ - category, images
+
+3. Salve como CSV (UTF-8)
+4. Produtos > Importar
+5. Selecione arquivo CSV
+6. Mapeie colunas
+7. Importar
+8. Revise produtos importados
+```
+
+Modelo CSV Completo:
+```csv
+sku,name,description,price,cost_price,stock,weight,width,height,depth,category,tags,status
+CAM-BMB-001,"Camiseta Bumba Meu Boi","Xilogravura em algodão
+premium",129.00,45.00,20,0.200,30,25,3,"Camisetas","xilogravura,bumba meu boi",ativo
+CAM-BMB-002,"Camiseta Bumba Meu Boi - Branco","Xilogravura em algodão
+premium",129.00,45.00,15,0.200,30,25,3,"Camisetas","xilogravura,bumba meu boi",ativo
+KIM-CP-001,"Kimono Cultura Popular","Seda com estampa
+xilogravura",249.00,95.00,8,0.350,35,30,5,"Kimonos","seda,xilogravura",ativo
+BOL-TB-001,"Bolsa Tote Bag Nordestina","Algodão cru com alças
+naturais",89.00,32.00,25,0.150,40,35,2,"Acessórios","bolsa,tote bag",ativo
+CAN-XIL-001,"Caneca Xilogravura","Cerâmica com arte
+nordestina",49.00,18.00,30,0.400,12,12,10,"Souvenirs","caneca,cerâmica",ativo
+VES-FJ-001,"Vestido Festa Junina","Viscose com estampa
+exclusiva",299.00,120.00,6,0.300,35,30,3,"Vestidos","vestido,festa junina",ativo
+```
+
+
+
+
+8. MARKETING DIGITAL
+
+#8.1 INSTAGRAM (@artequeveste79)
+
+Configuração Profissional:
+```
+1. Converta para Conta Comercial:
+   - Configurações > Conta
+   - Mudar para conta profissional
+   - Categoria: Loja de roupas
+
+2. Complete Bio:
+
+                                          🎨
+  - Nome: Arte Que Veste
+
+                                          🌎
+  - Bio: "Xilogravura nordestina em tecido
+        De São Cristóvão/SE para o mundo
+        @mestrenivaldo
+      👇 Compre agora"
+ - Link: artequeveste.com.br
+ - Email: contato@artequeveste.com.br
+ - Telefone: (79) XXXXX-XXXX
+ - Endereço: Aracaju/SE
+
+3. Destaques:
+   - Novidades
+   - Bastidores
+   - Depoimentos
+   - Como Comprar
+   - Tamanho
+   - FASC
+```
+
+Estratégia de Conteúdo:
+```
+Frequência:
+- Feed: 1 post/dia
+- Stories: 5-10/dia
+- Reels: 3-4/semana
+- IGTV: 1/semana
+
+Tipos de Conteúdo:
+1. Produto (40%):
+  - Fotos profissionais
+  - Modelos vestindo
+  - Detalhes da estampa
+  - Cores disponíveis
+
+2. Bastidores (25%):
+  - Mestre Nivaldo trabalhando
+  - Processo de xilogravura
+  - Estamparia
+  - Expedição de pedidos
+
+3. Cultural (20%):
+  - História do Bumba Meu Boi
+  - São Cristóvão/SE
+  - FASC
+  - Cultura nordestina
+
+4. Depoimentos (10%):
+  - Clientes usando
+  - Prints de WhatsApp
+  - Reviews
+
+5. Promocional (5%):
+   - Lançamentos
+   - Promoções
+   - Cupons
+```
+
+Hashtags:
+```
+Principais:
+#artequeveste #xilogravura #modanordestina
+#bumbameuboi #saocristovao #sergipe
+#modaautoral #wearableart #culturapopular
+#artesanato #nordeste #cordel
+
+Secundárias:
+#camisetaestampada #modabrasileira
+#artepopular #designnordestino #fasc
+#mestrenivaldo #gravura #estamparia
+```
+
+#8.2 TRÁFEGO PAGO
+
+Facebook/Instagram Ads:
+```
+Orçamento Inicial:
+- R$ 300-500/mês
+- R$ 10-15/dia
+
+Configuração:
+1. Facebook Business Manager
+2. Pixel do Facebook (instale na Nuvem)
+3. Catálogo de produtos
+
+Campanhas:
+1. Tráfego (R$ 10/dia):
+  - Objetivo: Visitas ao site
+  - Público: 25-55 anos
+  - Interesses:
+     Moda nordestina
+     Arte popular
+     Cultura brasileira
+     Sustentabilidade
+  - Localização: Brasil
+  - Posicionamento: Instagram Feed + Stories
+
+2. Conversão (R$ 15/dia):
+  - Objetivo: Compras
+  - Público: Visitantes do site (remarketing)
+  - Catálogo dinâmico
+ - Posicionamento: Instagram + Facebook
+
+3. Engajamento (R$ 5/dia):
+   - Objetivo: Curtidas/Comentários
+   - Público: Similar aos seguidores
+   - Posts orgânicos impulsionados
+```
+
+Google Ads:
+```
+Orçamento: R$ 200-300/mês
+
+Campanhas:
+1. Rede de Pesquisa:
+  - Palavras-chave:
+    "camiseta xilogravura"
+    "moda nordestina online"
+    "arte que veste"
+    "bumba meu boi camiseta"
+  - CPC médio: R$ 1-3
+
+2. Google Shopping:
+   - Catálogo de produtos
+   - Fotos aparecem na busca
+   - CPC: R$ 0,50-2
+```
+
+#8.3 EMAIL MARKETING
+
+Plataformas:
+```
+Mailchimp (Grátis até 2.000 contatos):
+- Fácil de usar
+- Templates prontos
+- Automação
+
+RD Station (Pago):
+- Mais completo
+- Automação avançada
+- CRM integrado
+
+Nuvem Email (Integrado):
+- Já vem na Nuvem
+- Simples
+- Suficiente para início
+```
+
+Estratégia:
+```
+Captura de Emails:
+1. Popup no site (10% OFF primeira compra)
+2. Checkout (opt-in)
+3. Redes sociais
+4. Eventos presenciais
+
+Sequência de Boas-vindas:
+
+                                         🎨
+Email 1 (Imediato):
+- Assunto: Bem-vindo à Arte Que Veste!
+- Conteúdo:
+  Agradecimento
+  História da marca
+  Cupom 10% OFF
+  Link catálogo
+
+Email 2 (3 dias):
+- Assunto: Conheça o Mestre Nivaldo
+- Conteúdo:
+  Biografia do artista
+  Vídeo do processo
+  Produtos em destaque
+
+Email 3 (7 dias):
+- Assunto: Últimas peças disponíveis!
+- Conteúdo:
+  Urgência (estoque limitado)
+  Produtos mais vendidos
+  Depoimentos de clientes
+
+Newsletter Semanal:
+- Toda terça-feira
+- Novidades
+- Bastidores
+- Dicas culturais
+- Promoções relâmpago
+```
+
+#8.4 SEO (OTIMIZAÇÃO PARA GOOGLE)
+
+Na Nuvem:
+```
+1. Títulos SEO:
+   - Use palavras-chave
+   - Máximo 60 caracteres
+   - Ex: "Camiseta Bumba Meu Boi - Xilogravura Nordestina | Arte Que Veste"
+
+2. Meta Descrições:
+  - Resumo do produto
+  - Máximo 160 caracteres
+  - Inclua CTA
+  - Ex: "Camiseta com xilogravura do Bumba Meu Boi. Arte nordestina autêntica. Algodão
+premium. Compre agora!"
+
+3. URLs Amigáveis:
+  - Evite: artequeveste.com.br/produto?id=123
+  - Use: artequeveste.com.br/camiseta-bumba-meu-boi-xilogravura
+
+4. Imagens Otimizadas:
+  - Nome do arquivo: camiseta-bumba-meu-boi-turquesa.jpg
+  - Alt text: "Camiseta turquesa com estampa de xilogravura do Bumba Meu Boi"
+  - Tamanho: Máx 200KB
+  - Formato: WebP ou JPG
+
+5. Blog:
+   - Crie conteúdo sobre:
+     História da xilogravura
+     Bumba Meu Boi
+     São Cristóvão/SE
+     Mestre Nivaldo
+     Cultura nordestina
+   - Frequência: 2 posts/semana
+   - Palavras-chave de cauda longa
+```
+
+Conteúdo para Blog:
+```
+Post 1: "O que é Xilogravura e sua História no Nordeste"
+- 1.500 palavras
+- Imagens do processo
+- Vídeo Mestre Nivaldo
+- Link produtos
+
+Post 2: "Bumba Meu Boi: Tradição Nordestina que Inspira Nossa Arte"
+- 1.200 palavras
+- História da festa
+- Fotos do festival
+- Produtos relacionados
+
+Post 3: "São Cristóvão: A Cidade que Deu Origem à Arte Que Veste"
+- 1.000 palavras
+- História da cidade
+- Patrimônio UNESCO
+- FASC
+```
+#8.5 INFLUENCIADORES
+
+Estratégia:
+```
+Micro-influenciadores (5k-50k seguidores):
+- Custo: R$ 200-800/post
+- Ou permuta (produto grátis)
+- Maior engajamento
+- Público mais nichado
+
+Como Encontrar:
+1. Instagram:
+  - Busque hashtags: #modanordestina #sergipe
+  - Veja quem segue @artequeveste79
+  - Analise engajamento
+
+2. Critérios:
+  - Engajamento: Mínimo 3%
+  - Público: 25-55 anos
+  - Localização: Brasil (prioridade Nordeste)
+  - Valores: Cultura, arte, sustentabilidade
+
+3. Abordagem:
+   - Direct ou email
+   - Apresente a marca
+   - Proponha parceria
+   - Envie produto
+   - Peça post + stories
+```
+
+Kit Influenciador:
+```
+Conteúdo:
+- 1 Camiseta Bumba Meu Boi
+- 1 Bolsa Tote Bag
+- 1 Caneca Xilogravura
+- Cartão de agradecimento
+- Cupom exclusivo (15% OFF)
+- Hashtag: #artequeveste
+
+Contrapartida:
+- 1 post no feed
+- 3 stories
+- Link na bio (24h)
+- Uso da hashtag
+- Marcação @artequeveste79
+```
+9. SUPORTE TÉCNICO
+
+#9.1 ATENDIMENTO AO CLIENTE
+
+Canais:
+```
+WhatsApp Business (Principal):
+- Número: (79) XXXXX-XXXX
+- Horário: Seg-Sex 9h-18h, Sáb 9h-13h
+- Tempo resposta: Máx 1 hora
+- Ferramentas:
+   Respostas rápidas
+   Etiquetas
+   Catálogo
+   Mensagens automáticas
+
+Email:
+- contato@artequeveste.com.br
+- Tempo resposta: 24h úteis
+- Assuntos: Trocas, devoluções, dúvidas técnicas
+
+Instagram Direct:
+- Tempo resposta: 2 horas
+- Horário comercial
+- Use respostas salvas
+
+Chat Online (Site):
+- Tidio ou JivoChat (grátis)
+- Horário: 9h-18h
+- Fora disso: Deixe email
+```
+
+Respostas Rápidas WhatsApp:
+```
+
+                                 🎨
+1. Saudação:
+"Olá! Bem-vindo à Arte Que Veste
+Sou [nome], como posso ajudar você hoje?"
+
+2. Prazo de Entrega:
+"O prazo de entrega varia conforme sua região:
+- Nordeste: 5-10 dias úteis
+- Sudeste: 7-12 dias úteis
+- Sul/Centro-Oeste/Norte: 10-15 dias úteis
+Após postagem, enviamos código de rastreio!"
+
+3. Trocas e Devoluções:
+"Você tem até 7 dias após o recebimento para trocar ou devolver.
+O produto deve estar sem uso, nas embalagens originais.
+Entre em contato que orientamos o processo!"
+
+4. Formas de Pagamento:
+
+💳
+"Aceitamos:
+
+💰
+    Cartão de crédito (até 12x)
+
+📄
+    PIX (5% de desconto)
+    Boleto bancário
+Qual prefere?"
+
+5. Guia de Tamanhos:
+"Nossas camisetas seguem padrão brasileiro:
+P: 48cm largura x 66cm comprimento
+M: 50cm x 68cm
+G: 54cm x 70cm
+GG: 58cm x 72cm
+Precisa de ajuda para escolher?"
+```
+
+#9.2 RESOLUÇÃO DE PROBLEMAS
+
+Produto Atrasado:
+```
+1. Verifique rastreio
+2. Contate transportadora
+3. Informe cliente:
+   - Situação real
+   - Previsão atualizada
+   - Pedido de desculpas
+   - Brinde/cupom (opcional)
+4. Acompanhe até entrega
+```
+
+Produto Danificado:
+```
+1. Peça fotos do dano
+2. Peça foto da embalagem
+3. Avalie:
+   - Dano transporte: Acione seguro
+   - Dano fabricação: Troque imediatamente
+4. Envie novo produto (frete grátis)
+5. Peça devolução do danificado
+6. Registre ocorrência
+```
+
+Produto Errado:
+```
+1. Peça desculpas
+2. Confirme qual produto cliente quer
+3. Envie produto correto (frete grátis)
+4. Oriente devolução do errado
+5. Ofereça brinde/cupom
+6. Melhore processo de separação
+```
+
+Cliente Insatisfeito:
+```
+1. Ouça ativamente
+2. Não fique na defensiva
+3. Peça desculpas sinceras
+4. Ofereça solução:
+   - Troca
+   - Devolução
+   - Desconto próxima compra
+5. Resolva rápido
+6. Acompanhe após resolução
+7. Aprenda com o erro
+```
+
+#9.3 SUPORTE TÉCNICO DA PLATAFORMA
+
+Nuvem:
+```
+Suporte:
+- Chat: 24/7
+- Email: suporte@nuvem.com.br
+- Telefone: (11) 4020-1234
+- Central de Ajuda: ajuda.nuvem.com.br
+
+Problemas Comuns:
+1. Site fora do ar:
+  - Verifique status.nuvem.com.br
+  - Limpe cache
+  - Contate suporte
+
+2. Pagamento não processa:
+  - Verifique gateway
+  - Teste em modo sandbox
+  - Contate gateway
+
+3. Produtos não aparecem:
+   - Verifique status (ativo/inativo)
+   - Verifique estoque
+   - Limpe cache do site
+```
+Melhor Envio:
+```
+Suporte:
+- Email: suporte@melhorenvio.com.br
+- Chat: Seg-Sex 9h-18h
+- Central: melhorenvio.com.br/ajuda
+
+Problemas:
+1. Etiqueta não gera:
+  - Verifique dimensões/peso
+  - Verifique CEP
+  - Recarregue saldo
+
+2. Rastreio não atualiza:
+   - Aguarde 24h após postagem
+   - Verifique código
+   - Contate Correios
+```
+
+#9.4 BACKUP E SEGURANÇA
+
+Backup da Loja:
+```
+Nuvem (Automático):
+- Backup diário automático
+- Retenção: 30 dias
+- Restauração: Contate suporte
+
+Backup Manual:
+1. Produtos:
+  - Exporte CSV semanalmente
+  - Guarde em Google Drive
+
+2. Temas:
+  - Duplicar tema antes de editar
+  - Exporte tema personalizado
+
+3. Banco de Dados:
+   - Nuvem faz automático
+   - Não precisa se preocupar
+```
+
+Segurança:
+```
+SSL/HTTPS:
+- Ativado automaticamente
+- Verifique cadeado no navegador
+- Renovação automática
+
+Senhas Fortes:
+- Mínimo 12 caracteres
+- Letras maiúsculas/minúsculas
+- Números e símbolos
+- Troque a cada 90 dias
+- Use gerenciador (LastPass, 1Password)
+
+Acesso de Dois Fatores:
+- Ative em todas as plataformas
+- Nuvem
+- Email
+- Instagram
+- Google
+```
+
+
+
+
+10. CHECKLIST FINAL
+
+#10.1 PRÉ-LANÇAMENTO (30 DIAS)
+
+Semana 1:
+```
+[ ] Abrir MEI ou ME
+[ ] Obter CNPJ
+[ ] Abrir conta bancária PJ
+[ ] Registrar domínio .com.br
+[ ] Contratar hospedagem
+[ ] Criar email profissional
+[ ] Configurar certificado SSL
+```
+
+Semana 2:
+```
+[ ] Criar conta na Nuvem
+[ ] Configurar tema
+[ ] Upload logo
+[ ] Configurar cores/fontes
+[ ] Cadastrar primeiros 10 produtos
+[ ] Tirar fotos profissionais
+[ ] Escrever descrições completas
+```
+
+Semana 3:
+```
+[ ] Configurar gateway de pagamento
+[ ] Testar checkout completo
+[ ] Configurar Melhor Envio
+[ ] Testar cálculo de frete
+[ ] Configurar email marketing
+[ ] Criar popup de captura
+[ ] Instalar Pixel Facebook
+```
+
+Semana 4:
+```
+[ ] Configurar Instagram Business
+[ ] Criar 9 posts iniciais
+[ ] Configurar WhatsApp Business
+[ ] Escrever respostas rápidas
+[ ] Criar 3 posts de blog
+[ ] Testar site no mobile
+[ ] Testar velocidade (GTmetrix)
+[ ] Corrigir erros
+```
+
+#10.2 LANÇAMENTO (7 DIAS)
+
+Dia 1:
+```
+[ ] Publicar site
+[ ] Anunciar no Instagram
+[ ] Enviar email para lista
+[ ] Postar stories
+[ ] Ativar anúncios pagos
+```
+
+Dia 2-7:
+```
+[ ] Monitorar métricas
+[ ] Responder mensagens rápido
+[ ] Ajustar anúncios
+[ ] Post diário no Instagram
+[ ] Stories diários
+[ ] Atender primeiros clientes
+[ ] Coletar depoimentos
+```
+
+#10.3 PÓS-LANÇAMENTO (CONTÍNUO)
+
+Diário:
+```
+[ ] Verificar pedidos
+[ ] Responder mensagens
+[ ] Postar stories (5-10)
+[ ] Verificar estoque
+[ ] Monitorar anúncios
+```
+
+Semanal:
+```
+[ ] Post no feed (7x)
+[ ] Reels (3-4x)
+[ ] Post no blog (2x)
+[ ] Newsletter (1x)
+[ ] Análise de métricas
+[ ] Ajuste de anúncios
+[ ] Reposição de estoque
+```
+
+Mensal:
+```
+[ ] Inventário físico
+[ ] Análise financeira
+[ ] Pagamento de impostos
+[ ] Planejamento próximo mês
+[ ] Novos produtos
+[ ] Campanhas promocionais
+[ ] Parcerias influenciadores
+```
+
+
+
+
+📊 RESUMO DE CUSTOS INICIAIS
+#Investimento Único:
+```
+Abertura MEI:              R$ 0
+Registro domínio:           R$ 40
+Fotos profissionais:        R$ 500-1.500
+Estoque inicial (50 peças):   R$ 2.000-3.000
+Embalagens (100 un):          R$ 200
+Impressora térmica:          R$ 800 (opcional)
+Material expedição:         R$ 200
+Certificado Digital:       R$ 200-400/ano
+-
+TOTAL:                   R$ 3.940-6.540
+```
+
+#Custos Mensais Fixos:
+```
+MEI (DAS):             R$ 77,90
+Nuvem (plano inicial):       R$ 59
+Domínio (anual/12):          R$ 3,33
+Email profissional:        R$ 0-30
+Melhor Envio:              R$ 0
+WhatsApp Business:             R$ 0
+Instagram:                R$ 0
+-
+TOTAL:                    R$ 140-170/mês
+```
+
+#Custos Variáveis (por venda):
+```
+Taxa gateway (cartão):       4.99% + R$ 0,50
+Taxa gateway (PIX):         0.99%
+Embalagem:                R$ 2-5
+Frete médio:             R$ 15-35
+Custo produto:            R$ 45-120
+-
+```
+
+
+
+
+🎯 PRÓXIMOS PASSOS IMEDIATOS
+HOJE:
+1. [ ] Abrir MEI (portaldoempreendedor.gov.br)
+2. [ ] Registrar domínio (registro.br)
+3. [ ] Contratar Hostinger (R$ 11,99/mês)
+
+AMANHÃ:
+4. [ ] Criar conta na Nuvem
+5. [ ] Configurar tema básico
+6. [ ] Cadastrar 3 produtos piloto
+
+ESTA SEMANA:
+7. [ ] Tirar fotos profissionais
+8. [ ] Configurar Mercado Pago
+9. [ ] Configurar Melhor Envio
+10. [ ] Criar Instagram profissional
+
+PRÓXIMA SEMANA:
+11. [ ] Cadastrar todos os produtos
+12. [ ] Escrever descrições SEO
+13. [ ] Testar checkout completo
+14. [ ] Preparar campanha lançamento
+📞 CONTATOS ÚTEIS
+Sebrae Sergipe:
+- Telefone: 0800 570 0800
+- Site: sebrae.com.br/sites/PortalSebrae/se
+- Consultoria gratuita
+
+Prefeitura de Aracaju:
+- Alvará: (79) 3218-2000
+- Site: aracaju.se.gov.br
+
+SEFAZ/SE:
+- Inscrição Estadual: (79) 3218-2500
+- Site: sefaz.se.gov.br
+
+Correios Aracaju:
+- Agência Central: (79) 3211-5400
+- Site: correios.com.br
+
+Suporte Nuvem:
+- Chat 24/7: nuvem.com.br
+- Email: suporte@nuvem.com.br
+
+
+
+
+"O sucesso é a soma de pequenos esforços repetidos dia após dia."
+
+Boa sorte! A Arte Que Veste merece brilhar!   🚀✨
+
+Documento elaborado em: 20 de junho de 2026
+Local: Aracaju, Sergipe, Brasil
+
+ 📚
+Validade: Revisar a cada 6 meses
+#    MANUAL COMPLETO DE IMPLANTAÇÃO - ARTE QUE VESTE
+Guia Forense Passo a Passo para Operação em Aracaju/SE
+
+
+
+
+📋 ÍNDICE GERAL
+1. [ASPECTOS LEGAIS E TRIBUTÁRIOS](#1-aspectos-legais-e-tributários)
+2. [HOSPEDAGEM E DOMÍNIO](#2-hospedagem-e-domínio)
+3. [CONFIGURAÇÃO DA PLATAFORMA](#3-configuração-da-plataforma)
+4. [GATEWAYS DE PAGAMENTO](#4-gateways-de-pagamento)
+5. [LOGÍSTICA E TRANSPORTADORAS](#5-logística-e-transportadoras)
+6. [GESTÃO DE ESTOQUE](#6-gestão-de-estoque)
+7. [EDIÇÃO DE PRODUTOS](#7-edição-de-produtos)
+8. [MARKETING DIGITAL](#8-marketing-digital)
+9. [SUPORTE TÉCNICO](#9-suporte-técnico)
+10. [CHECKLIST FINAL](#10-checklist-final)
+
+
+
+
+1. ASPECTOS LEGAIS E TRIBUTÁRIOS
+
+#1.1 ABERTURA DE EMPRESA
+
+Opção 1: MEI (Microempreendedor Individual)
+- Custo: Gratuito
+- Faturamento máximo: R$ 81.000/ano (2024)
+- Imposto mensal: R$ 77,90 (comércio) ou R$ 81,90 (serviço)
+- CNAEs recomendados:
+  - 4781-4/00 - Comércio varejista de artigos do vestuário e acessórios
+  - 4789-0/99 - Comércio varejista de outros produtos não especificados anteriormente
+  - 7490-1/04 - Atividades de intermediação e agenciamento de serviços e negócios em
+geral
+
+Passo a Passo MEI:
+1. Acesse: portaldoempreendedor.gov.br
+2. Clique em "Formalize-se"
+3. Preencha dados pessoais
+4. Selecione CNAEs principais e secundários
+5. Informe endereço em Aracaju/SE
+6. Confirme e gere CNPJ
+7. Tempo: 2-3 dias úteis
+8. Custo: Zero
+
+Opção 2: Simples Nacional (ME)
+- Custo de abertura: R$ 500-1.500 (contador)
+- Faturamento: Até R$ 360.000/ano
+- Imposto: 4-19% sobre faturamento (Anexo I ou III)
+- Vantagem: Permite mais de 1 MEI, emite NF para PJ
+
+Documentos Necessários:
+- RG e CPF
+- Comprovante de residência
+- Título de eleitor
+- Certificado Digital e-CNPJ (opcional inicial)
+
+#1.2 INSCRIÇÃO ESTADUAL
+
+Obrigatório para comércio:
+1. Acesse: www.sefaz.se.gov.br
+2. Solicite Inscrição Estadual
+3. Custo: Gratuito
+4. Prazo: 5-10 dias úteis
+
+#1.3 ALVARÁ DE FUNCIONAMENTO
+
+Para Aracaju/SE:
+1. Prefeitura Municipal de Aracaju
+2. Secretaria de Planejamento
+3. Custo: R$ 100-300 (varia por atividade)
+4. Prazo: 15-30 dias
+
+#1.4 IMPOSTOS E TRIBUTOS
+
+MEI - Mensal:
+- DAS MEI: R$ 77,90 (comércio)
+- Vencimento: Todo dia 20
+- Pagamento: Guia DAS no SIMEI
+
+Simples Nacional:
+- Anexo I (Comércio):
+  - Até R$ 180.000/ano: 4%
+  - De R$ 180.001 a R$ 360.000: 7%
+
+- Anexo III (Serviços):
+  - Até R$ 180.000/ano: 6%
+  - De R$ 180.001 a R$ 360.000: 11,5%
+
+ICMS (Sergipe):
+- Operação interna: 18%
+- Interestadual:
+  - Sul/Sudeste (exceto ES): 7%
+  - Norte/Nordeste/Centro-Oeste/ES: 12%
+
+Diferencial de Alíquota (DIFAL):
+- Quando vende para consumidor final em outro estado
+- Diferença entre alíquota interna e interestadual
+
+PIS/COFINS:
+- MEI: Isento
+- Simples Nacional: Incluído no DAS
+
+#1.5 NOTA FISCAL ELETRÔNICA (NF-e)
+
+Obrigatório para ME e opcional para MEI:
+
+Emissão Gratuita:
+1. NFe.io - 50 NFs/mês grátis
+2. Emissor Gratuito SEFAZ/SE - Ilimitado
+3. Sebrae SE - Emissor gratuito
+Configuração:
+1. Certificado Digital e-CNPJ (R$ 200-400/ano)
+2. Credenciamento na SEFAZ/SE
+3. Software emissor
+4. Custo anual: R$ 200-600
+
+
+
+
+2. HOSPEDAGEM E DOMÍNIO
+
+#2.1 MELHORES OPÇÕES DE HOSPEDAGEM
+
+OPÇÃO 1: HOSTINGER (Melhor Custo-Benefício)
+- Plano Single: R$ 11,99/mês (primeiro ano)
+- Domínio: .com.br grátis 1 ano
+- SSL: Gratuito
+- Espaço: 50 GB SSD
+- Tráfego: Ilimitado
+- Suporte: 24/7 em português
+- Localização: Servidores no Brasil
+- Renovação: R$ 19,99/mês
+
+
+ ✅
+Vantagens:
+
+ ✅
+-   Mais barato
+
+ ✅
+-   Servidor no Brasil (velocidade)
+
+ ✅
+-   Painel intuitivo
+-   30 dias de garantia
+
+OPÇÃO 2: HOSTGATOR (Tradicional)
+- Plano P: R$ 16,74/mês (anual)
+- Domínio: .com.br grátis
+- SSL: Gratuito
+- Espaço: Ilimitado
+- Renovação: R$ 27,90/mês
+
+OPÇÃO 3: KINGHOST (Nacional)
+- Plano Linux Start: R$ 14,90/mês
+- Domínio: .com.br grátis 1 ano
+- SSL: Gratuito
+- Suporte: Brasileiro
+- Renovação: R$ 24,90/mês
+
+OPÇÃO 4: LOCAWEB (Premium)
+- Plano Starter: R$ 29,90/mês
+- Qualidade: Excelente
+- Suporte: Top de linha
+- Recomendado: Para quem pode investir mais
+#2.2 REGISTRO DE DOMÍNIO
+
+Registro.br (Oficial .com.br):
+- Custo: R$ 40/ano
+- Site: registro.br
+- Obrigatório: CNPJ ou CPF
+- Tempo: 3-5 dias úteis
+
+Passo a Passo:
+1. Acesse registro.br
+2. Verifique disponibilidade: artequeveste.com.br
+3. Clique em "Registre-se"
+4. Preencha dados do titular (CNPJ)
+5. Pague boleto (R$ 40)
+6. Configure DNS após aprovação
+
+#2.3 CONFIGURAÇÃO DE DNS
+
+Apontar Domínio para Hospedagem:
+
+Nameservers (Hostinger):
+```
+ns1.hostinger.com
+ns2.hostinger.com
+```
+
+Registro A (se necessário):
+```
+Tipo: A
+Nome: @
+Valor: IP do servidor (fornecido pela hospedagem)
+TTL: 14400
+```
+
+Configuração no Registro.br:
+1. Acesse registro.br
+2. Clique no domínio
+3. Alterar DNS
+4. Insira nameservers da Hostinger
+5. Aguarde 24-48h propagação
+
+#2.4 CERTIFICADO SSL/HTTPS
+
+Gratuito (Let's Encrypt):
+- Incluído em todas as hospedagens
+- Ativado automaticamente
+- Renovação automática
+Configuração:
+1. Painel de controle (cPanel/hPanel)
+2. SSL/TLS
+3. Selecione domínio
+4. Clique em "Instalar"
+5. Forçar HTTPS
+
+
+
+
+3. CONFIGURAÇÃO DA PLATAFORMA
+
+#3.1 ESCOLHA DA PLATAFORMA
+
+OPÇÃO 1: NUUVEM (Recomendada)
+- Plano Inicial: R$ 59/mês
+- Vantagens:
+  - Brasileira
+  - Suporte em português
+  - Integração Correios/Melhor Envio
+  - Temas responsivos
+  - App mobile
+  - Ideal para moda
+
+OPÇÃO 2: SHOPIFY
+- Plano Básico: R$ 107/mês
+- Vantagens:
+  - Global
+  - Apps ilimitados
+  - Alta escalabilidade
+- Desvantagens:
+  - Mais cara
+  - Apps pagos adicionais
+
+OPÇÃO 3: TRAY
+- Plano Start: R$ 49/mês
+- Vantagens:
+  - Custo-benefício
+  - Marketplace integrado
+  - Nacional
+
+OPÇÃO 4: WOOCommerce (WordPress)
+- Custo: Gratuito (software)
+- Hospedagem: R$ 20-40/mês
+- Vantagens:
+  - Total controle
+  - Sem mensalidade plataforma
+- Desvantagens:
+ - Requer conhecimento técnico
+ - Manutenção própria
+
+#3.2 CONFIGURAÇÃO NUUVEM (Passo a Passo)
+
+1. Criação da Conta:
+```
+1. Acesse nuuvem.com.br
+2. Clique "Começar grátis"
+3. Preencha:
+   - Nome completo
+   - Email
+   - Senha
+   - CNPJ
+4. Confirme email
+5. Complete cadastro
+```
+
+2. Configuração da Loja:
+```
+Dados da Loja:
+- Nome: Arte Que Veste
+- Email: contato@artequeveste.com.br
+- Telefone: (79) XXXXX-XXXX
+- Endereço: Rua XXX, nº XX, Bairro, Aracaju/SE, CEP 49XXX-XXX
+
+Configurações:
+- Moeda: Real (R$)
+- Fuso horário: Brasília (GMT-3)
+- Idioma: Português
+```
+
+3. Escolha do Tema:
+```
+Temas Recomendados:
+- Minimal (gratuito)
+- Fashion (gratuito)
+- Store (gratuito)
+
+Personalização:
+- Logo: Upload logo ARTE QUE VESTE
+- Cores:
+  - Primária: #40E0D0 (Turquesa)
+  - Secundária: #FF1493 (Rosa)
+  - Texto: #1a1a1a (Preto)
+- Fontes: Playfair Display (títulos) + Inter (corpo)
+```
+4. Configuração de Produtos:
+```
+Cadastro de Produto:
+1. Produtos > Adicionar Produto
+2. Preencha:
+   - Nome: Camiseta Bumba Meu Boi
+   - Descrição: Texto completo
+   - Preço: R$ 129,00
+   - Preço de custo: R$ 45,00
+   - SKU: CAM-BMB-001
+   - Estoque: 20 unidades
+   - Peso: 200g
+   - Dimensões: 30x25x3 cm
+
+3. Imagens:
+  - Foto principal (mínimo 1000x1000px)
+  - Fotos adicionais (mínimo 3)
+  - Vídeo (opcional)
+
+4. Variações:
+  - Tamanhos: P, M, G, GG
+  - Cores: Turquesa, Branco, Preto
+
+5. SEO:
+   - Título: Camiseta Bumba Meu Boi - Arte Que Veste
+   - Descrição: Camiseta com xilogravura...
+   - Palavras-chave: xilogravura, camiseta, nordeste
+```
+
+#3.3 MIGRAÇÃO DE PRODUTOS EM MASSA
+
+Via CSV (Planilha):
+```
+1. Exporte modelo CSV da Nuvem
+2. Preencha colunas:
+   - sku, name, description, price, cost_price
+   - stock, weight, width, height, depth
+   - category, images, variations
+
+3. Importe CSV
+4. Revise produtos
+5. Publique
+```
+
+Modelo CSV:
+```csv
+sku,name,description,price,cost_price,stock,weight,width,height,depth,category
+CAM-BMB-001,"Camiseta Bumba Meu Boi","Xilogravura em algodão
+premium",129.00,45.00,20,0.200,30,25,3,Camisetas
+KIM-CP-001,"Kimono Cultura Popular","Seda com estampa
+xilogravura",249.00,95.00,10,0.350,35,30,5,Kimonos
+```
+
+
+
+
+4. GATEWAYS DE PAGAMENTO
+
+#4.1 PRINCIPAIS OPÇÕES
+
+OPÇÃO 1: MERCADO PAGO (Recomendado)
+- Taxas:
+  - Cartão à vista: 4.99% + R$ 0,50
+  - Cartão parcelado: 5.99% + R$ 0,50/parcela
+  - PIX: 0.99%
+  - Boleto: R$ 2,00
+
+- Liberação:
+  - À vista: 14 dias
+  - Parcelado: conforme parcelas
+
+- Vantagens:
+  - Reconhecido
+  - Fácil integração
+  - Checkout transparente
+  - Antecipação disponível
+
+Configuração:
+```
+1. Crie conta: mercadopago.com.br
+2. Ative conta (envie documentos)
+3. Obtenha credenciais:
+   - Public Key
+   - Access Token
+4. Na Nuvem:
+   - Configurações > Pagamentos
+   - Mercado Pago
+   - Cole credenciais
+   - Ative
+```
+
+OPÇÃO 2: PAGBANK (PAGSEGURO)
+- Taxas:
+  - Cartão à vista: 3.99% + R$ 0,40
+  - PIX: 1.99%
+  - Boleto: R$ 2,00
+- Vantagens:
+  - Taxas competitivas
+  - Popular no Brasil
+  - Antecipação
+
+OPÇÃO 3: ASAAS
+- Taxas:
+  - Cartão: 2.99% + R$ 0,49
+  - PIX: 0.99%
+  - Boleto: R$ 1,99
+
+- Vantagens:
+  - Menores taxas
+  - Cobrança recorrente
+  - API robusta
+
+OPÇÃO 4: NUUVEM PAGO
+- Taxas:
+  - Cartão: 3.59% + R$ 0,50
+  - PIX: 0.99%
+  - Boleto: R$ 1,50
+
+- Vantagens:
+  - Integrado Nuvem
+  - Sem burocracia
+  - Liberação rápida
+
+#4.2 CONFIGURAÇÃO DE PARCELAMENTO
+
+Recomendado:
+```
+- Mínimo por parcela: R$ 5,00
+- Máximo de parcelas: 12x
+- Parcelas sem juros: 3x ou 6x
+- Juros: Por conta da loja ou cliente
+```
+
+Exemplo de Configuração:
+```
+1x a 3x: Sem juros
+4x a 6x: Sem juros (loja absorve)
+7x a 12x: Com juros (cliente paga)
+```
+
+#4.3 PIX - CONFIGURAÇÃO
+
+Obrigatório ter:
+```
+1. QR Code dinâmico
+2. Aprovação automática
+3. Baixa automática no pedido
+4. Desconto de 5% para PIX (opcional)
+```
+
+Vantagens:
+- Aprovação imediata
+- Taxa baixa (0.99%)
+- Disponível 24/7
+- Sem chargeback
+
+#4.4 BOLETO BANCÁRIO
+
+Configuração:
+```
+- Banco: Itaú, Bradesco, Santander
+- Juros: 0,10% ao dia (máx 30 dias)
+- Multa: 2% após vencimento
+- Validade: 30 dias
+```
+
+
+
+
+5. LOGÍSTICA E TRANSPORTADORAS
+
+#5.1 MELHOR ENVIO (Recomendado)
+
+O que é:
+- Plataforma comparadora de fretes
+- Descontos de até 70%
+- Integração com Correios e transportadoras
+
+Custo:
+- Grátis para usar
+- Paga apenas o frete
+
+Cadastro:
+```
+1. Acesse: melhorenvio.com.br
+2. Crie conta (CNPJ)
+3. Configure:
+   - CEP de origem: 49XXX-XXX (Aracaju)
+   - Dimensões padrão dos produtos
+   - Peso padrão
+4. Integre com Nuvem:
+   - Configurações > Frete
+   - Melhor Envio
+   - API Key
+```
+
+Transportadoras Disponíveis:
+```
+Correios:
+- PAC: 7-15 dias úteis
+- SEDEX: 3-7 dias úteis
+- SEDEX 10: 1-2 dias úteis (capital)
+
+Privadas:
+- Jadlog: 5-12 dias
+- Azul Cargo: 1-3 dias (urgente)
+- Loggi: 2-5 dias (capitais)
+```
+
+#5.2 CORREIOS DIRETO
+
+Cadastro:
+```
+1. Acesse: correios.com.br
+2. Cartão de Postagem
+3. Envie documentação:
+   - CNPJ
+   - Inscrição Estadual
+   - Contrato social
+4. Taxa: R$ 0-100/mês (volume)
+```
+
+Serviços:
+```
+PAC:
+- Prazo: 7-15 dias
+- Preço: Mais barato
+- Rastreamento: Sim
+
+SEDEX:
+- Prazo: 3-7 dias
+- Preço: Médio
+- Rastreamento: Sim
+
+SEDEX 10:
+- Prazo: Entrega até 10h
+- Preço: Alto
+- Disponibilidade: Capitais
+```
+#5.3 FRETE GRÁTIS
+
+Estratégia:
+```
+Opção 1: Condicional
+- Compras acima de R$ 299
+- Repassar no preço do produto
+
+Opção 2: Parcial
+- Cliente paga 50% do frete
+- Loja subsidia 50%
+
+Opção 3: Fixo
+- Frete único: R$ 15-25
+- Independente do destino
+```
+
+Cálculo:
+```
+Preço do Produto: R$ 129
+Custo Real: R$ 45
+Frete Médio: R$ 20
+Lucro: R$ 129 - R$ 45 - R$ 20 = R$ 64
+```
+
+#5.4 EMBALAGENS
+
+Tipos Recomendadas:
+```
+1. Envelopes Plásticos:
+   - Tamanho P: 16x24cm - R$ 0,30/un
+   - Tamanho M: 24x34cm - R$ 0,45/un
+   - Tamanho G: 32x42cm - R$ 0,60/un
+
+2. Caixas de Papelão:
+  - P: 20x15x10cm - R$ 1,50/un
+  - M: 30x20x15cm - R$ 2,50/un
+  - G: 40x30x20cm - R$ 4,00/un
+
+3. Fita Adesiva:
+  - Rolo 50m: R$ 8,00
+
+4. Etiqueta de Envio:
+   - Impressora térmica: R$ 800-1.500
+   - Ou impressora comum + saco plástico
+```
+
+Onde Comprar:
+```
+- Mercado Livre
+- Shopee
+- Amazon
+- Embalax (embalax.com.br)
+- Plásticos Aracaju (local)
+```
+
+#5.5 PROCESSO DE ENVIO
+
+Passo a Passo Diário:
+```
+1. Acesse Nuvem > Pedidos
+2. Filtre: "Pagos" ou "Aguardando envio"
+3. Separe produtos no estoque
+4. Embale com cuidado:
+   - Produto
+   - Brinde (opcional)
+   - Agradecimento
+   - Cartão de visita
+5. Pese e meça
+6. Gere etiqueta no Melhor Envio
+7. Cole etiqueta na embalagem
+8. Leve aos Correios/Transportadora
+9. Atualize status: "Enviado"
+10. Envie código de rastreio ao cliente
+```
+
+Tempo de Postagem:
+```
+- Pedido até 14h: Envio mesmo dia
+- Pedido após 14h: Envio próximo dia útil
+- Prazo máximo: 2 dias úteis
+```
+
+
+
+
+6. GESTÃO DE ESTOQUE
+
+#6.1 CONTROLE FÍSICO
+
+Planilha de Controle:
+```
+Colunas:
+- SKU
+- Nome do Produto
+- Tamanho/Cor
+- Quantidade Atual
+- Quantidade Mínima
+- Quantidade Máxima
+- Fornecedor
+- Preço de Custo
+- Última Entrada
+- Última Saída
+- Status (OK/Repor)
+```
+
+Modelo de Planilha:
+```
+SKU     | Produto        | Tam | Cor  | Qtd | Mín | Fornec    | Custo
+CAM-BMB-001| Camiseta Bumba Meu Boi| P | Turquesa | 15 | 5 | Malharia Silva | R$ 45
+CAM-BMB-002| Camiseta Bumba Meu Boi| M | Turquesa | 20 | 5 | Malharia Silva | R$ 45
+KIM-CP-001 | Kimono Cultura Pop | Ú | Variado | 8 | 3 | Tecidos Norte | R$ 95
+```
+
+#6.2 CONTROLE DIGITAL (NUVEM)
+
+Configuração:
+```
+1. Produtos > Estoque
+2. Ative "Controlar estoque"
+3. Defina:
+   - Quantidade inicial
+   - Estoque mínimo (alerta)
+   - Permite venda sem estoque? (Não)
+4. Atualize manualmente ou via CSV
+```
+
+Alertas de Estoque Baixo:
+```
+Configure:
+- Email de alerta: seu@email.com
+- Quantidade mínima: 5 unidades
+- Frequência: Diário
+```
+
+#6.3 ENTRADA DE PRODUTOS
+
+Processo:
+```
+1. Receba mercadoria do fornecedor
+2. Confira nota fiscal
+3. Verifique qualidade:
+   - Costuras
+   - Estampas
+   - Tamanhos
+   - Cores
+4. Conte unidades
+5. Armazene em local adequado
+6. Atualize sistema:
+   - Nuvem > Produtos > Estoque
+   - Adicione quantidade
+   - Registre data
+   - Anote fornecedor
+```
+
+Nota Fiscal de Entrada:
+```
+Obrigatório para ME:
+- Registre no sistema contábil
+- Arquive por 5 anos
+- Controle de ICMS
+```
+
+#6.4 SAÍDA DE PRODUTOS
+
+Processo de Venda:
+```
+1. Pedido confirmado na Nuvem
+2. Sistema baixa estoque automaticamente
+3. Separe produto físico
+4. Embale
+5. Envie
+6. Confirme envio no sistema
+7. Estoque atualizado automaticamente
+```
+
+Devoluções/Trocas:
+```
+1. Cliente solicita troca
+2. Receba produto de volta
+3. Verifique estado:
+   - Novo: Retorna ao estoque
+   - Usado/Danificado: Baixa como perda
+4. Atualize sistema:
+   - Adicione ao estoque (se novo)
+   - Ou registre perda
+5. Envie novo produto ou estorne
+```
+
+#6.5 INVENTÁRIO FÍSICO
+
+Quando Fazer:
+- Mensalmente (recomendado)
+- Trimestralmente (mínimo)
+- Antes de grandes promoções
+- Após mudanças no estoque
+
+Processo:
+```
+1. Imprima lista de produtos
+2. Conte fisicamente cada item
+3. Anote quantidades reais
+4. Compare com sistema
+5. Ajuste diferenças:
+   - Sistema: 20
+   - Físico: 18
+   - Ajuste: -2
+6. Investigue discrepâncias:
+   - Roubo?
+   - Erro de digitação?
+   - Produto danificado?
+7. Atualize sistema
+8. Assine e arquive
+```
+
+Planilha de Inventário:
+```
+Data: __/__/____
+Responsável: ________________
+
+Produto: Camiseta Bumba Meu Boi
+SKU: CAM-BMB-001
+
+Tamanho | Sistema | Físico | Diferença | Ajuste
+P   | 15    | 14 | -1       | -1
+M    | 20    | 20 | 0        |0
+G   | 18    | 17 | -1        | -1
+GG     | 10    | 10 | 0        |0
+
+Total de Itens: 63
+Diferenças: -2
+Justificativa: Produto extraviado na expedição
+Assinatura: ___________________
+```
+
+#6.6 REPOSIÇÃO DE ESTOQUE
+
+Quando Repor:
+
+✅
+```
+
+✅
+    Quando atingir estoque mínimo
+    30 dias antes de datas comemorativas
+✅ Quando produto estiver esgotado
+✅ Quando houver previsão de alta demanda
+✅ Após análise de vendas mensais
+```
+
+Cálculo de Reposição:
+```
+Fórmula:
+Qtd a Comprar =
+  (Média Vendas Mensais x Lead Time) +
+  Estoque Segurança -
+  Estoque Atual
+
+Exemplo:
+- Média vendas Camiseta: 20 unid/mês
+- Lead time (entrega fornecedor): 15 dias (0.5 mês)
+- Estoque segurança: 10 unidades
+- Estoque atual: 5 unidades
+
+Qtd a comprar = (20 x 0.5) + 10 - 5 = 15 unidades
+```
+
+Fornecedores Recomendados:
+```
+Camisetas Brancas:
+- Malharia Silva (Aracaju/SE)
+  - Telefone: (79) XXXX-XXXX
+  - MOQ: 50 peças
+  - Preço: R$ 25-35/un
+
+- Malharia Nordeste (Recife/PE)
+  - Telefone: (81) XXXX-XXXX
+  - MOQ: 100 peças
+  - Preço: R$ 22-30/un
+
+Estamparia/Xilogravura:
+- Mestre Nivaldo Oliveira (São Cristóvão/SE)
+  - Parceria estabelecida
+  - Preço: R$ 10-15/peça estampada
+
+Kimonos/Seda:
+- Tecidos Norte (São Paulo/SP)
+  - Telefone: (11) XXXX-XXXX
+  - MOQ: 20 peças
+  - Preço: R$ 80-120/metro
+```
+
+#6.7 ARMAZENAMENTO
+Condições Ideais:
+
+✅
+```
+
+✅
+    Local seco e arejado
+
+✅
+    Temperatura: 20-25°C
+
+✅
+    Umidade: 50-60%
+
+✅
+    Longe da luz solar direta
+
+✅
+    Longe de umidade
+    Protegido de pragas (traças)
+```
+
+Organização Física:
+```
+1. Separe por categoria:
+   - Camisetas
+   - Kimonos
+   - Vestidos
+   - Acessórios
+   - Souvenirs
+
+2. Dentro de cada categoria:
+  - Por tamanho (P, M, G, GG)
+  - Por cor
+  - Por modelo
+
+3. Use etiquetas:
+  - Nome do produto
+  - Tamanho
+  - Código SKU
+  - Quantidade
+
+4. Prateleiras:
+   - Altura: 1,80m máximo
+   - Profundidade: 40-50cm
+   - Identificação clara
+```
+
+Embalagem para Armazenamento:
+
+✅
+```
+
+✅
+    Sacos plásticos com zíper
+
+✅
+    Caixas organizadoras
+
+✅
+    Prateleiras identificadas
+
+✅
+    Cabides para peças penduradas
+    Gavetas organizadas
+```
+7. EDIÇÃO DE PRODUTOS
+
+#7.1 ADICIONAR NOVO PRODUTO
+
+Passo a Passo Nuvem:
+```
+1. Acesse: Produtos > Adicionar Produto
+
+2. Informações Básicas:
+  - Nome: Camiseta Bumba Meu Boi
+  - Descrição Completa:
+    "Camiseta 100% algodão premium com estampa
+    de xilogravura do Bumba Meu Boi, tradição
+    nordestina. Estampa feita artesanalmente
+    pelo Mestre Nivaldo Oliveira em São
+    Cristóvão/SE.
+
+   Características:
+   - Tecido: Algodão 30.1 penteado
+   - Gramatura: 160g/m²
+   - Estampa: Xilogravura artesanal
+   - Acabamento: Costura reforçada
+   - Gola: Redonda com ribana
+   - Etiqueta: Sem etiqueta (conforto)
+
+   Cuidados:
+   - Lavar à mão ou máquina (água fria)
+   - Não usar alvejante
+   - Secar à sombra
+   - Passar em temperatura média"
+
+3. Preço:
+  - Preço de venda: R$ 129,00
+  - Preço de custo: R$ 45,00
+  - Preço promocional: R$ 115,00 (opcional)
+  - Data início/fim promoção
+
+4. SKU:
+  - Código único: CAM-BMB-001
+  - Use padrão: CATEGORIA-MODELO-NUMERO
+
+5. Estoque:
+  - Controle: Sim
+  - Quantidade: 50
+  - Estoque mínimo: 10
+  - Permite compra sem estoque: Não
+
+6. Peso e Dimensões:
+ - Peso: 0,200 kg (200g)
+ - Largura: 30 cm
+ - Altura: 25 cm
+ - Profundidade: 3 cm
+
+7. Imagens:
+  - Foto principal: 1000x1000px mínimo
+  - Fotos adicionais: Mínimo 3
+    - Frente
+    - Costas
+    - Detalhe da estampa
+    - Modelo vestindo
+  - Formato: JPG ou PNG
+  - Tamanho: Máx 5MB cada
+
+8. Variações:
+  - Tamanhos: P, M, G, GG, XG
+  - Cores: Turquesa, Branco, Preto
+
+ Para cada variação:
+ - SKU único
+ - Preço (pode ser diferente)
+ - Estoque individual
+ - Imagem específica (opcional)
+
+9. Categorias:
+  - Principal: Camisetas
+  - Secundária: Moda Masculina/Feminina
+
+10. Tags/Palavras-chave:
+  - xilogravura
+  - bumba meu boi
+  - camiseta
+  - nordeste
+  - arte que veste
+  - mestre nivaldo
+
+11. SEO:
+  - Título SEO: Camiseta Bumba Meu Boi - Xilogravura Nordestina | Arte Que Veste
+  - Meta descrição: Camiseta com estampa de xilogravura do Bumba Meu Boi. Arte
+nordestina autêntica do Mestre Nivaldo. Algodão premium.
+  - URL amigável: camiseta-bumba-meu-boi-xilogravura
+
+12. Status:
+  - Ativo (publicado)
+  - Rascunho (não publicado)
+  - Agendado (publicar em data específica)
+13. Salvar
+```
+
+#7.2 EDITAR PRODUTO EXISTENTE
+
+Alterar Preço:
+```
+1. Produtos > Lista de Produtos
+2. Busque produto: "Camiseta Bumba Meu Boi"
+3. Clique em Editar
+4. Altere:
+   - Preço de venda: R$ 129,00 → R$ 139,00
+5. Salvar
+6. Sistema atualiza automaticamente
+```
+
+Alterar Estoque:
+```
+1. Produtos > Estoque
+2. Busque produto
+3. Altere quantidade:
+   - Atual: 20
+   - Nova: 35
+4. Motivo: "Reposição de estoque"
+5. Salvar
+```
+
+Alterar Imagens:
+```
+1. Produtos > Editar Produto
+2. Seção Imagens
+3. Para remover:
+   - Clique no X da imagem
+4. Para adicionar:
+   - Arraste nova imagem
+   - Ou clique "Upload"
+5. Defina imagem principal (arraste para primeira posição)
+6. Salvar
+```
+
+Alterar Descrição:
+```
+1. Produtos > Editar Produto
+2. Campo Descrição
+3. Edite texto
+4. Use formatação:
+   - <strong>texto</strong> (negrito)
+   - <em>texto</em> (itálico)
+   - <ul><li>item</li></ul> (lista)
+5. Salvar
+```
+
+#7.3 EXCLUIR/DESATIVAR PRODUTO
+
+Desativar (Recomendado):
+```
+1. Produtos > Editar Produto
+2. Status: Ativo → Inativo
+3. Salvar
+
+Vantagens:
+- Produto some da loja
+- Mantém histórico de vendas
+- Pode reativar depois
+- Não perde dados
+```
+
+Excluir (Cuidado!):
+```
+1. Produtos > Editar Produto
+2. Clique em Excluir
+3. Confirme exclusão
+
+Atenção:
+- Exclusão permanente
+- Perde histórico de vendas
+- Não pode desfazer
+- Só use se produto nunca vendeu
+```
+
+Excluir em Massa:
+```
+1. Produtos > Lista
+2. Marque checkboxes dos produtos
+3. Ações em Massa > Excluir
+4. Confirme
+```
+
+#7.4 DUPLICAR PRODUTO
+
+Para criar variação:
+```
+1. Produtos > Editar Produto
+2. Clique em Duplicar
+3. Sistema cria cópia exata
+4. Edite:
+   - Nome: Camiseta Bumba Meu Boi - Cor Branca
+   - SKU: CAM-BMB-002
+   - Cor: Branco
+   - Imagens: Troque fotos
+5. Salvar
+```
+
+#7.5 IMPORTAR/EXPORTAR PRODUTOS
+
+Exportar para Backup:
+```
+1. Produtos > Lista
+2. Clique em Exportar
+3. Formato: CSV ou Excel
+4. Campos: Todos
+5. Download arquivo
+6. Guarde em local seguro
+```
+
+Importar em Massa:
+```
+1. Baixe modelo CSV da Nuvem
+2. Preencha planilha:
+   - sku, name, description, price
+   - cost_price, stock, weight
+   - width, height, depth
+   - category, images
+
+3. Salve como CSV (UTF-8)
+4. Produtos > Importar
+5. Selecione arquivo CSV
+6. Mapeie colunas
+7. Importar
+8. Revise produtos importados
+```
+
+Modelo CSV Completo:
+```csv
+sku,name,description,price,cost_price,stock,weight,width,height,depth,category,tags,status
+CAM-BMB-001,"Camiseta Bumba Meu Boi","Xilogravura em algodão
+premium",129.00,45.00,20,0.200,30,25,3,"Camisetas","xilogravura,bumba meu boi",ativo
+CAM-BMB-002,"Camiseta Bumba Meu Boi - Branco","Xilogravura em algodão
+premium",129.00,45.00,15,0.200,30,25,3,"Camisetas","xilogravura,bumba meu boi",ativo
+KIM-CP-001,"Kimono Cultura Popular","Seda com estampa
+xilogravura",249.00,95.00,8,0.350,35,30,5,"Kimonos","seda,xilogravura",ativo
+BOL-TB-001,"Bolsa Tote Bag Nordestina","Algodão cru com alças
+naturais",89.00,32.00,25,0.150,40,35,2,"Acessórios","bolsa,tote bag",ativo
+CAN-XIL-001,"Caneca Xilogravura","Cerâmica com arte
+nordestina",49.00,18.00,30,0.400,12,12,10,"Souvenirs","caneca,cerâmica",ativo
+VES-FJ-001,"Vestido Festa Junina","Viscose com estampa
+exclusiva",299.00,120.00,6,0.300,35,30,3,"Vestidos","vestido,festa junina",ativo
+```
+
+
+
+
+8. MARKETING DIGITAL
+
+#8.1 INSTAGRAM (@artequeveste79)
+
+Configuração Profissional:
+```
+1. Converta para Conta Comercial:
+   - Configurações > Conta
+   - Mudar para conta profissional
+   - Categoria: Loja de roupas
+
+2. Complete Bio:
+
+                                          🎨
+  - Nome: Arte Que Veste
+
+                                          🌎
+  - Bio: "Xilogravura nordestina em tecido
+        De São Cristóvão/SE para o mundo
+
+      👇
+        @mestrenivaldo
+            Compre agora"
+  - Link: artequeveste.com.br
+  - Email: contato@artequeveste.com.br
+  - Telefone: (79) XXXXX-XXXX
+  - Endereço: Aracaju/SE
+
+3. Destaques:
+   - Novidades
+   - Bastidores
+   - Depoimentos
+   - Como Comprar
+   - Tamanho
+   - FASC
+```
+
+Estratégia de Conteúdo:
+```
+Frequência:
+- Feed: 1 post/dia
+- Stories: 5-10/dia
+- Reels: 3-4/semana
+- IGTV: 1/semana
+
+Tipos de Conteúdo:
+1. Produto (40%):
+  - Fotos profissionais
+  - Modelos vestindo
+  - Detalhes da estampa
+  - Cores disponíveis
+
+2. Bastidores (25%):
+  - Mestre Nivaldo trabalhando
+  - Processo de xilogravura
+  - Estamparia
+  - Expedição de pedidos
+
+3. Cultural (20%):
+  - História do Bumba Meu Boi
+  - São Cristóvão/SE
+  - FASC
+  - Cultura nordestina
+
+4. Depoimentos (10%):
+  - Clientes usando
+  - Prints de WhatsApp
+  - Reviews
+
+5. Promocional (5%):
+   - Lançamentos
+   - Promoções
+   - Cupons
+```
+
+Hashtags:
+```
+Principais:
+#artequeveste #xilogravura #modanordestina
+#bumbameuboi #saocristovao #sergipe
+#modaautoral #wearableart #culturapopular
+#artesanato #nordeste #cordel
+
+Secundárias:
+#camisetaestampada #modabrasileira
+#artepopular #designnordestino #fasc
+#mestrenivaldo #gravura #estamparia
+```
+
+#8.2 TRÁFEGO PAGO
+
+Facebook/Instagram Ads:
+```
+Orçamento Inicial:
+- R$ 300-500/mês
+- R$ 10-15/dia
+
+Configuração:
+1. Facebook Business Manager
+2. Pixel do Facebook (instale na Nuvem)
+3. Catálogo de produtos
+
+Campanhas:
+1. Tráfego (R$ 10/dia):
+  - Objetivo: Visitas ao site
+  - Público: 25-55 anos
+  - Interesses:
+     Moda nordestina
+     Arte popular
+     Cultura brasileira
+     Sustentabilidade
+  - Localização: Brasil
+  - Posicionamento: Instagram Feed + Stories
+
+2. Conversão (R$ 15/dia):
+  - Objetivo: Compras
+  - Público: Visitantes do site (remarketing)
+  - Catálogo dinâmico
+  - Posicionamento: Instagram + Facebook
+
+3. Engajamento (R$ 5/dia):
+   - Objetivo: Curtidas/Comentários
+   - Público: Similar aos seguidores
+   - Posts orgânicos impulsionados
+```
+
+Google Ads:
+```
+Orçamento: R$ 200-300/mês
+
+Campanhas:
+1. Rede de Pesquisa:
+  - Palavras-chave:
+    "camiseta xilogravura"
+    "moda nordestina online"
+    "arte que veste"
+    "bumba meu boi camiseta"
+  - CPC médio: R$ 1-3
+
+2. Google Shopping:
+  - Catálogo de produtos
+  - Fotos aparecem na busca
+   - CPC: R$ 0,50-2
+```
+
+#8.3 EMAIL MARKETING
+
+Plataformas:
+```
+Mailchimp (Grátis até 2.000 contatos):
+- Fácil de usar
+- Templates prontos
+- Automação
+
+RD Station (Pago):
+- Mais completo
+- Automação avançada
+- CRM integrado
+
+Nuvem Email (Integrado):
+- Já vem na Nuvem
+- Simples
+- Suficiente para início
+```
+
+Estratégia:
+```
+Captura de Emails:
+1. Popup no site (10% OFF primeira compra)
+2. Checkout (opt-in)
+3. Redes sociais
+4. Eventos presenciais
+
+Sequência de Boas-vindas:
+
+                                         🎨
+Email 1 (Imediato):
+- Assunto: Bem-vindo à Arte Que Veste!
+- Conteúdo:
+  Agradecimento
+  História da marca
+  Cupom 10% OFF
+  Link catálogo
+
+Email 2 (3 dias):
+- Assunto: Conheça o Mestre Nivaldo
+- Conteúdo:
+  Biografia do artista
+  Vídeo do processo
+  Produtos em destaque
+
+Email 3 (7 dias):
+- Assunto: Últimas peças disponíveis!
+- Conteúdo:
+  Urgência (estoque limitado)
+  Produtos mais vendidos
+  Depoimentos de clientes
+
+Newsletter Semanal:
+- Toda terça-feira
+- Novidades
+- Bastidores
+- Dicas culturais
+- Promoções relâmpago
+```
+
+#8.4 SEO (OTIMIZAÇÃO PARA GOOGLE)
+
+Na Nuvem:
+```
+1. Títulos SEO:
+   - Use palavras-chave
+   - Máximo 60 caracteres
+   - Ex: "Camiseta Bumba Meu Boi - Xilogravura Nordestina | Arte Que Veste"
+
+2. Meta Descrições:
+  - Resumo do produto
+  - Máximo 160 caracteres
+  - Inclua CTA
+  - Ex: "Camiseta com xilogravura do Bumba Meu Boi. Arte nordestina autêntica. Algodão
+premium. Compre agora!"
+
+3. URLs Amigáveis:
+  - Evite: artequeveste.com.br/produto?id=123
+  - Use: artequeveste.com.br/camiseta-bumba-meu-boi-xilogravura
+
+4. Imagens Otimizadas:
+  - Nome do arquivo: camiseta-bumba-meu-boi-turquesa.jpg
+  - Alt text: "Camiseta turquesa com estampa de xilogravura do Bumba Meu Boi"
+  - Tamanho: Máx 200KB
+  - Formato: WebP ou JPG
+
+5. Blog:
+  - Crie conteúdo sobre:
+    História da xilogravura
+    Bumba Meu Boi
+    São Cristóvão/SE
+    Mestre Nivaldo
+    Cultura nordestina
+  - Frequência: 2 posts/semana
+   - Palavras-chave de cauda longa
+```
+
+Conteúdo para Blog:
+```
+Post 1: "O que é Xilogravura e sua História no Nordeste"
+- 1.500 palavras
+- Imagens do processo
+- Vídeo Mestre Nivaldo
+- Link produtos
+
+Post 2: "Bumba Meu Boi: Tradição Nordestina que Inspira Nossa Arte"
+- 1.200 palavras
+- História da festa
+- Fotos do festival
+- Produtos relacionados
+
+Post 3: "São Cristóvão: A Cidade que Deu Origem à Arte Que Veste"
+- 1.000 palavras
+- História da cidade
+- Patrimônio UNESCO
+- FASC
+```
+
+#8.5 INFLUENCIADORES
+
+Estratégia:
+```
+Micro-influenciadores (5k-50k seguidores):
+- Custo: R$ 200-800/post
+- Ou permuta (produto grátis)
+- Maior engajamento
+- Público mais nichado
+
+Como Encontrar:
+1. Instagram:
+  - Busque hashtags: #modanordestina #sergipe
+  - Veja quem segue @artequeveste79
+  - Analise engajamento
+
+2. Critérios:
+  - Engajamento: Mínimo 3%
+  - Público: 25-55 anos
+  - Localização: Brasil (prioridade Nordeste)
+  - Valores: Cultura, arte, sustentabilidade
+
+3. Abordagem:
+  - Direct ou email
+   - Apresente a marca
+   - Proponha parceria
+   - Envie produto
+   - Peça post + stories
+```
+
+Kit Influenciador:
+```
+Conteúdo:
+- 1 Camiseta Bumba Meu Boi
+- 1 Bolsa Tote Bag
+- 1 Caneca Xilogravura
+- Cartão de agradecimento
+- Cupom exclusivo (15% OFF)
+- Hashtag: #artequeveste
+
+Contrapartida:
+- 1 post no feed
+- 3 stories
+- Link na bio (24h)
+- Uso da hashtag
+- Marcação @artequeveste79
+```
+
+
+
+
+9. SUPORTE TÉCNICO
+
+#9.1 ATENDIMENTO AO CLIENTE
+
+Canais:
+```
+WhatsApp Business (Principal):
+- Número: (79) XXXXX-XXXX
+- Horário: Seg-Sex 9h-18h, Sáb 9h-13h
+- Tempo resposta: Máx 1 hora
+- Ferramentas:
+   Respostas rápidas
+   Etiquetas
+   Catálogo
+   Mensagens automáticas
+
+Email:
+- contato@artequeveste.com.br
+- Tempo resposta: 24h úteis
+- Assuntos: Trocas, devoluções, dúvidas técnicas
+
+Instagram Direct:
+- Tempo resposta: 2 horas
+- Horário comercial
+- Use respostas salvas
+
+Chat Online (Site):
+- Tidio ou JivoChat (grátis)
+- Horário: 9h-18h
+- Fora disso: Deixe email
+```
+
+Respostas Rápidas WhatsApp:
+```
+
+                                  🎨
+1. Saudação:
+"Olá! Bem-vindo à Arte Que Veste
+Sou [nome], como posso ajudar você hoje?"
+
+2. Prazo de Entrega:
+"O prazo de entrega varia conforme sua região:
+- Nordeste: 5-10 dias úteis
+- Sudeste: 7-12 dias úteis
+- Sul/Centro-Oeste/Norte: 10-15 dias úteis
+Após postagem, enviamos código de rastreio!"
+
+3. Trocas e Devoluções:
+"Você tem até 7 dias após o recebimento para trocar ou devolver.
+O produto deve estar sem uso, nas embalagens originais.
+Entre em contato que orientamos o processo!"
+
+4. Formas de Pagamento:
+
+💳
+"Aceitamos:
+
+💰
+    Cartão de crédito (até 12x)
+
+📄
+    PIX (5% de desconto)
+    Boleto bancário
+Qual prefere?"
+
+5. Guia de Tamanhos:
+"Nossas camisetas seguem padrão brasileiro:
+P: 48cm largura x 66cm comprimento
+M: 50cm x 68cm
+G: 54cm x 70cm
+GG: 58cm x 72cm
+Precisa de ajuda para escolher?"
+```
+
+#9.2 RESOLUÇÃO DE PROBLEMAS
+
+Produto Atrasado:
+```
+1. Verifique rastreio
+2. Contate transportadora
+3. Informe cliente:
+   - Situação real
+   - Previsão atualizada
+   - Pedido de desculpas
+   - Brinde/cupom (opcional)
+4. Acompanhe até entrega
+```
+
+Produto Danificado:
+```
+1. Peça fotos do dano
+2. Peça foto da embalagem
+3. Avalie:
+   - Dano transporte: Acione seguro
+   - Dano fabricação: Troque imediatamente
+4. Envie novo produto (frete grátis)
+5. Peça devolução do danificado
+6. Registre ocorrência
+```
+
+Produto Errado:
+```
+1. Peça desculpas
+2. Confirme qual produto cliente quer
+3. Envie produto correto (frete grátis)
+4. Oriente devolução do errado
+5. Ofereça brinde/cupom
+6. Melhore processo de separação
+```
+
+Cliente Insatisfeito:
+```
+1. Ouça ativamente
+2. Não fique na defensiva
+3. Peça desculpas sinceras
+4. Ofereça solução:
+   - Troca
+   - Devolução
+   - Desconto próxima compra
+5. Resolva rápido
+6. Acompanhe após resolução
+7. Aprenda com o erro
+```
+
+#9.3 SUPORTE TÉCNICO DA PLATAFORMA
+Nuvem:
+```
+Suporte:
+- Chat: 24/7
+- Email: suporte@nuvem.com.br
+- Telefone: (11) 4020-1234
+- Central de Ajuda: ajuda.nuvem.com.br
+
+Problemas Comuns:
+1. Site fora do ar:
+  - Verifique status.nuvem.com.br
+  - Limpe cache
+  - Contate suporte
+
+2. Pagamento não processa:
+  - Verifique gateway
+  - Teste em modo sandbox
+  - Contate gateway
+
+3. Produtos não aparecem:
+   - Verifique status (ativo/inativo)
+   - Verifique estoque
+   - Limpe cache do site
+```
+
+Melhor Envio:
+```
+Suporte:
+- Email: suporte@melhorenvio.com.br
+- Chat: Seg-Sex 9h-18h
+- Central: melhorenvio.com.br/ajuda
+
+Problemas:
+1. Etiqueta não gera:
+  - Verifique dimensões/peso
+  - Verifique CEP
+  - Recarregue saldo
+
+2. Rastreio não atualiza:
+   - Aguarde 24h após postagem
+   - Verifique código
+   - Contate Correios
+```
+
+#9.4 BACKUP E SEGURANÇA
+
+Backup da Loja:
+```
+Nuvem (Automático):
+- Backup diário automático
+- Retenção: 30 dias
+- Restauração: Contate suporte
+
+Backup Manual:
+1. Produtos:
+  - Exporte CSV semanalmente
+  - Guarde em Google Drive
+
+2. Temas:
+  - Duplicar tema antes de editar
+  - Exporte tema personalizado
+
+3. Banco de Dados:
+   - Nuvem faz automático
+   - Não precisa se preocupar
+```
+
+Segurança:
+```
+SSL/HTTPS:
+- Ativado automaticamente
+- Verifique cadeado no navegador
+- Renovação automática
+
+Senhas Fortes:
+- Mínimo 12 caracteres
+- Letras maiúsculas/minúsculas
+- Números e símbolos
+- Troque a cada 90 dias
+- Use gerenciador (LastPass, 1Password)
+
+Acesso de Dois Fatores:
+- Ative em todas as plataformas
+- Nuvem
+- Email
+- Instagram
+- Google
+```
+
+
+
+
+10. CHECKLIST FINAL
+
+#10.1 PRÉ-LANÇAMENTO (30 DIAS)
+
+Semana 1:
+```
+[ ] Abrir MEI ou ME
+[ ] Obter CNPJ
+[ ] Abrir conta bancária PJ
+[ ] Registrar domínio .com.br
+[ ] Contratar hospedagem
+[ ] Criar email profissional
+[ ] Configurar certificado SSL
+```
+
+Semana 2:
+```
+[ ] Criar conta na Nuvem
+[ ] Configurar tema
+[ ] Upload logo
+[ ] Configurar cores/fontes
+[ ] Cadastrar primeiros 10 produtos
+[ ] Tirar fotos profissionais
+[ ] Escrever descrições completas
+```
+
+Semana 3:
+```
+[ ] Configurar gateway de pagamento
+[ ] Testar checkout completo
+[ ] Configurar Melhor Envio
+[ ] Testar cálculo de frete
+[ ] Configurar email marketing
+[ ] Criar popup de captura
+[ ] Instalar Pixel Facebook
+```
+
+Semana 4:
+```
+[ ] Configurar Instagram Business
+[ ] Criar 9 posts iniciais
+[ ] Configurar WhatsApp Business
+[ ] Escrever respostas rápidas
+[ ] Criar 3 posts de blog
+[ ] Testar site no mobile
+[ ] Testar velocidade (GTmetrix)
+[ ] Corrigir erros
+```
+
+#10.2 LANÇAMENTO (7 DIAS)
+
+Dia 1:
+```
+[ ] Publicar site
+[ ] Anunciar no Instagram
+[ ] Enviar email para lista
+[ ] Postar stories
+[ ] Ativar anúncios pagos
+```
+
+Dia 2-7:
+```
+[ ] Monitorar métricas
+[ ] Responder mensagens rápido
+[ ] Ajustar anúncios
+[ ] Post diário no Instagram
+[ ] Stories diários
+[ ] Atender primeiros clientes
+[ ] Coletar depoimentos
+```
+
+#10.3 PÓS-LANÇAMENTO (CONTÍNUO)
+
+Diário:
+```
+[ ] Verificar pedidos
+[ ] Responder mensagens
+[ ] Postar stories (5-10)
+[ ] Verificar estoque
+[ ] Monitorar anúncios
+```
+
+Semanal:
+```
+[ ] Post no feed (7x)
+[ ] Reels (3-4x)
+[ ] Post no blog (2x)
+[ ] Newsletter (1x)
+[ ] Análise de métricas
+[ ] Ajuste de anúncios
+[ ] Reposição de estoque
+```
+
+Mensal:
+```
+[ ] Inventário físico
+[ ] Análise financeira
+[ ] Pagamento de impostos
+[ ] Planejamento próximo mês
+[ ] Novos produtos
+[ ] Campanhas promocionais
+[ ] Parcerias influenciadores
+```
+
+
+
+
+📊 RESUMO DE CUSTOS INICIAIS
+#Investimento Único:
+```
+Abertura MEI:              R$ 0
+Registro domínio:           R$ 40
+Fotos profissionais:        R$ 500-1.500
+Estoque inicial (50 peças):   R$ 2.000-3.000
+Embalagens (100 un):          R$ 200
+Impressora térmica:          R$ 800 (opcional)
+Material expedição:         R$ 200
+Certificado Digital:       R$ 200-400/ano
+-
+TOTAL:                   R$ 3.940-6.540
+```
+
+#Custos Mensais Fixos:
+```
+MEI (DAS):              R$ 77,90
+Nuvem (plano inicial):    R$ 59
+Domínio (anual/12):       R$ 3,33
+Email profissional:      R$ 0-30
+Melhor Envio:           R$ 0
+WhatsApp Business:          R$ 0
+Instagram:             R$ 0
+-
+TOTAL:                 R$ 140-170/mês
+```
+
+#Custos Variáveis (por venda):
+```
+Taxa gateway (cartão):       4.99% + R$ 0,50
+Taxa gateway (PIX):         0.99%
+Embalagem:                R$ 2-5
+Frete médio:             R$ 15-35
+Custo produto:            R$ 45-120
+-
+```
+
+
+
+
+🎯 PRÓXIMOS PASSOS IMEDIATOS
+HOJE:
+1. [ ] Abrir MEI (portaldoempreendedor.gov.br)
+2. [ ] Registrar domínio (registro.br)
+3. [ ] Contratar Hostinger (R$ 11,99/mês)
+
+AMANHÃ:
+4. [ ] Criar conta na Nuvem
+5. [ ] Configurar tema básico
+6. [ ] Cadastrar 3 produtos piloto
+
+ESTA SEMANA:
+7. [ ] Tirar fotos profissionais
+8. [ ] Configurar Mercado Pago
+9. [ ] Configurar Melhor Envio
+10. [ ] Criar Instagram profissional
+
+PRÓXIMA SEMANA:
+11. [ ] Cadastrar todos os produtos
+12. [ ] Escrever descrições SEO
+13. [ ] Testar checkout completo
+14. [ ] Preparar campanha lançamento
+
+
+
+
+📞 CONTATOS ÚTEIS
+Sebrae Sergipe:
+- Telefone: 0800 570 0800
+- Site: sebrae.com.br/sites/PortalSebrae/se
+- Consultoria gratuita
+
+Prefeitura de Aracaju:
+- Alvará: (79) 3218-2000
+- Site: aracaju.se.gov.br
+
+SEFAZ/SE:
+- Inscrição Estadual: (79) 3218-2500
+- Site: sefaz.se.gov.br
+
+Correios Aracaju:
+- Agência Central: (79) 3211-5400
+- Site: correios.com.br
+
+Suporte Nuvem:
+- Chat 24/7: nuvem.com.br
+- Email: suporte@nuvem.com.br
+"O sucesso é a soma de pequenos esforços repetidos dia após dia."
+
+Boa sorte! A Arte Que Veste merece brilhar!   🚀✨
+
+Documento elaborado em: 20 de junho de 2026
+Local: Aracaju, Sergipe, Brasil
+Validade: Revisar a cada 6 meses
+

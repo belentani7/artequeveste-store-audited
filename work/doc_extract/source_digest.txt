@@ -1,0 +1,660 @@
+=== identidade e storytelling ===
+8-
+9-
+10-
+11:Manual Completo - ARTE QUE VESTE
+12-
+13-
+14-
+15-
+16-
+17-
+18-
+19-
+--
+25-
+26-
+27-
+28:ARTE QUE VESTE
+29-
+30-
+31-MANUAL 
+32-COMPLETO
+33-
+34-
+35-Do Zero à Loja Online
+36-
+--
+204-
+205-
+206-Este manual foi criado para fornecer um guia completo, passo a passo, para a implantação e operação da loja online 
+207:Arte Que Veste
+208-. Ele cobre desde os aspectos legais até a gestão diária, passando por configuração técnica, marketing e atendimento ao cliente.
+209-
+210-
+211:O público-alvo é o proprietário da marca, que deseja vender camisetas, kimonos, bolsas, canecas e souvenirs com estampas de xilogravura nordestina, produzidas em parceria com o Mestre Nivaldo Oliveira, em São Cristóvão/SE.
+212-
+213-
+214-1.1 O Que Este Manual Inclui
+215-
+216-
+217-
+218-
+219-Abertura de MEI e obrigações fiscais
+--
+257-
+258-
+259-Site institucional:
+260: Página estática (HTML) que conta a história da marca, a cultura nordestina e apresenta o Mestre Nivaldo. Hospedado em Netlify (gratuito). URL: artequeveste.com.br
+261-
+262-
+263-Loja virtual:
+264- Plataforma Nuvemshop com carrinho, checkout, pagamentos e gestão de pedidos. URL: loja.artequeveste.com.br
+265-
+266-
+267-
+268-
+--
+457- Mas é recomendável emitir para passar credibilidade.
+458-
+459-
+460:Emissão gratuita:
+461-
+462-
+463-
+464-
+465-NFe.io – 50 NFs/mês grátis
+466-
+467-
+468-Emissor Gratuito SEFAZ/SE – ilimitado
+--
+715-
+716-
+717-Sobre Nós:
+718: História da marca e do Mestre Nivaldo
+719-
+720-
+721-Coleções:
+722- Lista de produtos com filtros
+723-
+724-
+725-Contato:
+726- Formulário, WhatsApp, Instagram
+--
+1277-
+1278-
+1279-Bastidores (25%):
+1280: Mestre Nivaldo trabalhando, processo de xilogravura
+1281-
+1282-
+1283-Cultural (20%):
+1284: História do Bumba Meu Boi, São Cristóvão, FASC
+1285-
+1286-
+1287-Depoimentos (10%):
+1288- Clientes usando as peças
+1289-
+1290-
+1291-Promocional (5%):
+1292- Lançamentos e cupons
+--
+1295-
+1296-
+1297-Hashtags:
+1298: #artequeveste #xilogravura #modanordestina #bumbameuboi #saocristovao #sergipe
+1299-
+1300-
+1301-9.2 Tráfego Pago
+1302-
+1303-
+1304-Facebook/Instagram Ads:
+1305- Orçamento inicial de R$ 300-500/mês. Crie campanhas de tráfego, conversão e engajamento.
+1306-
+1307-
+1308-Google Ads:
+1309: R$ 200-300/mês para palavras-chave como "camiseta xilogravura" e "moda nordestina online".
+1310-
+1311-
+1312-9.3 E-mail Marketing
+1313-
+1314-
+1315-Use Mailchimp (grátis até 2.000 contatos) ou a ferramenta de email da Nuvemshop.
+1316-
+1317-
+--
+1320-
+1321-
+1322-
+1323:Imediato: agradecimento, história, cupom 10% OFF
+1324-
+1325-
+1326:3 dias: conheça o Mestre Nivaldo
+1327-
+1328-
+1329-7 dias: últimas peças disponíveis
+1330-
+1331-
+1332-
+1333-
+1334-9.4 SEO
+--
+1348-Imagens com alt text e nomes descritivos
+1349-
+1350-
+1351:Blog com conteúdo sobre xilogravura, Bumba Meu Boi, São Cristóvão
+1352-
+1353-
+1354-
+1355-
+1356-
+1357-
+1358-
+1359-
+--
+1394-
+1395-
+1396-
+1397:Saudação: "Olá! Bem-vindo à Arte Que Veste. Sou [nome], como posso ajudar?"
+1398-
+1399-
+1400-Prazo de entrega: informações por região
+1401-
+1402-
+1403-Trocas e devoluções: 7 dias, produto sem uso
+1404-
+1405-
+--
+1528-Cálculo de frete (Melhor Envio)
+1529-
+1530-
+1531:Emissão de nota fiscal (NFe.io)
+1532-
+1533-
+1534-Painel administrativo completo
+1535-
+1536-
+1537-Gestão de clientes e pedidos
+1538-
+1539-
+--
+1677-
+1678-
+1679-
+1680:        POLÍTICA DE TROCA E DEVOLUÇÃO – ARTE QUE VESTE
+1681-
+1682-        1. Prazo: 7 dias corridos após o recebimento (Art. 49 do CDC).
+1683-        2. Condições: produto sem uso, na embalagem original, etiqueta intacta.
+1684-        3. Como solicitar: WhatsApp (79) XXXXX-XXXX, informando número do pedido e motivo.
+1685-        4. Defeito: 30 dias para troca, enviamos novo produto sem custo.
+1686-        5. Reembolso: no mesmo método de pagamento (cartão: estorno na fatura; Pix: transferência; boleto: crédito).
+1687-        6. Frete de devolução: defeito/fabricação – pagamos; arrependimento/tamanho – cliente paga.
+1688-    
+--
+1692-
+1693-
+1694-
+1695:        POLÍTICA DE PRIVACIDADE – ARTE QUE VESTE
+1696-
+1697-        1. Dados coletados: nome, e-mail, telefone, endereço, CPF (para NF).
+1698-        2. Uso: processar pedidos, enviar confirmações e rastreios, newsletter (com autorização).
+1699-        3. Compartilhamento: apenas com transportadoras, Mercado Pago e NFe.io.
+1700-        4. Seus direitos: excluir, corrigir, copiar dados, revogar consentimento.
+1701-        5. Cookies: carrinho, preferências, analytics.
+1702-    
+1703-
+--
+1706-
+1707-
+1708-
+1709:        TERMOS DE USO – ARTE QUE VESTE
+1710-
+1711-        1. Aceitação: ao usar o site, você concorda.
+1712:        2. Propriedade Intelectual: todo conteúdo é da ARTE QUE VESTE.
+1713-        3. Uso permitido: navegar, comprar, compartilhar com crédito.
+1714-        4. Uso proibido: copiar, modificar ou revender conteúdo.
+1715-        5. Preços em Reais (R$), podem ser alterados sem aviso.
+1716-        6. Responsabilidade: não nos responsabilizamos por atrasos dos Correios.
+1717-        7. Foro: Aracaju/SE.
+1718-    
+1719-
+1720-
+=== produtos e catálogo ===
+125-
+126-8.
+127- 
+128:EDIÇÃO E GESTÃO DE PRODUTOS
+129-
+130-
+131-9.
+132- 
+133-MARKETING DIGITAL
+134-
+--
+208-. Ele cobre desde os aspectos legais até a gestão diária, passando por configuração técnica, marketing e atendimento ao cliente.
+209-
+210-
+211:O público-alvo é o proprietário da marca, que deseja vender camisetas, kimonos, bolsas, canecas e souvenirs com estampas de xilogravura nordestina, produzidas em parceria com o Mestre Nivaldo Oliveira, em São Cristóvão/SE.
+212-
+213-
+214-1.1 O Que Este Manual Inclui
+215-
+216-
+217-
+--
+231-Gestão de estoque físico e digital
+232-
+233-
+234:Cadastro e edição de produtos
+235-
+236-
+237-Estratégias de marketing digital (Instagram, tráfego pago, e-mail)
+238-
+239-
+240-Atendimento ao cliente e suporte técnico
+--
+333-
+334-
+335-Secundário:
+336: 4789-0/99 – Comércio varejista de outros produtos não especificados
+337-
+338-
+339-
+340-
+341-
+342-
+--
+719-
+720-
+721-Coleções:
+722: Lista de produtos com filtros
+723-
+724-
+725-Contato:
+726- Formulário, WhatsApp, Instagram
+727-
+728-
+--
+740-
+741-
+742-
+743:4.4 Configurar Produtos
+744-
+745-
+746-Veja a seção 
+747:8. EDIÇÃO E GESTÃO DE PRODUTOS
+748- para o passo a passo completo.
+749-
+750-
+751-
+752-
+753-
+--
+936-Filtre "Pagos"
+937-
+938-
+939:Separe o produto no estoque
+940-
+941-
+942:Embele com cuidado (produto, brinde, cartão de agradecimento)
+943-
+944-
+945-Pese e meça o pacote
+946-
+947-
+948-Gere etiqueta no Melhor Envio
+--
+990-SKU
+991-
+992-
+993:Nome do Produto
+994-
+995-
+996-Tamanho/Cor
+997-
+998-
+999-Quantidade Atual
+--
+1027-
+1028-
+1029-
+1030:Vá em "Produtos" > "Estoque"
+1031-
+1032-
+1033-Ative "Controlar estoque"
+1034-
+1035-
+1036-Defina quantidade inicial e estoque mínimo
+--
+1041-
+1042-
+1043-
+1044:7.3 Entrada de Produtos
+1045-
+1046-
+1047-
+1048-
+1049-Receba mercadoria do fornecedor
+1050-
+--
+1066-
+1067-
+1068-
+1069:7.4 Saída de Produtos
+1070-
+1071-
+1072-
+1073-
+1074-O sistema baixa o estoque automaticamente após cada venda confirmada
+1075-
+1076-
+1077:Em caso de troca/devolução, reative o estoque manualmente se o produto estiver novo
+1078-
+1079-
+1080-
+1081-
+1082-7.5 Inventário Físico
+1083-
+--
+1087-
+1088-
+1089-
+1090:Imprima a lista de produtos
+1091-
+1092-
+1093-Conte fisicamente cada item
+1094-
+1095-
+1096-Anote as quantidades reais
+--
+1156-
+1157-
+1158-
+1159:8. EDIÇÃO E GESTÃO DE PRODUTOS
+1160-
+1161-
+1162:8.1 Adicionar Novo Produto (Nuvemshop)
+1163-
+1164-
+1165-
+1166-
+1167:Produtos > Adicionar Produto
+1168-
+1169-
+1170-Nome:
+1171: Camiseta Bumba Meu Boi – Turquesa
+1172-
+1173-
+1174-Descrição:
+1175- Use o texto detalhado que já consta no site institucional
+1176-
+1177-
+--
+1214-
+1215-
+1216-
+1217:8.2 Editar Produto
+1218-
+1219-
+1220-
+1221-
+1222-Alterar preço:
+1223: Produtos > Editar > Preço > Salvar
+1224-
+1225-
+1226-Alterar estoque:
+1227: Produtos > Estoque > Editar quantidade
+1228-
+1229-
+1230-Alterar imagens:
+1231: Produtos > Editar > Seção Imagens
+1232-
+1233-
+1234-Desativar:
+1235- Status > Inativo (recomendado em vez de excluir)
+1236-
+1237-
+--
+1244-8.3 Importar/Exportar CSV
+1245-
+1246-
+1247:Use para migrar muitos produtos de uma vez. Baixe o modelo, preencha e importe.
+1248-
+1249-
+1250-
+1251-
+1252-
+1253-
+--
+1272-
+1273-
+1274-
+1275:Produto (40%):
+1276- Fotos profissionais, modelos, detalhes
+1277-
+1278-
+1279-Bastidores (25%):
+1280- Mestre Nivaldo trabalhando, processo de xilogravura
+1281-
+--
+1306-
+1307-
+1308-Google Ads:
+1309: R$ 200-300/mês para palavras-chave como "camiseta xilogravura" e "moda nordestina online".
+1310-
+1311-
+1312-9.3 E-mail Marketing
+1313-
+1314-
+1315-Use Mailchimp (grátis até 2.000 contatos) ou a ferramenta de email da Nuvemshop.
+--
+1342-Meta descrições com call-to-action (máx 160 caracteres)
+1343-
+1344-
+1345:URLs amigáveis (ex: /camiseta-bumba-meu-boi)
+1346-
+1347-
+1348-Imagens com alt text e nomes descritivos
+1349-
+1350-
+1351-Blog com conteúdo sobre xilogravura, Bumba Meu Boi, São Cristóvão
+--
+1400-Prazo de entrega: informações por região
+=== lançamento e manutenção ===
+140-
+141-11.
+142- 
+143:SEGURANÇA E BACKUP
+144-
+145-
+146-12.
+147- 
+148-SITE ESTÁTICO vs LOJA REAL
+149-
+150-
+151-13.
+--
+160-
+161-15.
+162- 
+163:PLANO DE CONTINGÊNCIA
+164-
+165-
+166-16.
+167- 
+168-PLANILHA DE MARGEM E CUSTOS
+169-
+170-
+171-17.
+172- 
+173:CRONOGRAMA DE 30 DIAS
+174-
+175-
+176-18.
+177- 
+178:CHECKLIST FINAL E GUIA RÁPIDO
+179-
+180-
+181-19.
+182- 
+183-GLOSSÁRIO
+184-
+185-
+186-20.
+--
+205-
+206-Este manual foi criado para fornecer um guia completo, passo a passo, para a implantação e operação da loja online 
+207-Arte Que Veste
+208:. Ele cobre desde os aspectos legais até a gestão diária, passando por configuração técnica, marketing e atendimento ao cliente.
+209-
+210-
+211-O público-alvo é o proprietário da marca, que deseja vender camisetas, kimonos, bolsas, canecas e souvenirs com estampas de xilogravura nordestina, produzidas em parceria com o Mestre Nivaldo Oliveira, em São Cristóvão/SE.
+212-
+213-
+214-1.1 O Que Este Manual Inclui
+215-
+216-
+--
+240-Atendimento ao cliente e suporte técnico
+241-
+242-
+243:Segurança, backup e plano de contingência
+244-
+245-
+246:Checklists, cronogramas e modelos de documentos
+247-
+248-
+249-
+250-
+251-1.2 Estrutura do Projeto
+252-
+253-
+254-O projeto é composto por dois pilares:
+--
+399-
+400-
+401-Prazo:
+402: 15-30 dias
+403-
+404-
+405-
+406-
+407-
+408-
+409-💡 Dica:
+410- Muitos MEIs começam sem o alvará e o tiram depois, pois o processo é demorado. Porém, tecnicamente é obrigatório.
+--
+1457-
+1458-
+1459-
+1460:11. SEGURANÇA E BACKUP
+1461-
+1462-
+1463:11.1 Backup
+1464-
+1465-
+1466-
+1467-
+1468:Nuvemshop faz backup diário automático (retenção 30 dias)
+1469-
+1470-
+1471:Exporte produtos CSV semanalmente e guarde no Google Drive
+1472-
+1473-
+1474:Faça backup do tema personalizado antes de editar
+1475-
+1476-
+1477-
+1478-
+1479-11.2 Segurança
+1480-
+1481-
+1482-
+--
+1599-O sistema baixa automaticamente a cada venda
+1600-
+1601-
+1602:Faça inventário físico semanalmente e corrija eventuais divergências
+1603-
+1604-
+1605-
+1606-
+1607-13.3 Fluxo Diário (Guia de 1 Página)
+1608-
+1609-
+1610-
+--
+1682-        1. Prazo: 7 dias corridos após o recebimento (Art. 49 do CDC).
+1683-        2. Condições: produto sem uso, na embalagem original, etiqueta intacta.
+1684-        3. Como solicitar: WhatsApp (79) XXXXX-XXXX, informando número do pedido e motivo.
+1685:        4. Defeito: 30 dias para troca, enviamos novo produto sem custo.
+1686-        5. Reembolso: no mesmo método de pagamento (cartão: estorno na fatura; Pix: transferência; boleto: crédito).
+1687-        6. Frete de devolução: defeito/fabricação – pagamos; arrependimento/tamanho – cliente paga.
+1688-    
+1689-
+1690-
+1691-14.2 Política de Privacidade (LGPD)
+1692-
+1693-
+--
+1728-
+1729-
+1730-
+1731:15. PLANO DE CONTINGÊNCIA
+1732-
+1733-
+1734-15.1 Se o Site da Nuvemshop Cair
+1735-
+1736-
+1737-
+1738-
+1739-Verifique status.nuvemshop.com.br
+1740-
+1741-
+1742:Poste no Instagram: "⚠️ Nossa loja está em manutenção, mas você pode falar conosco pelo WhatsApp (79) XXXXX-XXXX"
+1743-
+1744-
+1745-Atenda pelo WhatsApp e anote os pedidos manualmente
+1746-
+1747-
+1748-
+1749-
+1750-15.2 Se o Pagamento Falhar
+--
+1895-
+1896-
+1897-
+1898:17. CRONOGRAMA DE 30 DIAS
+1899-
+1900-
+1901-Semana 1 – A papelada
+1902-
+1903-
+1904-
+1905-
+1906-Dia 1: Abrir MEI
+--
+2009-
+2010-
+2011-
+2012:18. CHECKLIST FINAL E GUIA RÁPIDO
+2013-
+2014-
+2015-2 Dias Antes do Lançamento
+2016-
+2017-
+2018-
+2019-
+2020-☐ Testei checkout com cartão de teste
+--
+2117-        9. Verificar estoque baixo
+2118-        10. Anotar o que repor
+2119-
+2120:        SEMANALMENTE (Sexta)
+2121-        1. Inventário físico
+2122-        2. Comparar com sistema
+2123-        3. Ajustar diferenças
+2124-        4. Pedir reposição
+2125-        5. Postar no Instagram (5+ posts)
+2126-        ═══════════════════════════════════════════════
+2127-    
+2128-

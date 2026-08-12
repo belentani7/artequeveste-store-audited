@@ -1,0 +1,486 @@
+===== 2Manual_Arte_Que_Veste_2026_1.txt =====
+1:MANUAL COMPLETO DE IMPLANTAÇÃO E GESTÃO
+3:                       ARTE QUE VESTE
+6:      Operação em Aracaju/SE — legislação e processos verificados em junho de 2026
+11:                                     Aracaju, Sergipe, Brasil
+20:CAPÍTULO 1 — Fundamentos Jurídicos e Tributários (Aracaju/SE, 2026)
+24:CAPÍTULO 3 — Pagamentos
+30:CAPÍTULO 6 — Gestão de Produtos e Catálogo
+38:CAPÍTULO 10 — Anexos (Contatos, Modelo de Produto, Glossário)
+44:CAPÍTULO 1 — FUNDAMENTOS JURÍDICOS E TRIBUTÁRIOS (ARACAJU/SE,
+47:Esta parte substitui e corrige a versão anterior do manual, que continha valores de 2024 e um órgão
+48:municipal incorreto para o alvará. Todos os valores abaixo foram verificados em fontes oficiais e de
+51:e no site da Prefeitura de Aracaju antes de qualquer pagamento.
+55: Faturamento               R$ 81.000 (2026, inalterado desde
+56:                                                                    R$ 360.000
+59:                           R$ 6.750                                 —
+61:                           Gratuito, via Portal do                  R$ 500–1.500 (contador) + taxas
+64:                           Valor fixo: R$ 82,05 a R$ 87,05
+65:                                                                    4% a 19% sobre o faturamento,
+75:                           piso da categoria
+77: Indicado para Arte Que    Sim, na fase inicial (loja em Aracaju,   faturamento mensal se aproximar
+78: Veste                     faturamento ainda não recorrente)        de R$ 6.750–7.000 de forma
+84:  Se o faturamento anual ultrapassar R$ 81.000 em até 20% (até R$ 97.200), o MEI continua até
+85:  31/12 e paga apenas um DAS complementar sobre o excedente; a migração para ME ocorre em
+88:  Resolução CGSN nº 183/2025, rendimentos recebidos no CPF do titular ligados à mesma atividade
+90:  via Pix pessoa física fora do CNPJ.
+93:1.2 — Abertura: o caminho real em Sergipe (corrigido)
+94:O fluxo descrito em versões anteriores deste manual estava parcialmente desatualizado. Em Sergipe, a
+96:Junta Comercial de Sergipe (Jucese) e a Prefeitura, através de dois sistemas que se conversam:
+101:    apenas para quem vai abrir como MEI; é onde se obtém o CNPJ.
+104:  • SLIM Aracaju (slim.aracaju.se.gov.br) — portal de licenciamento municipal da Prefeitura de Aracaju,
+105:    onde se solicita o Alvará de Localização e Funcionamento depois de aberto o CNPJ.
+107:Passo a passo — MEI (recomendado para a fase atual da Arte Que Veste)
+109:  2. Informe CPF, título de eleitor e dados pessoais (login via conta gov.br, nível bronze/prata é suficiente).
+113:  4. Informe o endereço da atividade em Aracaju/SE (pode ser o endereço residencial, salvo restrição de
+115:  5. Confirme os dados e gere o CNPJ — emissão imediata na maioria dos casos.
+117:     solicitada via SLIM Aracaju, conforme orientação exibida ao final do cadastro no Portal do
+125:  9. Obtenha o CNPJ na Receita Federal (gerado automaticamente após o registro na Jucese, via Redesim).
+127:  11.   Solicite o Alvará de Localização e Funcionamento no SLIM Aracaju (ver 1.3).
+130:  A Prefeitura de Aracaju reduziu o prazo médio de abertura de empresas de baixo e médio risco —
+131:  categoria em que se encaixa uma loja de roupas sem fabricação no local — de até 5 dias úteis para
+137:1.3 — Alvará de Localização e Funcionamento (correção importante)
+139:Aracaju, o Alvará de Localização e Funcionamento é expedido pela Secretaria Municipal de Finanças (SEFIN),
+140:com base no Decreto Municipal nº 2.469, e solicitado integralmente pela internet no portal SLIM Aracaju.
+143:                                 slim.aracaju.se.gov.br → "Alvará de Localização" (pessoa jurídica) ou
+160: Documentos (Pessoa              Cartão CNPJ, RG/CPF dos sócios, comprovante de residência, Contrato
+166:simplificado, mas é exigida ao migrar para ME). Solicitação pela Secretaria de Estado da Fazenda de Sergipe
+170:1.5 — Tributos em 2026 (valores corrigidos)
+173: Comércio/Indústria          INSS + ICMS                           R$ 82,05
+174: Serviços                    INSS + ISS                            R$ 86,05
+175: Comércio + Serviços         INSS + ICMS + ISS                     R$ 87,05
+176:Valores calculados sobre o salário mínimo de R$ 1.621 (2026) e sujeitos a pequenas variações conforme
+183: Até R$ 180.000                            4,00%                     Sem parcela a deduzir
+185: R$ 180.000,01 a R$ 360.000                7,30%                     tabela oficial — o contador calcula
+188:por causa da Reforma Tributária em 2026 (ver 1.7). A faixa de R$ 360.000 a R$ 4,8 milhões deixa de ser
+189:MEI/ME e passa a EPP — fora do escopo inicial da Arte Que Veste.
+191:ICMS em Sergipe — valor corrigido
+192:A alíquota interna padrão de Sergipe é de 19% + 1% destinado ao Fundo Estadual de Combate e Erradicação
+194:como constava na versão anterior. Para venda interestadual (cliente fora de Sergipe), a alíquota
+210:                            Emissão obrigatória
+212: Venda para Pessoa                                                Emissão obrigatória em TODAS as
+213:                            Emissão obrigatória apenas se o
+221:de nota fiscal (gratuito) desde o lançamento da loja. Isso evita uma corrida de adaptação em 2027 e já cria o
+227:Este é o ponto mais importante que faltava nas versões anteriores do manual, porque 2026 é, na prática, o
+229:  • A Reforma substitui PIS, Cofins e IPI por um novo tributo federal, a CBS (Contribuição sobre Bens e
+230:    Serviços), e substitui ICMS e ISS por um novo tributo, o IBS (Imposto sobre Bens e Serviços), de
+235:  • Até abril de 2026 não há multa por erro ou omissão no preenchimento desses campos — período de
+237:  • Para quem está no Simples Nacional/MEI (o caso da Arte Que Veste): não há nenhuma mudança na
+256:  se abre antes de setembro de 2026; e (3) não se preocupar com aumento de preço — a própria
+257:  reforma foi desenhada para ser neutra em 2026.
+260:1.8 — LGPD para uma loja virtual (não estava no manual anterior)
+261:A partir do momento em que a loja online da Arte Que Veste coleta nome, telefone, CPF, e-mail e endereço
+262:de entrega de clientes, ela se torna "controladora de dados pessoais" e está sujeita à Lei Geral de Proteção
+264:  • Tenha uma Política de Privacidade visível no rodapé do site, explicando quais dados são coletados
+265:    (nome, telefone, endereço, dados de pagamento processados pelo gateway) e para que são usados
+266:    (processar o pedido, calcular frete, emitir nota fiscal).
+270:    do gateway de pagamento (Mercado Pago, PagBank etc.), que é certificado PCI-DSS. Nunca crie um
+272:  • Para pedidos via WhatsApp (como na versão atual do site), o número de telefone do cliente e o
+273:    conteúdo da conversa também são dados pessoais — mantenha o WhatsApp Business com
+274:    senha/biometria e não compartilhe prints de conversas de clientes publicamente sem mascarar o
+283:  • Direito de arrependimento: o cliente pode desistir da compra em até 7 dias corridos após o
+===== ARTEQUEVESTEMANUSCRITO.txt =====
+11:Manual Completo - ARTE QUE VESTE
+28:ARTE QUE VESTE
+31:MANUAL 
+39:        Guia Forense Passo a Passo para Operação em Aracaju/SE
+68:Instagram: @Belentani_
+113:GATEWAYS DE PAGAMENTO
+128:EDIÇÃO E GESTÃO DE PRODUTOS
+158:POLÍTICAS LEGAIS (TEXTOS PRONTOS)
+188:CONTATOS ÚTEIS
+206:Este manual foi criado para fornecer um guia completo, passo a passo, para a implantação e operação da loja online 
+207:Arte Que Veste
+214:1.1 O Que Este Manual Inclui
+228:Integração com Mercado Pago, Melhor Envio e NFe.io
+234:Cadastro e edição de produtos
+237:Estratégias de marketing digital (Instagram, tráfego pago, e-mail)
+264: Plataforma Nuvemshop com carrinho, checkout, pagamentos e gestão de pedidos. URL: loja.artequeveste.com.br
+275: Mantenha os dois sites com a mesma identidade visual (cores, fontes, logo) para transmitir consistência e confiança.
+305: R$ 81.000/ano (2026)
+309: R$ 77,90 (comércio)
+324:Preencha seus dados pessoais (RG, CPF, comprovante de residência)
+336: 4789-0/99 – Comércio varejista de outros produtos não especificados
+343:Informe o endereço em Aracaju/SE
+346:Confirme e gere o CNPJ
+357: O MEI não pode ter faturamento superior a R$ 81.000 por ano. Se ultrapassar, você precisará migrar para o Simples Nacional.
+389:Para Aracaju/SE:
+394:Prefeitura Municipal de Aracaju – Secretaria de Planejamento
+398: R$ 100-300 (varia por atividade)
+422:DAS MEI: R$ 77,90 (comércio)
+428:Pagamento: Guia DAS no SIMEI
+433:ICMS (Sergipe):
+460:Emissão gratuita:
+481:Certificado Digital e-CNPJ (A1) – R$ 200-400/ano
+513:Preço
+522:R$ 11,99/mês (1º ano)
+560: R$ 40/ano
+568: CNPJ ou CPF
+591:Preencha os dados do titular (CNPJ)
+594:Pague o boleto (R$ 40)
+679:Preencha: Nome, Email, Senha, CNPJ
+682:Confirme o email
+703:Personalize: logo, cores (#40E0D0 – turquesa, #FF1493 – rosa), fontes (Playfair Display + Inter)
+717:Sobre Nós:
+722: Lista de produtos com filtros
+725:Contato:
+726: Formulário, WhatsApp, Instagram
+730: Política legal
+733:Política de Privacidade:
+743:4.4 Configurar Produtos
+747:8. EDIÇÃO E GESTÃO DE PRODUTOS
+761:5. GATEWAYS DE PAGAMENTO
+772:Cartão à vista: 4,99% + R$ 0,50
+775:Cartão parcelado: 5,99% + R$ 0,50/parcela
+778:PIX: 0,99%
+781:Boleto: R$ 2,00
+794:Envie os documentos (RG, comprovante de endereço, CNPJ)
+809:Na Nuvemshop, vá em "Configurações" > "Formas de pagamento" > "Mercado Pago"
+812:Cole as chaves e ative as formas de pagamento
+828:Valor mínimo por parcela: R$ 5,00
+844:        CPF: 12345678909
+864:6.1 Melhor Envio (Recomendado)
+867:Plataforma comparadora de fretes com descontos de até 70%.
+875:Acesse melhorenvio.com.br
+878:Crie conta com CNPJ
+881:Configure CEP de origem (Aracaju/SE)
+913:Envelopes plásticos (P: R$ 0,30, M: R$ 0,45, G: R$ 0,60)
+916:Caixas de papelão (P: R$ 1,50, M: R$ 2,50, G: R$ 4,00)
+919:Fita adesiva: R$ 8,00/rolo
+925: Mercado Livre, Shopee, Amazon, Embalax, ou lojas locais em Aracaju.
+928:6.3 Processo de Envio
+939:Separe o produto no estoque
+942:Embele com cuidado (produto, brinde, cartão de agradecimento)
+948:Gere etiqueta no Melhor Envio
+954:Leve aos Correios
+993:Nome do Produto
+996:Tamanho/Cor
+1011:Preço de Custo
+1030:Vá em "Produtos" > "Estoque"
+1044:7.3 Entrada de Produtos
+1055:Verifique qualidade (costuras, estampas, tamanhos)
+1069:7.4 Saída de Produtos
+===== Artequevestemanual2e3.txt =====
+4:# 📘 **MANUAL COMPLETO - PARTE 3**
+36:- ❌ Processamento de pagamentos
+39:- ❌ Cálculo de frete real
+40:- ❌ Emissão de notas fiscais
+41:- ❌ Integração com Correios
+53:| Mostra produtos visualmente | Processa vendas reais |
+54:| Não processa pagamentos | Aceita Pix, cartão, boleto |
+57:| Não calcula frete | Calcula frete por CEP |
+72:❌ Nenhum pagamento é processado
+74:❌ Nenhum produto é enviado
+85:Gateway de pagamento processa (Mercado Pago, PagSeguro)
+89:Sistema calcula frete (Melhor Envio/Correios)
+93:Sistema envia email de confirmação
+97:Vendedor separa e embala o produto
+99:Sistema gera etiqueta de envio
+101:Produto é postado nos Correios
+105:Produto é entregue
+127:│     ❌ APIs de pagamento                                │
+133:│     ❌ Produtos cadastrados                             │
+141:│     ❌ Gateway de pagamento (Mercado Pago)              │
+142:│     ❌ Transportadora (Melhor Envio)                    │
+144:│     ❌ Email transacional (SendGrid)                    │
+145:│     ❌ WhatsApp Business API                            │
+149:│     ❌ Gestão de produtos                               │
+173:- ❌ Banco de dados para salvar produtos
+174:- ❌ Integração com gateway de pagamento
+175:- ❌ Sistema de cálculo de frete
+176:- ❌ Emissão de nota fiscal
+180:- ❌ Emails transacionais
+189:| Plataforma | Preço Mensal | Ideal Para | Dificuldade | Vantagens | Desvantagens |
+191:| **Nuvemshop** | R$ 59-399 | Pequenas/Médias | ⭐ Fácil | Brasileira, suporte PT, integrações locais | Limitada para grandes operações |
+192:| **Shopify** | R$ 107-1.500 | Médias/Grandes | ⭐⭐ Média | Global, apps ilimitados, escalável | Mais cara, apps pagos |
+194:| **VTEX** | R$ 2.000+ | Grandes empresas | ⭐⭐⭐⭐ Muito difícil | Enterprise, marketplace | Caro, complexo |
+195:| **Tray** | R$ 49-299 | Pequenas | ⭐ Fácil | Barata, marketplace integrado | Menos recursos |
+196:| **Loja Integrada** | R$ 39-199 | Iniciantes | ⭐ Muito fácil | Simples, barata | Muito limitada |
+198:### **3.2 Recomendação para ARTE QUE VESTE**
+203:- ✅ **Preço acessível:** R$ 59/mês no plano inicial
+207:  - Melhor Envio, Correios
+209:  - WhatsApp Business
+217:| Plano | Preço | Produtos | Funcionários | Recursos |
+219:| **Gratuito** | R$ 0 | 50 | 1 | Básico, taxa de venda 2% |
+220:| **Inicial** | R$ 59/mês | Ilimitado | 2 | Tudo essencial |
+221:| **Avançado** | R$ 199/mês | Ilimitado | 5 | Relatórios avançados |
+222:| **Premium** | R$ 399/mês | Ilimitado | 15 | Tudo + suporte prioritário |
+224:**Recomendação:** Começar com **Inicial (R$ 59/mês)**
+233:- ✅ Tudo pronto (pagamento, frete, NF-e)
+251:3. Personalizar cores e fontes (turquesa, Playfair Display)
+253:4. Cadastrar produtos (com fotos, descrições, preços)
+255:5. Configurar pagamentos (Mercado Pago)
+257:6. Configurar frete (Melhor Envio)
+269:**Custo total:** ~R$ 500-1.000 (configuração inicial)
+282:- ❌ Você integra tudo manualmente
+290:   - APIs para produtos, carrinho, pedidos
+294:   - Tabela de produtos
+299:3. GATEWAY DE PAGAMENTO
+301:   - Processamento de Pix, cartão, boleto
+304:4. SISTEMA DE FRETE
+305:   - Integração com API dos Correios
+306:   - Ou integração com Melhor Envio API
+309:5. EMISSÃO DE NF-E
+312:   - Emissão automática
+314:6. EMAILS TRANSACTIONAIS
+317:   - Status de envio
+318:   - Recuperação de senha
+321:   - Interface para gerenciar produtos
+335:**Custo total:** R$ 5.000-20.000 (desenvolvimento)
+348:- ❌ Requer hospedagem paga (R$ 30-100/mês)
+350:- ❌ Plugins pagos (R$ 200-1.000)
+356:Hospedagem:              R$ 50/mês
+357:Domínio:                 R$ 40/ano
+358:Tema premium:            R$ 300 (uma vez)
+359:Plugins essenciais:      R$ 1.000-2.000 (uma vez)
+360:Manutenção mensal:       R$ 200-500/mês
+362:Total 1º ano:            R$ 5.000-10.000
+363:Total mensal:            R$ 250-600/mês
+376:| **Abertura MEI** | R$ 0 | Gratuito |
+377:| **Registro domínio** | R$ 40 | Registro.br |
+378:| **Fotos profissionais** | R$ 500-1.500 | Essencial |
+379:| **Estoque inicial (50 peças)** | R$ 2.000-3.000 | Camisetas, kimonos |
+380:| **Embalagens (100 un)** | R$ 200-300 | Envelopes, caixas |
+===== Manual_Arte_Que_Veste_2026.txt =====
+1:    MANUAL COMPLETO DE IMPLANTAÇÃO E GESTÃO
+3:                 ARTE QUE VESTE
+7:  Operação em Aracaju/SE — legislação e processos verificados em junho de 2026
+10:                                     Aracaju, Sergipe, Brasil
+14: 01 Fundamentos Jurídicos e Tributários (Aracaju/SE, 2026)
+18: 03 Pagamentos
+24: 06 Gestão de Produtos e Catálogo
+32: 10 Anexos (Contatos, Modelo de Produto, Glossário)
+37:(Aracaju/SE, 2026)
+41:Aracaju antes de qualquer pagamento.
+46: Faturamento máx./ano         R$ 81.000 (inalterado desde       R$ 360.000
+49: Faturamento médio/mês        R$ 6.750                          —
+51: Custo de abertura            Gratuito (Portal do               R$ 500–1.500 (contador) + taxas Jucese
+54: Imposto mensal (DAS)         Fixo: R$ 82,05 a R$ 87,05         4% a 19% sobre faturamento
+61: Indicado para Arte Que       Sim, fase inicial                 Quando faturamento mensal se aproximar de R$ 6.750–7.000 de
+65:  Ponto de atenção 2026: se o faturamento anual ultrapassar R$ 81.000 em até 20% (até R$ 97.200), o MEI continua até 31/12 e paga
+66:  DAS complementar sobre o excedente; migração para ME ocorre em janeiro seguinte. Acima de 20%, o desenquadramento é
+67:  retroativo. Desde a Resolução CGSN nº 183/2025, rendimentos recebidos no CPF do titular ligados à mesma atividade também
+68:  contam para esse limite — relevante se parte das vendas for recebida via Pix pessoa física fora do CNPJ.
+71:1.2 — Abertura: o caminho real em Sergipe
+72:A abertura é integrada entre Receita Federal, Junta Comercial de Sergipe (Jucese) e Prefeitura, via três portais: Portal do
+73:Empreendedor (gov.br/empresas-e-negocios/empreendedor, abertura MEI/CNPJ), AGILIZA SE (www.agiliza.se.gov.br,
+74:viabilidade e registro Redesim/Jucese para ME/EPP) e SLIM Aracaju (slim.aracaju.se.gov.br, Alvará de Localização
+79: 2. Informe CPF, título de eleitor e dados pessoais (login gov.br nível bronze/prata).
+82: 4. Informe o endereço da atividade em Aracaju/SE.
+83: 5. Gere o CNPJ — emissão imediata na maioria dos casos.
+84: 6. A inscrição municipal é integrada automaticamente ou solicitada via SLIM Aracaju.
+93: 3. CNPJ gerado automaticamente na Receita Federal via Redesim.
+95: 5. Alvará de Localização e Funcionamento no SLIM Aracaju.
+97:  Prazo real (não o de 2024): a Prefeitura de Aracaju reduziu o prazo médio de abertura de empresas de baixo/médio risco —
+98:  categoria de uma loja de roupas sem fabricação no local — para poucas horas a 1 dia útil, com fiscalização posterior. Atividades de
+103:Correção importante: o órgão responsável é a SEFIN (Secretaria Municipal de Finanças), com base no Decreto Municipal nº
+104:2.469 — não a "Secretaria de Planejamento". Solicitação 100% online no SLIM Aracaju.
+108: Onde solicitar             slim.aracaju.se.gov.br → "Alvará de Localização" (PJ) ou AjuInteligente (autônomo/PF)
+118: Documentos (PJ)            Cartão CNPJ, RG/CPF dos sócios, comprovante de residência, Contrato Social, cartão de autógrafo
+134: Comércio/Indústria                                INSS + ICMS                               R$ 82,05
+136: Serviços                                          INSS + ISS                                R$ 86,05
+138: Comércio + Serviços                               INSS + ICMS + ISS                         R$ 87,05
+140:Calculado sobre o salário mínimo de R$ 1.621 (2026). Vencimento todo dia 20; atraso gera multa de 0,33% a 2%/mês (limite
+147: Até R$ 180.000                                                   4,00% (sem parcela a deduzir)
+149: R$ 180.000,01 a R$ 360.000                                       7,30% (com parcela a deduzir)
+151:ICMS em Sergipe
+167:e evita corrida de adaptação em 2027.
+178:  • A decisão real chega em 2027: permanecer no DAS simplificado (recomendado para a Arte Que Veste, que vende
+184:  setembro de 2026; (3) não reajustar preços por causa da reforma — ela foi desenhada para ser neutra em 2026.
+188:Ao coletar nome, telefone, CPF, e-mail e endereço, a loja se torna controladora de dados pessoais (Lei nº 13.709/2018),
+190:  • Política de Privacidade visível no rodapé do site, explicando dados coletados e finalidade.
+192:  • WhatsApp Business com senha/biometria; nunca publicar prints sem mascarar nome/telefone.
+201:  • Direito de arrependimento: desistência em até 7 dias corridos após o recebimento, sem justificar, com devolução integral
+202:    (inclusive frete) — diferente da troca por defeito.
+203:  • Dever de informação clara: características do produto, preço total com frete, prazo de entrega e identificação completa do
+205:  • Atendimento facilitado: canal de fácil acesso para reclamações — o WhatsApp Business cumpre esse papel, se
+207:  • Confirmação imediata do recebimento do pedido, mesmo no modelo manual via WhatsApp.
+209:  Resumo do Capítulo 1: abra como MEI pelo Portal do Empreendedor, regularize o Alvará via SLIM Aracaju (SEFIN), pague o DAS
+210:  todo dia 20, prepare-se para a decisão Simples × Híbrido antes de setembro de 2026, publique a Política de Privacidade e respeite os
+225: Frontend          Completo: Tailwind, GSAP, tradução PT/ES/EN, catálogo por categoria   Nada — reaproveitar 100%
+226: (visual)          e tamanho BR
+228: Carrinho          Em memória (array JS)                                                 Persistência real + frete/imposto
+230: Finalização       Pedido textual via WhatsApp                                           Checkout com pagamento online
+232: Pagamento         Inexistente                                                           Gateway certificado
+239: Frete             A combinar                                                            Integração Melhor Envio por CEP
+241: Painel admin      Editar produto = editar código                                        Painel para cadastro sem tocar em
+251:PRODUTOS por uma chamada de API. Reaproveita a stack já em desenvolvimento (FastAPI + PostgreSQL + Redis + n8n) do
+253:Opção C — WooCommerce: ecossistema grande de plugins prontos (frete, pagamento, nota), sem mensalidade de
+263: API de catálogo                Devolver produtos/estoque/preço                             FastAPI — GET /produtos
+265: Banco de dados                 Produtos, estoque, pedidos, clientes                        PostgreSQL
+267: Fila/cache                     Webhooks de pagamento assíncronos                           Redis
+269: Checkout                       Pix, cartão, boleto com PCI-DSS                             Mercado Pago (Checkout Pro)
+271: Frete                          Preço/prazo por CEP                                         API Melhor Envio
+273: Nota fiscal                    Emissão automática pós-pagamento                            NFe.io / Emissor SEFAZ/SE
+275: Automação                      E-mail/WhatsApp pós-venda, planilha, alertas                n8n
+282:1. Cliente abre a loja → fetch("/api/produtos") devolve preço/estoque reais.
+284:3. Backend devolve link de pagamento Mercado Pago.
+285:4. Cliente paga via Pix/cartão/boleto na página do gateway (segurança PCI-DSS sem custo extra).
+286:5. Webhook "pagamento aprovado" → estoque decrementado, nota emitida via n8n, cliente notificado.
+287:6. Painel/planilha mostra o pedido pago → separação, etiqueta Melhor Envio, despacho.
+290:  Transição em fases (evita big-bang): Fase 1 (hoje) catálogo estático + WhatsApp → Fase 2 API só de catálogo → Fase 3 checkout
+291:  real, WhatsApp mantido como alternativa → Fase 4 nota fiscal e notificações automatizadas via n8n.
+297:2.4 — Pagamento real: Mercado Pago, passo a passo
+298: 1. Crie a conta em mercadopago.com.br com o CNPJ da loja.
+===== Manualartequeveste.txt =====
+32:#    MANUAL COMPLETO DE IMPLANTAÇÃO - ARTE
+35:emAracaju/SE
+43:4. [GATEWAYS DE PAGAMENTO](#4-gateways-de-pagamento)
+46:7. [EDIÇÃO DE PRODUTOS](#7-edição-de-produtos)
+60:- Faturamento máximo: R$ 81.000/ano (2024)
+61:- Imposto mensal: R$ 77,90 (comércio) ou R$ 81,90 (serviço)
+64:  - 4789-0/99 - Comércio varejista de outros produtos não especificados anteriormente
+73:5. Informe endereço em Aracaju/SE
+74:6. Confirme e gere CNPJ
+79:- Custo de abertura: R$ 500-1.500 (contador)
+80:- Faturamento: Até R$ 360.000/ano
+81:- Imposto: 4-19% sobre faturamento (Anexo I ou III)
+85:- RG e CPF
+88:- Certificado Digital e-CNPJ (opcional inicial)
+100:Para Aracaju/SE:
+101:1. Prefeitura Municipal de Aracaju
+103:3. Custo: R$ 100-300 (varia por atividade)
+109:- DAS MEI: R$ 77,90 (comércio)
+111:- Pagamento: Guia DAS no SIMEI
+115:  - Até R$ 180.000/ano: 4%
+116:  - De R$ 180.001 a R$ 360.000: 7%
+118:  - Até R$ 180.000/ano: 6%
+119:  - De R$ 180.001 a R$ 360.000: 11,5%
+121:ICMS (Sergipe):
+139:Emissão Gratuita:
+145:1. Certificado Digital e-CNPJ (R$ 200-400/ano)
+148:4. Custo anual: R$ 200-600
+158:- Plano Single: R$ 11,99/mês (primeiro ano)
+165:- Renovação: R$ 19,99/mês
+180:- Plano P: R$ 16,74/mês (anual)
+184:- Renovação: R$ 27,90/mês
+187:- Plano Linux Start: R$ 14,90/mês
+191:- Renovação: R$ 24,90/mês
+194:- Plano Starter: R$ 29,90/mês
+202:- Custo: R$ 40/ano
+204:- Obrigatório: CNPJ ou CPF
+211:4. Preencha dados do titular (CNPJ)
+212:5. Pague boleto (R$ 40)
+262:- Plano Inicial: R$ 59/mês
+266:  - Integração Correios/Melhor Envio
+272:- Plano Básico: R$ 107/mês
+282:- Plano Start: R$ 49/mês
+290:- Hospedagem: R$ 20-40/mês
+306:   - Email
+307:   - Senha
+308:   - CNPJ
+309:4. Confirme email
+316:- Nome: Arte Que Veste
+317:- Email: contato@artequeveste.com.br
+319:- Endereço: Rua XXX, nº XX, Bairro, Aracaju/SE, CEP 49XXX-XXX
+322:- Moeda: Real (R$)
+335:- Logo: Upload logo ARTE QUE VESTE
+336:- Cores:
+340:- Fontes: Playfair Display (títulos) + Inter (corpo)
+343:4. Configuração de Produtos:
+345:Cadastro de Produto:
+346:1. Produtos > Adicionar Produto
+350:   - Preço: R$ 129,00
+351:   - Preço de custo: R$ 45,00
+363:  - Tamanhos: P, M, G, GG
+364:  - Cores: Turquesa, Branco, Preto
+366:   - Título: Camiseta Bumba Meu Boi - Arte Que Veste
+371:#3.3 MIGRAÇÃO DE PRODUTOS EM MASSA
+382:4. Revise produtos
+398:4. GATEWAYS DE PAGAMENTO
+404:  - Cartão à vista: 4.99% + R$ 0,50
+405:  - Cartão parcelado: 5.99% + R$ 0,50/parcela
+406:  - PIX: 0.99%
+407:  - Boleto: R$ 2,00
+426:   - Configurações > Pagamentos
+434:  - Cartão à vista: 3.99% + R$ 0,40
+435:  - PIX: 1.99%
+436:  - Boleto: R$ 2,00
+445:  - Cartão: 2.99% + R$ 0,49
+446:  - PIX: 0.99%
+447:  - Boleto: R$ 1,99
+451:  - Cobrança recorrente
+456:  - Cartão: 3.59% + R$ 0,50
+457:  - PIX: 0.99%
+458:  - Boleto: R$ 1,50
+===== key_terms.txt =====
+1:===== 2Manual_Arte_Que_Veste_2026_1.txt =====
+2:1:MANUAL COMPLETO DE IMPLANTAÇÃO E GESTÃO
+3:3:                       ARTE QUE VESTE
+4:6:      Operação em Aracaju/SE — legislação e processos verificados em junho de 2026
+5:11:                                     Aracaju, Sergipe, Brasil
+6:20:CAPÍTULO 1 — Fundamentos Jurídicos e Tributários (Aracaju/SE, 2026)
+7:24:CAPÍTULO 3 — Pagamentos
+8:30:CAPÍTULO 6 — Gestão de Produtos e Catálogo
+9:38:CAPÍTULO 10 — Anexos (Contatos, Modelo de Produto, Glossário)
+10:44:CAPÍTULO 1 — FUNDAMENTOS JURÍDICOS E TRIBUTÁRIOS (ARACAJU/SE,
+11:47:Esta parte substitui e corrige a versão anterior do manual, que continha valores de 2024 e um órgão
+12:48:municipal incorreto para o alvará. Todos os valores abaixo foram verificados em fontes oficiais e de
+13:51:e no site da Prefeitura de Aracaju antes de qualquer pagamento.
+14:55: Faturamento               R$ 81.000 (2026, inalterado desde
+15:56:                                                                    R$ 360.000
+16:59:                           R$ 6.750                                 —
+17:61:                           Gratuito, via Portal do                  R$ 500–1.500 (contador) + taxas
+18:64:                           Valor fixo: R$ 82,05 a R$ 87,05
+19:65:                                                                    4% a 19% sobre o faturamento,
+20:75:                           piso da categoria
+21:77: Indicado para Arte Que    Sim, na fase inicial (loja em Aracaju,   faturamento mensal se aproximar
+22:78: Veste                     faturamento ainda não recorrente)        de R$ 6.750–7.000 de forma
+23:84:  Se o faturamento anual ultrapassar R$ 81.000 em até 20% (até R$ 97.200), o MEI continua até
+24:85:  31/12 e paga apenas um DAS complementar sobre o excedente; a migração para ME ocorre em
+25:88:  Resolução CGSN nº 183/2025, rendimentos recebidos no CPF do titular ligados à mesma atividade
+26:90:  via Pix pessoa física fora do CNPJ.
+27:93:1.2 — Abertura: o caminho real em Sergipe (corrigido)
+28:94:O fluxo descrito em versões anteriores deste manual estava parcialmente desatualizado. Em Sergipe, a
+29:96:Junta Comercial de Sergipe (Jucese) e a Prefeitura, através de dois sistemas que se conversam:
+30:101:    apenas para quem vai abrir como MEI; é onde se obtém o CNPJ.
+31:104:  • SLIM Aracaju (slim.aracaju.se.gov.br) — portal de licenciamento municipal da Prefeitura de Aracaju,
+32:105:    onde se solicita o Alvará de Localização e Funcionamento depois de aberto o CNPJ.
+33:107:Passo a passo — MEI (recomendado para a fase atual da Arte Que Veste)
+34:109:  2. Informe CPF, título de eleitor e dados pessoais (login via conta gov.br, nível bronze/prata é suficiente).
+35:113:  4. Informe o endereço da atividade em Aracaju/SE (pode ser o endereço residencial, salvo restrição de
+36:115:  5. Confirme os dados e gere o CNPJ — emissão imediata na maioria dos casos.
+37:117:     solicitada via SLIM Aracaju, conforme orientação exibida ao final do cadastro no Portal do
+38:125:  9. Obtenha o CNPJ na Receita Federal (gerado automaticamente após o registro na Jucese, via Redesim).
+39:127:  11.   Solicite o Alvará de Localização e Funcionamento no SLIM Aracaju (ver 1.3).
+40:130:  A Prefeitura de Aracaju reduziu o prazo médio de abertura de empresas de baixo e médio risco —
+41:131:  categoria em que se encaixa uma loja de roupas sem fabricação no local — de até 5 dias úteis para
+42:137:1.3 — Alvará de Localização e Funcionamento (correção importante)
+43:139:Aracaju, o Alvará de Localização e Funcionamento é expedido pela Secretaria Municipal de Finanças (SEFIN),
+44:140:com base no Decreto Municipal nº 2.469, e solicitado integralmente pela internet no portal SLIM Aracaju.
+45:143:                                 slim.aracaju.se.gov.br → "Alvará de Localização" (pessoa jurídica) ou
+46:160: Documentos (Pessoa              Cartão CNPJ, RG/CPF dos sócios, comprovante de residência, Contrato
+47:166:simplificado, mas é exigida ao migrar para ME). Solicitação pela Secretaria de Estado da Fazenda de Sergipe
+48:170:1.5 — Tributos em 2026 (valores corrigidos)
+49:173: Comércio/Indústria          INSS + ICMS                           R$ 82,05
+50:174: Serviços                    INSS + ISS                            R$ 86,05
+51:175: Comércio + Serviços         INSS + ICMS + ISS                     R$ 87,05
+52:176:Valores calculados sobre o salário mínimo de R$ 1.621 (2026) e sujeitos a pequenas variações conforme
+53:183: Até R$ 180.000                            4,00%                     Sem parcela a deduzir
+54:185: R$ 180.000,01 a R$ 360.000                7,30%                     tabela oficial — o contador calcula
+55:188:por causa da Reforma Tributária em 2026 (ver 1.7). A faixa de R$ 360.000 a R$ 4,8 milhões deixa de ser
+56:189:MEI/ME e passa a EPP — fora do escopo inicial da Arte Que Veste.
+57:191:ICMS em Sergipe — valor corrigido
+58:192:A alíquota interna padrão de Sergipe é de 19% + 1% destinado ao Fundo Estadual de Combate e Erradicação
+59:194:como constava na versão anterior. Para venda interestadual (cliente fora de Sergipe), a alíquota
+60:210:                            Emissão obrigatória
+61:212: Venda para Pessoa                                                Emissão obrigatória em TODAS as
+62:213:                            Emissão obrigatória apenas se o
+63:221:de nota fiscal (gratuito) desde o lançamento da loja. Isso evita uma corrida de adaptação em 2027 e já cria o
+64:227:Este é o ponto mais importante que faltava nas versões anteriores do manual, porque 2026 é, na prática, o
+65:229:  • A Reforma substitui PIS, Cofins e IPI por um novo tributo federal, a CBS (Contribuição sobre Bens e
+66:230:    Serviços), e substitui ICMS e ISS por um novo tributo, o IBS (Imposto sobre Bens e Serviços), de
+67:235:  • Até abril de 2026 não há multa por erro ou omissão no preenchimento desses campos — período de
+68:237:  • Para quem está no Simples Nacional/MEI (o caso da Arte Que Veste): não há nenhuma mudança na
+69:256:  se abre antes de setembro de 2026; e (3) não se preocupar com aumento de preço — a própria
+70:257:  reforma foi desenhada para ser neutra em 2026.
+71:260:1.8 — LGPD para uma loja virtual (não estava no manual anterior)
+72:261:A partir do momento em que a loja online da Arte Que Veste coleta nome, telefone, CPF, e-mail e endereço
+73:262:de entrega de clientes, ela se torna "controladora de dados pessoais" e está sujeita à Lei Geral de Proteção
+74:264:  • Tenha uma Política de Privacidade visível no rodapé do site, explicando quais dados são coletados
+75:265:    (nome, telefone, endereço, dados de pagamento processados pelo gateway) e para que são usados
+76:266:    (processar o pedido, calcular frete, emitir nota fiscal).
+77:270:    do gateway de pagamento (Mercado Pago, PagBank etc.), que é certificado PCI-DSS. Nunca crie um
+78:272:  • Para pedidos via WhatsApp (como na versão atual do site), o número de telefone do cliente e o
+79:273:    conteúdo da conversa também são dados pessoais — mantenha o WhatsApp Business com
+80:274:    senha/biometria e não compartilhe prints de conversas de clientes publicamente sem mascarar o
