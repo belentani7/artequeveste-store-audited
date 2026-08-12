@@ -34,9 +34,6 @@
 - [x] Incluir no e-mail a distinção entre loja hospedada, painel administrativo e configurações que dependem do titular
 - [x] Entregar uma versão editável do e-mail para envio ao cliente
 
-- [x] Montar o pacote final de entrega com arquivos finais identificados, links e checklist de ativação
-- [x] Atualizar explicitamente o manual principal com a seção final de lançamento passo a passo para o proprietário
+- [ ] Montar o pacote final de entrega com arquivos finais identificados, links e checklist de ativação
+- [ ] Atualizar explicitamente o manual principal com a seção final de lançamento passo a passo para o proprietário
 - [ ] Salvar novo checkpoint após os documentos finais para vincular a entrega real ao estado atual do projeto
-
-- [x] Adicionar ao pacote final um arquivo explícito com os links disponíveis de visualização e checkpoint
-- [ ] Salvar um novo checkpoint após incluir os links finais e atualizar o checklist de ativação com referências reais de entrega

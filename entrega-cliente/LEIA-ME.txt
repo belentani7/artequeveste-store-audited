@@ -1,0 +1,15 @@
+ARTE QUE VESTE — PACOTE DE ENTREGA
+
+1. Manual-Arte-Que-Veste-2026.pdf
+   Manual completo em português do Brasil.
+2. Manual-Arte-Que-Veste-2026-editavel.md
+   Versão editável para futuras atualizações.
+3. Guia-Entrega-Sem-Codigo.md
+   Explica como o proprietário recebe e lança a loja sem programar.
+4. Email-Entrega-Cliente.md
+   Mensagem pronta para enviar ao proprietário.
+5. Checklist-Interno.md
+   Controle interno do que está concluído e do que depende do titular.
+
+NÃO INCLUIR SENHAS, TOKENS, CHAVES DE API OU DADOS BANCÁRIOS NESTA PASTA.
+As credenciais devem ser entregues por convite ou canal seguro e alteradas no primeiro acesso.
