@@ -39,3 +39,11 @@
 - [x] Salvar novo checkpoint após os documentos finais para vincular a entrega real ao estado atual do projeto
 - [x] Adicionar ao pacote final um arquivo explícito com os links disponíveis de visualização e checkpoint
 - [x] Salvar um novo checkpoint após incluir os links finais e atualizar o checklist de ativação com referências reais de entrega
+
+- [x] Reorganizar o pacote final em um ZIP editorial completo em português do Brasil
+- [x] Criar PDF inspirado na capa de couro fornecida pelo cliente
+- [x] Ampliar capítulos sobre cultura de Sergipe e conceito da Arte Que Veste
+- [x] Incluir frases originais de sorte, prosperidade e pertencimento cultural
+- [x] Consolidar manual completo de lançamento, uso diário e manutenção da web
+- [x] Incluir arquivos PDF, editáveis, guias, e-mail e checklist no ZIP final
+- [x] Validar o ZIP e salvar checkpoint atualizado da entrega editorial
