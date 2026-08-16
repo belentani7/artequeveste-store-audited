@@ -8,7 +8,7 @@ O cliente não precisa instalar Node, editar código, configurar servidor ou faz
 
 ## O que será entregue pronto
 
-A vitrine recebe o nome, o tom de voz, a paleta original do manuscrito — turquesa `#40E0D0`, preto `#1A1A1A`, rosa `#FF1493` e fundo claro `#FAF9F6` — e a assinatura institucional:
+A vitrine recebe o nome, o tom de voz e a direção visual reformulada — papel quente `#F6EFE4`, tinta `#211A16`, verde-turquesa `#23867F`, terracota `#C7654C` e amarelo-ouro `#E4A83B` — além da assinatura institucional. O arquivo `STATUS-REFORMULACAO-VISUAL.md`, incluído na pasta de guias, lista as rotas e componentes cobertos pela reformulação: Home, 404, header, hero, coleção, cartões, carrinho, consentimento e rodapé.
 
 > © 2026 Arte Que Veste · Todos os direitos reservados · Conceito e identidade digital por Pedro Belentani
 
@@ -34,7 +34,7 @@ O proprietário entra no provedor disponível na conta, conclui a validação de
 
 ### Etapa 5 — ativar envio
 
-O proprietário informa CEP de origem, endereço de postagem, embalagem, prazo de preparação e transportadora. O frete deve ser testado com um CEP de Aracaju e outro de uma região distante antes do lançamento.
+O proprietário informa CEP de origem, endereço de postagem, embalagem, prazo de preparação e transportadora. O frete deve ser testado com um CEP real de Recife/PE e outro de uma região distante antes do lançamento.
 
 ### Etapa 6 — fazer o pedido de teste
 

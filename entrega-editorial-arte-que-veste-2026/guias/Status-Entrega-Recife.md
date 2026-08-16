@@ -15,3 +15,8 @@ Essas etapas não foram simuladas e nenhuma senha ou credencial foi incluída. S
 ## Pendências sem credenciais
 
 Ainda é necessário receber arquivos visuais separados caso existam: logo, fotos de produtos, fontes próprias, SVGs, imagens de campanha ou outro HTML que contenha referências de imagem. O HTML analisado não possui tags de imagem, SVG, data URI, background-image ou referências a PNG, JPG, WEBP e GIF. Por isso a identidade foi clonada com os recursos CSS efetivamente presentes, e não com imagens inexistentes.
+
+
+## Teste de acesso após reinício
+
+O preview foi reiniciado e testado no navegador. O endereço `https://3000-impude2jr0xtgl5cobst3-64ad344f.us3.manus.computer/` respondeu corretamente, exibindo a página inicial, navegação, hero, coleção, login, carrinho e banner de privacidade. A recusa de conexão observada anteriormente foi resolvida pelo reinício do serviço.

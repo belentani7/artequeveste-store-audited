@@ -85,4 +85,34 @@
 - [x] Validar visualmente a correção e salvar novo checkpoint
 
 - [x] Revisar visualmente a vitrine e o PDF HTML-only após remover a imagem do PDF
-- [ ] Salvar novo checkpoint após a correção final baseada exclusivamente no HTML original
+- [x] Salvar novo checkpoint após a correção final baseada exclusivamente no HTML original
+
+- [x] Diagnosticar por que a loja não abre no endereço entregue; o preview temporário estava recusando conexão
+- [x] Corrigir o erro de servidor, preview, build ou rota identificado; serviço reiniciado
+- [x] Testar a abertura da loja no navegador e entregar apenas um endereço confirmado
+- [ ] Salvar checkpoint após corrigir o acesso
+
+- [x] Corrigir a recusa de conexão exibida no preview do navegador do usuário
+- [x] Reiniciar o serviço e confirmar novo endereço de preview
+- [x] Validar o novo endereço no navegador antes de entregar
+- [ ] Atualizar checkpoint após corrigir o acesso
+
+- [ ] Confirmar com o usuário que o preview reiniciado abre no navegador dele ou publicar um endereço definitivo
+- [ ] Salvar checkpoint específico após a confirmação externa do acesso
+
+- [x] Auditar a versão publicada e definir uma direção visual coerente
+- [x] Aplicar paleta, tipografia e espaçamento profissionais em toda a loja
+- [x] Refinar hero, navegação, coleção, cartões, consentimento e mobile
+- [ ] Validar desktop/mobile, build e nova publicação
+
+- [x] Revisar paleta, tipografia e espaçamento também nas telas e fluxos publicados além da Home; as rotas publicadas são Home e 404
+- [x] Documentar as telas e componentes cobertos pela reformulação visual: Home, 404, header, hero, coleção, cartões, carrinho, consentimento e rodapé
+
+- [x] Criar STATUS-REFORMULACAO-VISUAL.md com rotas e componentes cobertos
+- [x] Vincular o status visual atualizado ao pacote final e ao guia de entrega
+
+- [x] Atualizar o guia de entrega e o LEIA-ME-PRIMEIRO para mencionar STATUS-REFORMULACAO-VISUAL.md
+- [x] Reconstruir o ZIP após atualizar o guia visual
+
+- [x] Atualizar explicitamente o LEIA-ME-PRIMEIRO.txt com STATUS-REFORMULACAO-VISUAL.md
+- [x] Reconstruir e validar o ZIP após atualizar o LEIA-ME-PRIMEIRO.txt
