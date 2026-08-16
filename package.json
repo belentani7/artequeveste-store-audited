@@ -44,6 +44,7 @@
     "embla-carousel-react": "^8.6.0",
     "express": "^4.21.2",
     "framer-motion": "^12.23.22",
+    "gsap": "^3.15.0",
     "input-otp": "^1.4.2",
     "jose": "6.1.0",
     "lucide-react": "^0.453.0",
@@ -95,16 +96,16 @@
   "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
   "pnpm": {
     "overrides": {
-      "tailwindcss\u003enanoid": "3.3.7"
+      "tailwindcss>nanoid": "3.3.7"
     },
     "patchedDependencies": {
       "wouter@3.7.1": "patches/wouter@3.7.1.patch"
     }
   },
   "scripts": {
-    "build": "vite build \u0026\u0026 esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "check": "tsc --noEmit",
-    "db:push": "drizzle-kit generate \u0026\u0026 drizzle-kit migrate",
+    "db:push": "drizzle-kit generate && drizzle-kit migrate",
     "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
     "format": "prettier --write .",
     "shopify:probe": "tsx scripts/shopify-probe.runner.ts",

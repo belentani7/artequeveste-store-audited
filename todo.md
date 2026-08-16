@@ -90,15 +90,15 @@
 - [x] Diagnosticar por que a loja não abre no endereço entregue; o preview temporário estava recusando conexão
 - [x] Corrigir o erro de servidor, preview, build ou rota identificado; serviço reiniciado
 - [x] Testar a abertura da loja no navegador e entregar apenas um endereço confirmado
-- [ ] Salvar checkpoint após corrigir o acesso
+- [x] Salvar checkpoint após corrigir o acesso
 
 - [x] Corrigir a recusa de conexão exibida no preview do navegador do usuário
 - [x] Reiniciar o serviço e confirmar novo endereço de preview
 - [x] Validar o novo endereço no navegador antes de entregar
-- [ ] Atualizar checkpoint após corrigir o acesso
+- [x] Atualizar checkpoint após corrigir o acesso
 
 - [x] Confirmar com o usuário que o preview reiniciado abre no navegador dele ou publicar um endereço definitivo; domínio público atualizado confirmado
-- [ ] Salvar checkpoint específico após a confirmação externa do acesso
+- [x] Salvar checkpoint específico após a confirmação externa do acesso
 
 - [x] Auditar a versão publicada e definir uma direção visual coerente
 - [x] Aplicar paleta, tipografia e espaçamento profissionais em toda a loja
@@ -120,7 +120,24 @@
 - [x] Corrigir a divergência entre o preview novo e o domínio público antigo
 - [x] Reprocessar a publicação para servir a reformulação visual atual
 - [x] Testar o domínio público após a sincronização e confirmar a paleta nova
-- [ ] Salvar checkpoint específico da publicação sincronizada
+- [x] Salvar checkpoint específico da publicação sincronizada
 
 - [x] Capturar e registrar visualmente o domínio público publicado com a paleta nova
-- [ ] Salvar checkpoint após a validação visual pública sincronizada
+- [x] Salvar checkpoint após a validação visual pública sincronizada
+
+- [x] Redefinir a direção visual para uma estética premium contemporânea, sem verde/marrom dominante
+- [x] Aplicar sistema UX/UI de ecommerce moderno com tipografia Google Fonts
+- [x] Integrar GSAP e microinterações com fallback acessível
+- [x] Validar desktop/mobile, build e publicar a nova versão visual
+
+- [x] Reestruturar a Home como loja fashion de roupas, não como blog editorial
+- [x] Criar hero de coleção com CTA de compra e navegação comercial
+- [x] Destacar produtos, categorias, preços, tamanhos, estoque e adicionar ao carrinho
+- [x] Manter cultura e storytelling como apoio de marca, sem dominar a experiência de compra
+- [x] Validar a experiência fashion em desktop/mobile e publicar a nova versão
+
+- [x] Buscar skills verificadas de ecommerce fashion, UX/UI premium e fast-fashion
+- [x] Avaliar se existe uma skill reutilizável sem copiar marca ou assets da Zara
+- [x] Criar e validar skill própria se a busca não encontrar uma opção suficiente
+- [x] Aplicar a skill ao redesign fashion da Arte Que Veste
+- [x] Refinar estados sem catálogo e sinais gráficos para manter o tom premium mesmo antes da publicação dos produtos reais
