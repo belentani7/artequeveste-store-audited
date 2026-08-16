@@ -54,4 +54,27 @@
 - [x] Adicionar controles de segurança, consentimento, rastreabilidade e proteção contra abuso
 - [x] Criar testes e documentação do perfil PVC-U aplicado à loja; 9 testes aprovados
 - [x] Atualizar o manual e o ZIP editorial com a camada PVC-U
-- [ ] Validar e salvar checkpoint da versão PVC-U aplicada
+- [x] Validar e salvar checkpoint da versão PVC-U aplicada; TypeScript, build e 9 testes aprovados
+
+- [x] Localizar e examinar imagens, capas, logos e assets originais disponíveis
+- [x] Extrair paleta, tipografia, símbolos, textura e regras de composição da identidade visual
+- [x] Aplicar os assets reais à loja, ao PDF editorial e ao pacote final; o HTML forneceu CSS e composição, não imagens
+- [x] Validar visualmente a identidade reconstruída e salvar nova versão revisável
+
+- [x] Inspecionar o HTML original e localizar imagens, SVGs, fontes, fundos e referências externas; o HTML não contém imagens incorporadas
+- [x] Extrair e validar os assets reais do HTML original; foram extraídos CSS, paleta e composição, sem arquivos de imagem
+- [x] Clonar a composição visual do HTML na vitrine, sem substituir por interpretação abstrata
+- [x] Atualizar PDF e ZIP com a identidade clonada do HTML e validar visualmente
+
+- [x] Auditar o estado atual da loja, materiais, identidade HTML e integração comercial
+- [x] Preparar tudo que não depende de login, dados fiscais, pagamento ou transporte do titular
+- [x] Criar checklist específico para lançamento em Recife/PE
+- [x] Redigir e-mail final com solicitações, indicações, acessos e ordem de lançamento
+- [ ] Validar o pacote atualizado e salvar checkpoint revisável
+
+- [x] Concluir e registrar a validação visual da identidade reconstruída do HTML na loja e nos materiais editoriais
+- [x] Listar explicitamente o que foi preparado sem depender do titular e o que ainda falta sem depender de credenciais
+- [ ] Salvar novo checkpoint após a revisão final do pacote atualizado
+
+- [x] Revisar visualmente páginas adicionais do PDF editorial atualizado e registrar a conferência no pacote
+- [ ] Salvar novo checkpoint após as mudanças finais de identidade HTML, validação visual e pacote Recife

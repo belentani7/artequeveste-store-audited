@@ -341,3 +341,10 @@ Cada validação pode gerar um Validation Envelope com status, ID de validação
 Os módulos de criptografia homomórfica, distribuição quântica de chaves, simulações multiversais, limite de Landauer, MLOps e reescrita de axiomas não foram incluídos. Eles não são necessários para uma loja de produtos e acrescentariam custo e manutenção. O princípio aplicado é segurança proporcional: usar controles reais que o cliente consegue manter.
 
 A camada não substitui o provedor de pagamento, a transportadora, a responsabilidade fiscal nem a revisão humana. Ela melhora o comportamento do software; não cria documentos, estoque, conta bancária ou autorização comercial.
+
+
+# 18. Identidade visual clonada do HTML
+
+A composição visual da vitrine foi baseada diretamente no arquivo HTML original. O HTML contém CSS inline, não imagens incorporadas. Por isso foram reproduzidos os elementos reais disponíveis: fundo claro, gradiente turquesa-preto, rosa de destaque, moldura arredondada, sombra, títulos em caixa alta com espaçamento e cartões brancos de leitura.
+
+A capa de couro é um material visual separado encontrado nos PDFs. Ela permanece como referência editorial e não foi apresentada como uma imagem extraída do HTML. Caso existam fotos, logo ou outros assets visuais da empresa, eles devem ser enviados em arquivos separados para serem incorporados sem substituição ou interpretação.
