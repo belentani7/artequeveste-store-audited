@@ -12,9 +12,9 @@
 
 ## Nota de inspiração
 
-Este manual foi concebido a partir da referência visual da capa de couro presente nos materiais recebidos: textura terrosa, gravura dourada, moldura ornamental, figuras do sertão, cactos, sanfona, cavaleiro, sol e composição de cordel. A capa funciona como um objeto de memória: algo que parece guardado por muitos anos, mas continua vivo quando é aberto.
+Este manual foi concebido a partir da identidade visual existente no HTML original da Arte Que Veste: fundo claro `#faf9f6`, texto preto `#1a1a1a`, turquesa `#40E0D0`, rosa `#FF1493`, gradiente de turquesa ao preto, cantos arredondados, sombras amplas, títulos em caixa alta e composição editorial limpa.
 
-A versão digital traduz essa atmosfera para uma experiência de loja: o couro vira profundidade e matéria; o dourado vira valor e prosperidade; o azul-turquesa e o rosa da identidade editorial tornam a marca contemporânea; a cultura sergipana oferece o território, a história e o vínculo humano.
+A versão digital reproduz essa linguagem diretamente: o gradiente cria profundidade, o rosa marca palavras importantes, o turquesa conduz a navegação e o fundo claro mantém a leitura. A cultura sergipana oferece o território, a história e o vínculo humano. Nenhuma imagem do PDF foi usada como imagem original do HTML.
 
 > O objetivo não é transformar a cultura em decoração. É criar uma loja que reconheça origem, autoria, memória, trabalho manual e circulação de imagens com respeito.
 
@@ -154,7 +154,7 @@ As frases abaixo são textos autorais para cartões, etiquetas, embalagens, camp
 
 # 5. Identidade visual e direção de arte
 
-A capa de couro recebida funciona como referência principal de atmosfera. Ela combina matéria escura, desenhos dourados, moldura, personagens, ornamentos vegetais e uma tipografia central forte. Para o ambiente digital, essa linguagem pode ser aplicada em camadas, sem transformar cada tela em uma textura pesada.
+A identidade do HTML funciona como referência principal de atmosfera. Ela combina fundo claro, gradiente turquesa-preto, rosa de destaque, títulos espaçados, moldura arredondada e cartões limpos. Para o ambiente digital, essa linguagem é aplicada diretamente, sem adicionar imagens de outros documentos.
 
 ## 5.1 Paleta
 
@@ -330,3 +330,21 @@ Se o checkout falhar, verificar status do provedor de pagamento, domínio, conex
 Conceito comercial, identidade corporativa, direção criativa e desenvolvimento da experiência digital: **Pedro Belentani**.
 
 **© 2026 Arte Que Veste. Todos os direitos reservados.**
+
+
+# 17. Perfil PVC-U aplicado à loja
+
+A loja utiliza uma versão proporcional do protocolo PVC-U Ω-Max. Foram aplicadas as partes que melhoram a operação real: validação estrutural com Zod, regras de negócio simples, estados de carregamento e erro, sanitização, autenticação existente, headers de versão, traceId, proteção contra clickjacking, CSP, limite básico de requisições e consentimento de privacidade.
+
+Cada validação pode gerar um Validation Envelope com status, ID de validação, traceId, perfil, versão, códigos e horário. Isso torna as falhas mais explicáveis e ajuda o suporte a identificar uma solicitação sem registrar dados pessoais além do necessário.
+
+Os módulos de criptografia homomórfica, distribuição quântica de chaves, simulações multiversais, limite de Landauer, MLOps e reescrita de axiomas não foram incluídos. Eles não são necessários para uma loja de produtos e acrescentariam custo e manutenção. O princípio aplicado é segurança proporcional: usar controles reais que o cliente consegue manter.
+
+A camada não substitui o provedor de pagamento, a transportadora, a responsabilidade fiscal nem a revisão humana. Ela melhora o comportamento do software; não cria documentos, estoque, conta bancária ou autorização comercial.
+
+
+# 18. Identidade visual clonada do HTML
+
+A composição visual da vitrine foi baseada diretamente no arquivo HTML original. O HTML contém CSS inline, não imagens incorporadas. Por isso foram reproduzidos os elementos reais disponíveis: fundo claro, gradiente turquesa-preto, rosa de destaque, moldura arredondada, sombra, títulos em caixa alta com espaçamento e cartões brancos de leitura.
+
+O HTML analisado não possui imagens, SVGs, data URIs ou referências externas de imagem. Portanto, a clonagem visual usa somente os elementos que realmente existem no HTML. Fotos, logo, textura ou outros assets da empresa só devem ser incorporados quando forem enviados como arquivos originais separados.

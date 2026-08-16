@@ -1,19 +1,17 @@
 # Identidade visual extraída do HTML original
 
-## Fonte correta
+## Fonte visual usada
 
-A fonte visual solicitada é `ARTEQUEVESTEMANUSCRITO.html`. A análise textual do arquivo encontrou HTML, CSS inline e conteúdo editorial, mas nenhuma tag `<img>`, nenhum `<svg>`, nenhuma `data:image`, nenhum `background-image` e nenhuma referência a arquivos PNG, JPG, WEBP ou GIF. Portanto, o HTML original não contém arquivos de imagem para extrair.
+A fonte visual correta é `ARTEQUEVESTEMANUSCRITO.html`. A vitrine e o manual final usam somente a linguagem visual presente nesse HTML. A capa do PDF recebido não é usada como imagem da empresa e foi retirada da versão final do pacote.
 
-## Elementos reais do HTML reutilizados
+## Elementos encontrados e reutilizados
 
-A vitrine foi ajustada para usar diretamente as regras visuais encontradas no HTML: fundo `#faf9f6`, texto `#1a1a1a`, turquesa `#40E0D0`, rosa `#FF1493`, gradiente de capa do turquesa ao preto, cantos arredondados de 20px, sombra ampla, tipografia sans-serif do sistema, títulos em caixa alta com espaçamento de letras e cartões brancos com sombras leves.
+O HTML contém CSS inline, fundo `#faf9f6`, texto `#1a1a1a`, turquesa `#40E0D0`, rosa `#FF1493`, gradiente turquesa-preto, cantos arredondados de 20px, sombras amplas, títulos em caixa alta com espaçamento, cartões brancos, bordas e composição editorial limpa.
 
-A composição também reproduz a lógica da capa HTML: marca em letras espaçadas, título forte em caixa alta, palavra de destaque em rosa, subtítulo curto, bloco de metadados e contraste entre turquesa, preto e branco.
+## Imagens
 
-## O que não foi inventado
+A análise do HTML não encontrou tags `<img>`, `<svg>`, `data:image`, `background-image` nem referências a arquivos PNG, JPG, JPEG, WEBP ou GIF. Portanto, não havia imagem original para extrair desse HTML. Nenhuma imagem do PDF foi usada como substituta na versão corrigida.
 
-A capa de couro presente nos PDFs não foi tratada como imagem do HTML. Ela permanece arquivada apenas como referência editorial separada. Para usar imagens reais da empresa no site, é necessário receber os arquivos de imagem ou um HTML diferente que realmente contenha essas imagens.
+## Regra para futuros assets
 
-## Uso no pacote
-
-Este documento acompanha o PDF e o ZIP para que o cliente saiba exatamente o que foi clonado do HTML e quais assets ainda precisam ser fornecidos para uma reprodução fotográfica ou de logotipo.
+Logo, fotografias, texturas ou ilustrações só devem ser incorporadas quando forem enviadas como arquivos originais separados ou quando estiverem realmente presentes em um novo HTML visual. Isso evita usar a imagem errada ou atribuir ao HTML um asset que pertence a outro documento.

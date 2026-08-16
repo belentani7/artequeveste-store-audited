@@ -70,11 +70,19 @@
 - [x] Preparar tudo que não depende de login, dados fiscais, pagamento ou transporte do titular
 - [x] Criar checklist específico para lançamento em Recife/PE
 - [x] Redigir e-mail final com solicitações, indicações, acessos e ordem de lançamento
-- [ ] Validar o pacote atualizado e salvar checkpoint revisável
+- [x] Validar o pacote atualizado e salvar checkpoint revisável
 
 - [x] Concluir e registrar a validação visual da identidade reconstruída do HTML na loja e nos materiais editoriais
 - [x] Listar explicitamente o que foi preparado sem depender do titular e o que ainda falta sem depender de credenciais
-- [ ] Salvar novo checkpoint após a revisão final do pacote atualizado
+- [x] Salvar novo checkpoint após a revisão final do pacote atualizado
 
 - [x] Revisar visualmente páginas adicionais do PDF editorial atualizado e registrar a conferência no pacote
-- [ ] Salvar novo checkpoint após as mudanças finais de identidade HTML, validação visual e pacote Recife
+- [x] Salvar novo checkpoint após as mudanças finais de identidade HTML, validação visual e pacote Recife
+
+- [x] Remover da vitrine a imagem incorreta extraída do PDF
+- [x] Receber e validar a imagem ou HTML visual original correto; foi confirmado que o HTML contém CSS e composição, mas não imagens
+- [x] Aplicar somente o asset correto e atualizar a vitrine, PDF e pacote; a versão corrigida não usa a imagem do PDF
+- [x] Validar visualmente a correção e salvar novo checkpoint
+
+- [x] Revisar visualmente a vitrine e o PDF HTML-only após remover a imagem do PDF
+- [ ] Salvar novo checkpoint após a correção final baseada exclusivamente no HTML original
