@@ -141,3 +141,7 @@
 - [x] Criar e validar skill própria se a busca não encontrar uma opção suficiente
 - [x] Aplicar a skill ao redesign fashion da Arte Que Veste
 - [x] Refinar estados sem catálogo e sinais gráficos para manter o tom premium mesmo antes da publicação dos produtos reais
+- [x] Remover linguagem de livro, manifesto e manual da Home; manter o PDF apenas como material de entrega
+- [x] Reorientar o front para loja de roupas com catálogo, preços, tamanhos, filtros, carrinho e checkout
+- [x] Remover o botão de busca sem funcionalidade ou implementar busca real
+- [x] Corrigir o link Acessórios para uma listagem comercial real ou renomear a seção institucional
