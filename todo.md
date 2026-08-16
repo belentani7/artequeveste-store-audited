@@ -97,13 +97,13 @@
 - [x] Validar o novo endereço no navegador antes de entregar
 - [ ] Atualizar checkpoint após corrigir o acesso
 
-- [ ] Confirmar com o usuário que o preview reiniciado abre no navegador dele ou publicar um endereço definitivo
+- [x] Confirmar com o usuário que o preview reiniciado abre no navegador dele ou publicar um endereço definitivo; domínio público atualizado confirmado
 - [ ] Salvar checkpoint específico após a confirmação externa do acesso
 
 - [x] Auditar a versão publicada e definir uma direção visual coerente
 - [x] Aplicar paleta, tipografia e espaçamento profissionais em toda a loja
 - [x] Refinar hero, navegação, coleção, cartões, consentimento e mobile
-- [ ] Validar desktop/mobile, build e nova publicação
+- [x] Validar desktop/mobile, build e nova publicação
 
 - [x] Revisar paleta, tipografia e espaçamento também nas telas e fluxos publicados além da Home; as rotas publicadas são Home e 404
 - [x] Documentar as telas e componentes cobertos pela reformulação visual: Home, 404, header, hero, coleção, cartões, carrinho, consentimento e rodapé
@@ -116,3 +116,11 @@
 
 - [x] Atualizar explicitamente o LEIA-ME-PRIMEIRO.txt com STATUS-REFORMULACAO-VISUAL.md
 - [x] Reconstruir e validar o ZIP após atualizar o LEIA-ME-PRIMEIRO.txt
+
+- [x] Corrigir a divergência entre o preview novo e o domínio público antigo
+- [x] Reprocessar a publicação para servir a reformulação visual atual
+- [x] Testar o domínio público após a sincronização e confirmar a paleta nova
+- [ ] Salvar checkpoint específico da publicação sincronizada
+
+- [x] Capturar e registrar visualmente o domínio público publicado com a paleta nova
+- [ ] Salvar checkpoint após a validação visual pública sincronizada

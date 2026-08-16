@@ -20,3 +20,13 @@ Ainda é necessário receber arquivos visuais separados caso existam: logo, foto
 ## Teste de acesso após reinício
 
 O preview foi reiniciado e testado no navegador. O endereço `https://3000-impude2jr0xtgl5cobst3-64ad344f.us3.manus.computer/` respondeu corretamente, exibindo a página inicial, navegação, hero, coleção, login, carrinho e banner de privacidade. A recusa de conexão observada anteriormente foi resolvida pelo reinício do serviço.
+
+
+## Discrepância de publicação
+
+O preview após a reformulação visual mostra a nova direção editorial, mas o domínio público `https://artequeveste-ra4lysqd.manus.space/` ainda carregou a versão anterior, com a hero antiga. A consulta de logs públicos retornou `cloudrun service not found`. A publicação definitiva precisa ser reprocessada ou confirmada no painel antes de ser considerada atualizada.
+
+
+## Publicação sincronizada
+
+Após a publicação bem-sucedida, o domínio público `https://artequeveste-ra4lysqd.manus.space/` passou a exibir a reformulação visual atual: papel quente, tinta, verde-turquesa, terracota, hero “Vestir memória”, selo 01/SE, coleção e estado vazio do catálogo. A versão antiga deixou de ser servida no teste público.
