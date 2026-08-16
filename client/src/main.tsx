@@ -6,6 +6,7 @@ import { createRoot } from "react-dom/client";
 import superjson from "superjson";
 import App from "./App";
 import { startLogin } from "./const";
+import { CLIENT_VERSION, createTraceId } from "@shared/pvcu";
 import "./index.css";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,8 @@ const trpcClient = trpc.createClient({
       url: "/api/trpc",
       transformer: superjson,
       headers() {
+        const traceId = createTraceId();
+        const consent = localStorage.getItem("artequeveste-consent") ?? "essential";
         // Preview auto-login fallback: when the browser blocks iframe cookies
         // (Safari ITP / private browsing / WebView), the runtime mirrors the
         // session into sessionStorage so we can forward it as a Bearer token.
@@ -54,13 +57,13 @@ const trpcClient = trpc.createClient({
             const pair = raw.split(";").find(s => s.trim().startsWith(prefix));
             const token = pair?.trim().slice(prefix.length);
             if (token) {
-              return { Authorization: `Bearer ${token}` };
+              return { Authorization: `Bearer ${token}`, "X-Client-Version": CLIENT_VERSION, "Accept-Version": "1", "X-Trace-Id": traceId, "X-Consent": consent };
             }
           }
         } catch {
           // sessionStorage unavailable
         }
-        return {};
+        return { "X-Client-Version": CLIENT_VERSION, "Accept-Version": "1", "X-Trace-Id": traceId, "X-Consent": consent };
       },
       fetch(input, init) {
         return globalThis.fetch(input, {

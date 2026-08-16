@@ -47,3 +47,11 @@
 - [x] Consolidar manual completo de lançamento, uso diário e manutenção da web
 - [x] Incluir arquivos PDF, editáveis, guias, e-mail e checklist no ZIP final
 - [x] Validar o ZIP e salvar checkpoint atualizado da entrega editorial
+
+- [x] Mapear as esferas PVC-U aplicáveis ao ecommerce Arte Que Veste e excluir módulos desnecessários
+- [x] Implementar envelopes de resposta, códigos de validação e headers de versão no runtime tRPC
+- [x] Adicionar validação estrutural e semântica aos fluxos comerciais relevantes, incluindo sanitização de IDs e handles
+- [x] Adicionar controles de segurança, consentimento, rastreabilidade e proteção contra abuso
+- [x] Criar testes e documentação do perfil PVC-U aplicado à loja; 9 testes aprovados
+- [x] Atualizar o manual e o ZIP editorial com a camada PVC-U
+- [ ] Validar e salvar checkpoint da versão PVC-U aplicada

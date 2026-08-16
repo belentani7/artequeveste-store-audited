@@ -20,14 +20,18 @@ import {
   updateCartLines,
 } from "../_core/shopify";
 import { publicProcedure, router } from "../_core/trpc";
+import { sanitizeText } from "../../shared/pvcu";
+
+const safeId = z.string().trim().min(1).max(220).transform(sanitizeText);
+const safeHandle = z.string().trim().min(1).max(180).transform(sanitizeText);
 
 const cartLineInputSchema = z.object({
-  variantId: z.string().min(1),
+  variantId: safeId,
   quantity: z.number().int().min(1).max(99),
 });
 
 const cartLineUpdateSchema = z.object({
-  lineId: z.string().min(1),
+  lineId: safeId,
   /** 0 means "remove this line" — the route forwards to removeLines. */
   quantity: z.number().int().min(0).max(99),
 });
@@ -39,7 +43,7 @@ export const commerceRouter = router({
         z
           .object({
             first: z.number().int().min(1).max(100).optional(),
-            collectionHandle: z.string().min(1).optional(),
+            collectionHandle: safeHandle.optional(),
           })
           .optional()
       )
@@ -47,7 +51,7 @@ export const commerceRouter = router({
         return listProducts(input ?? {});
       }),
     byHandle: publicProcedure
-      .input(z.object({ handle: z.string().min(1) }))
+      .input(z.object({ handle: safeHandle }))
       .query(async ({ input }) => {
         return getProductByHandle(input.handle);
       }),
@@ -59,7 +63,7 @@ export const commerceRouter = router({
         return listCollections(input?.first);
       }),
     byHandle: publicProcedure
-      .input(z.object({ handle: z.string().min(1) }))
+      .input(z.object({ handle: safeHandle }))
       .query(async ({ input }) => {
         return getCollectionByHandle(input.handle);
       }),
@@ -112,7 +116,7 @@ export const commerceRouter = router({
       .input(
         z.object({
           cartId: z.string().min(1),
-          lineIds: z.array(z.string().min(1)).min(1).max(50),
+          lineIds: z.array(safeId).min(1).max(50),
         })
       )
       .mutation(async ({ input }) => {

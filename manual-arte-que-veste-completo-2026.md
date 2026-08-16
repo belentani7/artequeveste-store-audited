@@ -330,3 +330,14 @@ Se o checkout falhar, verificar status do provedor de pagamento, domínio, conex
 Conceito comercial, identidade corporativa, direção criativa e desenvolvimento da experiência digital: **Pedro Belentani**.
 
 **© 2026 Arte Que Veste. Todos os direitos reservados.**
+
+
+# 17. Perfil PVC-U aplicado à loja
+
+A loja utiliza uma versão proporcional do protocolo PVC-U Ω-Max. Foram aplicadas as partes que melhoram a operação real: validação estrutural com Zod, regras de negócio simples, estados de carregamento e erro, sanitização, autenticação existente, headers de versão, traceId, proteção contra clickjacking, CSP, limite básico de requisições e consentimento de privacidade.
+
+Cada validação pode gerar um Validation Envelope com status, ID de validação, traceId, perfil, versão, códigos e horário. Isso torna as falhas mais explicáveis e ajuda o suporte a identificar uma solicitação sem registrar dados pessoais além do necessário.
+
+Os módulos de criptografia homomórfica, distribuição quântica de chaves, simulações multiversais, limite de Landauer, MLOps e reescrita de axiomas não foram incluídos. Eles não são necessários para uma loja de produtos e acrescentariam custo e manutenção. O princípio aplicado é segurança proporcional: usar controles reais que o cliente consegue manter.
+
+A camada não substitui o provedor de pagamento, a transportadora, a responsabilidade fiscal nem a revisão humana. Ela melhora o comportamento do software; não cria documentos, estoque, conta bancária ou autorização comercial.
