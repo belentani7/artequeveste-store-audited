@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -23,230 +23,61 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  --primary: oklch(0.52 0.09 178);
-  --primary-foreground: oklch(0.98 0.015 85);
-  --sidebar-primary: oklch(0.52 0.09 178);
-  --sidebar-primary-foreground: oklch(0.98 0.015 85);
-  --chart-1: oklch(0.52 0.09 178);
-  --chart-2: oklch(0.62 0.13 45);
-  --chart-3: oklch(0.7 0.08 80);
-  --chart-4: oklch(0.24 0.025 45);
-  --chart-5: oklch(0.55 0.07 178);
-  --radius: 0.65rem;
-  --background: oklch(0.95 0.025 82);
-  --foreground: oklch(0.24 0.025 48);
-  --card: oklch(0.98 0.012 82);
-  --card-foreground: oklch(0.24 0.025 48);
-  --popover: oklch(0.98 0.012 82);
-  --popover-foreground: oklch(0.24 0.025 48);
-  --secondary: oklch(0.91 0.035 82);
-  --secondary-foreground: oklch(0.38 0.03 48);
-  --muted: oklch(0.91 0.035 82);
-  --muted-foreground: oklch(0.52 0.035 48);
-  --accent: oklch(0.86 0.08 178);
-  --accent-foreground: oklch(0.24 0.025 48);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.82 0.045 72);
-  --input: oklch(0.82 0.045 72);
-  --ring: oklch(0.52 0.09 178);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --aqv-ink: #171717;
+  --aqv-paper: #f4f0e9;
+  --aqv-surface: #ebe5db;
+  --aqv-surface-2: #d8d1c6;
+  --aqv-line: #bdb5aa;
+  --aqv-muted: #6d675f;
+  --aqv-accent: #b63b2e;
+  --aqv-accent-2: #99a6bc;
+  --background: var(--aqv-paper);
+  --foreground: var(--aqv-ink);
+  --card: var(--aqv-paper);
+  --card-foreground: var(--aqv-ink);
+  --popover: var(--aqv-paper);
+  --popover-foreground: var(--aqv-ink);
+  --primary: var(--aqv-ink);
+  --primary-foreground: #fff;
+  --secondary: var(--aqv-surface);
+  --secondary-foreground: var(--aqv-ink);
+  --muted: var(--aqv-surface);
+  --muted-foreground: var(--aqv-muted);
+  --accent: var(--aqv-accent);
+  --accent-foreground: #fff;
+  --border: var(--aqv-line);
+  --input: var(--aqv-line);
+  --ring: var(--aqv-accent);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-    letter-spacing: -0.01em;
-  }
-  button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
-  }
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground; font-family: "Manrope", ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.015em; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), a[href] { @apply cursor-pointer; }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--aqv-accent); outline-offset: 3px; }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
-  }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
-  }
+  .aqv-container { width: 100%; margin-inline: auto; padding-inline: 1.25rem; }
+  .aqv-topline { background: var(--aqv-ink); color: var(--aqv-paper); padding: .55rem 1rem; text-align: center; font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+  .aqv-wordmark { position: relative; font-size: 1rem; font-weight: 800; letter-spacing: -.06em; }
+  .aqv-wordmark::after { content: ""; display: block; width: 1.9rem; height: 2px; margin-top: .25rem; background: var(--aqv-accent); transform: skewX(-30deg); transform-origin: left; }
+  .aqv-kicker { font-size: 10px; font-weight: 800; letter-spacing: .18em; line-height: 1.3; text-transform: uppercase; }
+  .aqv-hero { background: var(--aqv-surface); }
+  .aqv-category-card { min-height: 13rem; position: relative; overflow: hidden; transition: transform .24s cubic-bezier(.23,1,.32,1), filter .24s ease; }
+  .aqv-category-card:hover { transform: translateY(-5px); filter: saturate(1.08); }
+  @media (min-width: 640px) { .aqv-container { padding-inline: 2rem; } }
+  @media (min-width: 1024px) { .aqv-container { max-width: 1320px; padding-inline: 3rem; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 }
-
-
-@layer components {
-  .aqv-shell {
-    background-image: radial-gradient(circle at 12% 18%, rgba(33, 26, 22, 0.035) 0 1px, transparent 1px), radial-gradient(circle at 78% 42%, rgba(35, 134, 127, 0.05) 0 1px, transparent 1px);
-    background-size: 19px 19px, 27px 27px;
-  }
-
-  .aqv-wordmark {
-    position: relative;
-    letter-spacing: -0.04em;
-  }
-
-  .aqv-wordmark::after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 2.25rem;
-    margin-top: 0.25rem;
-    background: #c7654c;
-    transform: skewX(-28deg);
-    transform-origin: left;
-  }
-
-  .aqv-print {
-    isolation: isolate;
-    background-image: repeating-linear-gradient(135deg, rgba(246, 239, 228, 0.08) 0 1px, transparent 1px 9px), linear-gradient(135deg, #23867f 0%, #176b66 54%, #211a16 100%);
-  }
-
-  .aqv-print::after {
-    content: "";
-    position: absolute;
-    inset: 1rem;
-    border: 1px solid rgba(246, 239, 228, 0.55);
-    pointer-events: none;
-  }
-
-  .aqv-stamp {
-    display: grid;
-    place-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border: 1px solid #e4a83b;
-    border-radius: 999px;
-    color: #e4a83b;
-    font-size: 0.62rem;
-    line-height: 1.15;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-align: center;
-    transform: rotate(8deg);
-  }
-
-  @media (max-width: 640px) {
-    .aqv-print {
-      min-height: 22rem;
-      box-shadow: 7px 8px 0 0 #c7654c;
-    }
-
-    .aqv-print > .relative {
-      min-height: 22rem;
-    }
-  }
-}
-
 
 @layer utilities {
-  .font-display {
-    font-family: "Space Grotesk", "DM Sans", ui-sans-serif, system-ui, sans-serif;
-    letter-spacing: -0.045em;
-  }
+  .font-display { font-family: "DM Serif Display", Georgia, serif; letter-spacing: -.045em; }
 }

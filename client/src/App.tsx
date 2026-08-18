@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -5,6 +6,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 import { CartProvider } from "./contexts/CartContext";
 
 function Router() {
@@ -12,6 +14,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/produto/:handle"}><Suspense fallback={<div className="min-h-screen bg-[var(--aqv-paper)] p-8"><div className="mx-auto max-w-7xl animate-pulse bg-[var(--aqv-surface-2)]" style={{ height: "70vh" }} /></div>}><ProductDetail /></Suspense></Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

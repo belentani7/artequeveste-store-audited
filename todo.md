@@ -150,3 +150,17 @@
 - [x] No aplicar mejoras externas que no superen el umbral 10/10; build y validación visual del storefront actual ya realizados
 - [x] Crear y sincronizar un repositorio privado nuevo en GitHub con el resultado auditado
 - [x] Documentar que el smoke test live de Shopify queda pendiente hasta que el titular publique un producto real con imagen, precio y variante
+- [x] Auditar y aislar la implementación anterior antes de iniciar la reconstrucción desde cero
+- [x] Investigar bases de datos, tiendas de ropa y estudios de branding con fuentes y activos actuales de 2026
+- [x] Definir estrategia de marca, arquitectura comercial y sistema visual nuevos sin reutilizar la estética anterior
+- [x] Preparar activos visuales nuevos de 2026 y documentar sus licencias/origen
+- [x] Reconstruir la tienda fullstack con Shopify, UX de moda, accesibilidad, seguridad y mantenimiento simple
+- [x] Validar tests, build, rendimiento, responsive y flujos comerciales; el smoke live de Shopify queda documentado por catálogo vacío
+- [x] Sustituir el activo gráfico fallido por textura CSS segura o asset generado válido
+- [x] Hacer que loading/error de producto mantengan header, marca y estado editorial comercial
+- [x] Añadir tests unitarios para reglas de categoría y variante comprable de la nueva storefront
+- [x] Recuperar consentimiento mínimo de analítica en la nueva Home sin bloquear catálogo, carrito ni checkout
+- [x] Retirar del front los placeholders de los activos fotográficos que no terminaron de generarse
+- [x] Medir el bundle principal 2026, aplicar code-splitting de PDP/GSAP y documentar que el vendor chunk grande queda como mejora futura
+- [x] Cargar analítica no esencial solamente después del consentimiento real del usuario
+- [x] Documentar por separado los flujos comerciales validados y los que dependen de un producto Shopify real
