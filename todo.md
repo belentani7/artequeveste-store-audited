@@ -145,3 +145,7 @@
 - [x] Reorientar o front para loja de roupas com catálogo, preços, tamanhos, filtros, carrinho e checkout
 - [x] Remover o botão de busca sem funcionalidade ou implementar busca real
 - [x] Corrigir o link Acessórios para uma listagem comercial real ou renomear a seção institucional
+- [ ] Auditar arquitectura, backend, frontend, utilidad, relevancia, potencial e identidad con matriz 10/10
+- [ ] Investigar y contrastar soluciones/repositorios externos antes de aplicar cambios
+- [ ] Aplicar solamente mejoras que superen el umbral definido y validar con tests/build/visual
+- [ ] Crear y sincronizar un repositorio privado nuevo en GitHub con el resultado auditado
