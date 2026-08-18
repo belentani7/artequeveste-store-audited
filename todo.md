@@ -164,3 +164,11 @@
 - [x] Medir el bundle principal 2026, aplicar code-splitting de PDP/GSAP y documentar que el vendor chunk grande queda como mejora futura
 - [x] Cargar analítica no esencial solamente después del consentimiento real del usuario
 - [x] Documentar por separado los flujos comerciales validados y los que dependen de un producto Shopify real
+- [x] Auditar o frontend atual e definir uma direção visual refinada para a loja
+- [x] Refinar tokens Tailwind, paleta de cores, tipografia e texturas próprias
+- [x] Implementar microinterações GSAP premium com fallback para reduced motion
+- [x] Validar frontend desktop/mobile, acessibilidade, performance e consistência entre rotas
+- [x] Validar visualmente PDP e 404 após o refinamento de paleta, texturas e GSAP
+- [x] Atualizar a rota 404 para usar a paleta e os tokens 2026 da storefront
+- [x] Executar revisão explícita de teclado, foco, contraste e reduced motion
+- [x] Documentar o vendor chunk de 735 kB e definir critério aceitável de performance antes do checkpoint
