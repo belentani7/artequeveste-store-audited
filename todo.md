@@ -177,6 +177,6 @@
 - [x] Retirar del front el asset gratuito sin licencia individual confirmada; mantener solo assets 2026 propios y texturas CSS
 - [x] Atualizar ASSETS-2026.md e notas para remover referências ao asset gratuito retirado
 - [x] Executar e documentar revisão final explícita de acessibilidade após a decisão definitiva de assets
-- [ ] Salvar e publicar checkpoint final desta etapa
+- [x] Salvar e publicar checkpoint final desta etapa
 - [x] Aplicar únicamente recursos propios 2026, texturas CSS y patrones Tailwind adaptados sin copiar identidades de terceros
 - [x] Revalidar responsividade e performance após a decisão final de assets; revisão final de acessibilidade e checkpoint permanecem registrados acima
