@@ -194,6 +194,6 @@
 - [x] Atualizar documentação da revisão de acessibilidade após corrigir os fluxos reais das rotas alteradas
 - [x] Ampliar o upgrade de widgets a PDP, 404 y demás componentes visuales relevantes sin romper Shopify, carrinho ou checkout
 - [x] Executar testes focados (13 passaram), revisar acessibilidade explicitamente e documentar smoke live Shopify bloqueado por catálogo vazio
-- [ ] Sincronizar no GitHub a última versão publicada, sem credenciais ou tokens
+- [x] Sincronizar no GitHub a última versão publicada, sem credenciais ou tokens
 - [x] Aplicar únicamente recursos propios 2026, texturas CSS y patrones Tailwind adaptados sin copiar identidades de terceros
 - [x] Revalidar responsividade e performance após a decisão final de assets; revisão final de acessibilidade e checkpoint permanecem registrados acima
