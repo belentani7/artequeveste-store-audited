@@ -179,5 +179,20 @@
 - [x] Executar e documentar revisão final explícita de acessibilidade após a decisão definitiva de assets
 - [x] Salvar e publicar checkpoint final desta etapa
 - [x] Tornar ARTE QUE VESTE a marca dominante no hero e reduzir ou remover Traço vivo como título principal
+- [x] Inventariar todos os widgets, plugins, dependências visuais e assets atuais
+- [x] Pesquisar e filtrar bancos de imagens, ícones, plugins Tailwind e recursos fashion com licenças verificáveis
+- [x] Definir sistema unificado de widgets e assets para Arte Que Veste
+- [x] Mover CartDrawer para layout compartilhado e garantir carrinho funcional em Home, PDP e 404
+- [x] Capturar validação visual explícita do estado loading da PDP após a correção do header com carrinho
+- [x] Capturar nova validação visual de PDP loading/error e 404 após a correção do header com carrinho
+- [x] Verificar por automação o foco real e o estado de foco visível no CartDrawer em PDP e 404
+- [x] Registrar a validação final no documento de acessibilidade/upgrade
+- [x] Adicionar carrinho ao header da PDP em loading/error e validar visualmente após a correção
+- [x] Validar interativamente carrinho em PDP e 404: abrir, fechar, clique fora, tecla Escape e foco visível
+- [x] Validar interativamente carrinho em PDP e 404: abrir, fechar, clique fora, tecla Escape e foco visível
+- [x] Validar visual e funcionalmente PDP e 404 após os últimos edits, incluindo carrinho, foco, teclado e estados de diálogo
+- [x] Atualizar documentação da revisão de acessibilidade após corrigir os fluxos reais das rotas alteradas
+- [x] Ampliar o upgrade de widgets a PDP, 404 y demás componentes visuales relevantes sin romper Shopify, carrinho ou checkout
+- [x] Executar testes focados (13 passaram), revisar acessibilidade explicitamente e documentar smoke live Shopify bloqueado por catálogo vazio
 - [x] Aplicar únicamente recursos propios 2026, texturas CSS y patrones Tailwind adaptados sin copiar identidades de terceros
 - [x] Revalidar responsividade e performance após a decisão final de assets; revisão final de acessibilidade e checkpoint permanecem registrados acima
