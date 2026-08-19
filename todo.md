@@ -172,3 +172,11 @@
 - [x] Atualizar a rota 404 para usar a paleta e os tokens 2026 da storefront
 - [x] Executar revisão explícita de teclado, foco, contraste e reduced motion
 - [x] Documentar o vendor chunk de 735 kB e definir critério aceitável de performance antes do checkpoint
+- [x] Revisar o frontend atual e definir quais partes serão refinadas com recursos gratuitos
+- [x] Pesquisar bancos de imagens, plugins Tailwind e templates fashion gratuitos com licenças verificáveis
+- [x] Retirar del front el asset gratuito sin licencia individual confirmada; mantener solo assets 2026 propios y texturas CSS
+- [x] Atualizar ASSETS-2026.md e notas para remover referências ao asset gratuito retirado
+- [x] Executar e documentar revisão final explícita de acessibilidade após a decisão definitiva de assets
+- [ ] Salvar e publicar checkpoint final desta etapa
+- [x] Aplicar únicamente recursos propios 2026, texturas CSS y patrones Tailwind adaptados sin copiar identidades de terceros
+- [x] Revalidar responsividade e performance após a decisão final de assets; revisão final de acessibilidade e checkpoint permanecem registrados acima

@@ -12,3 +12,7 @@ Los activos de esta reconstrucción fueron generados específicamente para la ca
 | Graphic texture | Generación fallida; no se utiliza | No se aplica |
 
 El fondo de la tarjeta **Bolsas** usa una textura CSS determinista como fallback seguro, no un placeholder roto. Las imágenes muestran campañas conceptuales y no deben interpretarse como stock, catálogo o producto real de Shopify. El catálogo comercial sólo utiliza imágenes, precios, variantes y disponibilidad que lleguen del Shopify del titular.
+
+## Recursos externos analisados, não incorporados
+
+Uma referência fotográfica encontrada via busca visual foi descartada porque a página individual e a licença não foram verificadas. No front final não há uso desse asset. A composição secundária utiliza somente gradientes e texturas CSS próprias. Os componentes Tailwind foram adaptados a partir de patrones libres de HyperUI y de la taxonomía oficial de ecommerce de Tailwind UI, sin incorporar bloques pagos ni copiar identidades de terceros.
