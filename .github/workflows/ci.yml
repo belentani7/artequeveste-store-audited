@@ -14,6 +14,12 @@ jobs:
         with:
           node-version: 20
       - run: npm install -g pnpm@9 --no-audit --no-fund
+      - name: neutralise a malformed pnpm workspace file
+        run: |
+          if [ -f pnpm-workspace.yaml ] && ! grep -qE '^packages:' pnpm-workspace.yaml; then
+            echo "pnpm-workspace.yaml declares no packages; disabling it for this run."
+            mv pnpm-workspace.yaml pnpm-workspace.yaml.disabled
+          fi
       - run: pnpm install --no-frozen-lockfile
       - name: detect build script
         id: buildscript
