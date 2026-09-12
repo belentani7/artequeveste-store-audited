@@ -13,6 +13,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: corepack enable && corepack prepare pnpm@latest --activate
+      - run: npm install -g pnpm@9 --no-audit --no-fund
       - run: pnpm install --no-frozen-lockfile
-      - run: pnpm run build --if-present
+      - name: detect build script
+        id: buildscript
+        run: |
+          if node -e "process.exit(require('./package.json').scripts?.build ? 0 : 1)"; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "No build script declared in package.json."
+          fi
+      - if: steps.buildscript.outputs.present == 'true'
+        run: pnpm run build
