@@ -1,4 +1,9 @@
-import { AXIOS_TIMEOUT_MS, COOKIE_NAME, ONE_YEAR_MS, decodeOAuthState } from "@shared/const";
+import {
+  AXIOS_TIMEOUT_MS,
+  COOKIE_NAME,
+  ONE_YEAR_MS,
+  decodeOAuthState,
+} from "@shared/const";
 import { ForbiddenError } from "@shared/_core/errors";
 import axios, { type AxiosInstance } from "axios";
 import { parse as parseCookieHeader } from "cookie";
@@ -30,11 +35,16 @@ const GET_USER_INFO_WITH_JWT_PATH = `/webdev.v1.WebDevAuthPublicService/GetUserI
 
 class OAuthService {
   constructor(private client: ReturnType<typeof axios.create>) {
-    console.log("[OAuth] Initialized with baseURL:", ENV.oAuthServerUrl);
+    // Authentication is OPTIONAL for this storefront: the catalog, cart and
+    // checkout are all public. A missing OAuth server is therefore a normal
+    // configuration, not an error — the client hides the "Entrar" control
+    // when the portal URL is absent.
     if (!ENV.oAuthServerUrl) {
-      console.error(
-        "[OAuth] ERROR: OAUTH_SERVER_URL is not configured! Set OAUTH_SERVER_URL environment variable."
+      console.info(
+        "[OAuth] Login disabled: OAUTH_SERVER_URL / VITE_OAUTH_PORTAL_URL are not configured. The storefront runs without accounts."
       );
+    } else {
+      console.log("[OAuth] Initialized with baseURL:", ENV.oAuthServerUrl);
     }
   }
 

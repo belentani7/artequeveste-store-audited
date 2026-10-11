@@ -1,5 +1,7 @@
 # Línea base antes de reconstrucción 2026
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Decisión de alcance
 
 La nueva tienda se reconstruirá como una experiencia fullstack independiente en arquitectura y diseño, sin reutilizar la estética de libro/manual ni los activos visuales históricos del PDF/HTML. El manual permanece como material de entrega, no como fuente de UI.

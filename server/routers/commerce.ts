@@ -5,17 +5,24 @@
  * named functions exported from `server/_core/shopify`. If we ever swap
  * commerce backends, only `_core/shopify.ts` + `_core/shopifyNormalize.ts`
  * change — this router stays put.
+ *
+ * Read endpoints degrade honestly when Shopify is not connected yet (empty
+ * page + `mode: "unconfigured"`), while cart mutations keep failing loudly:
+ * you can never fake a checkout.
  */
 
 import { z } from "zod";
+import { PRODUCT_SORTS } from "@shared/commerce/types";
 import {
   addCartLines,
   createCart,
   getCart,
   getCollectionByHandle,
+  getCollectionPage,
   getProductByHandle,
+  getStorefrontStatus,
   listCollections,
-  listProducts,
+  listProductPage,
   removeCartLines,
   updateCartLines,
 } from "../_core/shopify";
@@ -24,6 +31,25 @@ import { sanitizeText } from "../../shared/pvcu";
 
 const safeId = z.string().trim().min(1).max(220).transform(sanitizeText);
 const safeHandle = z.string().trim().min(1).max(180).transform(sanitizeText);
+
+/**
+ * Search terms are user input that ends up inside a Shopify `query` string.
+ * Shopify's search syntax has operators (`:` `-` `*` `(` `)`) and quoting, so
+ * the terms are stripped of those characters instead of being passed through:
+ * a shopper searching for "vestido:3XL" gets a literal search, never a query
+ * injection into the merchant's catalog.
+ */
+export const safeSearchTerm = z
+  .string()
+  .trim()
+  .min(1)
+  .max(80)
+  .transform(value =>
+    sanitizeText(value)
+      .replace(/[\\:*()"'`~^[\]{}=!<>&|+,\-]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
 
 const cartLineInputSchema = z.object({
   variantId: safeId,
@@ -36,29 +62,64 @@ const cartLineUpdateSchema = z.object({
   quantity: z.number().int().min(0).max(99),
 });
 
+const sortSchema = z.enum(PRODUCT_SORTS).optional();
+
+const listingInputSchema = z
+  .object({
+    first: z.number().int().min(1).max(60).optional(),
+    after: z.string().trim().max(512).optional(),
+    query: safeSearchTerm.optional(),
+    sort: sortSchema,
+    collectionHandle: safeHandle.optional(),
+  })
+  .optional();
+
 export const commerceRouter = router({
+  /**
+   * Connection state of the commerce backend. The UI uses it to separate
+   * "catalog not published yet" (branded launch state) from "backend replied
+   * with an error" (retry UI) without ever inventing products.
+   */
+  status: publicProcedure.query(() => getStorefrontStatus()),
+
   products: router({
-    list: publicProcedure
-      .input(
-        z
-          .object({
-            first: z.number().int().min(1).max(100).optional(),
-            collectionHandle: safeHandle.optional(),
-          })
-          .optional()
-      )
-      .query(async ({ input }) => {
-        return listProducts(input ?? {});
-      }),
+    list: publicProcedure.input(listingInputSchema).query(async ({ input }) => {
+      return listProductPage(input ?? {});
+    }),
     byHandle: publicProcedure
       .input(z.object({ handle: safeHandle }))
       .query(async ({ input }) => {
         return getProductByHandle(input.handle);
       }),
+    /**
+     * Catalog search. With an empty term this is just a listing, which is
+     * what the search page shows before the shopper types anything.
+     */
+    search: publicProcedure
+      .input(
+        z.object({
+          term: safeSearchTerm,
+          first: z.number().int().min(1).max(60).optional(),
+          after: z.string().trim().max(512).optional(),
+          sort: sortSchema,
+        })
+      )
+      .query(async ({ input }) => {
+        return listProductPage({
+          query: input.term,
+          first: input.first,
+          after: input.after,
+          sort: input.sort ?? "relevance",
+        });
+      }),
   }),
   collections: router({
     list: publicProcedure
-      .input(z.object({ first: z.number().int().min(1).max(50).optional() }).optional())
+      .input(
+        z
+          .object({ first: z.number().int().min(1).max(50).optional() })
+          .optional()
+      )
       .query(async ({ input }) => {
         return listCollections(input?.first);
       }),
@@ -66,6 +127,24 @@ export const commerceRouter = router({
       .input(z.object({ handle: safeHandle }))
       .query(async ({ input }) => {
         return getCollectionByHandle(input.handle);
+      }),
+    /** Collection metadata + first product page in a single round trip. */
+    page: publicProcedure
+      .input(
+        z.object({
+          handle: safeHandle,
+          first: z.number().int().min(1).max(60).optional(),
+          after: z.string().trim().max(512).optional(),
+          sort: sortSchema,
+        })
+      )
+      .query(async ({ input }) => {
+        const page = await getCollectionPage(input.handle, {
+          first: input.first,
+          after: input.after,
+          sort: input.sort,
+        });
+        return page;
       }),
   }),
   cart: router({
@@ -75,14 +154,14 @@ export const commerceRouter = router({
         return createCart(input.lines);
       }),
     get: publicProcedure
-      .input(z.object({ cartId: z.string().min(1) }))
+      .input(z.object({ cartId: z.string().min(1).max(512) }))
       .query(async ({ input }) => {
         return getCart(input.cartId);
       }),
     addLines: publicProcedure
       .input(
         z.object({
-          cartId: z.string().min(1),
+          cartId: z.string().min(1).max(512),
           lines: z.array(cartLineInputSchema).min(1).max(50),
         })
       )
@@ -92,14 +171,16 @@ export const commerceRouter = router({
     updateLines: publicProcedure
       .input(
         z.object({
-          cartId: z.string().min(1),
+          cartId: z.string().min(1).max(512),
           lines: z.array(cartLineUpdateSchema).min(1).max(50),
         })
       )
       .mutation(async ({ input }) => {
         // qty 0 means "remove this line" — split the request so the client
         // never has to call two procedures for a single user gesture.
-        const toRemove = input.lines.filter(l => l.quantity === 0).map(l => l.lineId);
+        const toRemove = input.lines
+          .filter(l => l.quantity === 0)
+          .map(l => l.lineId);
         const toUpdate = input.lines.filter(l => l.quantity > 0);
 
         let cart = null;
@@ -115,7 +196,7 @@ export const commerceRouter = router({
     removeLines: publicProcedure
       .input(
         z.object({
-          cartId: z.string().min(1),
+          cartId: z.string().min(1).max(512),
           lineIds: z.array(safeId).min(1).max(50),
         })
       )

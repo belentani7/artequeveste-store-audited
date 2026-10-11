@@ -1,46 +1,71 @@
 import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 import { CartProvider } from "./contexts/CartContext";
 
+/**
+ * Route-level code splitting.
+ *
+ * The Home ships in the entry chunk (it is the landing page); every other
+ * route is lazy so a shopper who only browses the landing page never pays for
+ * the PDP, the search page or the policy copy.
+ */
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
+const CategoryPage = lazy(() => import("./pages/CategoryPage"));
+const SearchPage = lazy(() => import("./pages/SearchPage"));
+const PolicyPage = lazy(() => import("./pages/PolicyPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+function RouteFallback() {
+  return (
+    <div
+      className="min-h-screen bg-[var(--aqv-paper)]"
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <div className="aqv-topline">
+        Envio para todo o Brasil · frete calculado no checkout
+      </div>
+      <div className="aqv-container py-16">
+        <p className="aqv-kicker">Carregando</p>
+        <div className="mt-6 h-[70vh] animate-pulse bg-[var(--aqv-surface-2)]" />
+      </div>
+    </div>
+  );
+}
+
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/produto/:handle"}><Suspense fallback={<div className="min-h-screen bg-[var(--aqv-paper)] p-8"><div className="mx-auto max-w-7xl animate-pulse bg-[var(--aqv-surface-2)]" style={{ height: "70vh" }} /></div>}><ProductDetail /></Suspense></Route>
-      <Route path={"/404"} component={NotFound} />
+      <Route path="/" component={Home} />
+      <Route path="/produto/:handle" component={ProductDetail} />
+      <Route path="/categoria/:slug" component={CategoryPage} />
+      <Route path="/busca" component={SearchPage} />
+      <Route path="/trocas">{() => <PolicyPage policyKey="trocas" />}</Route>
+      <Route path="/privacidade">
+        {() => <PolicyPage policyKey="privacidade" />}
+      </Route>
+      <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <CartProvider>
+      <TooltipProvider>
+        <Toaster />
+        <CartProvider>
+          <Suspense fallback={<RouteFallback />}>
             <Router />
-          </CartProvider>
-        </TooltipProvider>
-      </ThemeProvider>
+          </Suspense>
+        </CartProvider>
+      </TooltipProvider>
     </ErrorBoundary>
   );
 }

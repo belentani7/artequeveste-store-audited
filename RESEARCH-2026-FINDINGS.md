@@ -1,5 +1,7 @@
 # Investigación 2026 — Hallazgos iniciales
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Mercado y comportamiento
 
 La guía de ecommerce de Brasil del U.S. Department of Commerce señala que el ecommerce brasileño mantiene crecimiento rápido y proyectaba US$36,3B de ingresos para 2025, con 94 millones de compradores online. También identifica WhatsApp, YouTube, Instagram, Facebook y TikTok como canales relevantes de descubrimiento de productos. Para pagos, destaca el crecimiento de PIX, su adopción por pequeños comercios y la importancia de cuotas con tarjeta. La seguridad y prevención de fraude aparecen como preocupaciones relevantes.[1]

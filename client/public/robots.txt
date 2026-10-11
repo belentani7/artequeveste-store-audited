@@ -1,0 +1,9 @@
+# Arte Que Veste — loja
+# Rastreamento liberado para a vitrine; rotas de API e de carrinho ficam fora.
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /busca?
+Disallow: /404
+
+Sitemap: /sitemap.xml

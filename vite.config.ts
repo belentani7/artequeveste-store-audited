@@ -56,7 +56,7 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
   const logPath = path.join(LOG_DIR, `${source}.log`);
 
   // Format entries with timestamps
-  const lines = entries.map((entry) => {
+  const lines = entries.map(entry => {
     const ts = new Date().toISOString();
     return `[${ts}] ${JSON.stringify(entry)}`;
   });
@@ -132,7 +132,7 @@ function vitePluginManusDebugCollector(): Plugin {
         }
 
         let body = "";
-        req.on("data", (chunk) => {
+        req.on("data", chunk => {
           body += chunk.toString();
         });
 
@@ -150,7 +150,27 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+/**
+ * Development-only plugins.
+ *
+ * `vitePluginManusRuntime` injects a ~360 kB inline automation/runtime bundle
+ * into index.html, and the JSX-loc plugin rewrites every element with debug
+ * attributes. Both are useful while the app is being built inside the sandbox
+ * preview and both are pure weight for a shopper: the production build emits
+ * only the storefront, so the storefront's CSP can stay strict and the HTML
+ * payload stays small.
+ */
+const devOnlyPlugins = [
+  jsxLocPlugin(),
+  vitePluginManusRuntime(),
+  vitePluginManusDebugCollector(),
+];
+const isProductionBuild = process.env.NODE_ENV === "production";
+const plugins = [
+  react(),
+  tailwindcss(),
+  ...(isProductionBuild ? [] : devOnlyPlugins),
+];
 
 export default defineConfig({
   plugins,
@@ -169,16 +189,42 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
+        /**
+         * Split the vendor bundle by library family.
+         *
+         * A single 530 kB "vendor" chunk forced every shopper to re-download
+         * React, the tRPC client and the icon set together on any dependency
+         * bump, and tripped Vite's chunk-size warning. Grouping by family makes
+         * the framework chunk stable across deploys and lets the router and
+         * icon set cache independently. Keep this list in sync when a new
+         * top-level dependency is added.
+         */
         manualChunks(id) {
-          if (id.includes("node_modules")) return "vendor";
-          return undefined;
+          if (!id.includes("node_modules")) return undefined;
+          if (/node_modules[\\/](react|react-dom|scheduler)[\\/]/.test(id))
+            return "react";
+          if (/node_modules[\\/](@tanstack|@trpc|superjson)[\\/]/.test(id))
+            return "data";
+          if (/node_modules[\\/]lucide-react[\\/]/.test(id)) return "icons";
+          if (/node_modules[\\/]@radix-ui[\\/]/.test(id)) return "radix";
+          if (/node_modules[\\/]gsap[\\/]/.test(id)) return "gsap";
+          return "vendor";
         },
       },
     },
   },
   server: {
     host: true,
+    /**
+     * Dev-server host allow-list.
+     *
+     * The preview is served through a proxied host (e.g. `*.e2b.app`) and the
+     * sandbox hostnames used by earlier tooling. `allowedHosts` is omitted in
+     * the bundled server path because `server/_core/vite.ts` runs Vite in
+     * middleware mode where the Express app owns the host check.
+     */
     allowedHosts: [
+      ".e2b.app",
       ".manuspre.computer",
       ".manus.computer",
       ".manus-asia.computer",

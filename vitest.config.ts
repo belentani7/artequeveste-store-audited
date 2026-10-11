@@ -9,11 +9,18 @@ export default defineConfig({
     alias: {
       "@": path.resolve(templateRoot, "client", "src"),
       "@shared": path.resolve(templateRoot, "shared"),
-      "@assets": path.resolve(templateRoot, "attached_assets"),
     },
   },
   test: {
+    // Default to the node environment (server + shared rules are pure logic).
+    // Browser-only modules (consent, seo, format helpers) opt into jsdom with
+    // a `@vitest-environment jsdom` docblock at the top of the file.
     environment: "node",
-    include: ["server/**/*.test.ts", "server/**/*.spec.ts"],
+    include: [
+      "server/**/*.test.ts",
+      "shared/**/*.test.ts",
+      "client/src/**/*.test.ts",
+      "client/src/**/*.test.tsx",
+    ],
   },
 });

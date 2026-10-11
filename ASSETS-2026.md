@@ -1,18 +1,42 @@
-# Activos Arte Que Veste — 2026
+# Assets visuais — Arte Que Veste 2026
 
-## Regla de origen
+## Regra de origem
 
-Los activos de esta reconstrucción fueron generados específicamente para la campaña 2026 y se almacenan fuera del repositorio en `/home/ubuntu/webdev-static-assets/`, con URLs persistentes del ciclo de vida del proyecto. No se reutilizan imágenes del PDF, del HTML heredado ni de tiendas de referencia.
+Todo asset usado pela loja está **dentro do repositório**, em `client/public/`, e foi gerado para
+este projeto. Não há dependência de storage externo, de CDN de terceiro nem de arquivo que não
+esteja versionado. Nenhum asset de loja de referência foi copiado.
 
-| Activo | Uso | URL de runtime |
-|---|---|---|
-| Hero reference | Campaña principal Home | `/manus-storage/arte-que-veste-2026-hero-reference_ee0e66ee.jpg` |
-| Campaign portrait | Bloque de campaña/composición | `/manus-storage/arte-que-veste-2026-campaign-portrait_16885b2c.jpg` |
-| Garment detail | Detalle material/comercial | `/manus-storage/arte-que-veste-2026-garment-detail_0db9c6c0.jpg` |
-| Graphic texture | Generación fallida; no se utiliza | No se aplica |
+| Arquivo                                               | Uso na loja                                               | Origem                                                                                     | Licença de uso                       |
+| ----------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------ |
+| `client/public/campaign/aqv-2026-campaign-hero.jpg`   | Hero da Home, bloco de campanha, card social (`og:image`) | Imagem gerada para a campanha 2026 com a paleta da marca (papel/tinta/cinábrio/azul polvo) | Projeto Arte Que Veste (uso próprio) |
+| `client/public/campaign/aqv-2026-material-detail.jpg` | Bloco "Detalhe de matéria" da Home                        | Estudo macro de trama de tecido, gerado para o projeto                                     | Projeto Arte Que Veste (uso próprio) |
 
-El fondo de la tarjeta **Bolsas** usa una textura CSS determinista como fallback seguro, no un placeholder roto. Las imágenes muestran campañas conceptuales y no deben interpretarse como stock, catálogo o producto real de Shopify. El catálogo comercial sólo utiliza imágenes, precios, variantes y disponibilidad que lleguen del Shopify del titular.
+As imagens são **campanha conceitual de marca** (tecido, forma, matéria) e não devem ser lidas como
+foto de produto, estoque ou catálogo. A vitrine diferencia os dois estados:
 
-## Recursos externos analisados, não incorporados
+- imagens de campanha → apenas em blocos de marca (hero e campanha);
+- imagem de peça → somente `product.images` vindo do Shopify, com `alt` real ou o estado
+  "Imagem em preparação" quando o titular ainda não subiu foto.
 
-Uma referência fotográfica encontrada via busca visual foi descartada porque a página individual e a licença não foram verificadas. No front final não há uso desse asset. A composição secundária utiliza somente gradientes e texturas CSS próprias. Os componentes Tailwind foram adaptados a partir de patrones libres de HyperUI y de la taxonomía oficial de ecommerce de Tailwind UI, sin incorporar bloques pagos ni copiar identidades de terceros.
+## Imagens que **não** são usadas (e por quê)
+
+| Item                                                      | Motivo                                                                                                       |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Imagem extraída do PDF editorial (rodada anterior)        | Não é foto da peça nem asset de vitrine; foi removida da loja em rodada anterior e não voltou                |
+| Banco de imagens externo pesquisado em rodadas anteriores | Página individual e licença não verificáveis → fora do front                                                 |
+| Texturas geradas que falharam                             | Substituídas por texturas CSS determinísticas (`aqv-texture-cut`, gradientes) em vez de placeholder quebrado |
+
+## Tipografia
+
+Fontes são self-hosted via `@fontsource` (`@fontsource/dm-serif-display`,
+`@fontsource-variable/manrope`), importadas em `client/src/index.css` e empacotadas no build. Não há
+requisição a `fonts.googleapis.com` em nenhum momento — o que também remove o envio de IP a
+terceiros antes de qualquer consentimento (LGPD) e simplifica a CSP.
+
+## Padrões e componentes
+
+Os elementos gráficos (granulado SVG inline no `body::before`, molduras de corte, linhas de
+registro, trama diagonal, molduras com sombra deslocada) são CSS próprio. Os componentes Radix
+remanescentes (`tooltip`, `sonner`) são bibliotecas MIT; os demais primitivos de UI do template
+foram removidos na auditoria por não estarem em uso — para reintroduzir um, use `components.json`
+com a CLI do shadcn, que já aponta para `client/src/index.css` e os aliases do projeto.

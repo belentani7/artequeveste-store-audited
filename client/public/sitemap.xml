@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Static sitemap for the storefront's fixed routes.
+  Product and collection URLs are published by Shopify's own catalog and are
+  intentionally NOT listed here: a URL that the titular has not published must
+  never appear in a sitemap (that would be an invented page).
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>/categoria/camisetas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>/categoria/quimonos</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>/categoria/bolsas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>/categoria/acessorios</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>/trocas</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>/privacidade</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+</urlset>

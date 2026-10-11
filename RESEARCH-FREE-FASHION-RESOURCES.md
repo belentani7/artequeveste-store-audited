@@ -1,6 +1,8 @@
 
 # Investigación de recursos gratuitos para Arte Que Veste
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Criterios de selección
 
 Solo se aplicarán recursos con licencia comercial clara, sin dependencias que añadan coste obligatorio, sin copiar identidad visual de otra marca y con posibilidad de mantenimiento simple en el proyecto Shopify/tRPC.

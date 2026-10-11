@@ -1,5 +1,7 @@
 # Validação visual — Arte Que Veste
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 A vitrine foi verificada em desktop após a clonagem da composição do HTML. O hero usa fundo claro, gradiente turquesa-preto, destaque rosa, marca em caixa alta com espaçamento, título editorial, cantos arredondados e sombra ampla, correspondendo às regras CSS encontradas no HTML original.
 
 O banner de privacidade permanece legível e separado da área principal. A navegação, o login e o carrinho continuam visíveis. A composição mantém contraste adequado entre texto escuro sobre fundo claro e texto branco sobre o gradiente.

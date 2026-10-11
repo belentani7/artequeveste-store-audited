@@ -1,60 +1,588 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, Menu, ShoppingBag, X } from "lucide-react";
+import { ArrowRight, SlidersHorizontal } from "lucide-react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
-import { useCart } from "@/contexts/CartContext";
+import ProductCard from "@/components/commerce/ProductCard";
+import SiteHeader from "@/components/commerce/SiteHeader";
+import SiteFooter from "@/components/commerce/SiteFooter";
+import StorefrontLayout, {
+  LaunchNotice,
+} from "@/components/commerce/StorefrontLayout";
+import { applyRouteMeta } from "@/lib/seo";
+import { PRODUCT_SORT_LABELS, type ProductSort } from "@shared/commerce/types";
+import {
+  categoryMatches,
+  STOREFRONT_CATEGORIES,
+} from "@shared/storefrontRules";
 import { formatMoney } from "@/lib/format";
-import CartDrawer from "@/components/commerce/CartDrawer";
-import { startLogin } from "@/const";
-import type { Product } from "@shared/commerce/types";
-import { categoryMatches, findPurchasableVariant } from "@shared/storefrontRules";
 
-const HERO = "/manus-storage/arte-que-veste-2026-hero-reference_ee0e66ee.jpg";
-const categories = ["Todos", "Camisetas", "Quimonos", "Bolsas", "Acessórios"];
+const HERO_IMAGE = "/campaign/aqv-2026-campaign-hero.jpg";
+const MATERIAL_IMAGE = "/campaign/aqv-2026-material-detail.jpg";
+const PAGE_SIZE = 12;
+/** Window requested from the backend for the Home grid (max accepted: 60). */
+const FETCH_WINDOW = 48;
 
-function enableAnalytics() {
-  if (document.querySelector("script[data-aqv-analytics]") || !import.meta.env.VITE_ANALYTICS_ENDPOINT || !import.meta.env.VITE_ANALYTICS_WEBSITE_ID) return;
-  const script = document.createElement("script");
-  script.defer = true;
-  script.src = `${import.meta.env.VITE_ANALYTICS_ENDPOINT}/umami`;
-  script.dataset.websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
-  script.dataset.aqvAnalytics = "true";
-  document.body.appendChild(script);
-}
+type SortKey = ProductSort;
 
-function ProductCard({ product }: { product: Product }) {
-  const { addItem, loading } = useCart();
-  const variant = findPurchasableVariant(product);
-  const image = product.images[0];
-  const secondImage = product.images[1];
-  const sizeOption = product.options.find((option) => /tamanho|size/i.test(option.name));
+/**
+ * Home — storefront first, brand story second.
+ *
+ * The audit flagged the previous version for concentrating the whole store in
+ * one unbraidable file and for showing empty controls. This page is now a
+ * composition of named sections with a single data source (`commerce.products.list`)
+ * and an honest launch state when the catalog is empty.
+ */
+export default function Home() {
+  const [category, setCategory] = useState<string>("todos");
+  const [sort, setSort] = useState<SortKey>("featured");
+  const [visible, setVisible] = useState(PAGE_SIZE);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  const {
+    data: page,
+    isLoading,
+    isError,
+    refetch,
+    isRefetching,
+  } = trpc.commerce.products.list.useQuery(
+    { first: FETCH_WINDOW, sort },
+    { retry: 1 }
+  );
+
+  const products = page?.products ?? [];
+  const mode = page?.mode ?? "unconfigured";
+
+  useEffect(() => {
+    applyRouteMeta({
+      title: "Arte Que Veste — roupas autorais brasileiras",
+      description:
+        "Camisetas, quimonos, bolsas e acessórios autorais. Coleção 2026 da Arte Que Veste com preço, tamanho e disponibilidade reais do catálogo.",
+      canonical: "/",
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        name: "Arte Que Veste",
+        description: "Loja de roupas autorais brasileiras.",
+        areaServed: "BR",
+        image: HERO_IMAGE,
+      },
+    });
+  }, []);
+
+  // GSAP is loaded on demand and never on reduced-motion devices. The previous
+  // implementation re-ran on every product-count change and left the grid
+  // invisible when the import resolved after a re-render; this one runs once,
+  // against elements that exist on first paint.
+  useEffect(() => {
+    const root = pageRef.current;
+    if (!root) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let cleanup = () => {};
+    let cancelled = false;
+
+    import("gsap").then(({ default: gsap }) => {
+      if (cancelled) return;
+      const context = gsap.context(() => {
+        gsap.fromTo(
+          ".aqv-hero-copy > *",
+          { y: 24, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.075,
+            ease: "power4.out",
+          }
+        );
+        gsap.fromTo(
+          ".aqv-hero-media",
+          { clipPath: "inset(0 0 100% 0)" },
+          {
+            clipPath: "inset(0 0 0% 0)",
+            duration: 1.05,
+            ease: "power4.inOut",
+            delay: 0.12,
+          }
+        );
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (!entry.isIntersecting) return;
+              gsap.fromTo(
+                entry.target,
+                { y: 26, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }
+              );
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.12 }
+        );
+        root
+          .querySelectorAll<HTMLElement>("[data-reveal]")
+          .forEach(element => observer.observe(element));
+        context.add(() => observer.disconnect());
+      }, root);
+      cleanup = () => context.revert();
+    });
+
+    return () => {
+      cancelled = true;
+      cleanup();
+    };
+  }, []);
+
+  const filtered = useMemo(() => {
+    if (category === "todos") return products;
+    return products.filter(product => categoryMatches(product, category));
+  }, [category, products]);
+
+  const shown = filtered.slice(0, visible);
+  const categoryCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const definition of STOREFRONT_CATEGORIES) {
+      counts.set(
+        definition.slug,
+        products.filter(product => categoryMatches(product, definition.slug))
+          .length
+      );
+    }
+    return counts;
+  }, [products]);
+  const hasCatalog = products.length > 0;
+
   return (
-    <article className="group min-w-0">
-      <Link href={`/produto/${product.handle}`} className="relative block aspect-[4/5] overflow-hidden bg-[var(--aqv-surface-2)]" aria-label={`Ver ${product.title}`}>
-        {image ? <>
-          <img src={image.url} alt={image.altText ?? product.title} className={`h-full w-full object-cover transition duration-500 ${secondImage ? "group-hover:opacity-0" : "group-hover:scale-[1.03]"}`} />
-          {secondImage && <img src={secondImage.url} alt="" className="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100" />}
-        </> : <div className="flex h-full items-center justify-center p-6 text-center text-xs uppercase tracking-[0.16em] text-[var(--aqv-muted)]">Imagem em preparação</div>}
-        <button aria-label={`Adicionar ${product.title}`} disabled={!variant?.availableForSale || loading} onClick={(event) => { event.preventDefault(); event.stopPropagation(); if (variant) addItem(variant.id); }} className="absolute bottom-3 left-3 right-3 bg-[var(--aqv-ink)] py-3 text-[10px] font-medium uppercase tracking-[0.15em] text-white opacity-100 transition duration-200 group-hover:bg-[var(--aqv-accent)] disabled:bg-[var(--aqv-muted)] md:opacity-0 md:group-hover:opacity-100">{variant?.availableForSale ? "Adicionar ao carrinho" : "Indisponível"}</button>
-      </Link>
-      <div className="flex items-start justify-between gap-3 pt-3">
-        <div className="min-w-0"><h3 className="truncate text-sm font-medium">{product.title}</h3><p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-[var(--aqv-muted)]">{product.productType || "Peça autoral"}</p>{sizeOption && <p className="mt-2 text-[10px] uppercase tracking-[0.11em] text-[var(--aqv-muted)]">{sizeOption.values.join(" · ")}</p>}<p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-[var(--aqv-accent)]">{product.variants.some((item) => item.availableForSale) ? "Disponível" : "Esgotado"}</p></div>
-        <span className="shrink-0 text-sm font-medium">{formatMoney(product.priceRange.min)}</span>
+    <StorefrontLayout>
+      <div ref={pageRef}>
+        <SiteHeader variant="home" />
+
+        <main>
+          {/* ---------------------------------------------------------------- */}
+          {/* Hero                                                             */}
+          {/* ---------------------------------------------------------------- */}
+          <section className="aqv-hero border-b border-[var(--aqv-line)]">
+            <div className="aqv-container grid min-h-[600px] gap-8 py-8 md:grid-cols-[0.82fr_1.18fr] md:items-center md:py-12">
+              <div className="aqv-hero-copy order-2 md:order-1">
+                <p className="aqv-kicker">Arte Que Veste · Coleção 2026</p>
+                <h1 className="mt-5 max-w-[9ch] font-display text-[clamp(3.4rem,7.4vw,6.5rem)] leading-[0.86] tracking-[-0.08em]">
+                  ARTE QUE VESTE
+                </h1>
+                <p className="mt-7 max-w-sm text-base leading-relaxed text-[var(--aqv-muted)]">
+                  <span className="font-medium text-[var(--aqv-accent)]">
+                    Traço vivo.
+                  </span>{" "}
+                  Roupas autorais para vestir presença, movimento e memória sem
+                  pedir licença.
+                </p>
+                <div className="mt-9 flex flex-wrap gap-3">
+                  <Link
+                    href="#catalogo"
+                    className="inline-flex items-center gap-3 bg-[var(--aqv-ink)] px-6 py-4 text-[10px] font-medium uppercase tracking-[0.16em] text-white transition hover:bg-[var(--aqv-accent)]"
+                  >
+                    Explorar a coleção{" "}
+                    <ArrowRight size={15} aria-hidden="true" />
+                  </Link>
+                  <Link
+                    href="/busca"
+                    className="inline-flex items-center gap-3 border border-[var(--aqv-ink)] px-6 py-4 text-[10px] font-medium uppercase tracking-[0.16em] transition hover:bg-[var(--aqv-ink)] hover:text-white"
+                  >
+                    Buscar por peça
+                  </Link>
+                </div>
+                {hasCatalog && (
+                  <p className="mt-6 text-xs uppercase tracking-[0.14em] text-[var(--aqv-muted)]">
+                    {products.length}{" "}
+                    {products.length === 1
+                      ? "peça publicada"
+                      : "peças publicadas"}{" "}
+                    · a partir de{" "}
+                    {formatMoney(
+                      products.reduce(
+                        (cheapest, product) =>
+                          Number.parseFloat(product.priceRange.min.amount) <
+                          Number.parseFloat(cheapest.amount)
+                            ? product.priceRange.min
+                            : cheapest,
+                        products[0].priceRange.min
+                      )
+                    )}
+                  </p>
+                )}
+              </div>
+
+              <div className="aqv-hero-media relative order-1 min-h-[380px] overflow-hidden bg-[var(--aqv-surface-2)] md:order-2 md:min-h-[540px]">
+                <img
+                  src={HERO_IMAGE}
+                  alt="Composição de tecidos e formas da campanha Arte Que Veste 2026"
+                  width={768}
+                  height={1152}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+                <div
+                  className="absolute inset-5 border border-white/60"
+                  aria-hidden="true"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <p className="text-[10px] uppercase tracking-[0.2em]">
+                    AQV / 026
+                  </p>
+                  <p className="mt-2 max-w-[10ch] font-display text-4xl leading-[0.9] tracking-[-0.06em]">
+                    Feito para acontecer.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ---------------------------------------------------------------- */}
+          {/* Novidades                                                        */}
+          {/* ---------------------------------------------------------------- */}
+          <section
+            id="novidades"
+            className="aqv-container py-16 md:py-24"
+            data-reveal
+          >
+            <div className="flex items-end justify-between border-b border-[var(--aqv-line)] pb-6">
+              <div>
+                <p className="aqv-kicker">Agora na loja</p>
+                <h2 className="mt-3 font-display text-5xl tracking-[-0.07em] md:text-6xl">
+                  Novidades
+                </h2>
+              </div>
+              <Link
+                href="#catalogo"
+                className="text-[10px] font-medium uppercase tracking-[0.15em] underline underline-offset-8"
+              >
+                Ver tudo
+              </Link>
+            </div>
+
+            {isLoading ? (
+              <div className="aqv-product-grid mt-9 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4">
+                {Array.from({ length: 4 }).map((_, index) => (
+                  <div
+                    key={index}
+                    className="aspect-[4/5] animate-pulse bg-[var(--aqv-surface-2)]"
+                    aria-hidden="true"
+                  />
+                ))}
+              </div>
+            ) : isError ? (
+              <div className="mt-9">
+                <ErrorState onRetry={() => refetch()} busy={isRefetching} />
+              </div>
+            ) : products.length ? (
+              <div className="aqv-product-grid mt-9 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4">
+                {products.slice(0, 4).map((product, index) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    priority={index < 2}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="mt-9">
+                <LaunchNotice mode={mode} />
+              </div>
+            )}
+          </section>
+
+          {/* ---------------------------------------------------------------- */}
+          {/* Categorias                                                       */}
+          {/* ---------------------------------------------------------------- */}
+          <section
+            id="categorias"
+            className="border-y border-[var(--aqv-line)] bg-[var(--aqv-ink)] text-white"
+            data-reveal
+          >
+            <div className="aqv-container py-16 md:py-24">
+              <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+                <div>
+                  <p className="aqv-kicker text-[var(--aqv-accent-2)]">
+                    Escolha por forma
+                  </p>
+                  <h2 className="mt-3 max-w-[8ch] font-display text-6xl leading-[0.88] tracking-[-0.08em]">
+                    Vestir o gesto.
+                  </h2>
+                </div>
+                <p className="max-w-sm text-sm leading-relaxed text-white/65">
+                  Cada categoria abre uma página de catálogo real. Se ainda não
+                  houver peças publicadas nela, a loja diz isso em vez de
+                  mostrar uma grade vazia.
+                </p>
+              </div>
+
+              <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {STOREFRONT_CATEGORIES.map((definition, index) => {
+                  const count = categoryCounts.get(definition.slug) ?? 0;
+                  return (
+                    <Link
+                      key={definition.slug}
+                      href={`/categoria/${definition.slug}`}
+                      className="aqv-category-card block bg-white/10 p-6 text-left"
+                    >
+                      <span className="aqv-kicker text-white/60">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <strong className="mt-16 block font-display text-4xl tracking-[-0.06em]">
+                        {definition.label}
+                      </strong>
+                      <span className="mt-3 block text-[11px] uppercase tracking-[0.12em] text-white/55">
+                        {hasCatalog
+                          ? `${count} ${count === 1 ? "peça" : "peças"}`
+                          : "catálogo em preparação"}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* ---------------------------------------------------------------- */}
+          {/* Campanha / matéria                                               */}
+          {/* ---------------------------------------------------------------- */}
+          <section
+            className="aqv-container grid gap-4 py-16 md:grid-cols-[1.15fr_.85fr] md:py-24"
+            data-reveal
+          >
+            <div className="relative min-h-[360px] overflow-hidden bg-[var(--aqv-surface-2)]">
+              <img
+                src={HERO_IMAGE}
+                alt="Tecidos sobrepostos da campanha Arte Que Veste 2026"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover object-[68%_42%]"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <p className="aqv-kicker">Forma / movimento</p>
+                <p className="mt-2 max-w-[12ch] font-display text-4xl leading-[.9]">
+                  A roupa ocupa espaço.
+                </p>
+              </div>
+            </div>
+            <div className="relative min-h-[360px] overflow-hidden bg-[var(--aqv-surface-2)]">
+              <img
+                src={MATERIAL_IMAGE}
+                alt="Detalhe macro de tecido com trama aparente"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+              <div
+                className="absolute inset-0 bg-[linear-gradient(160deg,rgba(23,23,23,.12),rgba(23,23,23,.62))]"
+                aria-hidden="true"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <p className="aqv-kicker">Detalhe de matéria</p>
+                <p className="mt-2 max-w-[14ch] font-display text-4xl leading-[.9]">
+                  O gesto mora no corte.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* ---------------------------------------------------------------- */}
+          {/* Catálogo                                                         */}
+          {/* ---------------------------------------------------------------- */}
+          <section
+            id="catalogo"
+            className="aqv-container py-16 md:py-24"
+            data-reveal
+          >
+            <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
+              <div>
+                <p className="aqv-kicker">Comprar</p>
+                <h2 className="mt-3 font-display text-5xl tracking-[-0.07em] md:text-6xl">
+                  Todas as peças
+                </h2>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+                {[
+                  { slug: "todos", label: "Todos" },
+                  ...STOREFRONT_CATEGORIES,
+                ].map(item => (
+                  <button
+                    key={item.slug}
+                    type="button"
+                    aria-pressed={category === item.slug}
+                    onClick={() => {
+                      setCategory(item.slug);
+                      setVisible(PAGE_SIZE);
+                    }}
+                    className={`text-[10px] font-medium uppercase tracking-[0.14em] ${
+                      category === item.slug
+                        ? "border-b-2 border-[var(--aqv-accent)] pb-1 text-[var(--aqv-accent)]"
+                        : "text-[var(--aqv-muted)] hover:text-[var(--aqv-ink)]"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  aria-expanded={filtersOpen}
+                  aria-controls="aqv-sort-panel"
+                  onClick={() => setFiltersOpen(value => !value)}
+                  className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--aqv-muted)] hover:text-[var(--aqv-ink)]"
+                >
+                  <SlidersHorizontal size={13} aria-hidden="true" /> Ordenar
+                </button>
+              </div>
+            </div>
+
+            {filtersOpen && (
+              <div
+                id="aqv-sort-panel"
+                className="mt-6 flex flex-wrap gap-2 border border-[var(--aqv-line)] bg-[var(--aqv-surface)] p-4"
+              >
+                {(Object.keys(PRODUCT_SORT_LABELS) as SortKey[])
+                  .filter(key => key !== "relevance")
+                  .map(key => (
+                    <button
+                      key={key}
+                      type="button"
+                      aria-pressed={sort === key}
+                      onClick={() => setSort(key)}
+                      className={`border px-3 py-2 text-[10px] uppercase tracking-[0.12em] transition ${
+                        sort === key
+                          ? "border-[var(--aqv-ink)] bg-[var(--aqv-ink)] text-white"
+                          : "border-[var(--aqv-line)] hover:border-[var(--aqv-accent)]"
+                      }`}
+                    >
+                      {PRODUCT_SORT_LABELS[key]}
+                    </button>
+                  ))}
+              </div>
+            )}
+
+            <div className="mt-10">
+              {isLoading ? (
+                <div className="grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-4">
+                  {Array.from({ length: 8 }).map((_, index) => (
+                    <div
+                      key={index}
+                      className="aspect-[4/5] animate-pulse bg-[var(--aqv-surface-2)]"
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+              ) : isError ? (
+                <ErrorState onRetry={() => refetch()} busy={isRefetching} />
+              ) : !hasCatalog ? (
+                <LaunchNotice mode={mode} />
+              ) : filtered.length ? (
+                <>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-4">
+                    {shown.map((product, index) => (
+                      <ProductCard
+                        key={product.id}
+                        product={product}
+                        priority={index < 4}
+                      />
+                    ))}
+                  </div>
+                  {filtered.length > shown.length && (
+                    <div className="mt-12 text-center">
+                      <button
+                        type="button"
+                        onClick={() => setVisible(value => value + PAGE_SIZE)}
+                        className="border border-[var(--aqv-ink)] px-6 py-4 text-[10px] font-medium uppercase tracking-[0.15em] transition hover:bg-[var(--aqv-ink)] hover:text-white"
+                      >
+                        Ver mais peças ({filtered.length - shown.length}{" "}
+                        restantes)
+                      </button>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="border border-dashed border-[var(--aqv-line)] bg-[var(--aqv-surface)] p-8 text-sm text-[var(--aqv-muted)]">
+                  Nenhuma peça publicada nesta categoria ainda.{" "}
+                  <button
+                    type="button"
+                    className="underline underline-offset-4"
+                    onClick={() => setCategory("todos")}
+                  >
+                    Ver todas as peças
+                  </button>
+                  .
+                </div>
+              )}
+            </div>
+          </section>
+
+          {/* ---------------------------------------------------------------- */}
+          {/* Informações                                                      */}
+          {/* ---------------------------------------------------------------- */}
+          <section
+            id="informacoes"
+            className="border-t border-[var(--aqv-line)]"
+          >
+            <div className="aqv-container grid gap-10 py-12 text-sm md:grid-cols-3">
+              <div>
+                <p className="aqv-kicker">Pagamento</p>
+                <p className="mt-3 text-[var(--aqv-muted)]">
+                  Checkout protegido Shopify. PIX, cartão e parcelamento
+                  dependem da configuração do titular.
+                </p>
+              </div>
+              <div>
+                <p className="aqv-kicker">Entrega e trocas</p>
+                <p className="mt-3 text-[var(--aqv-muted)]">
+                  Frete, prazo e políticas aparecem no checkout e nas
+                  informações reais do produto. Veja também{" "}
+                  <Link href="/trocas" className="underline underline-offset-4">
+                    trocas e devoluções
+                  </Link>
+                  .
+                </p>
+              </div>
+              <div>
+                <p className="aqv-kicker">Atendimento</p>
+                <p className="mt-3 text-[var(--aqv-muted)]">
+                  Suporte antes e depois do pedido. Consulte a{" "}
+                  <Link
+                    href="/privacidade"
+                    className="underline underline-offset-4"
+                  >
+                    política de privacidade
+                  </Link>{" "}
+                  para saber como seus dados são tratados.
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <SiteFooter />
       </div>
-    </article>
+    </StorefrontLayout>
   );
 }
 
-
-export default function Home() {
-  const [category, setCategory] = useState("Todos");
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [consentVisible, setConsentVisible] = useState(() => localStorage.getItem("aqv-consent-2026") === null);
-  const { itemCount, openCart } = useCart();
-  const { data: products = [], isLoading, isError } = trpc.commerce.products.list.useQuery({ first: 24 }, { retry: 1 });
-  const pageRef = useRef<HTMLDivElement | null>(null);
-  const filtered = useMemo(() => products.filter((product) => categoryMatches(product, category)), [category, products]);
-  useEffect(() => { if (localStorage.getItem("aqv-consent-2026") === "all") enableAnalytics(); }, []);
-  useEffect(() => { if (!pageRef.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; let cleanup = () => {}; import("gsap").then(({ default: gsap }) => { if (!pageRef.current) return; const ctx = gsap.context(() => { const observed = Array.from(pageRef.current!.querySelectorAll<HTMLElement>("[data-reveal]")); gsap.fromTo(".aqv-hero-copy > *", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .075, ease: "power4.out" }); gsap.fromTo(".aqv-hero-media", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 1.05, ease: "power4.inOut", delay: .12 }); const observer = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (!entry.isIntersecting) return; gsap.fromTo(entry.target, { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: .7, ease: "power3.out" }); observer.unobserve(entry.target); }); }, { threshold: .12 }); observed.forEach((element) => observer.observe(element)); gsap.fromTo(".aqv-product-grid > article", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: .55, stagger: .06, delay: .2, ease: "power3.out" }); cleanup = () => { observer.disconnect(); ctx.revert(); }; }); }); return () => cleanup(); }, [products.length]);
-  return <div ref={pageRef} className="min-h-screen bg-[var(--aqv-paper)] text-[var(--aqv-ink)]"><div className="aqv-topline">Envio para todo o Brasil · frete calculado no checkout</div><header className="sticky top-0 z-40 border-b border-[var(--aqv-line)] bg-[var(--aqv-paper)]/95 backdrop-blur"><div className="aqv-container flex h-[72px] items-center justify-between gap-5"><button aria-label="Abrir menu" className="md:hidden" onClick={() => setMenuOpen((value) => !value)}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button><Link href="/" className="aqv-wordmark">ARTE QUE VESTE</Link><nav className={`${menuOpen ? "absolute left-0 right-0 top-[72px] flex border-b border-[var(--aqv-line)] bg-[var(--aqv-paper)] p-5" : "hidden"} flex-col gap-5 text-[10px] uppercase tracking-[0.16em] md:static md:flex md:flex-row md:gap-7 md:border-0 md:bg-transparent md:p-0`}><a href="#novidades" onClick={() => setMenuOpen(false)}>Novidades</a><a href="#catalogo" onClick={() => setMenuOpen(false)}>Roupas</a><a href="#categorias" onClick={() => setMenuOpen(false)}>Categorias</a><a href="#informacoes" onClick={() => setMenuOpen(false)}>Ajuda</a></nav><div className="flex items-center gap-1"><button aria-label="Entrar" onClick={() => startLogin()} className="hidden px-2 text-[10px] uppercase tracking-[0.14em] sm:block">Entrar</button><button aria-label="Abrir carrinho" onClick={openCart} className="relative p-2"><ShoppingBag size={19} />{itemCount > 0 && <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center bg-[var(--aqv-accent)] px-1 text-[9px] text-white">{itemCount}</span>}</button></div></div></header><main><section className="aqv-hero border-b border-[var(--aqv-line)]"><div className="aqv-container grid min-h-[600px] gap-8 py-8 md:grid-cols-[0.82fr_1.18fr] md:items-center md:py-12"><div className="aqv-hero-copy order-2 md:order-1" data-reveal><p className="aqv-kicker">Arte Que Veste · Coleção 2026</p><h1 className="mt-5 max-w-[9ch] font-display text-[clamp(3.8rem,8vw,7rem)] leading-[0.86] tracking-[-0.08em]">ARTE QUE VESTE</h1><p className="mt-7 max-w-sm text-base leading-relaxed text-[var(--aqv-muted)]"><span className="font-medium text-[var(--aqv-accent)]">Traço vivo.</span> Roupas autorais para vestir presença, movimento e memória sem pedir licença.</p><a href="#catalogo" className="mt-9 inline-flex items-center gap-3 bg-[var(--aqv-ink)] px-6 py-4 text-[10px] font-medium uppercase tracking-[0.16em] text-white transition hover:bg-[var(--aqv-accent)]">Explorar a coleção <ArrowRight size={15} /></a></div><div className="aqv-hero-media relative order-1 min-h-[420px] overflow-hidden bg-[var(--aqv-surface-2)] md:order-2 md:min-h-[540px]"><img src={HERO} alt="Campanha Arte Que Veste 2026" className="h-full w-full object-cover" /><div className="absolute inset-5 border border-white/60" /><div className="absolute bottom-5 left-5 text-white"><p className="text-[10px] uppercase tracking-[0.2em]">AQV / 026</p><p className="mt-2 max-w-[10ch] font-display text-4xl leading-[0.9] tracking-[-0.06em]">Feito para acontecer.</p></div></div></div></section><section id="novidades" className="aqv-container py-16 md:py-24" data-reveal><div className="flex items-end justify-between border-b border-[var(--aqv-line)] pb-6"><div><p className="aqv-kicker">Agora na loja</p><h2 className="mt-3 font-display text-5xl tracking-[-0.07em] md:text-6xl">Novidades</h2></div><a href="#catalogo" className="text-[10px] font-medium uppercase tracking-[0.15em] underline underline-offset-8">Ver tudo</a></div>{isLoading ? <div className="aqv-product-grid mt-9 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4">{Array.from({ length: 4 }).map((_, index) => <div key={index} className="aspect-[4/5] animate-pulse bg-[var(--aqv-surface-2)]" />)}</div> : isError ? <div className="mt-9 border border-[var(--aqv-line)] bg-[var(--aqv-surface)] p-8"><p className="aqv-kicker text-[var(--aqv-accent)]">Catálogo temporariamente indisponível</p><p className="mt-3 max-w-xl text-sm text-[var(--aqv-muted)]">Não foi possível consultar as peças agora. Tente novamente em instantes ou entre no painel Shopify para verificar a publicação do catálogo.</p></div> : products.length ? <div className="aqv-product-grid mt-9 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4">{products.slice(0, 4).map((product) => <ProductCard key={product.id} product={product} />)}</div> : <div className="mt-9 border border-dashed border-[var(--aqv-line)] bg-[var(--aqv-surface)] p-8"><p className="aqv-kicker">Primeiro lançamento</p><h3 className="mt-3 font-display text-4xl tracking-[-0.06em]">O catálogo está sendo preparado.</h3><p className="mt-3 max-w-xl text-sm leading-relaxed text-[var(--aqv-muted)]">Quando o titular publicar as primeiras peças no Shopify, imagens, preços, tamanhos e disponibilidade aparecerão aqui.</p></div>}</section><section id="categorias" className="border-y border-[var(--aqv-line)] bg-[var(--aqv-ink)] text-white" data-reveal><div className="aqv-container py-16 md:py-24"><div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><p className="aqv-kicker text-[var(--aqv-accent-2)]">Escolha por forma</p><h2 className="mt-3 max-w-[8ch] font-display text-6xl leading-[0.88] tracking-[-0.08em]">Vestir o gesto.</h2></div><p className="max-w-sm text-sm leading-relaxed text-white/65">Uma loja construída para encontrar a peça, entender a escolha e comprar com segurança.</p></div><div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"><button aria-pressed={category === "Camisetas"} onClick={() => { setCategory("Camisetas"); document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" }); }} className="aqv-category-card bg-[var(--aqv-accent)] p-6 text-left"><span className="aqv-kicker text-white/70">01</span><strong className="mt-16 block font-display text-4xl tracking-[-0.06em]">Camisetas</strong></button><button aria-pressed={category === "Quimonos"} onClick={() => { setCategory("Quimonos"); document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" }); }} className="aqv-category-card bg-[var(--aqv-accent-2)] p-6 text-left text-[var(--aqv-ink)]"><span className="aqv-kicker text-black/55">02</span><strong className="mt-16 block font-display text-4xl tracking-[-0.06em]">Quimonos</strong></button><button aria-pressed={category === "Bolsas"} onClick={() => { setCategory("Bolsas"); document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" }); }} className="aqv-category-card aqv-texture-cut overflow-hidden bg-[var(--aqv-surface-2)] p-6 text-left text-[var(--aqv-ink)]"><span className="aqv-kicker">03</span><strong className="mt-16 block font-display text-4xl tracking-[-0.06em]">Bolsas</strong></button><a href="#informacoes" className="aqv-category-card bg-white/10 p-6 text-left"><span className="aqv-kicker text-white/60">04</span><strong className="mt-16 block font-display text-4xl tracking-[-0.06em]">Ajuda</strong></a></div></div></section><section className="aqv-container grid gap-4 py-16 md:grid-cols-[1.15fr_.85fr] md:py-24" data-reveal><div className="relative min-h-[360px] overflow-hidden bg-[var(--aqv-surface-2)]"><img src={HERO} alt="Campanha de moda Arte Que Veste 2026" className="h-full w-full object-cover object-[68%_42%]" /><div className="absolute bottom-5 left-5 text-white"><p className="aqv-kicker">Forma / movimento</p><p className="mt-2 max-w-[12ch] font-display text-4xl leading-[.9]">A roupa ocupa espaço.</p></div></div><div className="relative min-h-[360px] overflow-hidden bg-[var(--aqv-accent-2)] aqv-texture-cut"><div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(244,240,233,.58),transparent_32%),linear-gradient(150deg,rgba(154,168,189,.7),rgba(182,59,46,.72))]" /><div className="absolute inset-5 border border-[var(--aqv-ink)]/30" /><div className="absolute bottom-5 left-5"><p className="aqv-kicker">Detalhe de matéria</p><p className="mt-2 max-w-[14ch] font-display text-4xl leading-[.9]">O gesto mora no corte.</p></div></div></section><section id="catalogo" className="aqv-container py-16 md:py-24" data-reveal><div className="flex flex-col justify-between gap-7 md:flex-row md:items-end"><div><p className="aqv-kicker">Comprar</p><h2 className="mt-3 font-display text-5xl tracking-[-0.07em] md:text-6xl">Todas as peças</h2></div><div className="flex flex-wrap gap-x-5 gap-y-3">{categories.map((item) => <button key={item} onClick={() => setCategory(item)} className={`text-[10px] font-medium uppercase tracking-[0.14em] ${category === item ? "border-b-2 border-[var(--aqv-accent)] pb-1 text-[var(--aqv-accent)]" : "text-[var(--aqv-muted)]"}`}>{item}</button>)}</div></div><div className="mt-10">{isLoading ? <div className="grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-4">{Array.from({ length: 8 }).map((_, index) => <div key={index} className="aspect-[4/5] animate-pulse bg-[var(--aqv-surface-2)]" />)}</div> : filtered.length ? <div className="grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-4">{filtered.map((product) => <ProductCard key={product.id} product={product} />)}</div> : <div className="border border-dashed border-[var(--aqv-line)] bg-[var(--aqv-surface)] p-8 text-sm text-[var(--aqv-muted)]">Nenhuma peça publicada nesta categoria.</div>}</div></section><section id="informacoes" className="border-t border-[var(--aqv-line)]"><div className="aqv-container grid gap-10 py-12 text-sm md:grid-cols-3"><div><p className="aqv-kicker">Pagamento</p><p className="mt-3 text-[var(--aqv-muted)]">Checkout protegido Shopify. PIX, cartão e parcelamento dependem da configuração do titular.</p></div><div><p className="aqv-kicker">Entrega e trocas</p><p className="mt-3 text-[var(--aqv-muted)]">Frete, prazo e políticas aparecem no checkout e nas informações reais do produto.</p></div><div><p className="aqv-kicker">Atendimento</p><p className="mt-3 text-[var(--aqv-muted)]">Uma experiência simples para comprar do Brasil, com suporte claro antes e depois do pedido.</p></div></div></section></main>{consentVisible && <div role="dialog" aria-modal="true" aria-label="Preferências de privacidade" className="fixed inset-x-4 bottom-4 z-50 border border-[var(--aqv-line)] bg-[var(--aqv-paper)] p-5 shadow-2xl md:left-auto md:max-w-md"><p className="text-sm font-semibold">Privacidade sem complicação</p><p className="mt-2 text-xs leading-relaxed text-[var(--aqv-muted)]">Usamos o mínimo necessário para a loja funcionar. A escolha não interfere no catálogo, carrinho ou checkout.</p><div className="mt-4 flex gap-2"><button className="bg-[var(--aqv-ink)] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.12em] text-white" onClick={() => { localStorage.setItem("aqv-consent-2026", "essential"); setConsentVisible(false); }}>Somente essenciais</button><button className="border border-[var(--aqv-line)] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.12em]" onClick={() => { localStorage.setItem("aqv-consent-2026", "all"); enableAnalytics(); setConsentVisible(false); }}>Aceitar analítica</button></div></div>}<footer className="bg-[var(--aqv-ink)] py-8 text-white"><div className="aqv-container flex flex-col gap-3 text-[10px] uppercase tracking-[0.13em] text-white/55 md:flex-row md:justify-between"><span>ARTE QUE VESTE / 2026</span><span>Conceito e identidade digital por Pedro Belentani</span></div></footer><CartDrawer /></div>;
+function ErrorState({ onRetry, busy }: { onRetry: () => void; busy: boolean }) {
+  return (
+    <div className="border border-[var(--aqv-accent)] bg-[var(--aqv-surface)] p-8">
+      <p className="aqv-kicker text-[var(--aqv-accent)]">
+        Catálogo temporariamente indisponível
+      </p>
+      <p className="mt-3 max-w-xl text-sm text-[var(--aqv-muted)]">
+        Não foi possível consultar as peças agora. Tente novamente em instantes.
+      </p>
+      <button
+        type="button"
+        onClick={onRetry}
+        disabled={busy}
+        className="mt-5 border border-[var(--aqv-ink)] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.15em] transition hover:bg-[var(--aqv-ink)] hover:text-white disabled:opacity-50"
+      >
+        {busy ? "Tentando…" : "Tentar novamente"}
+      </button>
+    </div>
+  );
 }

@@ -8,5 +8,6 @@ export const ENV = {
   forgeApiUrl: process.env.BUILT_IN_FORGE_API_URL ?? "",
   forgeApiKey: process.env.BUILT_IN_FORGE_API_KEY ?? "",
   shopifyStoreDomain: process.env.SHOPIFY_STORE_DOMAIN ?? "",
-  shopifyStorefrontApiAccessToken: process.env.SHOPIFY_STOREFRONT_API_ACCESS_TOKEN ?? "",
+  shopifyStorefrontApiAccessToken:
+    process.env.SHOPIFY_STOREFRONT_API_ACCESS_TOKEN ?? "",
 };

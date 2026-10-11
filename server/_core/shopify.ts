@@ -18,14 +18,24 @@
  */
 
 import { TRPCError } from "@trpc/server";
-import type { Cart, Collection, Product } from "@shared/commerce/types";
+import type {
+  Cart,
+  Collection,
+  Product,
+  ProductPage,
+  ProductSort,
+  StorefrontStatus,
+} from "@shared/commerce/types";
 import {
+  type Connection,
   type RawCart,
   type RawCollection,
   type RawProduct,
   normalizeCart,
   normalizeCollection,
   normalizeProduct,
+  normalizeProductPage,
+  UNCONFIGURED_PAGE,
 } from "./shopifyNormalize";
 
 // ---------------------------------------------------------------------------
@@ -47,6 +57,24 @@ function getShopifyStorefrontToken(): string {
 export function isShopifyConfigured(): boolean {
   return Boolean(getShopifyStoreDomain() && getShopifyStorefrontToken());
 }
+
+/**
+ * Public, secret-free description of the storefront connection.
+ *
+ * Read-only catalog endpoints use this to answer with an empty catalog plus
+ * `mode: "unconfigured"` instead of a 500 when the titular has not connected
+ * Shopify yet. The storefront can then show its branded launch state — which
+ * is honest — instead of an error that looks like a bug.
+ */
+export function getStorefrontStatus(): StorefrontStatus {
+  const configured = isShopifyConfigured();
+  return {
+    mode: configured ? "live" : "unconfigured",
+    storeDomain: configured ? getShopifyStoreDomain() : null,
+    apiVersion: SHOPIFY_API_VERSION,
+  };
+}
+
 function shopifyStorefrontEndpoint(): string {
   return `https://${getShopifyStoreDomain()}/api/${SHOPIFY_API_VERSION}/graphql.json`;
 }
@@ -181,9 +209,16 @@ const VARIANT_FRAGMENT = /* GraphQL */ `
     id
     title
     availableForSale
-    price { ...MoneyFields }
-    compareAtPrice { ...MoneyFields }
-    selectedOptions { name value }
+    price {
+      ...MoneyFields
+    }
+    compareAtPrice {
+      ...MoneyFields
+    }
+    selectedOptions {
+      name
+      value
+    }
   }
 `;
 
@@ -199,17 +234,75 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
     productType
     vendor
     tags
-    options { name values }
+    options {
+      name
+      values
+    }
     priceRange {
-      minVariantPrice { ...MoneyFields }
-      maxVariantPrice { ...MoneyFields }
+      minVariantPrice {
+        ...MoneyFields
+      }
+      maxVariantPrice {
+        ...MoneyFields
+      }
     }
     images(first: 8) {
-      edges { node { ...ImageFields } }
+      edges {
+        node {
+          ...ImageFields
+        }
+      }
     }
     variants(first: 25) {
-      edges { node { ...VariantFields } }
+      edges {
+        node {
+          ...VariantFields
+        }
+      }
     }
+    sizeChart: metafield(namespace: "aqv", key: "size_chart") {
+      namespace
+      key
+      value
+      type
+    }
+    composition: metafield(namespace: "aqv", key: "composition") {
+      namespace
+      key
+      value
+      type
+    }
+    careInstructions: metafield(namespace: "aqv", key: "care_instructions") {
+      namespace
+      key
+      value
+      type
+    }
+    measurements: metafield(namespace: "aqv", key: "measurements") {
+      namespace
+      key
+      value
+      type
+    }
+    fitNotes: metafield(namespace: "aqv", key: "fit_notes") {
+      namespace
+      key
+      value
+      type
+    }
+    modelInfo: metafield(namespace: "aqv", key: "model_info") {
+      namespace
+      key
+      value
+      type
+    }
+  }
+`;
+
+const PAGE_INFO_FRAGMENT = /* GraphQL */ `
+  fragment PageInfoFields on PageInfo {
+    hasNextPage
+    endCursor
   }
 `;
 
@@ -220,7 +313,9 @@ const COLLECTION_FRAGMENT = /* GraphQL */ `
     handle
     title
     description
-    image { ...ImageFields }
+    image {
+      ...ImageFields
+    }
   }
 `;
 
@@ -231,25 +326,42 @@ const CART_FRAGMENT = /* GraphQL */ `
     checkoutUrl
     totalQuantity
     cost {
-      totalAmount { ...MoneyFields }
-      subtotalAmount { ...MoneyFields }
+      totalAmount {
+        ...MoneyFields
+      }
+      subtotalAmount {
+        ...MoneyFields
+      }
     }
     lines(first: 100) {
       edges {
         node {
           id
           quantity
-          cost { totalAmount { ...MoneyFields } }
+          cost {
+            totalAmount {
+              ...MoneyFields
+            }
+          }
           merchandise {
             ... on ProductVariant {
               id
               title
-              price { ...MoneyFields }
+              price {
+                ...MoneyFields
+              }
               product {
                 handle
                 title
                 images(first: 1) {
-                  edges { node { url altText width height } }
+                  edges {
+                    node {
+                      url
+                      altText
+                      width
+                      height
+                    }
+                  }
                 }
               }
             }
@@ -266,48 +378,135 @@ const CART_FRAGMENT = /* GraphQL */ `
 
 type Edges<T> = { edges: Array<{ node: T }> };
 
+/**
+ * Storefront sort orders mapped onto Shopify's enums.
+ *
+ * `RELEVANCE` is only valid together with a `query`, and collections use a
+ * different enum, so the mapping is applied per call instead of globally.
+ * See https://shopify.dev/docs/api/storefront/latest/enums/ProductSortKeys
+ */
+const PRODUCT_SORT_KEYS = {
+  featured: "BEST_SELLING",
+  newest: "CREATED_AT",
+  "price-asc": "PRICE",
+  "price-desc": "PRICE",
+  title: "TITLE",
+  relevance: "RELEVANCE",
+} as const satisfies Record<ProductSort, string>;
+
+function sortKeyFor(sort: ProductSort | undefined, hasQuery: boolean) {
+  const requested = sort ?? (hasQuery ? "relevance" : "featured");
+  if (requested === "relevance" && !hasQuery)
+    return { sortKey: "BEST_SELLING" as const, reverse: false };
+  return {
+    sortKey: PRODUCT_SORT_KEYS[requested],
+    reverse: requested === "newest" || requested === "price-desc",
+  };
+}
+
 export type ListProductsOptions = {
   first?: number;
   /** Optional handle of a collection to scope the listing to. */
   collectionHandle?: string;
+  /** Opaque forward cursor from a previous `pageInfo.endCursor`. */
+  after?: string;
+  /** Full-text search terms (Storefront `query` argument). */
+  query?: string;
+  sort?: ProductSort;
 };
 
-export async function listProducts(
+/**
+ * Paginated catalog listing.
+ *
+ * Returns an empty page with `mode: "unconfigured"`-friendly semantics when
+ * Shopify is not connected, so the storefront can render its launch state
+ * instead of an error. Cart operations still fail loudly — you cannot fake a
+ * checkout.
+ */
+export async function listProductPage(
   options: ListProductsOptions = {}
-): Promise<Product[]> {
+): Promise<ProductPage> {
   const first = options.first ?? 24;
 
+  if (!isShopifyConfigured()) return UNCONFIGURED_PAGE;
+
+  const hasQuery = Boolean(options.query?.trim());
+
   if (options.collectionHandle) {
+    // Collection listings use ProductCollectionSortKeys (COLLECTION_DEFAULT
+    // respects the merchant's manual curation).
+    const collectionSort = hasQuery
+      ? "RELEVANCE"
+      : options.sort === "newest"
+        ? "CREATED"
+        : options.sort === "price-asc" || options.sort === "price-desc"
+          ? "PRICE"
+          : options.sort === "title"
+            ? "TITLE"
+            : "COLLECTION_DEFAULT";
     const data = await storefrontFetch<{
-      collection: { products: Edges<RawProduct> } | null;
+      collection: { products: Connection<RawProduct> } | null;
     }>(
       `${PRODUCT_FRAGMENT}
-       query productsByCollection($handle: String!, $first: Int!) {
+       ${PAGE_INFO_FRAGMENT}
+       query productsByCollection($handle: String!, $first: Int!, $after: String, $query: String, $sortKey: ProductCollectionSortKeys, $reverse: Boolean!) {
          collection(handle: $handle) {
-           products(first: $first) {
+           products(first: $first, after: $after, query: $query, sortKey: $sortKey, reverse: $reverse) {
              edges { node { ...ProductFields } }
+             pageInfo { ...PageInfoFields }
            }
          }
        }`,
-      { handle: options.collectionHandle, first }
+      {
+        handle: options.collectionHandle,
+        first,
+        after: options.after ?? null,
+        query: hasQuery ? options.query : null,
+        sortKey: collectionSort,
+        reverse: options.sort === "newest" || options.sort === "price-desc",
+      }
     );
-    if (!data.collection) return [];
-    return data.collection.products.edges.map(e => normalizeProduct(e.node));
+    if (!data.collection) return UNCONFIGURED_PAGE;
+    return normalizeProductPage(data.collection.products);
   }
 
-  const data = await storefrontFetch<{ products: Edges<RawProduct> }>(
+  const { sortKey, reverse } = sortKeyFor(options.sort, hasQuery);
+  const data = await storefrontFetch<{ products: Connection<RawProduct> }>(
     `${PRODUCT_FRAGMENT}
-     query listProducts($first: Int!) {
-       products(first: $first, sortKey: TITLE) {
+     ${PAGE_INFO_FRAGMENT}
+     query listProducts($first: Int!, $after: String, $query: String, $sortKey: ProductSortKeys, $reverse: Boolean!) {
+       products(first: $first, after: $after, query: $query, sortKey: $sortKey, reverse: $reverse) {
          edges { node { ...ProductFields } }
+         pageInfo { ...PageInfoFields }
        }
      }`,
-    { first }
+    {
+      first,
+      after: options.after ?? null,
+      query: hasQuery ? options.query : null,
+      sortKey,
+      reverse,
+    }
   );
-  return data.products.edges.map(e => normalizeProduct(e.node));
+  return normalizeProductPage(data.products);
+}
+
+/** Convenience wrapper that keeps the flat `Product[]` shape for callers
+ * (probe scripts, smoke tests) that only care about the first page. */
+export async function listProducts(
+  options: ListProductsOptions = {}
+): Promise<Product[]> {
+  const page = await listProductPage(options);
+  return page.products;
 }
 
 export async function getProductByHandle(handle: string): Promise<Product> {
+  if (!isShopifyConfigured()) {
+    throw new TRPCError({
+      code: "NOT_FOUND",
+      message: `Product "${handle}" is unavailable: the store is not connected to Shopify yet`,
+    });
+  }
   const data = await storefrontFetch<{ productByHandle: RawProduct | null }>(
     `${PRODUCT_FRAGMENT}
      query productByHandle($handle: String!) {
@@ -324,7 +523,10 @@ export async function getProductByHandle(handle: string): Promise<Product> {
   return normalizeProduct(data.productByHandle);
 }
 
-export async function listCollections(first: number = 10): Promise<Collection[]> {
+export async function listCollections(
+  first: number = 10
+): Promise<Collection[]> {
+  if (!isShopifyConfigured()) return [];
   const data = await storefrontFetch<{ collections: Edges<RawCollection> }>(
     `${COLLECTION_FRAGMENT}
      query listCollections($first: Int!) {
@@ -337,7 +539,15 @@ export async function listCollections(first: number = 10): Promise<Collection[]>
   return data.collections.edges.map(e => normalizeCollection(e.node));
 }
 
-export async function getCollectionByHandle(handle: string): Promise<Collection> {
+export async function getCollectionByHandle(
+  handle: string
+): Promise<Collection> {
+  if (!isShopifyConfigured()) {
+    throw new TRPCError({
+      code: "NOT_FOUND",
+      message: `Collection "${handle}" is unavailable: the store is not connected to Shopify yet`,
+    });
+  }
   const data = await storefrontFetch<{ collection: RawCollection | null }>(
     `${COLLECTION_FRAGMENT}
      query collectionByHandle($handle: String!) {
@@ -352,6 +562,76 @@ export async function getCollectionByHandle(handle: string): Promise<Collection>
     });
   }
   return normalizeCollection(data.collection);
+}
+
+export type CollectionPage = {
+  collection: Collection | null;
+  products: Product[];
+  pageInfo: ProductPage["pageInfo"];
+  mode: ProductPage["mode"];
+};
+
+/**
+ * One round trip for the collection route: metadata + first product page.
+ *
+ * Two distinct "empty" answers, because the UI must not confuse them:
+ *   - `null`            → the handle does not exist (render a 404 state);
+ *   - `collection: null` + `mode: "unconfigured"` → Shopify is not connected
+ *     yet, so the store has no collections at all (render launch state).
+ */
+export async function getCollectionPage(
+  handle: string,
+  options: Omit<ListProductsOptions, "collectionHandle"> = {}
+): Promise<CollectionPage | null> {
+  if (!isShopifyConfigured()) {
+    return { collection: null, ...UNCONFIGURED_PAGE };
+  }
+
+  const first = options.first ?? 24;
+  const hasQuery = Boolean(options.query?.trim());
+  const data = await storefrontFetch<{ collection: RawCollection | null }>(
+    `${COLLECTION_FRAGMENT}
+     ${PRODUCT_FRAGMENT}
+     ${PAGE_INFO_FRAGMENT}
+     query collectionPage($handle: String!, $first: Int!, $after: String, $query: String, $sortKey: ProductCollectionSortKeys, $reverse: Boolean!) {
+       collection(handle: $handle) {
+         ...CollectionFields
+         products(first: $first, after: $after, query: $query, sortKey: $sortKey, reverse: $reverse) {
+           edges { node { ...ProductFields } }
+           pageInfo { ...PageInfoFields }
+         }
+       }
+     }`,
+    {
+      handle,
+      first,
+      after: options.after ?? null,
+      query: hasQuery ? options.query : null,
+      sortKey: hasQuery
+        ? "RELEVANCE"
+        : options.sort === "newest"
+          ? "CREATED"
+          : options.sort === "price-asc" || options.sort === "price-desc"
+            ? "PRICE"
+            : options.sort === "title"
+              ? "TITLE"
+              : "COLLECTION_DEFAULT",
+      reverse: options.sort === "newest" || options.sort === "price-desc",
+    }
+  );
+
+  if (!data.collection) return null;
+
+  const page = data.collection.products
+    ? normalizeProductPage(data.collection.products)
+    : UNCONFIGURED_PAGE;
+
+  return {
+    collection: normalizeCollection(data.collection),
+    products: page.products,
+    pageInfo: page.pageInfo,
+    mode: page.mode,
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -377,7 +657,10 @@ export async function createCart(lines: CartLineInput[]): Promise<Cart> {
      }`,
     {
       input: {
-        lines: lines.map(l => ({ merchandiseId: l.variantId, quantity: l.quantity })),
+        lines: lines.map(l => ({
+          merchandiseId: l.variantId,
+          quantity: l.quantity,
+        })),
       },
     }
   );
@@ -409,7 +692,10 @@ export async function addCartLines(
      }`,
     {
       cartId,
-      lines: lines.map(l => ({ merchandiseId: l.variantId, quantity: l.quantity })),
+      lines: lines.map(l => ({
+        merchandiseId: l.variantId,
+        quantity: l.quantity,
+      })),
     }
   );
   return unwrapCart(data.cartLinesAdd, "cartLinesAdd");
