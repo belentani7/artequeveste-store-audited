@@ -60,14 +60,35 @@ jobs:
 
       - name: Smoke the production server
         run: |
-          PORT=3100 node dist/index.js &
+          set -euo pipefail
+          # NODE_ENV=production is the whole point of this step: it is the only
+          # path that exercises serveStatic + the strict CSP.
+          NODE_ENV=production PORT=3100 node dist/index.js > /tmp/aqv-server.log 2>&1 &
           SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+
+          ready=0
           for attempt in $(seq 1 30); do
-            curl -sf http://127.0.0.1:3100/api/health > /dev/null && break
+            if curl -sf http://127.0.0.1:3100/api/health > /tmp/health.json; then
+              ready=1
+              break
+            fi
             sleep 1
           done
-          curl -sf http://127.0.0.1:3100/api/health | tee /tmp/health.json
-          node -e "const h = require('/tmp/health.json'); if (!h.ok) { console.error('health not ok', h); process.exit(1) }"
+          if [ "$ready" != "1" ]; then
+            echo "::error::production server never became ready"
+            cat /tmp/aqv-server.log
+            exit 1
+          fi
+
+          cat /tmp/health.json; echo
+          node -e "
+            const fs = require('node:fs');
+            const health = JSON.parse(fs.readFileSync('/tmp/health.json', 'utf8'));
+            if (!health.ok) throw new Error('health not ok: ' + JSON.stringify(health));
+            if (health.environment !== 'production') throw new Error('not production mode: ' + health.environment);
+          "
           curl -sf http://127.0.0.1:3100/ | grep -qi "arte que veste"
           curl -sf -o /dev/null http://127.0.0.1:3100/produto/deep-link-desconhecido
-          kill "$SERVER_PID"
+          curl -sf -o /dev/null http://127.0.0.1:3100/robots.txt
+          echo "production smoke ok"
