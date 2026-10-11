@@ -7,8 +7,10 @@
 
 | Controle           | Comando                                  | Resultado                                                                                         |
 | ------------------ | ---------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Ambiente           | Node 22.22.2+ / 24                       | Piso real do `jsdom` 30; Node 20 falha nos testes de DOM (undici 8 exige 22.19+)                  |
+| Formatação         | `pnpm format:check`                      | Aprovado no código (entregáveis editoriais e históricos fora do escopo, por decisão)              |
 | TypeScript estrito | `pnpm check`                             | Aprovado, 0 erros                                                                                 |
-| Testes             | `pnpm test`                              | **93 aprovados**, 1 skip (smoke live sem credenciais)                                             |
+| Testes             | `pnpm test`                              | **93 aprovados**, 1 skip (smoke live sem credenciais); sem depender de build prévio               |
 | Build              | `pnpm build`                             | Aprovado; cliente + servidor, **sem** aviso de chunk > 500 kB                                     |
 | Boot de produção   | `NODE_ENV=production node dist/index.js` | HTML servido (2,5 kB), assets com cache imutável, deep link `/produto/*` responde 200             |
 | Health             | `GET /api/health`                        | 200 com `mode`, `apiVersion`, versões, uptime                                                     |

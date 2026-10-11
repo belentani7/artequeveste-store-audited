@@ -1,5 +1,12 @@
 # Como contribuir
 
+## Ambiente
+
+Node **22.22.2 ou superior** (ou 24.x) — é o piso que o `jsdom` 30 declara e o que o CI testa em
+`22` e `24`. O Node 20 está fora de suporte desde abril de 2026 e faz os testes de DOM falharem com
+`webidl.util.markAsUncloneable is not a function`. O `pnpm` vem do `packageManager` via
+`corepack enable`.
+
 ## Fluxo
 
 1. Crie uma branch com prefixo `feat/`, `fix/`, `docs/` ou `chore/`.

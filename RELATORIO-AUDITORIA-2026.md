@@ -177,6 +177,12 @@ esgotamento de memória), `vite` 7.1.9 (bypass de `server.fs` / leitura de arqui
   os dois layouts (bundle em `dist/` e fonte em `server/_core/`) mais o caso "ainda não buildado".
   A garantia de produção continua verificada de ponta a ponta pelo smoke do CI, que sobe o servidor
   e exige o HTML da loja.
+- **Piso de Node errado, descoberto pelo CI**: `engines.node` dizia `>=20` e o workflow usava Node 20,
+  mas o `jsdom` 30 (devDependency de DOM) declara `^22.22.2 || ^24.15.0 || >=26.0.0` — sob Node 20 os
+  testes de `consent`/`seo`/`format` morrem em `webidl.util.markAsUncloneable is not a function`
+  (undici 8). Reproduzido localmente com Node 20.19.5. **Correção**: piso real declarado
+  (`engines.node: ">=22.22.2"`, `.nvmrc` com `22`) e CI em matriz **Node 22 e 24**; o Node 20 saiu de
+  suporte em abril de 2026.
 - **CI não rodava em cópia limpa por outro motivo**: `actions/setup-node` com `cache: pnpm` exige o
   `pnpm` no PATH _antes_ da action rodar; a etapa falhava em ~10 s. Agora a ordem é `setup-node`
   (sem cache) → `corepack enable` (versão vinda de `packageManager`) → `actions/cache` explícito do

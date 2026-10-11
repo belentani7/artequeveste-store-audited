@@ -29,7 +29,7 @@ lançamento (vitrine de marca, catálogo vazio, sem erro).
 | Camada     | Tecnologia                                                                   |
 | ---------- | ---------------------------------------------------------------------------- |
 | Frontend   | React 19, Vite 7, Tailwind CSS 4, wouter (router), GSAP (motion sob demanda) |
-| Backend    | Node 20+, Express 4, tRPC 11, zod 4, superjson                               |
+| Backend    | Node 22.22+ (ou 24), Express 4, tRPC 11, zod 4, superjson                    |
 | Commerce   | Shopify Storefront API `2025-04` (somente Storefront token)                  |
 | Testes     | Vitest 4 (node + jsdom) + Playwright (smoke de rotas, opcional)              |
 | Tipografia | Self-hosted via `@fontsource` (DM Serif Display + Manrope)                   |
