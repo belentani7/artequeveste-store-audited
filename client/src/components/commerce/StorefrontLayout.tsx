@@ -53,8 +53,7 @@ export function StorefrontMessage({
   title: string;
   body: string;
   action?:
-    | { label: string; href: string }
-    | { label: string; onClick: () => void };
+    { label: string; href: string } | { label: string; onClick: () => void };
   tone?: "neutral" | "alert";
 }) {
   return (

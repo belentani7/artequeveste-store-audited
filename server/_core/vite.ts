@@ -61,10 +61,12 @@ export async function setupVite(app: Express, server: Server) {
  * `<root>/public`, which never exists — production served an empty directory
  * and every request ended in an ENOENT on `index.html`.
  */
-export function resolveStaticDir(): string {
+export function resolveStaticDir(
+  moduleDir: string = import.meta.dirname
+): string {
   const candidates = [
-    path.resolve(import.meta.dirname, "public"), // dist/index.js → dist/public
-    path.resolve(import.meta.dirname, "../..", "dist", "public"), // server/_core → dist/public
+    path.resolve(moduleDir, "public"), // bundled: dist/index.js → dist/public
+    path.resolve(moduleDir, "../..", "dist", "public"), // source: server/_core → <root>/dist/public
   ];
   return pickStaticDir(candidates);
 }
@@ -72,6 +74,11 @@ export function resolveStaticDir(): string {
 /**
  * Pure selection logic, exported so it can be tested against temporary
  * fixtures instead of whatever happens to be on disk during a test run.
+ *
+ * `resolveStaticDir` takes the module directory as an argument (defaulting to
+ * the real one) so the resolution can be tested against fixtures instead of
+ * depending on whether the machine running the tests has a `dist/` build — a
+ * fresh clone has none, and `pnpm test` runs before `pnpm build` in CI.
  *
  * A candidate only counts when it actually contains a built `index.html`;
  * otherwise the first candidate is returned so the error message names a real

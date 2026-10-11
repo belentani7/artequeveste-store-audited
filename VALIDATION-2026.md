@@ -8,7 +8,7 @@
 | Controle           | Comando                                  | Resultado                                                                                         |
 | ------------------ | ---------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | TypeScript estrito | `pnpm check`                             | Aprovado, 0 erros                                                                                 |
-| Testes             | `pnpm test`                              | **91 aprovados**, 1 skip (smoke live sem credenciais)                                             |
+| Testes             | `pnpm test`                              | **93 aprovados**, 1 skip (smoke live sem credenciais)                                             |
 | Build              | `pnpm build`                             | Aprovado; cliente + servidor, **sem** aviso de chunk > 500 kB                                     |
 | Boot de produção   | `NODE_ENV=production node dist/index.js` | HTML servido (2,5 kB), assets com cache imutável, deep link `/produto/*` responde 200             |
 | Health             | `GET /api/health`                        | 200 com `mode`, `apiVersion`, versões, uptime                                                     |

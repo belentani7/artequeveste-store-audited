@@ -12,13 +12,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # Node first: `cache: pnpm` would need pnpm on PATH before this action
+      # runs, so the pnpm store is cached explicitly in the step below.
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
-      - run: corepack enable
-      # Reads the exact version from package.json#packageManager.
-      - run: pnpm install --frozen-lockfile
+
+      - name: Enable corepack (pnpm version comes from packageManager)
+        run: corepack enable
+
+      - name: Resolve the pnpm store directory
+        id: pnpm-store
+        run: echo "path=$(pnpm store path)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-store.outputs.path }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+
+      - name: Formatting (code surface only; see .prettierignore)
+        run: pnpm format:check
 
       - name: TypeScript
         run: pnpm check
@@ -36,12 +55,13 @@ jobs:
       - name: Smoke the production server
         run: |
           PORT=3100 node dist/index.js &
+          SERVER_PID=$!
           for attempt in $(seq 1 30); do
-            if curl -sf http://127.0.0.1:3100/api/health > /dev/null; then break; fi
+            curl -sf http://127.0.0.1:3100/api/health > /dev/null && break
             sleep 1
           done
           curl -sf http://127.0.0.1:3100/api/health | tee /tmp/health.json
-          curl -sf http://127.0.0.1:3100/ | grep -q "ARTE QUE VESTE" || curl -sf http://127.0.0.1:3100/ | grep -q "art"
+          node -e "const h = require('/tmp/health.json'); if (!h.ok) { console.error('health not ok', h); process.exit(1) }"
+          curl -sf http://127.0.0.1:3100/ | grep -qi "arte que veste"
           curl -sf -o /dev/null http://127.0.0.1:3100/produto/deep-link-desconhecido
-          node -e "const h=require('/tmp/health.json'); if(!h.ok) process.exit(1)"
-          kill %1
+          kill "$SERVER_PID"

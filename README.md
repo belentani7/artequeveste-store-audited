@@ -55,7 +55,7 @@ pnpm check          # tsc --noEmit
 pnpm test           # vitest run
 pnpm build          # build do cliente (dist/public) + servidor (dist/index.js)
 pnpm start          # NODE_ENV=production node dist/index.js
-pnpm verify         # check + test + build (mesmo gate do CI)
+pnpm verify         # format:check + check + test + build (mesmo gate do CI)
 pnpm shopify:probe  # imprime o catálogo normalizado da Storefront API real
 pnpm validate:routes# smoke de navegador nas rotas (requer Playwright instalado)
 pnpm db:push        # migrations (opcional: só para o login de cliente)
@@ -156,7 +156,7 @@ Depois de publicar, rode `pnpm shopify:probe` para confirmar que o catálogo est
 | Controle                          | Resultado atual                                                                     |
 | --------------------------------- | ----------------------------------------------------------------------------------- |
 | `pnpm check` (TypeScript estrito) | ✅ sem erros                                                                        |
-| `pnpm test` (Vitest)              | ✅ 91 testes passam, 1 skip (smoke live sem credenciais)                            |
+| `pnpm test` (Vitest)              | ✅ 93 testes passam, 1 skip (smoke live sem credenciais)                            |
 | `pnpm build`                      | ✅ cliente + servidor; sem aviso de chunk > 500 kB                                  |
 | Servidor de produção              | ✅ `pnpm start` serve HTML, assets com cache imutável e deep links                  |
 | `/api/health`                     | ✅ `mode`, `apiVersion`, `uptime`, versões                                          |

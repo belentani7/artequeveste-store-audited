@@ -10,8 +10,8 @@
 ## Antes de abrir o PR
 
 ```bash
-pnpm verify        # check + test + build
-pnpm format        # prettier
+pnpm verify        # format:check + check + test + build (o gate do CI)
+pnpm format        # prettier --write no código
 ```
 
 Se a mudança toca a loja visualmente, rode também o smoke de navegador com o servidor ligado:
@@ -20,6 +20,11 @@ Se a mudança toca a loja visualmente, rode também o smoke de navegador com o s
 pnpm dev                       # em outro terminal
 pnpm validate:routes           # requires playwright chromium installed
 ```
+
+O `prettier` cobre o **código** (`client/`, `server/`, `shared/`, `scripts/`, `drizzle/`,
+`.github/` e configurações). Entregáveis editoriais e registros históricos (`entrega-cliente/`,
+`entrega-editorial-*/`, `manual-*.md`, `AUDITORIA-10X10.md`, `references/`…) estão no
+`.prettierignore` de propósito: são documentos já entregues ao cliente, mantidos como estão.
 
 ## Regras do projeto (não negociáveis)
 

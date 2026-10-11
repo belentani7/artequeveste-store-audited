@@ -30,7 +30,7 @@ titular (credenciais, catálogo, pagamento, frete, dados fiscais).
 | Manutenibilidade          |  7/10 | **9/10** | Home desmontada em componentes, ~42 dependências e 47 arquivos mortos removidos, deps atualizadas, CI com `verify`                 |
 | Segurança                 |  8/10 | **9/10** | CSP estrita sem inline em produção, rate limit com poda, corpo 512 KB, sanitização de busca, zero dependência vulnerável           |
 | Acessibilidade            |  7/10 | **9/10** | Diálogo do carrinho com foco preso/inert/retorno de foco, foco visível global, `aria-*` nos controles, reduced motion              |
-| Evidência operacional     |  5/10 | **9/10** | 91 testes, build sem aviso, `pnpm audit` limpo, boot de produção verificado por requisição, CI executa check+test+build+health     |
+| Evidência operacional     |  5/10 | **9/10** | 93 testes, build sem aviso, `pnpm audit` limpo, boot de produção verificado por requisição, CI executa check+test+build+health     |
 
 **Média ponderada aproximada: 8,8/10.** O que impede 10/10 não é código: é catálogo publicado,
 credenciais e uma compra real concluída. O item final da matriz (evidência operacional com catálogo
@@ -153,7 +153,7 @@ esgotamento de memória), `vite` 7.1.9 (bypass de `server.fs` / leitura de arqui
   loja). Além de desnecessário, era divulgação gratuita da superfície de rotas: o patch e a entrada
   `patchedDependencies` foram apagados, e o `wouter` subiu para 3.13.0.
 - **Evidência**: `pnpm audit` → _"No known vulnerabilities found"_; `pnpm verify` continua verde
-  (tsc 0 erros, 91 testes, build em ~4 s) e o boot de produção foi refeito depois do upgrade.
+  (tsc 0 erros, 93 testes, build em ~4 s) e o boot de produção foi refeito depois do upgrade.
 - **Custo**: o bundle inicial subiu de ~139 kB para ~164 kB gzip (React 19.3 e zod novos). O ganho de
   segurança foi considerado prioritário; nenhum chunk passa do limite de aviso do Vite.
 
@@ -169,6 +169,19 @@ esgotamento de memória), `vite` 7.1.9 (bypass de `server.fs` / leitura de arqui
   `packageManager`), `--frozen-lockfile`, `check` + `test` + `build` + smoke de produção via health.
 - `scripts/` do repositório estavam desatualizados em relação à API → probe e smoke de rotas
   reescritos; script de captura de um asset que não existe mais foi removido.
+- **Teste que dependia de build anterior**: `server/assets.test.ts` afirmava que
+  `resolveStaticDir()` devolvia `<raiz>/dist/public` — verdade só quando a máquina já tinha rodado
+  `pnpm build`. Numa cópia limpa (exatamente o caso do CI, que roda `test` **antes** de `build`) o
+  resolver caía no primeiro candidato e o teste falhava. `resolveStaticDir()` passou a receber o
+  diretório do módulo como argumento (com default o real) e o teste virou hermético: fixtures para
+  os dois layouts (bundle em `dist/` e fonte em `server/_core/`) mais o caso "ainda não buildado".
+  A garantia de produção continua verificada de ponta a ponta pelo smoke do CI, que sobe o servidor
+  e exige o HTML da loja.
+- **CI não rodava em cópia limpa por outro motivo**: `actions/setup-node` com `cache: pnpm` exige o
+  `pnpm` no PATH _antes_ da action rodar; a etapa falhava em ~10 s. Agora a ordem é `setup-node`
+  (sem cache) → `corepack enable` (versão vinda de `packageManager`) → `actions/cache` explícito do
+  _pnpm store_ → `pnpm install --frozen-lockfile`. O `kill %1` do smoke (que falha sem job control)
+  virou `SERVER_PID=$!` + `kill "$SERVER_PID"`.
 - `robots.txt`, `sitemap.xml` e cards sociais adicionados (o sitemap **não** lista produto inventado:
   só as rotas fixas; produto entra pelo catálogo do titular).
 - `/busca` sem termo passou a listar o catálogo inteiro e o "Ver mais" da Home avisa quando existe
@@ -197,7 +210,7 @@ esgotamento de memória), `vite` 7.1.9 (bypass de `server.fs` / leitura de arqui
 | Controle           | Comando                                  | Resultado                                                                          |
 | ------------------ | ---------------------------------------- | ---------------------------------------------------------------------------------- |
 | Tipos              | `pnpm check`                             | ✅ 0 erros                                                                         |
-| Testes             | `pnpm test`                              | ✅ 91 passam, 1 skip                                                               |
+| Testes             | `pnpm test`                              | ✅ 93 passam, 1 skip                                                               |
 | Build              | `pnpm build`                             | ✅ cliente + servidor, sem chunk > 500 kB                                          |
 | Boot produção      | `NODE_ENV=production node dist/index.js` | ✅ HTML, assets, deep link e `/api/health` (200)                                   |
 | Headers            | `curl -I`                                | ✅ CSP estrita, HSTS, `X-Frame-Options: DENY`, cache por tipo de arquivo           |

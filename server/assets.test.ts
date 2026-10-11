@@ -55,11 +55,31 @@ describe("pickStaticDir", () => {
 });
 
 describe("resolveStaticDir", () => {
-  it("points at dist/public so a production boot cannot serve an empty folder", () => {
-    // This test file lives in server/; the resolver lives in server/_core/.
-    expect(resolveStaticDir()).toBe(
-      path.resolve(import.meta.dirname, "..", "dist", "public")
-    );
+  // The resolver takes the module directory as an argument precisely so these
+  // cases stay hermetic: a clean checkout has no dist/ (CI runs the tests
+  // before the build), and the fixture below is what proves the layout rule.
+  it("resolves to dist/public from the bundled layout (dist/index.js)", () => {
+    const root = fixtureDir();
+    const bundled = withIndexHtml(path.join(root, "dist", "public"));
+
+    expect(resolveStaticDir(path.join(root, "dist"))).toBe(bundled);
+  });
+
+  it("resolves to dist/public from the source layout (server/_core)", () => {
+    const root = fixtureDir();
+    const bundled = withIndexHtml(path.join(root, "dist", "public"));
+
+    expect(resolveStaticDir(path.join(root, "server", "_core"))).toBe(bundled);
+  });
+
+  it("never crashes when the client was not built yet", () => {
+    const root = fixtureDir();
+
+    // Only the name is asserted: with nothing built there is no correct
+    // directory, but the caller must still get a path to report.
+    expect(
+      path.basename(resolveStaticDir(path.join(root, "server", "_core")))
+    ).toBe("public");
   });
 
   it("ships the campaign assets and crawler files the storefront references", () => {

@@ -81,7 +81,7 @@
     "check": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "verify": "pnpm check && pnpm test && pnpm build",
+    "verify": "pnpm format:check && pnpm check && pnpm test && pnpm build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "db:push": "drizzle-kit generate && drizzle-kit migrate",
