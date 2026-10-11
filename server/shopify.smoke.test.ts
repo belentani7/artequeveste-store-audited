@@ -26,29 +26,33 @@ describe.skipIf(!configured)("shopify smoke (live)", () => {
     "returns at least one product with title, image, and non-zero price",
     { timeout: 30_000 },
     async () => {
-    const products = await listProducts({ first: 10 });
+      const products = await listProducts({ first: 10 });
 
-    // Print a compact view so the agent can see the actual normalized output
-    // (titles, prices, image URLs) directly in test logs.
-    const preview = products.slice(0, 3).map(p => ({
-      handle: p.handle,
-      title: p.title,
-      price: `${p.priceRange.min.amount} ${p.priceRange.min.currencyCode}`,
-      firstImage: p.images[0]?.url ?? null,
-      variantCount: p.variants.length,
-    }));
-    // eslint-disable-next-line no-console
-    console.log("[shopify smoke] products:", JSON.stringify(preview, null, 2));
+      // Print a compact view so the agent can see the actual normalized output
+      // (titles, prices, image URLs) directly in test logs.
+      const preview = products.slice(0, 3).map(p => ({
+        handle: p.handle,
+        title: p.title,
+        price: `${p.priceRange.min.amount} ${p.priceRange.min.currencyCode}`,
+        firstImage: p.images[0]?.url ?? null,
+        variantCount: p.variants.length,
+      }));
+      // eslint-disable-next-line no-console
+      console.log(
+        "[shopify smoke] products:",
+        JSON.stringify(preview, null, 2)
+      );
 
-    expect(products.length).toBeGreaterThanOrEqual(1);
+      expect(products.length).toBeGreaterThanOrEqual(1);
 
-    const usable = products.find(p => {
-      const hasTitle = typeof p.title === "string" && p.title.trim().length > 0;
-      const hasImage = (p.images[0]?.url ?? "").length > 0;
-      const priceNum = Number.parseFloat(p.priceRange.min.amount);
-      const hasPrice = Number.isFinite(priceNum) && priceNum > 0;
-      return hasTitle && hasImage && hasPrice;
-    });
+      const usable = products.find(p => {
+        const hasTitle =
+          typeof p.title === "string" && p.title.trim().length > 0;
+        const hasImage = (p.images[0]?.url ?? "").length > 0;
+        const priceNum = Number.parseFloat(p.priceRange.min.amount);
+        const hasPrice = Number.isFinite(priceNum) && priceNum > 0;
+        return hasTitle && hasImage && hasPrice;
+      });
 
       expect(
         usable,

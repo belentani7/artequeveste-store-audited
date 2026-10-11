@@ -1,11 +1,60 @@
 # Como contribuir
 
-1. Crea una rama con prefijo `feat/`, `fix/` o `docs/`.
-2. Manten los commits pequenos y con un mensaje claro.
-3. Abre un Pull Request describiendo el cambio y como se prueba.
-4. Revisa que el CI pasa antes de pedir revision.
+## Ambiente
+
+Node **22.22.2 ou superior** (ou 24.x) — é o piso que o `jsdom` 30 declara e o que o CI testa em
+`22` e `24`. O Node 20 está fora de suporte desde abril de 2026 e faz os testes de DOM falharem com
+`webidl.util.markAsUncloneable is not a function`. O `pnpm` vem do `packageManager` via
+`corepack enable`.
+
+## Fluxo
+
+1. Crie uma branch com prefixo `feat/`, `fix/`, `docs/` ou `chore/`.
+2. Commits pequenos e com mensagem no imperativo (`fix: corrige cache do HTML`).
+3. Abra um Pull Request descrevendo **o que muda, por que e como foi verificado**.
+4. O PR só está pronto quando `pnpm verify` passa localmente (é o mesmo gate do CI).
+
+## Antes de abrir o PR
+
+```bash
+pnpm verify        # format:check + check + test + build (o gate do CI)
+pnpm format        # prettier --write no código
+```
+
+Se a mudança toca a loja visualmente, rode também o smoke de navegador com o servidor ligado:
+
+```bash
+pnpm dev                       # em outro terminal
+pnpm validate:routes           # requires playwright chromium installed
+```
+
+O `prettier` cobre o **código** (`client/`, `server/`, `shared/`, `scripts/`, `drizzle/`,
+`.github/` e configurações). Entregáveis editoriais e registros históricos (`entrega-cliente/`,
+`entrega-editorial-*/`, `manual-*.md`, `AUDITORIA-10X10.md`, `references/`…) estão no
+`.prettierignore` de propósito: são documentos já entregues ao cliente, mantidos como estão.
+
+## Regras do projeto (não negociáveis)
+
+1. **Nenhum dado inventado no front.** Produto, preço, desconto, estoque, tamanho, medida, prazo,
+   frete, avaliação ou selo só aparecem se vierem do Shopify/metafields do titular. Quando falta,
+   a interface diz o que falta.
+2. **Um único seam de commerce**: apenas `server/_core/shopify*.ts` conhece formas do Shopify.
+   Qualquer `edges`/`node` ou `gid://` no frontend é bug — há teste que falha se vazar.
+3. **Todas as rotas passam pelo `StorefrontLayout`.** Não duplique cabeçalho, carrinho, consentimento
+   ou rodapé em páginas.
+4. **Um controle sem destino não entra.** Botão que não faz nada, link para âncora inexistente ou
+   busca decorativa são defeitos, não placeholders.
+5. **Texto em pt-BR, tom direto, sem promessa jurídica.** Políticas descrevem processo; prazos e
+   dados legais são do checkout/titular.
+6. **Acessibilidade mínima**: controle com `aria-label`/`aria-pressed` quando o rótulo não é óbvio,
+   foco visível, diálogo com `aria-modal` + foco preso + `Escape`, imagens com `alt` real (ou
+   `aria-hidden` quando decorativas) e animação respeitando `prefers-reduced-motion`.
+7. **Segurança por padrão**: nada de inline script novo (a CSP de produção não permite), nenhuma
+   chave em código, validação zod em toda entrada de procedimento.
+8. **Performance**: rota nova entra por `lazy()`; dependência nova precisa de justificativa no PR
+   (o projeto hoje tem 25 dependências de runtime — manter assim é parte do design).
 
 ## Reportar problemas
 
-Usa las plantillas de issue. Un reporte util incluye pasos para reproducir,
-entorno y esperado frente a obtenido.
+Um relato útil traz: passos para reproduzir, ambiente (navegador/região), comportamento esperado e
+observado, e a linha de log ou o `X-Trace-Id` da resposta, quando houver.

@@ -1,5 +1,7 @@
 # Refinamiento frontend — Arte Que Veste 2026
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Dirección visual
 
 La interfaz utiliza una base de papel cálido, tinta carbón, rojo cinabrio y azul polvo, con amarillo de señal y oliva reservados para futuras cápsulas. La textura deja de depender de imágenes inciertas: se compone con grano SVG inline, líneas de registro, tramas diagonales y marcos de corte. La tipografía combina **DM Serif Display** para gesto editorial de moda y **Manrope** para navegación, precio y conversión.

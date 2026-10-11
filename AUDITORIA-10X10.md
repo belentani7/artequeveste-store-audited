@@ -1,5 +1,7 @@
 # Auditoría 10×10 — Arte Que Veste
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Decisión ejecutiva
 
 La auditoría no autoriza una migración externa automática. **Ningún repositorio evaluado alcanza 10/10 simultáneamente en backend, frontend, utilidad, relevancia, potencial e identidad**, y el proyecto actual presenta un bloqueo comercial verificable: el smoke test contra Shopify devuelve cero productos. Por lo tanto, no se copia Hydrogen ni otra plataforma externa al storefront. Se conserva el backend Shopify/tRPC existente y se prepara el repositorio nuevo únicamente como una copia auditada, trazable y privada del proyecto actual, sin afirmar que la tienda esté lista para vender mientras el titular no publique catálogo, pagos, envíos y datos fiscales.

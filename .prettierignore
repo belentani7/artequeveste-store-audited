@@ -33,3 +33,30 @@ pnpm-lock.yaml
 # OS files
 .DS_Store
 Thumbs.db
+
+# Client deliverables and historical records — kept exactly as delivered.
+# These are prose/editorial artifacts (Typst sources included), not code:
+# reformatting them would churn files the client already received.
+entrega-cliente/
+entrega-editorial-arte-que-veste-2026/
+manual-pdf/
+manual-arte-que-veste-2026.md
+manual-arte-que-veste-completo-2026.md
+email-entrega-arte-que-veste.md
+email-entrega-arte-que-veste-final.md
+AUDITORIA-10X10.md
+BRAND-STRATEGY-2026.md
+IDENTIDADE-EXTRAIDA-DO-HTML.md
+PVCU-ARTE-QUE-VESTE.md
+REBUILD-BASELINE-2026.md
+RESEARCH-2026-FINDINGS.md
+RESEARCH-FREE-FASHION-RESOURCES.md
+STATUS-ENTREGA-RECIFE.md
+STATUS-REFORMULACAO-VISUAL.md
+UPGRADE-RESOURCES-2026.md
+VALIDACAO-VISUAL-RECIFE.md
+audit-notes.md
+references/
+
+# Vendored browser script injected by the preview runtime.
+client/public/__manus__/debug-collector.js

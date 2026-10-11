@@ -19,19 +19,36 @@ import type {
   Collection,
   Image,
   Money,
+  PageInfo,
   Product,
+  ProductMetafields,
   ProductOption,
+  ProductPage,
   ProductVariant,
+  StorefrontMode,
   SelectedOption,
 } from "@shared/commerce/types";
 
 // ---- Raw Shopify shapes (kept private to this file) ----
 
 type RawMoney = { amount: string; currencyCode: string };
-type RawImage = { url: string; altText: string | null; width?: number; height?: number };
+type RawImage = {
+  url: string;
+  altText: string | null;
+  width?: number;
+  height?: number;
+};
 type RawSelectedOption = { name: string; value: string };
 type RawProductOption = { name: string; values: string[] };
 type Edges<T> = { edges: Array<{ node: T }> };
+type RawPageInfo = { hasNextPage: boolean; endCursor: string | null };
+export type Connection<T> = Edges<T> & { pageInfo?: RawPageInfo };
+type RawMetafield = {
+  namespace: string;
+  key: string;
+  value: string;
+  type: string;
+};
 
 type RawVariant = {
   id: string;
@@ -55,6 +72,19 @@ export type RawProduct = {
   priceRange: { minVariantPrice: RawMoney; maxVariantPrice: RawMoney };
   images: Edges<RawImage>;
   variants: Edges<RawVariant>;
+  /**
+   * Aliased single-metafield lookups. Shopify's `metafield(namespace, key)`
+   * is stable across API versions, so the transport asks for each `aqv.*`
+   * field under its own alias instead of relying on `metafields(first:)`.
+   * The alias names carry no meaning here — `normalizeMetafields` reads the
+   * real `namespace`/`key` from the payload.
+   */
+  sizeChart?: RawMetafield | null;
+  composition?: RawMetafield | null;
+  careInstructions?: RawMetafield | null;
+  measurements?: RawMetafield | null;
+  fitNotes?: RawMetafield | null;
+  modelInfo?: RawMetafield | null;
 };
 
 export type RawCollection = {
@@ -63,6 +93,8 @@ export type RawCollection = {
   title: string;
   description: string;
   image: RawImage | null;
+  /** Optional: only requested on the collection detail query. */
+  products?: Connection<RawProduct>;
 };
 
 export type RawCartLine = {
@@ -76,7 +108,12 @@ export type RawCartLine = {
     product: {
       handle: string;
       title: string;
-      images: Edges<{ url: string; altText: string | null; width?: number; height?: number }>;
+      images: Edges<{
+        url: string;
+        altText: string | null;
+        width?: number;
+        height?: number;
+      }>;
     };
   };
 };
@@ -96,7 +133,12 @@ function normalizeMoney(m: RawMoney): Money {
 }
 
 function normalizeImage(i: RawImage): Image {
-  return { url: i.url, altText: i.altText ?? null, width: i.width, height: i.height };
+  return {
+    url: i.url,
+    altText: i.altText ?? null,
+    width: i.width,
+    height: i.height,
+  };
 }
 
 function normalizeSelectedOption(o: RawSelectedOption): SelectedOption {
@@ -106,6 +148,109 @@ function normalizeSelectedOption(o: RawSelectedOption): SelectedOption {
 function normalizeProductOption(o: RawProductOption): ProductOption {
   return { name: o.name, values: o.values };
 }
+
+/**
+ * Merchandising metafields are optional and titular-authored.
+ *
+ * Rules that keep the storefront honest:
+ *   - unknown namespaces/keys are ignored (no guessing);
+ *   - malformed JSON is dropped instead of crashing the product query;
+ *   - only flat `Record<string, string>` rows survive for the size chart.
+ */
+export function normalizeMetafields(
+  metafields: Array<RawMetafield | null | undefined>
+): ProductMetafields | undefined {
+  const present = metafields.filter((field): field is RawMetafield =>
+    Boolean(field)
+  );
+  if (!present.length) return undefined;
+
+  const result: ProductMetafields = {};
+  const text = (value: string) => {
+    const trimmed = value.trim();
+    return trimmed.length ? trimmed : null;
+  };
+
+  for (const field of present) {
+    if (field.namespace !== "aqv") continue;
+    switch (field.key) {
+      case "size_chart": {
+        const rows = parseSizeChart(field.value);
+        if (rows.length) result.sizeChart = rows;
+        break;
+      }
+      case "composition":
+        result.composition = text(field.value);
+        break;
+      case "care_instructions":
+        result.careInstructions = text(field.value);
+        break;
+      case "measurements":
+        result.measurements = text(field.value);
+        break;
+      case "fit_notes":
+        result.fitNotes = text(field.value);
+        break;
+      case "model_info":
+        result.modelInfo = text(field.value);
+        break;
+      default:
+        break;
+    }
+  }
+
+  return Object.keys(result).length ? result : undefined;
+}
+
+function parseSizeChart(value: string): Array<Record<string, string>> {
+  try {
+    const parsed: unknown = JSON.parse(value);
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter(
+        (row): row is Record<string, unknown> =>
+          Boolean(row) && typeof row === "object"
+      )
+      .map(row =>
+        Object.fromEntries(
+          Object.entries(row)
+            .filter(([, v]) => typeof v === "string" || typeof v === "number")
+            .map(([k, v]) => [k, String(v)] as const)
+        )
+      )
+      .filter(row => Object.keys(row).length > 0)
+      .slice(0, 20);
+  } catch {
+    return [];
+  }
+}
+
+export function normalizePageInfo(connection: {
+  pageInfo?: RawPageInfo;
+}): PageInfo {
+  return {
+    hasNextPage: Boolean(connection.pageInfo?.hasNextPage),
+    endCursor: connection.pageInfo?.endCursor ?? null,
+  };
+}
+
+export function normalizeProductPage(
+  connection: Connection<RawProduct>,
+  mode: StorefrontMode = "live"
+): ProductPage {
+  return {
+    products: connection.edges.map(e => normalizeProduct(e.node)),
+    pageInfo: normalizePageInfo(connection),
+    mode,
+  };
+}
+
+/** Empty page used when the store has no commerce credentials yet. */
+export const UNCONFIGURED_PAGE: ProductPage = {
+  products: [],
+  pageInfo: { hasNextPage: false, endCursor: null },
+  mode: "unconfigured",
+};
 
 function normalizeVariant(v: RawVariant): ProductVariant {
   return {
@@ -135,6 +280,14 @@ export function normalizeProduct(p: RawProduct): Product {
     },
     options: (p.options ?? []).map(normalizeProductOption),
     variants: p.variants.edges.map(e => normalizeVariant(e.node)),
+    metafields: normalizeMetafields([
+      p.sizeChart,
+      p.composition,
+      p.careInstructions,
+      p.measurements,
+      p.fitNotes,
+      p.modelInfo,
+    ]),
   };
 }
 

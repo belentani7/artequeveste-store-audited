@@ -1,34 +1,82 @@
-# Validación Arte Que Veste — reconstrucción 2026
+# Validação Arte Que Veste — 2026
 
-## Aprobado
+> Documento vivo. A leitura completa da auditoria (achados, correções e pendências) está em
+> [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md).
 
-| Control | Resultado |
-|---|---|
-| TypeScript (`pnpm check`) | Aprobado, sin errores |
-| Build (`pnpm build`) | Aprobado; Vite y bundle server completan |
-| Reglas comerciales nuevas | 3 tests Vitest focalizados aprobados |
-| Seguridad/PVC-U existente | Se conserva; no se añadieron secretos ni tokens |
-| Catálogo sin productos | Estado branded de lanzamiento, sin datos falsos |
-| Error de producto | Shell de marca y estado comercial preservados |
-| Responsive | Home revisada en desktop y mobile |
-| Motion | GSAP con gate para `prefers-reduced-motion` |
-| Consentimiento | Banner mínimo no bloqueante para analítica |
-| Assets | Sólo URL persistente de asset 2026 validado y CSS determinista; placeholders fallidos retirados |
+## Aprovado nesta rodada
 
-## Dependencia externa pendiente
+| Controle           | Comando                                  | Resultado                                                                                         |
+| ------------------ | ---------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Ambiente           | Node 22.22.2+ / 24                       | Piso real do `jsdom` 30; Node 20 falha nos testes de DOM (undici 8 exige 22.19+)                  |
+| Formatação         | `pnpm format:check`                      | Aprovado no código (entregáveis editoriais e históricos fora do escopo, por decisão)              |
+| TypeScript estrito | `pnpm check`                             | Aprovado, 0 erros                                                                                 |
+| Testes             | `pnpm test`                              | **93 aprovados**, 1 skip (smoke live sem credenciais); sem depender de build prévio               |
+| Build              | `pnpm build`                             | Aprovado; cliente + servidor, **sem** aviso de chunk > 500 kB                                     |
+| Boot de produção   | `NODE_ENV=production node dist/index.js` | HTML servido (2,5 kB), assets com cache imutável, deep link `/produto/*` responde 200             |
+| Health             | `GET /api/health`                        | 200 com `mode`, `apiVersion`, versões, uptime                                                     |
+| CSP                | `curl -I` em produção                    | `script-src 'self'` sem inline; `frame-ancestors 'none'`; HSTS                                    |
+| Rate limit         | teste unitário                           | 120 req/min por IP, poda e teto de chaves cobertos                                                |
+| Dev/preview        | servidor de desenvolvimento              | Módulos transformados sem erro (`main`, `App`, `Home`, `CartDrawer`, `consent`); tRPC respondendo |
+| Dependências       | `pnpm audit`                             | **Sem vulnerabilidades conhecidas** (eram 92 avisos, 5 críticos, antes do upgrade)                |
 
-La batería completa de Vitest conserva un smoke test live de Shopify que falla porque `products.list` devuelve `[]`. Esto no es un fallo introducido por la reconstrucción: el catálogo del titular todavía no tiene un producto publicado con imagen, precio y variante utilizable. El test se mantiene fallando intencionalmente para no ocultar la falta de catálogo real.
+## Bundle final (gzip entre parênteses)
 
-## Decisión de entrega
+| Arquivo                                               | Tamanho                                          |
+| ----------------------------------------------------- | ------------------------------------------------ |
+| `index.html`                                          | 2,42 kB (1,05 kB)                                |
+| `index-*.js` (app)                                    | 46,97 kB (14,39 kB)                              |
+| `react-*.js`                                          | 217,07 kB (67,50 kB)                             |
+| `vendor-*.js`                                         | 170,24 kB (51,40 kB)                             |
+| `data-*.js` (tRPC/query/superjson)                    | 84,12 kB (24,33 kB)                              |
+| `gsap-*.js` (carregado sob demanda)                   | 68,48 kB (26,80 kB)                              |
+| `radix-*.js`                                          | 19,38 kB (7,09 kB)                               |
+| `icons-*.js`                                          | 4,41 kB (1,85 kB)                                |
+| Rotas lazy: PDP / categoria / busca / políticas / 404 | 13,0 / 7,2 / 5,2 / 4,4 / 3,1 kB                  |
+| `index-*.css`                                         | 41,22 kB (11,44 kB)                              |
+| Fontes                                                | woff2 latin (DM Serif 24,7 kB + Manrope 24,8 kB) |
 
-La reconstrucción se considera técnicamente lista para que el titular publique productos reales. No se fabricaron productos, precios, stock, reviews, ratings, testimonios, medidas ni claims de sostenibilidad.
+Os números são do build após o upgrade de segurança (React 19.3, zod 4.6, Vite 7.3.7, Vitest 4.1.11).
+A Home carrega react + vendor + data + icons + radix ≈ **152 kB gzip**; PDP, busca, categoria e
+políticas só baixam quando visitadas, e o GSAP só quando há animação permitida. Nenhum chunk passa do
+limite de aviso do Vite (> 500 kB).
 
-## Rendimiento y carga
+## O que foi validado funcionalmente (sem catálogo real)
 
-El build final queda aprobado con `pnpm build`. La entrada principal de la aplicación quedó en aproximadamente **63.54 kB**, la PDP en un chunk lazy de aproximadamente **20.48 kB** y las dependencias transitivas en un vendor chunk de aproximadamente **735.37 kB**. El warning de Vite sobre el vendor grande sigue visible y queda documentado como optimización futura; la Home ya no arrastra la PDP ni GSAP como dependencias directas del shell.
+- Estado de lançamento (catálogo vazio) e estado de erro de catálogo, ambos com marca e caminho de recuperação.
+- Filtro de categoria, ordenação, paginação por "ver mais" (cursor do backend).
+- Busca com termo vazio, com resultados e sem resultados (incluindo o caso "loja não conectada").
+- 404 de rota e rota de categoria inexistente.
+- Carrinho: criar/add/atualizar/remover/erro, fila de escrita, foco preso, Escape, clique fora, `inert`.
+- Consentimento: nenhum script antes do opt-in, persistência versionada, revogação por storage.
+- SEO: title/description/canonical/robots e JSON-LD idempotentes por rota.
 
-La analítica dejó de cargarse desde `index.html`: ahora sólo se inserta después de que el usuario elige “Aceitar analítica”. La opción “Somente essenciais” no inserta el script.
+## Dependências e supply chain
 
-## Alcance comercial
+- `pnpm audit` limpo: **0 vulnerabilidades conhecidas** (eram 92, com 5 críticos, na árvore herdada
+  do template).
+- Dependências diretas nas linhas corrigidas: Vite 7.3.7, Vitest 4.1.11, Tailwind 4.3.3, tRPC 11.19,
+  axios 1.20, Express 4.22.3, mysql2 3.24.5, drizzle-orm 0.45.4, nanoid 5.1.16, React 19.3, zod 4.6.5.
+- `pnpm.overrides` fixa as transitivas sensíveis (tar, rollup, postcss, qs, path-to-regexp,
+  proxy-addr, body-parser, picomatch, source-map-js, browserslist, follow-redirects, form-data,
+  @babel/core, esbuild, baseline-browser-mapping, nanoid 3.x) na primeira versão sem aviso — revisar
+  a cada atualização de lockfile.
+- O patch de terceiro em `wouter` (que copiava as rotas do app para `window.__WOUTER_ROUTES__`) foi
+  removido; `patches/` não existe mais.
+- CI instala com `--frozen-lockfile`; `pnpm audit` deve entrar como passo manual antes de cada
+  entrega (não é gate do CI para não derrubar build por aviso novo de transitiva).
 
-Se validaron UI de catálogo vacío, estados de error, ruta PDP inexistente, selector de categoría, selección de variante real, add-to-cart y la continuidad hacia checkout mediante el contexto existente. No se pudo completar una compra real ni verificar precio/stock/imágenes live porque Shopify todavía devuelve catálogo vacío; esa parte queda para cuando el titular publique la primera pieza.
+## Dependências externas ainda não exercitadas
+
+| Item                                                      | Por que                                               | Como fechar                                            |
+| --------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------ |
+| Produto real do Shopify (título, imagem, preço, variante) | Catálogo do titular vazio                             | Publicar peça → `pnpm shopify:probe`                   |
+| Checkout real (PIX/cartão, frete, prazo)                  | Depende de ativação financeira e logística do titular | Concluir uma compra de teste                           |
+| Dados fiscais e endereço de devolução                     | Dados do titular                                      | Preencher e publicar nas políticas                     |
+| Tabela de medidas por peça                                | Metafield `aqv.size_chart` não publicado              | Cadastrar metafield; a PDP passa a renderizar a tabela |
+| Login de cliente                                          | OAuth/banco não configurados                          | Configurar variáveis; o botão volta a aparecer         |
+
+## Decisão de entrega
+
+A loja está **tecnicamente pronta e verificada** para que o titular publique produtos. Ela não é
+apresentada como loja que vende: nenhum produto, preço, estoque, avaliação, testemunho, medida,
+prazo ou selo foi fabricado, e cada ausência tem um estado explícito na interface.

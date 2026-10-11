@@ -31,13 +31,16 @@ export const consentSchema = z.object({
 
 export function createTraceId(): string {
   const randomUuid = globalThis.crypto?.randomUUID?.();
-  return randomUuid ?? `trace-${Date.now()}-${Math.random().toString(36).slice(2, 12)}`;
+  return (
+    randomUuid ??
+    `trace-${Date.now()}-${Math.random().toString(36).slice(2, 12)}`
+  );
 }
 
 export function createValidationEnvelope(
   traceId: string,
   status: ValidationEnvelope["validationStatus"],
-  codes: string[] = [],
+  codes: string[] = []
 ): ValidationEnvelope {
   return {
     validationStatus: status,
@@ -51,7 +54,10 @@ export function createValidationEnvelope(
 }
 
 export function sanitizeText(value: string): string {
-  return value.replace(/[<>]/g, "").replace(/[\u0000-\u001F\u007F]/g, "").trim();
+  return value
+    .replace(/[<>]/g, "")
+    .replace(/[\u0000-\u001F\u007F]/g, "")
+    .trim();
 }
 
 export function isAllowedStateTransition(from: string, to: string): boolean {

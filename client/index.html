@@ -1,24 +1,53 @@
 <!doctype html>
 <html lang="pt-BR">
-
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arte Que Veste — Roupas autorais brasileiras</title>
-    <meta name="description" content="Roupas autorais brasileiras para vestir presença, movimento e memória. Conheça a coleção 2026 da Arte Que Veste." />
-    <meta name="theme-color" content="#171717" />    
-    <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    THIS IS THE END OF A COMMENT BLOCK, BLOCK TO BE DELETED -->
+    <meta
+      name="description"
+      content="Camisetas, quimonos, bolsas e acessórios autorais da Arte Que Veste. Coleção 2026 com preço, tamanhos e disponibilidade reais do catálogo."
+    />
+    <meta name="theme-color" content="#171717" />
+    <meta name="color-scheme" content="light" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!--
+      Social cards. The image is a local brand asset, so a scraper never has to
+      reach a third party to render a link preview.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Arte Que Veste" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta
+      property="og:title"
+      content="Arte Que Veste — Roupas autorais brasileiras"
+    />
+    <meta
+      property="og:description"
+      content="Coleção 2026 da Arte Que Veste: camisetas, quimonos, bolsas e acessórios publicados no catálogo real da loja."
+    />
+    <meta property="og:image" content="/campaign/aqv-2026-campaign-hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!--
+      Fonts are bundled (@fontsource) instead of fetched from Google Fonts:
+      no third-party request before consent, no external origin in the CSP, and
+      no flash of fallback text on a slow connection. See client/src/index.css.
+    -->
   </head>
 
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="padding: 24px; font-family: system-ui, sans-serif">
+        <h1>Arte Que Veste</h1>
+        <p>
+          Esta loja precisa de JavaScript para carregar o catálogo, o carrinho e
+          o checkout. Ative o JavaScript no navegador para continuar.
+        </p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
-
 </html>

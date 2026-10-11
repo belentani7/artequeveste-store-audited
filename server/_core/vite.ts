@@ -47,21 +47,78 @@ export async function setupVite(app: Express, server: Server) {
   });
 }
 
+/**
+ * Where the built client lives.
+ *
+ * Two supported layouts, because the same function is used by `pnpm build`
+ * (server bundled to `dist/index.js`, client to `dist/public`) and by
+ * `NODE_ENV=production tsx server/_core/index.ts` (running from source):
+ *
+ *   - bundled server:  <root>/dist/index.js      → <root>/dist/public
+ *   - source server:   <root>/server/_core/*.ts  → <root>/dist/public
+ *
+ * The previous implementation resolved `../public` from the bundle, i.e.
+ * `<root>/public`, which never exists — production served an empty directory
+ * and every request ended in an ENOENT on `index.html`.
+ */
+export function resolveStaticDir(
+  moduleDir: string = import.meta.dirname
+): string {
+  const candidates = [
+    path.resolve(moduleDir, "public"), // bundled: dist/index.js → dist/public
+    path.resolve(moduleDir, "../..", "dist", "public"), // source: server/_core → <root>/dist/public
+  ];
+  return pickStaticDir(candidates);
+}
+
+/**
+ * Pure selection logic, exported so it can be tested against temporary
+ * fixtures instead of whatever happens to be on disk during a test run.
+ *
+ * `resolveStaticDir` takes the module directory as an argument (defaulting to
+ * the real one) so the resolution can be tested against fixtures instead of
+ * depending on whether the machine running the tests has a `dist/` build — a
+ * fresh clone has none, and `pnpm test` runs before `pnpm build` in CI.
+ *
+ * A candidate only counts when it actually contains a built `index.html`;
+ * otherwise the first candidate is returned so the error message names a real
+ * path instead of crashing on `undefined`.
+ */
+export function pickStaticDir(candidates: string[]): string {
+  const found = candidates.find(dir =>
+    fs.existsSync(path.join(dir, "index.html"))
+  );
+  if (found) return found;
+  console.error(
+    `Could not find the build directory (looked in: ${candidates.join(", ")}). Run "pnpm build" first.`
+  );
+  return candidates[0];
+}
+
 export function serveStatic(app: Express) {
-  const distPath =
-    process.env.NODE_ENV === "development"
-      ? path.resolve(import.meta.dirname, "../..", "dist", "public")
-      : path.resolve(import.meta.dirname, "public");
-  if (!fs.existsSync(distPath)) {
-    console.error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`
-    );
-  }
+  const distPath = resolveStaticDir();
 
-  app.use(express.static(distPath));
+  // Hashed assets are immutable; HTML must always be revalidated so a deploy
+  // is picked up without a hard refresh.
+  app.use(
+    express.static(distPath, {
+      index: false,
+      setHeaders(res, filePath) {
+        if (filePath.includes(`${path.sep}assets${path.sep}`)) {
+          res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+        } else if (filePath.endsWith(".html")) {
+          res.setHeader("Cache-Control", "no-cache");
+        } else {
+          res.setHeader("Cache-Control", "public, max-age=3600");
+        }
+      },
+    })
+  );
 
-  // fall through to index.html if the file doesn't exist
+  // SPA fallback: every non-asset route renders the client router, which is
+  // what makes deep links such as /produto/<handle> work on a hard refresh.
   app.use("*", (_req, res) => {
+    res.setHeader("Cache-Control", "no-cache");
     res.sendFile(path.resolve(distPath, "index.html"));
   });
 }

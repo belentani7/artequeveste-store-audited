@@ -1,8 +1,22 @@
 export const COOKIE_NAME = "app_session_id";
 export const ONE_YEAR_MS = 1000 * 60 * 60 * 24 * 365;
 export const AXIOS_TIMEOUT_MS = 30_000;
-export const UNAUTHED_ERR_MSG = 'Please login (10001)';
-export const NOT_ADMIN_ERR_MSG = 'You do not have required permission (10002)';
+export const UNAUTHED_ERR_MSG = "Please login (10001)";
+export const NOT_ADMIN_ERR_MSG = "You do not have required permission (10002)";
+
+/**
+ * Local storage keys owned by the storefront. Declared in `shared` so the
+ * client modules that read/write them cannot drift apart — a cart id written
+ * under one key and read under another was a silent, bug-shaped risk.
+ */
+export const STORAGE_KEYS = {
+  /** Shopify cart GID, persisted so a refresh keeps the shopper's cart. */
+  cartId: "commerce:cart-id",
+  /** LGPD consent decision (see `client/src/lib/consent.ts`). */
+  consent: "aqv-consent-2026",
+  /** Runtime session mirror used when iframe cookies are blocked. */
+  sessionMirror: "manus-cookie",
+} as const;
 
 // One-time nonce cookie that binds an OAuth login to the browser that started
 // it. The `__Host-` prefix forces the cookie host-only (Secure, Path=/, no

@@ -1,5 +1,7 @@
 # Identidade visual extraída do HTML original
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Fonte visual usada
 
 A fonte visual correta é `ARTEQUEVESTEMANUSCRITO.html`. A vitrine e o manual final usam somente a linguagem visual presente nesse HTML. A capa do PDF recebido não é usada como imagem da empresa e foi retirada da versão final do pacote.

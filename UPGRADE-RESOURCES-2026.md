@@ -1,5 +1,7 @@
 # Upgrade de recursos frontend — Arte Que Veste
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Criterio de incorporación
 
 La actualización solo incorpora dependencias y assets con licencia verificable, mantenimiento razonable y utilidad directa para una tienda Shopify de ropa. Las referencias de terceros se estudian como patrones; no se copia una plantilla completa ni una identidad de marca.

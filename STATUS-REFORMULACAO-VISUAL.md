@@ -1,5 +1,7 @@
 # Status da reformulação visual — Arte Que Veste
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Direção de arte
 
 A loja passou de uma aparência turquesa/magenta genérica para uma linguagem de comércio editorial brasileiro com influência de xilogravura: papel quente, tinta escura, verde-turquesa profundo, terracota e um toque de amarelo-ouro. A nova direção usa linhas de impressão, molduras, carimbo, sombra deslocada e textura pontilhada discreta por CSS, sem importar imagens que não estavam no HTML original.

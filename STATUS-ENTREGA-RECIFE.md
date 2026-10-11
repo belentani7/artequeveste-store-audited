@@ -1,5 +1,7 @@
 # Status da entrega — Arte Que Veste / Recife-PE
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Preparado sem depender do titular
 
 A entrega contém a vitrine responsiva, identidade visual baseada no HTML original, navegação, seções de história e coleção, carrinho, checkout preparado, login, consentimento de privacidade, validação PVC-U, headers de segurança, rastreabilidade, documentação, manual editorial, PDF, e-mail, checklist de Recife e ZIP organizado. TypeScript, build de produção e nove testes automatizados foram aprovados.

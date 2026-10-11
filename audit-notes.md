@@ -1,5 +1,7 @@
 # Auditoría profunda Arte Que Veste
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## Matriz de decisión
 
 La aplicación de cambios exige superar un umbral de 9/10 en cada dimensión y no presentar fallos críticos. Las dimensiones son: backend, frontend, utilidad, relevancia, potencial, identidad, mantenibilidad, seguridad, accesibilidad y evidencia de operación. Un 10/10 absoluto se reserva para una solución con evidencia suficiente; si falta evidencia, se registra como no probado y no se aplica automáticamente.

@@ -1,5 +1,7 @@
 # Arte Que Veste — Estrategia de marca y storefront 2026
 
+> **Documento histórico.** O estado atual da loja está em [`RELATORIO-AUDITORIA-2026.md`](./RELATORIO-AUDITORIA-2026.md). Este arquivo é mantido como registro da rodada descrita abaixo.
+
 ## 1. Posicionamiento
 
 **Arte Que Veste** será una marca de ropa autoral brasileña contemporánea, nacida entre Sergipe y Recife, que convierte referencias gráficas, memoria territorial y trabajo manual en prendas utilizables en la vida cotidiana. La marca no se presentará como un museo, un libro ni una tienda de artesanía: será una tienda de ropa con una firma cultural reconocible.

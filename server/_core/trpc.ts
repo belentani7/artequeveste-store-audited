@@ -1,4 +1,4 @@
-import { NOT_ADMIN_ERR_MSG, UNAUTHED_ERR_MSG } from '@shared/const';
+import { NOT_ADMIN_ERR_MSG, UNAUTHED_ERR_MSG } from "@shared/const";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import type { TrpcContext } from "./context";
@@ -11,10 +11,16 @@ const t = initTRPC.context<TrpcContext>().create({
 export const router = t.router;
 
 const pvcuValidation = t.middleware(async opts => {
-  const traceId = typeof opts.ctx.req.headers["x-trace-id"] === "string" ? opts.ctx.req.headers["x-trace-id"] : createTraceId();
+  const traceId =
+    typeof opts.ctx.req.headers["x-trace-id"] === "string"
+      ? opts.ctx.req.headers["x-trace-id"]
+      : createTraceId();
   const setEnvelope = (status: "PASSED" | "FAILED", codes: string[]) => {
     if (typeof opts.ctx.res.setHeader === "function") {
-      opts.ctx.res.setHeader("X-Validation-Envelope", JSON.stringify(createValidationEnvelope(traceId, status, codes)));
+      opts.ctx.res.setHeader(
+        "X-Validation-Envelope",
+        JSON.stringify(createValidationEnvelope(traceId, status, codes))
+      );
     }
   };
   try {
@@ -50,7 +56,7 @@ export const adminProcedure = publicProcedure.use(
   t.middleware(async opts => {
     const { ctx, next } = opts;
 
-    if (!ctx.user || ctx.user.role !== 'admin') {
+    if (!ctx.user || ctx.user.role !== "admin") {
       throw new TRPCError({ code: "FORBIDDEN", message: NOT_ADMIN_ERR_MSG });
     }
 
@@ -60,5 +66,5 @@ export const adminProcedure = publicProcedure.use(
         user: ctx.user,
       },
     });
-  }),
+  })
 );

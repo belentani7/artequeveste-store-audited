@@ -1,5 +1,5 @@
 import { trpc } from "@/lib/trpc";
-import { COOKIE_NAME, UNAUTHED_ERR_MSG } from '@shared/const';
+import { COOKIE_NAME, STORAGE_KEYS, UNAUTHED_ERR_MSG } from "@shared/const";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink, TRPCClientError } from "@trpc/client";
 import { createRoot } from "react-dom/client";
@@ -7,9 +7,21 @@ import superjson from "superjson";
 import App from "./App";
 import { startLogin } from "./const";
 import { CLIENT_VERSION, createTraceId } from "@shared/pvcu";
+import { bootstrapConsent, consentHeaderValue } from "./lib/consent";
 import "./index.css";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // The catalog is cheap to refetch and shoppers navigate back and forth:
+      // one minute of staleness removes the refetch flicker on back/forward,
+      // while a cart is never cached (see CartContext, which always fetches).
+      staleTime: 60_000,
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const redirectToLoginIfUnauthorized = (error: unknown) => {
   if (!(error instanceof TRPCClientError)) return;
@@ -45,35 +57,44 @@ const trpcClient = trpc.createClient({
       transformer: superjson,
       headers() {
         const traceId = createTraceId();
-        const consent = localStorage.getItem("artequeveste-consent") ?? "essential";
+        const consent = consentHeaderValue();
         // Preview auto-login fallback: when the browser blocks iframe cookies
         // (Safari ITP / private browsing / WebView), the runtime mirrors the
         // session into sessionStorage so we can forward it as a Bearer token.
         // The regular OAuth cookie flow keeps working and takes priority server-side.
         try {
-          const raw = sessionStorage.getItem("manus-cookie");
+          const raw = sessionStorage.getItem(STORAGE_KEYS.sessionMirror);
           if (raw) {
             const prefix = `${COOKIE_NAME}=`;
             const pair = raw.split(";").find(s => s.trim().startsWith(prefix));
             const token = pair?.trim().slice(prefix.length);
             if (token) {
-              return { Authorization: `Bearer ${token}`, "X-Client-Version": CLIENT_VERSION, "Accept-Version": "1", "X-Trace-Id": traceId, "X-Consent": consent };
+              return {
+                Authorization: `Bearer ${token}`,
+                "X-Client-Version": CLIENT_VERSION,
+                "Accept-Version": "1",
+                "X-Trace-Id": traceId,
+                "X-Consent": consent,
+              };
             }
           }
         } catch {
           // sessionStorage unavailable
         }
-        return { "X-Client-Version": CLIENT_VERSION, "Accept-Version": "1", "X-Trace-Id": traceId, "X-Consent": consent };
-      },
-      fetch(input, init) {
-        return globalThis.fetch(input, {
-          ...(init ?? {}),
-          credentials: "include",
-        });
+        return {
+          "X-Client-Version": CLIENT_VERSION,
+          "Accept-Version": "1",
+          "X-Trace-Id": traceId,
+          "X-Consent": consent,
+        };
       },
     }),
   ],
 });
+
+// Replay a previous analytics opt-in before React mounts so the script order
+// stays deterministic (and never loads without consent).
+bootstrapConsent();
 
 createRoot(document.getElementById("root")!).render(
   <trpc.Provider client={trpcClient} queryClient={queryClient}>
