@@ -47,6 +47,16 @@ integridade do catálogo exibido e (3) a disponibilidade do serviço.
 ## Dependências
 
 A auditoria removeu ~42 dependências de template sem uso (incluindo SDKs de S3, formulários e
-bibliotecas de gráficos). O CI instala com `--frozen-lockfile` e roda `check`, `test`, `build` e um
-smoke do servidor de produção. Antes de adicionar uma dependência: verifique licença, manutenção e se
-ela não pode ser substituída por código do projeto (a loja hoje tem 25 dependências de runtime).
+bibliotecas de gráficos) e depois atualizou tudo o que tinha aviso aberto: `pnpm audit` passou de
+**92 avisos (5 críticos)** para **"No known vulnerabilities found"**. As correções vieram de upgrade
+das dependências diretas (Vite 7.3.7, Vitest 4.1.11, tRPC 11.19, axios 1.20, Express 4.22.3, mysql2
+3.24.5, drizzle-orm 0.45.4, nanoid 5.1.16, React 19.3) e de `pnpm.overrides` prendendo as
+transitivas (tar, rollup, postcss, qs, path-to-regexp, proxy-addr, body-parser, picomatch,
+source-map-js, browserslist, follow-redirects, form-data, @babel/core, esbuild) em versões corrigidas.
+Um patch aplicado pelo template ao `wouter` — que publicava todas as rotas da aplicação em
+`window.__WOUTER_ROUTES__` — foi removido junto com a pasta `patches/`.
+
+O CI instala com `--frozen-lockfile` e roda `check`, `test`, `build` e um smoke do servidor de
+produção. Antes de cada entrega rode `pnpm audit`; antes de adicionar uma dependência: verifique
+licença, manutenção e se ela não pode ser substituída por código do projeto (a loja hoje tem 25
+dependências de runtime e 19 de desenvolvimento).

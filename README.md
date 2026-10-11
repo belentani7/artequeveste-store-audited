@@ -31,7 +31,7 @@ lançamento (vitrine de marca, catálogo vazio, sem erro).
 | Frontend   | React 19, Vite 7, Tailwind CSS 4, wouter (router), GSAP (motion sob demanda) |
 | Backend    | Node 20+, Express 4, tRPC 11, zod 4, superjson                               |
 | Commerce   | Shopify Storefront API `2025-04` (somente Storefront token)                  |
-| Testes     | Vitest 2 (node + jsdom) + Playwright (smoke de rotas, opcional)              |
+| Testes     | Vitest 4 (node + jsdom) + Playwright (smoke de rotas, opcional)              |
 | Tipografia | Self-hosted via `@fontsource` (DM Serif Display + Manrope)                   |
 
 ## Como rodar
@@ -59,6 +59,7 @@ pnpm verify         # check + test + build (mesmo gate do CI)
 pnpm shopify:probe  # imprime o catálogo normalizado da Storefront API real
 pnpm validate:routes# smoke de navegador nas rotas (requer Playwright instalado)
 pnpm db:push        # migrations (opcional: só para o login de cliente)
+pnpm audit          # nenhuma vulnerabilidade conhecida hoje
 ```
 
 ## Rotas
@@ -134,14 +135,14 @@ Princípios que a auditoria fixou:
    - A categoria vem de `productType` (ex.: `Camisetas`, `Quimonos`, `Bolsas`, `Acessórios`) ou da
      etiqueta `aqv:categoria:<slug>`.
 3. **Metafields opcionais** (namespace `aqv`, expostos para a Storefront API):
-   | Chave | Tipo | Onde aparece |
-   |---|---|---|
-   | `size_chart` | JSON `[{"Tamanho":"P","Busto":"96 cm"}]` | Guia de tamanhos da PDP |
-   | `composition` | texto | PDP (Composição) |
-   | `care_instructions` | texto | PDP (Cuidados) |
-   | `measurements` | texto | PDP (Medidas da peça) |
-   | `fit_notes` | texto | PDP (Ajuste) |
-   | `model_info` | texto | PDP (Sobre a modelo) |
+   | Chave               | Tipo                                     | Onde aparece            |
+   | ------------------- | ---------------------------------------- | ----------------------- |
+   | `size_chart`        | JSON `[{"Tamanho":"P","Busto":"96 cm"}]` | Guia de tamanhos da PDP |
+   | `composition`       | texto                                    | PDP (Composição)        |
+   | `care_instructions` | texto                                    | PDP (Cuidados)          |
+   | `measurements`      | texto                                    | PDP (Medidas da peça)   |
+   | `fit_notes`         | texto                                    | PDP (Ajuste)            |
+   | `model_info`        | texto                                    | PDP (Sobre a modelo)    |
 4. **Coleções** (opcional, recomendado): crie coleções com handle `camisetas`, `quimonos`, `bolsas`,
    `acessorios` para controlar ordem e curadoria. Sem elas, `/categoria/<slug>` filtra o catálogo.
 5. **Pagamento, frete e checkout**: configurados no Shopify; a loja exibe "calculado no checkout" e

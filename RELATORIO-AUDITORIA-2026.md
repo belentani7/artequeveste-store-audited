@@ -27,10 +27,10 @@ titular (credenciais, catálogo, pagamento, frete, dados fiscais).
 | Relevância (pt-BR/Brasil) |  9/10 | **9/10** | pt-BR em toda a UI, BRL, textos de trocas/LGPD, políticas sem promessa inventada                                                   |
 | Potencial                 |  8/10 | **9/10** | Coleções Shopify, metafields de merchandising, JSON-LD, sitemap/robots, CTAs por categoria                                         |
 | Identidade                |  7/10 | **8/10** | Assets de campanha 2026 no repositório, paleta própria, referências a xilogravura; falta fotografia real das peças (titular)       |
-| Manutenibilidade          |  7/10 | **9/10** | Home monolítica desmontada em componentes, ~42 dependências removidas, 40+ arquivos mortos apagados, CI com `verify`               |
-| Segurança                 |  8/10 | **9/10** | CSP estrita sem inline em produção, rate limit com poda, corpo 512 KB, sanitização de busca, segredos só em env                    |
+| Manutenibilidade          |  7/10 | **9/10** | Home desmontada em componentes, ~42 dependências e 47 arquivos mortos removidos, deps atualizadas, CI com `verify`                 |
+| Segurança                 |  8/10 | **9/10** | CSP estrita sem inline em produção, rate limit com poda, corpo 512 KB, sanitização de busca, zero dependência vulnerável           |
 | Acessibilidade            |  7/10 | **9/10** | Diálogo do carrinho com foco preso/inert/retorno de foco, foco visível global, `aria-*` nos controles, reduced motion              |
-| Evidência operacional     |  5/10 | **9/10** | 91 testes, build sem aviso, boot de produção verificado por requisição, CI executa check+test+build+health                         |
+| Evidência operacional     |  5/10 | **9/10** | 91 testes, build sem aviso, `pnpm audit` limpo, boot de produção verificado por requisição, CI executa check+test+build+health     |
 
 **Média ponderada aproximada: 8,8/10.** O que impede 10/10 não é código: é catálogo publicado,
 credenciais e uma compra real concluída. O item final da matriz (evidência operacional com catálogo
@@ -133,7 +133,31 @@ Falhas de carrinho eram engolidas: a quantidade "voltava sozinha" e o usuário n
 - **Bundle**: o vendor único de 530 kB foi dividido por família (react / data / icons / radix /
   gsap / vendor) — sem aviso de chunk grande, com cache independente por deploy.
 
-### 2.8 Configuração e operação
+### 2.8 Dependências com vulnerabilidades conhecidas (92 avisos → 0)
+
+`pnpm audit` acusava **92 avisos** na árvore instalada (5 críticos, 40 altos, 43 moderados, 4 baixos),
+a maioria herdada do lockfile antigo do template: `axios` (14 avisos, incluindo CSRF/SSRF e
+esgotamento de memória), `vite` 7.1.9 (bypass de `server.fs` / leitura de arquivos fora do root),
+`vitest` 2.x + `tinypool` (crítico), `tar` 7.5.1 (crítico), `mysql2`, `drizzle-orm`, `nanoid`,
+`path-to-regexp`, `proxy-addr`, `qs`, `body-parser`, `rollup`, `postcss`, `picomatch`, `source-map-js`,
+`browserslist`, `follow-redirects`, `form-data`, `@babel/core`, além de `@trpc/server` (11.6 → 11.8+).
+
+- **Correção**: upgrade das dependências diretas para as linhas corrigidas — Vite 7.3.7, Vitest 4.1.11,
+  Tailwind 4.3.3, tRPC 11.19.0, axios 1.20.0, Express 4.22.3, mysql2 3.24.5, drizzle-orm 0.45.4,
+  nanoid 5.1.16, React 19.3.0, zod 4.6.5, Playwright 1.64.0 — e **overrides** no `package.json`
+  prendendo toda dependência transitiva (tar, rollup, postcss, qs, path-to-regexp, proxy-addr,
+  body-parser, picomatch, source-map-js, browserslist, follow-redirects, form-data, @babel/core,
+  esbuild, baseline-browser-mapping, nanoid 3.x) na primeira versão sem aviso.
+- **Patch de terceiro removido**: o template aplicava um patch em `wouter` que copiava **todas as
+  rotas da aplicação para `window.__WOUTER_ROUTES__`** (recurso do construtor do template, não da
+  loja). Além de desnecessário, era divulgação gratuita da superfície de rotas: o patch e a entrada
+  `patchedDependencies` foram apagados, e o `wouter` subiu para 3.13.0.
+- **Evidência**: `pnpm audit` → _"No known vulnerabilities found"_; `pnpm verify` continua verde
+  (tsc 0 erros, 91 testes, build em ~4 s) e o boot de produção foi refeito depois do upgrade.
+- **Custo**: o bundle inicial subiu de ~139 kB para ~164 kB gzip (React 19.3 e zod novos). O ganho de
+  segurança foi considerado prioritário; nenhum chunk passa do limite de aviso do Vite.
+
+### 2.9 Configuração e operação
 
 - `tsconfig` sem `target` herdava ES3 (iteração de `Map` falhava em `tsc`) → `target: ES2022`.
 - Corpo JSON de 50 MB → **512 KB** (a loja não recebe uploads).
@@ -147,6 +171,8 @@ Falhas de carrinho eram engolidas: a quantidade "voltava sozinha" e o usuário n
   reescritos; script de captura de um asset que não existe mais foi removido.
 - `robots.txt`, `sitemap.xml` e cards sociais adicionados (o sitemap **não** lista produto inventado:
   só as rotas fixas; produto entra pelo catálogo do titular).
+- `/busca` sem termo passou a listar o catálogo inteiro e o "Ver mais" da Home avisa quando existe
+  catálogo além da janela carregada — nenhuma tela sugere que a fatia exibida é o catálogo todo.
 
 ---
 
@@ -178,7 +204,11 @@ Falhas de carrinho eram engolidas: a quantidade "voltava sozinha" e o usuário n
 | Dev/preview        | servidor em modo desenvolvimento         | ✅ módulos transformados (`main`, `App`, `Home`, `CartDrawer`, `consent`) sem erro |
 | Gate de versão     | `X-Client-Version` desatualizado         | ✅ 426 com envelope PVC-U                                                          |
 | Catálogo vazio     | `commerce.products.list`                 | ✅ `mode: "unconfigured"`, sem 500                                                 |
+| Dependências       | `pnpm audit`                             | ✅ "No known vulnerabilities found" (eram 92 avisos, 5 críticos)                   |
 | Smoke live Shopify | `pnpm shopify:probe`                     | ⏳ skip/falha esperada: sem credenciais e sem catálogo publicado                   |
+
+Bundle inicial após o upgrade de segurança: react 217 kB (67,5 gzip) + vendor 170 kB (51,4 gzip) +
+data 84 kB (24,3 gzip) + icons + radix + CSS ≈ **164 kB gzip**, sem aviso de chunk grande.
 
 Cobertura de testes por arquivo: normalização Shopify (12), router de commerce (13),
 regras de vitrine (14), formatação de preço (7), consentimento (10), SEO (7), segurança/CSP/rate
