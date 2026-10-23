@@ -28,6 +28,7 @@ import {
 } from "../_core/shopify";
 import { publicProcedure, router } from "../_core/trpc";
 import { sanitizeText } from "../../shared/pvcu";
+import { normalizeStorefrontSearchTerm } from "@shared/storefrontSearch";
 
 const safeId = z.string().trim().min(1).max(220).transform(sanitizeText);
 const safeHandle = z.string().trim().min(1).max(180).transform(sanitizeText);
@@ -44,13 +45,10 @@ export const safeSearchTerm = z
   .trim()
   .min(1)
   .max(80)
-  .transform(value =>
-    sanitizeText(value)
-      .replace(/[\\:*()"'`~^[\]{}=!<>&|+,\-]/g, " ")
-      .replace(/\s+/g, " ")
-      .trim()
-  )
-  .refine(value => value.length > 0, { message: "Search term must contain searchable text" });
+  .transform(normalizeStorefrontSearchTerm)
+  .refine(value => value.length > 0, {
+    message: "Search term must contain searchable text",
+  });
 
 const cartLineInputSchema = z.object({
   variantId: safeId,
