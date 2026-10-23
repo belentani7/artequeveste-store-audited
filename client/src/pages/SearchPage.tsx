@@ -58,8 +58,12 @@ export default function SearchPage() {
 
   const hasTerm = trimmed.length > 0;
   const data = hasTerm ? searchQuery.data : catalogQuery.data;
-  const isLoading = !invalidTerm && (hasTerm ? searchQuery.isLoading : catalogQuery.isLoading);
-  const isError = !invalidTerm && (hasTerm ? searchQuery.isError : catalogQuery.isError);
+  const isLoading =
+    !invalidTerm &&
+    (hasTerm ? searchQuery.isLoading : catalogQuery.isLoading);
+  const isError =
+    !invalidTerm &&
+    (hasTerm ? searchQuery.isError : catalogQuery.isError);
   const refetch = hasTerm ? searchQuery.refetch : catalogQuery.refetch;
 
   useEffect(() => {
