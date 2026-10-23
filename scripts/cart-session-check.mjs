@@ -2,7 +2,9 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { createCartSession } from "../client/src/contexts/cartSession.ts";
 
-const deniedStorage = () => { throw new Error("SecurityError: blocked"); };
+const deniedStorage = () => {
+  throw new Error("SecurityError: blocked");
+};
 
 test("blocked localStorage keeps the cart id in memory", () => {
   const session = createCartSession("cart", deniedStorage);
@@ -33,8 +35,12 @@ test("successful storage reads, writes and clears cart id", () => {
 test("failed persistence does not resurrect a stale id", () => {
   const storage = {
     getItem: () => "stale",
-    setItem: () => { throw new Error("QuotaExceededError"); },
-    removeItem: () => { throw new Error("SecurityError"); },
+    setItem: () => {
+      throw new Error("QuotaExceededError");
+    },
+    removeItem: () => {
+      throw new Error("SecurityError");
+    },
   };
   const session = createCartSession("cart", () => storage);
   assert.equal(session.readCartId(), "stale");
@@ -65,6 +71,11 @@ test("concurrent adds serialize creation and reuse one cart", async () => {
 
 test("a rejected mutation does not deadlock subsequent cart operations", async () => {
   const session = createCartSession("cart", deniedStorage);
-  await assert.rejects(session.enqueue(async () => { throw new Error("offline"); }), /offline/);
+  await assert.rejects(
+    session.enqueue(async () => {
+      throw new Error("offline");
+    }),
+    /offline/
+  );
   assert.equal(await session.enqueue(async () => 42), 42);
 });
