@@ -66,10 +66,14 @@ test("concurrent adds serialize creation and reuse one cart", async () => {
     });
   }
   await Promise.all([add("A"), add("B"), add("C")]);
-  assert.deepEqual(operations, ["create:A", "add:new-cart:B", "add:new-cart:C"]);
+  assert.deepEqual(operations, [
+    "create:A",
+    "add:new-cart:B",
+    "add:new-cart:C",
+  ]);
 });
 
-test("a rejected mutation does not deadlock subsequent cart operations", async () => {
+test("rejected mutations do not deadlock subsequent operations", async () => {
   const session = createCartSession("cart", deniedStorage);
   await assert.rejects(
     session.enqueue(async () => {
