@@ -1,4 +1,5 @@
 import { trpc } from "@/lib/trpc";
+import { createCartSession } from "./cartSession";
 import { STORAGE_KEYS } from "@shared/const";
 import type { Cart } from "@shared/commerce/types";
 import {
@@ -8,7 +9,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from "react";
 
@@ -42,23 +42,16 @@ function toFriendlyMessage(error: unknown): string {
   return "Não foi possível atualizar o carrinho. Tente novamente.";
 }
 
+const cartSession = createCartSession(CART_STORAGE_KEY, () =>
+  typeof window === "undefined" ? null : window.localStorage
+);
+
 function readStoredCartId(): string | null {
-  if (typeof window === "undefined") return null;
-  try {
-    return window.localStorage.getItem(CART_STORAGE_KEY);
-  } catch {
-    return null;
-  }
+  return cartSession.readCartId();
 }
 
-function writeStoredCartId(value: string | null) {
-  if (typeof window === "undefined") return;
-  try {
-    if (value) window.localStorage.setItem(CART_STORAGE_KEY, value);
-    else window.localStorage.removeItem(CART_STORAGE_KEY);
-  } catch {
-    // Storage blocked (private mode): the cart simply won't survive a reload.
-  }
+function writeStoredCartId(value: string | null): void {
+  cartSession.writeCartId(value);
 }
 
 type CartContextValue = {
@@ -88,14 +81,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const utils = trpc.useUtils();
 
-  // Serialises cart writes: add/update/remove calls run one after another so
-  // the Shopify cart cannot receive two conflicting line updates at once.
-  const queue = useRef<Promise<unknown>>(Promise.resolve());
-  const enqueue = useCallback(<T,>(task: () => Promise<T>): Promise<T> => {
-    const run = queue.current.then(task, task);
-    queue.current = run.catch(() => undefined);
-    return run;
-  }, []);
+  // All mutations, including the cart-id lookup, run in the same queue.
+  // This prevents two rapid clicks from creating two separate Shopify carts.
+  const enqueue = cartSession.enqueue;
 
   const openCart = useCallback(() => {
     setError(null);
@@ -145,26 +133,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       setError(null);
       try {
-        const currentCartId = readStoredCartId();
-        if (!currentCartId) {
-          const created = await enqueue(() =>
-            utils.client.commerce.cart.create.mutate({
+        const result = await enqueue(async () => {
+          const currentCartId = readStoredCartId();
+          if (!currentCartId) {
+            const created = await utils.client.commerce.cart.create.mutate({
               lines: [{ variantId, quantity }],
-            })
-          );
-          setCart(created);
-          setCartId(created.id);
-          writeStoredCartId(created.id);
-        } else {
-          const updated = await enqueue(() =>
-            utils.client.commerce.cart.addLines.mutate({
-              cartId: currentCartId,
-              lines: [{ variantId, quantity }],
-            })
-          );
-          setCart(updated);
-          if (!cartId) setCartId(currentCartId);
-        }
+            });
+            // Persist before releasing the queue so the next add reuses it.
+            writeStoredCartId(created.id);
+            return { cart: created, id: created.id };
+          }
+          const updated = await utils.client.commerce.cart.addLines.mutate({
+            cartId: currentCartId,
+            lines: [{ variantId, quantity }],
+          });
+          return { cart: updated, id: currentCartId };
+        });
+        setCart(result.cart);
+        setCartId(result.id);
         setIsOpen(true);
       } catch (err) {
         setError(toFriendlyMessage(err));
@@ -173,23 +159,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
         setLoading(false);
       }
     },
-    [cartId, enqueue, utils.client]
+    [enqueue, utils.client]
   );
 
   const updateQuantity = useCallback(
     async (lineId: string, quantity: number) => {
-      const currentCartId = readStoredCartId();
-      if (!currentCartId) return;
       setLoading(true);
       setError(null);
       try {
-        const updated = await enqueue(() =>
-          utils.client.commerce.cart.updateLines.mutate({
+        const updated = await enqueue(async () => {
+          const currentCartId = readStoredCartId();
+          if (!currentCartId) return null;
+          return utils.client.commerce.cart.updateLines.mutate({
             cartId: currentCartId,
             // quantity 0 is interpreted server-side as "remove this line".
             lines: [{ lineId, quantity: Math.max(0, quantity) }],
-          })
-        );
+          });
+        });
         if (updated) setCart(updated);
       } catch (err) {
         setError(toFriendlyMessage(err));
@@ -202,18 +188,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const removeItem = useCallback(
     async (lineId: string) => {
-      const currentCartId = readStoredCartId();
-      if (!currentCartId) return;
       setLoading(true);
       setError(null);
       try {
-        const updated = await enqueue(() =>
-          utils.client.commerce.cart.removeLines.mutate({
+        const updated = await enqueue(async () => {
+          const currentCartId = readStoredCartId();
+          if (!currentCartId) return null;
+          return utils.client.commerce.cart.removeLines.mutate({
             cartId: currentCartId,
             lineIds: [lineId],
-          })
-        );
-        setCart(updated);
+          });
+        });
+        if (updated) setCart(updated);
       } catch (err) {
         setError(toFriendlyMessage(err));
       } finally {
