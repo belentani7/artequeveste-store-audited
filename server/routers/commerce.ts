@@ -49,7 +49,8 @@ export const safeSearchTerm = z
       .replace(/[\\:*()"'`~^[\]{}=!<>&|+,\-]/g, " ")
       .replace(/\s+/g, " ")
       .trim()
-  );
+  )
+  .refine(value => value.length > 0, { message: "Search term must contain searchable text" });
 
 const cartLineInputSchema = z.object({
   variantId: safeId,
