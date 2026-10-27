@@ -88,7 +88,7 @@
     "shopify:probe": "tsx scripts/shopify-probe.runner.ts",
     "validate:routes": "node scripts/validate-cart-routes.mjs",
     "preview:prod": "pnpm build && pnpm start",
-    "test:cart-session": "node --experimental-strip-types --test scripts/cart-session-check.mjs"
+    "test:cart-session": "node --experimental-strip-types --test scripts/cart-session-check.mjs scripts/cart-dialog-inert-check.mjs"
   },
   "type": "module",
   "version": "1.0.0",
