@@ -9,7 +9,9 @@ import {
 describe("shared storefront search rules", () => {
   it("keeps product words while stripping Shopify query operators", () => {
     expect(normalizeStorefrontSearchTerm(" vestido:3XL ")).toBe("vestido 3XL");
-    expect(normalizeStorefrontSearchTerm("  quimono azul ")).toBe("quimono azul");
+    expect(normalizeStorefrontSearchTerm("  quimono azul ")).toBe(
+      "quimono azul"
+    );
   });
 
   it("distinguishes browsing from operator-only input", () => {
