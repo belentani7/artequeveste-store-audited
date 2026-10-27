@@ -40,11 +40,8 @@ export function createCartSession(
     },
     writeCartId(id: string | null, expectedGeneration?: number): void {
       // A late response from a cleared cart must never restore its id.
-      if (
-        expectedGeneration !== undefined &&
-        generation !== expectedGeneration
-      ) {
-        return;
+      if (expectedGeneration !== undefined) {
+        if (generation !== expectedGeneration) return;
       }
       inMemoryId = id;
       try {
