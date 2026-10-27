@@ -9,9 +9,8 @@ import {
 describe("shared storefront search rules", () => {
   it("keeps product words while stripping Shopify query operators", () => {
     expect(normalizeStorefrontSearchTerm(" vestido:3XL ")).toBe("vestido 3XL");
-    expect(normalizeStorefrontSearchTerm("  quimono azul ")).toBe(
-      "quimono azul"
-    );
+    const expected = "quimono azul";
+    expect(normalizeStorefrontSearchTerm("  quimono azul ")).toBe(expected);
   });
 
   it("distinguishes browsing from operator-only input", () => {
@@ -38,15 +37,14 @@ describe("shared storefront search rules", () => {
   });
 
   it("enforces the same 80-character limit as the API", () => {
-    expect(
-      normalizeStorefrontSearchTerm("a".repeat(MAX_STOREFRONT_SEARCH_LENGTH + 10))
-    ).toBe("a".repeat(MAX_STOREFRONT_SEARCH_LENGTH));
+    const input = "a".repeat(MAX_STOREFRONT_SEARCH_LENGTH + 10);
+    const expected = "a".repeat(MAX_STOREFRONT_SEARCH_LENGTH);
+    expect(normalizeStorefrontSearchTerm(input)).toBe(expected);
   });
 
   it("builds a shareable URL while preserving browser history", () => {
-    expect(storefrontSearchPath(" quimono azul ")).toBe(
-      "/busca?q=quimono%20azul"
-    );
+    const path = storefrontSearchPath(" quimono azul ");
+    expect(path).toBe("/busca?q=quimono%20azul");
     expect(storefrontSearchPath(" ")).toBe("/busca");
   });
 });
