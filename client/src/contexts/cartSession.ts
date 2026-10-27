@@ -54,7 +54,10 @@ export function createCartSession(
     },
     enqueue<T>(task: () => Promise<T>): Promise<T> {
       const run = tail.then(task, task);
-      tail = run.then(() => undefined, () => undefined);
+      tail = run.then(
+        () => undefined,
+        () => undefined
+      );
       return run;
     },
   };
