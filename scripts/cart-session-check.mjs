@@ -83,3 +83,54 @@ test("rejected mutations do not deadlock subsequent operations", async () => {
   );
   assert.equal(await session.enqueue(async () => 42), 42);
 });
+
+test("clear invalidates an in-flight creation with storage denied", async () => {
+  const session = createCartSession("cart", deniedStorage);
+  let finishCreation;
+  const network = new Promise(resolve => {
+    finishCreation = resolve;
+  });
+  const generation = session.getGeneration();
+  const pending = session.enqueue(async () => {
+    await network;
+    session.writeCartId("old-cart", generation);
+  });
+  session.invalidateCart();
+  finishCreation();
+  await pending;
+  assert.equal(session.readCartId(), null);
+  assert.equal(session.isCurrent(generation), false);
+});
+
+test("queued writes from a cleared cart are skipped", async () => {
+  const session = createCartSession("cart", deniedStorage);
+  let release;
+  const network = new Promise(resolve => {
+    release = resolve;
+  });
+  const generation = session.getGeneration();
+  const first = session.enqueue(async () => {
+    await network;
+  });
+  const queued = session.enqueue(async () => {
+    if (!session.isCurrent(generation)) return "skipped";
+    session.writeCartId("old-cart", generation);
+    return "written";
+  });
+  session.invalidateCart();
+  release();
+  await first;
+  assert.equal(await queued, "skipped");
+  assert.equal(session.readCartId(), null);
+});
+
+test("a fresh cart after clearing can be persisted", () => {
+  const session = createCartSession("cart", deniedStorage);
+  const oldGeneration = session.getGeneration();
+  session.invalidateCart();
+  const newGeneration = session.getGeneration();
+  session.writeCartId("stale", oldGeneration);
+  assert.equal(session.readCartId(), null);
+  session.writeCartId("new-cart", newGeneration);
+  assert.equal(session.readCartId(), "new-cart");
+});

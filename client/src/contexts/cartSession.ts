@@ -10,9 +10,26 @@ export function createCartSession(
   getStorage: () => CartStorage | null
 ) {
   let inMemoryId: string | null | undefined;
+  let generation = 0;
   let tail: Promise<unknown> = Promise.resolve();
 
   return {
+    getGeneration(): number {
+      return generation;
+    },
+    isCurrent(expectedGeneration: number): boolean {
+      return generation === expectedGeneration;
+    },
+    invalidateCart(): void {
+      // Clear immediately, even if an older Shopify request is still pending.
+      generation += 1;
+      inMemoryId = null;
+      try {
+        getStorage()?.removeItem(key);
+      } catch {
+        // Clearing must also work when storage is denied.
+      }
+    },
     readCartId(): string | null {
       if (inMemoryId !== undefined) return inMemoryId;
       try {
@@ -21,7 +38,10 @@ export function createCartSession(
         return null;
       }
     },
-    writeCartId(id: string | null): void {
+    writeCartId(id: string | null, expectedGeneration?: number): void {
+      // A late response from a cleared cart must never restore its id.
+      if (expectedGeneration !== undefined && generation !== expectedGeneration)
+        return;
       inMemoryId = id;
       try {
         const storage = getStorage();

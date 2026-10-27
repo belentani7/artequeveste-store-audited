@@ -50,8 +50,8 @@ function readStoredCartId(): string | null {
   return cartSession.readCartId();
 }
 
-function writeStoredCartId(value: string | null): void {
-  cartSession.writeCartId(value);
+function writeStoredCartId(value: string | null, generation?: number): void {
+  cartSession.writeCartId(value, generation);
 }
 
 type CartContextValue = {
@@ -99,27 +99,29 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return;
     }
     let cancelled = false;
+    const generation = cartSession.getGeneration();
     setLoading(true);
     utils.commerce.cart.get
       .fetch({ cartId })
       .then(current => {
-        if (cancelled) return;
+        if (cancelled || !cartSession.isCurrent(generation)) return;
         if (current) {
           setCart(current);
         } else {
           // The stored cart no longer exists (expired / checked out) — drop it.
-          writeStoredCartId(null);
+          cartSession.invalidateCart();
           setCartId(null);
           setCart(null);
+          setLoading(false);
         }
       })
       .catch(() => {
-        if (cancelled) return;
+        if (cancelled || !cartSession.isCurrent(generation)) return;
         // A failed read must not destroy a shopper's cart id: the next mount
         // may simply have been offline. Keep the id, show nothing.
       })
       .finally(() => {
-        if (!cancelled) setLoading(false);
+        if (!cancelled && cartSession.isCurrent(generation)) setLoading(false);
       });
     return () => {
       cancelled = true;
@@ -132,31 +134,38 @@ export function CartProvider({ children }: { children: ReactNode }) {
     async (variantId: string, quantity: number = 1) => {
       setLoading(true);
       setError(null);
+      const generation = cartSession.getGeneration();
       try {
         const result = await enqueue(async () => {
+          if (!cartSession.isCurrent(generation)) return null;
           const currentCartId = readStoredCartId();
           if (!currentCartId) {
             const created = await utils.client.commerce.cart.create.mutate({
               lines: [{ variantId, quantity }],
             });
-            // Persist before releasing the queue so the next add reuses it.
-            writeStoredCartId(created.id);
+            // Persist only if this cart was not cleared while Shopify responded.
+            if (!cartSession.isCurrent(generation)) return null;
+            writeStoredCartId(created.id, generation);
             return { cart: created, id: created.id };
           }
           const updated = await utils.client.commerce.cart.addLines.mutate({
             cartId: currentCartId,
             lines: [{ variantId, quantity }],
           });
+          if (!cartSession.isCurrent(generation)) return null;
           return { cart: updated, id: currentCartId };
         });
+        if (!result || !cartSession.isCurrent(generation)) return;
         setCart(result.cart);
         setCartId(result.id);
         setIsOpen(true);
       } catch (err) {
-        setError(toFriendlyMessage(err));
-        setIsOpen(true);
+        if (cartSession.isCurrent(generation)) {
+          setError(toFriendlyMessage(err));
+          setIsOpen(true);
+        }
       } finally {
-        setLoading(false);
+        if (cartSession.isCurrent(generation)) setLoading(false);
       }
     },
     [enqueue, utils.client]
@@ -164,10 +173,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const updateQuantity = useCallback(
     async (lineId: string, quantity: number) => {
+      const generation = cartSession.getGeneration();
       setLoading(true);
       setError(null);
       try {
         const updated = await enqueue(async () => {
+          if (!cartSession.isCurrent(generation)) return null;
           const currentCartId = readStoredCartId();
           if (!currentCartId) return null;
           return utils.client.commerce.cart.updateLines.mutate({
@@ -176,11 +187,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
             lines: [{ lineId, quantity: Math.max(0, quantity) }],
           });
         });
-        if (updated) setCart(updated);
+        if (updated && cartSession.isCurrent(generation)) setCart(updated);
       } catch (err) {
-        setError(toFriendlyMessage(err));
+        if (cartSession.isCurrent(generation)) setError(toFriendlyMessage(err));
       } finally {
-        setLoading(false);
+        if (cartSession.isCurrent(generation)) setLoading(false);
       }
     },
     [enqueue, utils.client]
@@ -188,10 +199,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const removeItem = useCallback(
     async (lineId: string) => {
+      const generation = cartSession.getGeneration();
       setLoading(true);
       setError(null);
       try {
         const updated = await enqueue(async () => {
+          if (!cartSession.isCurrent(generation)) return null;
           const currentCartId = readStoredCartId();
           if (!currentCartId) return null;
           return utils.client.commerce.cart.removeLines.mutate({
@@ -199,21 +212,22 @@ export function CartProvider({ children }: { children: ReactNode }) {
             lineIds: [lineId],
           });
         });
-        if (updated) setCart(updated);
+        if (updated && cartSession.isCurrent(generation)) setCart(updated);
       } catch (err) {
-        setError(toFriendlyMessage(err));
+        if (cartSession.isCurrent(generation)) setError(toFriendlyMessage(err));
       } finally {
-        setLoading(false);
+        if (cartSession.isCurrent(generation)) setLoading(false);
       }
     },
     [enqueue, utils.client]
   );
 
   const clearCart = useCallback(() => {
-    writeStoredCartId(null);
+    cartSession.invalidateCart();
     setCartId(null);
     setCart(null);
     setError(null);
+    setLoading(false);
   }, []);
 
   const proceedToCheckout = useCallback(() => {
