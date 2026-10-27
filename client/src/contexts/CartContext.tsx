@@ -1,4 +1,5 @@
 import { trpc } from "@/lib/trpc";
+import { createCartSession } from "./cartSession";
 import { STORAGE_KEYS } from "@shared/const";
 import type { Cart } from "@shared/commerce/types";
 import {
@@ -8,7 +9,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from "react";
 
@@ -42,23 +42,16 @@ function toFriendlyMessage(error: unknown): string {
   return "Não foi possível atualizar o carrinho. Tente novamente.";
 }
 
+const cartSession = createCartSession(CART_STORAGE_KEY, () =>
+  typeof window === "undefined" ? null : window.localStorage
+);
+
 function readStoredCartId(): string | null {
-  if (typeof window === "undefined") return null;
-  try {
-    return window.localStorage.getItem(CART_STORAGE_KEY);
-  } catch {
-    return null;
-  }
+  return cartSession.readCartId();
 }
 
-function writeStoredCartId(value: string | null) {
-  if (typeof window === "undefined") return;
-  try {
-    if (value) window.localStorage.setItem(CART_STORAGE_KEY, value);
-    else window.localStorage.removeItem(CART_STORAGE_KEY);
-  } catch {
-    // Storage blocked (private mode): the cart simply won't survive a reload.
-  }
+function writeStoredCartId(value: string | null, generation?: number): void {
+  cartSession.writeCartId(value, generation);
 }
 
 type CartContextValue = {
@@ -88,14 +81,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const utils = trpc.useUtils();
 
-  // Serialises cart writes: add/update/remove calls run one after another so
-  // the Shopify cart cannot receive two conflicting line updates at once.
-  const queue = useRef<Promise<unknown>>(Promise.resolve());
-  const enqueue = useCallback(<T,>(task: () => Promise<T>): Promise<T> => {
-    const run = queue.current.then(task, task);
-    queue.current = run.catch(() => undefined);
-    return run;
-  }, []);
+  // All mutations, including the cart-id lookup, run in the same queue.
+  // This prevents two rapid clicks from creating two separate Shopify carts.
+  const enqueue = cartSession.enqueue;
 
   const openCart = useCallback(() => {
     setError(null);
@@ -111,27 +99,29 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return;
     }
     let cancelled = false;
+    const generation = cartSession.getGeneration();
     setLoading(true);
     utils.commerce.cart.get
       .fetch({ cartId })
       .then(current => {
-        if (cancelled) return;
+        if (cancelled || !cartSession.isCurrent(generation)) return;
         if (current) {
           setCart(current);
         } else {
           // The stored cart no longer exists (expired / checked out) — drop it.
-          writeStoredCartId(null);
+          cartSession.invalidateCart();
           setCartId(null);
           setCart(null);
+          setLoading(false);
         }
       })
       .catch(() => {
-        if (cancelled) return;
+        if (cancelled || !cartSession.isCurrent(generation)) return;
         // A failed read must not destroy a shopper's cart id: the next mount
         // may simply have been offline. Keep the id, show nothing.
       })
       .finally(() => {
-        if (!cancelled) setLoading(false);
+        if (!cancelled && cartSession.isCurrent(generation)) setLoading(false);
       });
     return () => {
       cancelled = true;
@@ -144,57 +134,64 @@ export function CartProvider({ children }: { children: ReactNode }) {
     async (variantId: string, quantity: number = 1) => {
       setLoading(true);
       setError(null);
+      const generation = cartSession.getGeneration();
       try {
-        const currentCartId = readStoredCartId();
-        if (!currentCartId) {
-          const created = await enqueue(() =>
-            utils.client.commerce.cart.create.mutate({
+        const result = await enqueue(async () => {
+          if (!cartSession.isCurrent(generation)) return null;
+          const currentCartId = readStoredCartId();
+          if (!currentCartId) {
+            const created = await utils.client.commerce.cart.create.mutate({
               lines: [{ variantId, quantity }],
-            })
-          );
-          setCart(created);
-          setCartId(created.id);
-          writeStoredCartId(created.id);
-        } else {
-          const updated = await enqueue(() =>
-            utils.client.commerce.cart.addLines.mutate({
-              cartId: currentCartId,
-              lines: [{ variantId, quantity }],
-            })
-          );
-          setCart(updated);
-          if (!cartId) setCartId(currentCartId);
-        }
+            });
+            // Persist only if this cart was not cleared while Shopify responded.
+            if (!cartSession.isCurrent(generation)) return null;
+            writeStoredCartId(created.id, generation);
+            return { cart: created, id: created.id };
+          }
+          const updated = await utils.client.commerce.cart.addLines.mutate({
+            cartId: currentCartId,
+            lines: [{ variantId, quantity }],
+          });
+          if (!cartSession.isCurrent(generation)) return null;
+          return { cart: updated, id: currentCartId };
+        });
+        if (!result || !cartSession.isCurrent(generation)) return;
+        setCart(result.cart);
+        setCartId(result.id);
         setIsOpen(true);
       } catch (err) {
-        setError(toFriendlyMessage(err));
-        setIsOpen(true);
+        if (cartSession.isCurrent(generation)) {
+          setError(toFriendlyMessage(err));
+          setIsOpen(true);
+        }
       } finally {
-        setLoading(false);
+        if (cartSession.isCurrent(generation)) setLoading(false);
       }
     },
-    [cartId, enqueue, utils.client]
+    [enqueue, utils.client]
   );
 
   const updateQuantity = useCallback(
     async (lineId: string, quantity: number) => {
-      const currentCartId = readStoredCartId();
-      if (!currentCartId) return;
+      const generation = cartSession.getGeneration();
       setLoading(true);
       setError(null);
       try {
-        const updated = await enqueue(() =>
-          utils.client.commerce.cart.updateLines.mutate({
+        const updated = await enqueue(async () => {
+          if (!cartSession.isCurrent(generation)) return null;
+          const currentCartId = readStoredCartId();
+          if (!currentCartId) return null;
+          return utils.client.commerce.cart.updateLines.mutate({
             cartId: currentCartId,
             // quantity 0 is interpreted server-side as "remove this line".
             lines: [{ lineId, quantity: Math.max(0, quantity) }],
-          })
-        );
-        if (updated) setCart(updated);
+          });
+        });
+        if (updated && cartSession.isCurrent(generation)) setCart(updated);
       } catch (err) {
-        setError(toFriendlyMessage(err));
+        if (cartSession.isCurrent(generation)) setError(toFriendlyMessage(err));
       } finally {
-        setLoading(false);
+        if (cartSession.isCurrent(generation)) setLoading(false);
       }
     },
     [enqueue, utils.client]
@@ -202,32 +199,35 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const removeItem = useCallback(
     async (lineId: string) => {
-      const currentCartId = readStoredCartId();
-      if (!currentCartId) return;
+      const generation = cartSession.getGeneration();
       setLoading(true);
       setError(null);
       try {
-        const updated = await enqueue(() =>
-          utils.client.commerce.cart.removeLines.mutate({
+        const updated = await enqueue(async () => {
+          if (!cartSession.isCurrent(generation)) return null;
+          const currentCartId = readStoredCartId();
+          if (!currentCartId) return null;
+          return utils.client.commerce.cart.removeLines.mutate({
             cartId: currentCartId,
             lineIds: [lineId],
-          })
-        );
-        setCart(updated);
+          });
+        });
+        if (updated && cartSession.isCurrent(generation)) setCart(updated);
       } catch (err) {
-        setError(toFriendlyMessage(err));
+        if (cartSession.isCurrent(generation)) setError(toFriendlyMessage(err));
       } finally {
-        setLoading(false);
+        if (cartSession.isCurrent(generation)) setLoading(false);
       }
     },
     [enqueue, utils.client]
   );
 
   const clearCart = useCallback(() => {
-    writeStoredCartId(null);
+    cartSession.invalidateCart();
     setCartId(null);
     setCart(null);
     setError(null);
+    setLoading(false);
   }, []);
 
   const proceedToCheckout = useCallback(() => {

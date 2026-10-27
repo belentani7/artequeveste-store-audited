@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Search as SearchIcon, X } from "lucide-react";
-import { Link, useSearch } from "wouter";
+import { Link, useLocation, useSearch } from "wouter";
 import { trpc } from "@/lib/trpc";
 import ProductCard from "@/components/commerce/ProductCard";
 import SiteHeader from "@/components/commerce/SiteHeader";
@@ -11,8 +11,11 @@ import StorefrontLayout, {
 import { applyRouteMeta } from "@/lib/seo";
 import { PRODUCT_SORT_LABELS, type ProductSort } from "@shared/commerce/types";
 import { STOREFRONT_CATEGORIES } from "@shared/storefrontRules";
-
-const MAX_TERM = 80;
+import {
+  MAX_STOREFRONT_SEARCH_LENGTH,
+  resolveStorefrontSearch,
+  storefrontSearchPath,
+} from "@shared/storefrontSearch";
 
 /**
  * Catalog search (`/busca?q=`).
@@ -25,6 +28,7 @@ const MAX_TERM = 80;
  */
 export default function SearchPage() {
   const search = useSearch();
+  const [, navigate] = useLocation();
   const params = useMemo(() => new URLSearchParams(search), [search]);
   const queryParam = params.get("q") ?? "";
   const [term, setTerm] = useState(queryParam);
@@ -36,24 +40,28 @@ export default function SearchPage() {
     setSubmitted(queryParam);
   }, [queryParam]);
 
-  const trimmed = submitted.trim().slice(0, MAX_TERM);
+  const trimmed = submitted.trim().slice(0, MAX_STOREFRONT_SEARCH_LENGTH);
+  const searchState = resolveStorefrontSearch(trimmed);
+  const invalidTerm = searchState.kind === "invalid";
 
   // With a term: Storefront search (relevance ordering by default).
   // Without a term: the full catalog, which is what a shopper expects from a
   // "browse everything" route — the previous version showed only a hint here.
   const searchQuery = trpc.commerce.products.search.useQuery(
-    { term: trimmed, first: 24, sort },
-    { retry: 1, enabled: trimmed.length > 0, staleTime: 30_000 }
+    { term: searchState.term, first: 24, sort },
+    { retry: 1, enabled: searchState.kind === "search", staleTime: 30_000 }
   );
   const catalogQuery = trpc.commerce.products.list.useQuery(
     { first: 24, sort: sort === "relevance" ? "featured" : sort },
-    { retry: 1, enabled: trimmed.length === 0, staleTime: 30_000 }
+    { retry: 1, enabled: searchState.kind === "browse", staleTime: 30_000 }
   );
 
   const hasTerm = trimmed.length > 0;
   const data = hasTerm ? searchQuery.data : catalogQuery.data;
-  const isLoading = hasTerm ? searchQuery.isLoading : catalogQuery.isLoading;
-  const isError = hasTerm ? searchQuery.isError : catalogQuery.isError;
+  const isLoading =
+    !invalidTerm && (hasTerm ? searchQuery.isLoading : catalogQuery.isLoading);
+  const isError =
+    !invalidTerm && (hasTerm ? searchQuery.isError : catalogQuery.isError);
   const refetch = hasTerm ? searchQuery.refetch : catalogQuery.refetch;
 
   useEffect(() => {
@@ -73,12 +81,8 @@ export default function SearchPage() {
 
   const submit = (event: React.FormEvent) => {
     event.preventDefault();
-    const value = term.trim().slice(0, MAX_TERM);
-    window.history.replaceState(
-      null,
-      "",
-      value ? `/busca?q=${encodeURIComponent(value)}` : "/busca"
-    );
+    const value = term.trim().slice(0, MAX_STOREFRONT_SEARCH_LENGTH);
+    navigate(storefrontSearchPath(value));
     setSubmitted(value);
   };
 
@@ -120,7 +124,7 @@ export default function SearchPage() {
                 id="aqv-search-page"
                 type="search"
                 value={term}
-                maxLength={MAX_TERM}
+                maxLength={MAX_STOREFRONT_SEARCH_LENGTH}
                 onChange={event => setTerm(event.target.value)}
                 placeholder="camiseta, quimono, bolsa…"
                 className="h-12 w-full border border-[var(--aqv-line)] bg-[var(--aqv-paper)] pl-11 pr-10 text-sm outline-none focus-visible:border-[var(--aqv-accent)]"
@@ -166,7 +170,26 @@ export default function SearchPage() {
         </header>
 
         <div className="mt-10">
-          {isLoading ? (
+          <p className="sr-only" role="status">
+            {invalidTerm
+              ? "Busca inválida: digite o nome de uma peça ou categoria."
+              : isLoading
+                ? "Carregando peças do catálogo."
+                : isError
+                  ? "Não foi possível consultar o catálogo."
+                  : products.length === 0
+                    ? "Nenhuma peça encontrada."
+                    : "Resultados da busca disponíveis."}
+          </p>
+          {invalidTerm ? (
+            <StorefrontMessage
+              kicker="Busca inválida"
+              title="Digite uma palavra para encontrar peças."
+              body="Sua busca contém apenas símbolos ou operadores. Use o nome de uma peça, cor ou categoria para continuar."
+              action={{ label: "Ver catálogo completo", href: "/busca" }}
+              tone="alert"
+            />
+          ) : isLoading ? (
             <div className="grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-4">
               {Array.from({ length: 4 }).map((_, index) => (
                 <div

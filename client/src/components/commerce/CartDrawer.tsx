@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import {
   AlertCircle,
   ArrowRight,
@@ -8,6 +9,7 @@ import {
   X,
 } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import { inertDialogBackground } from "./dialogInert";
 import { formatMoney } from "@/lib/format";
 
 /**
@@ -45,13 +47,11 @@ export default function CartDrawer() {
     previouslyFocused.current = document.activeElement as HTMLElement | null;
     closeButtonRef.current?.focus();
 
-    const root = document.getElementById("root");
-    const siblings = root ? Array.from(root.children) : [];
-    siblings.forEach(node => {
-      if (node !== containerRef.current && "inert" in node) {
-        (node as HTMLElement & { inert: boolean }).inert = true;
-      }
-    });
+    // The portal is a sibling of #root, never its descendant: inerting the
+    // background cannot disable the dialog itself.
+    const restoreInert = containerRef.current
+      ? inertDialogBackground(containerRef.current)
+      : () => undefined;
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -78,10 +78,7 @@ export default function CartDrawer() {
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      siblings.forEach(node => {
-        if ("inert" in node)
-          (node as HTMLElement & { inert: boolean }).inert = false;
-      });
+      restoreInert();
       previouslyFocused.current?.focus?.();
     };
   }, [closeCart, isOpen]);
@@ -91,7 +88,7 @@ export default function CartDrawer() {
   const items = cart?.items ?? [];
   const isEmpty = items.length === 0;
 
-  return (
+  return createPortal(
     <div
       ref={containerRef}
       className="fixed inset-0 z-50 bg-black/50"
@@ -272,6 +269,7 @@ export default function CartDrawer() {
           </button>
         </div>
       </aside>
-    </div>
+    </div>,
+    document.body
   );
 }
